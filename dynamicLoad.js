@@ -15,6 +15,6 @@ const HTML_ROOT = "https://cwpersonrennell.github.io/Math/";
 
 function loadFiles(files,target){
   for(let i = 0;i<files.length;i++){
-    loadHTML(`${HTML_ROOT}${files[i]}`,target);
+    loadHTML(`${HTML_ROOT}${files[i]}.html`,target);
   }
 }
