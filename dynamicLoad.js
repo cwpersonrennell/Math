@@ -11,3 +11,10 @@ function loadHTML(href,target){
     renderPage();
   });
 }
+const HTML_ROOT = "https://cwpersonrennell.github.io/Math/";
+
+function loadFiles(files,target){
+  for(let i = 0;i<files.length;i++){
+    loadHTML(files[i],target);
+  }
+}
