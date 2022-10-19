@@ -1,0 +1,10 @@
+body { 
+  max-width: 800px; 
+  width: 100%; 
+  margin: 1em auto; 
+  font-size: 10em; 
+  background:black;
+  color:white;
+  text-align:center;
+  vertical-align:center;
+}
