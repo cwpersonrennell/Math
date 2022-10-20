@@ -1,4 +1,6 @@
 function renderPage(){
+  console.log(`Rendering Page with MathJax Version ${MathJax.version}`);
+  
   MathJax.typeset();
   getCalculators();
 }
