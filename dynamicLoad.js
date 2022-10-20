@@ -8,7 +8,7 @@ function loadHTML(href,target,container='div'){
     let shell = document.createElement(container);
     shell.innerHTML=content;
     target.appendChild(shell);
-    renderPage();
+   // renderPage();
   });
 }
 const HTML_ROOT = "https://cwpersonrennell.github.io/Math/";
