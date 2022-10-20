@@ -1,7 +1,6 @@
 let MJ;
 function renderPage(){
-  console.log(`Rendering Page with MathJax Version ${MJ.version}`);
-  
+  //console.log(`Rendering Page with MathJax Version ${MJ.version}`);
   MJ.typeset();
   getCalculators();
 }
@@ -11,7 +10,6 @@ function loadHTML(href,target,container='div'){
     let shell = document.createElement(container);
     shell.innerHTML=content;
     target.appendChild(shell);
-   // renderPage();
   });
   return promise
 }
@@ -25,7 +23,7 @@ function loadFiles(files,target,container='div'){
     promises.push(promise);
   }
   Promise.all(promises).then(()=>{
-    console.log("All elements fetched and embedded, rendering page");
+    //console.log("All elements fetched and embedded, rendering page");
     renderPage();
   });
 }
