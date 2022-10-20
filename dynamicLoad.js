@@ -1,7 +1,8 @@
+let MJ;
 function renderPage(){
-  console.log(`Rendering Page with MathJax Version ${MathJax.version}`);
+  console.log(`Rendering Page with MathJax Version ${MJ.version}`);
   
-  MathJax.typeset();
+  MJ.typeset();
   getCalculators();
 }
       
@@ -17,6 +18,7 @@ function loadHTML(href,target,container='div'){
 const HTML_ROOT = "https://cwpersonrennell.github.io/Math/";
 
 function loadFiles(files,target,container='div'){
+  MJ = MathJax;
   let promises = [];
   for(let i = 0;i<files.length;i++){
     let promise=loadHTML(`${HTML_ROOT}${files[i]}.html`,target,container);
