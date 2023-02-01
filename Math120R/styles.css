@@ -36,7 +36,7 @@
 
 body {
   --space: 6rem;
-  --bg-color: papayawhip;
+  --bg-color: #333;
   display: grid;
   place-items: center;
   padding: var(--space) 0;
