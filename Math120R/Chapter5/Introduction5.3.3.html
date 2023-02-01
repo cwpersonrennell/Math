@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <!--<script defer="" src="https://cwpersonrennell.github.io/Math/dynamicLoad.js"></script>-->
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+       //Force the locally downloaded version of MathJax to typeset
+       //D2L will create a weird hybrid version behind the scenes for
+       //its own typsetting (using the UI) and it messes with these
+       //simply typed LaTex.
+       MathJax.typeset();
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head><body style="color: rgb(32, 33, 34);"><p style="display: none;">\( \def\dfrac#1#2{{\displaystyle\frac{#1}{#2}}} \def\solve#1{{\begin{{array}}{{rcl}}#1\end{{array}} }} \)</p>
+<div class="fa" style="width: 100%;">
+<p>The final consideration for these transformations is to consider what happens when we put them all together. Starting from \(y=\sin(\theta)\), applying the general stretch/compress and shifts results in the following:</p>
+<p>\[y=A\sin\left(B(\theta-\omega)\right)+C\]</p>
+<p>This generalized formula for the Sine function has the following properties:</p>
+<ul>
+<li>Domain: All real numbers</li>
+<li>Amplitude: \(|A|\)</li>
+<li>Midline/Average Value: \(y=C\)</li>
+<li>Range: \(\left[C-|A|,C+|A|\right]\)
+<ul>
+<li>While the range looks complicated, the meaning of the above boils down to: "the average value minus the amplitude to the average value plus the amplitude".</li>
+</ul>
+</li>
+<li>Phase Shift: \(\omega\)</li>
+<li>Frequency: \(f=\frac{{B}}{2\pi}\)</li>
+<li>Period: \(P=\frac{2\pi}{{B}}\)</li>
+<li>Zeros: If \(C=0\) (aka, no vertical shift), then the zeros can be found every half-period, offset by the phase shift. So, each zero (there would be infinitely many) could be written with the formula \(\frac{{nP}}{{2}} +\omega\), where \(n\) is any integer and \(P\) is the period.</li>
+<li>If \(C\neq 0\), then the above "zeros" can be found on the midline itself (not the \(x\)-axis) using the same reasoning, which is still highly useful.</li>
+</ul>
+<p>Note that the formula has \(B\) factored in the inner part of the function. This is a requirement because the order of operations matters for the order of transformations. Whenever you work with one of these functions, make sure you factor the inner part of the function before you start determining any of the above graphical features.</p>
+</div></body></html>
