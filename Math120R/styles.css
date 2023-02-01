@@ -23,7 +23,7 @@
 
 .carousel-control.next {
   place-self: center right;
-  right:5rem;
+  right:-15rem;
 }
 
 .carousel-dots {
