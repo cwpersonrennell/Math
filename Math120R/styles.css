@@ -4,7 +4,7 @@
   place-items: center;
   place-content: center;
   overflow: hidden;
-  max-height: clamp(450px, 50vh, 600px);
+  height:100%;
 }
 
 .container > * {
