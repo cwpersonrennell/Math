@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>Example1.9.2</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+       MathJax.typeset();
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div class="fa">
+<p>Create a table of values for the function and sketch the graph.</p>
+\[ y = 4\sqrt{-\displaystyle \frac{x^2}{{9}}+1} \]
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>First and foremost it is important to determine the domain of the function:</p>
+\[ \solve{ -\displaystyle\frac{x^2}{{9}}+1&amp;\geq&amp; 0\\ -\displaystyle\frac{x^2}{{9}}&amp;\geq&amp;-1\\ \displaystyle\frac{x^2}{{9}}&amp;\leq&amp;1\\ x^2&amp;\leq&amp;9\\ x\leq3 &amp;&amp;x\geq -3 } \]
+<p>Since the domain is \([-3,3]\), we should only select values in that interval. I choose to use very specific values to get "nice" answers, which is why there are some inputs with radicals.</p>
+\[ \begin{array}{{c|c|c|c}} x&amp;y=&amp;... &amp; y\\ \hline 0 &amp; 4\sqrt{-\displaystyle \frac{(0)^2}{{9}} +1}&amp; 4\sqrt{{1}} &amp;4 \\ -3 &amp; 4\sqrt{-\displaystyle \frac{(-3)^2}{{9}} +1}&amp;4\sqrt{{0}}&amp;0\\ 3&amp;4\sqrt{-\displaystyle \frac{(3)^2}{{9}} +1}&amp;4\sqrt{{0}}&amp;0 \\ -\sqrt{{5}} &amp;4\sqrt{-\displaystyle \frac{(-\sqrt{{5}})^2}{{9}}+1} &amp;4\sqrt{\frac{{4}}{{9}}}&amp;\frac{{8}}{{3}} \\ \sqrt{{5}} &amp;4\sqrt{-\displaystyle \frac{(\sqrt{{5}})^2}{{9}}+1} &amp;4\sqrt{\frac{{4}}{{9}}}&amp;\frac{{8}}{{3}} \\-\sqrt{{8}} &amp;4\sqrt{-\displaystyle\frac{(-\sqrt{{8}})^2}{{9}}+1}&amp;4\sqrt{\frac{{1}}{{9}}}&amp;\frac{{4}}{{3}}\\ \sqrt{{8}} &amp;4\sqrt{-\displaystyle\frac{(\sqrt{{8}})^2}{{9}}+1}&amp;4\sqrt{\frac{{1}}{{9}}}&amp;\frac{{4}}{{3}} \end{array} \]
+<p>With these values, we can create the following sketch:</p>
+<div id="calculator" style="width: 600px; height: 400px; text-align: center;"></div>
+<p>Once we have the basic shape, we can fill it in:</p>
+<div id="calculator2" style="width: 600px; height: 400px; text-align: center;"></div>
+</div>
+<p>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:false,xAxisStep:0});
+  calculator.setMathBounds({left:4,right:4,bottom:-1,top:5});
+  calculator.setExpressions( [{id: 'graph1', latex: '(0,4)',color:"blue",showLabel:true},{latex:"(-3,0)",color:"blue",showLabel:true},{latex:"(3,0)",color:"blue",showLabel:true},{latex:"(-\\sqrt{{5}},8/3)",color:"blue",showLabel:true},{latex:"(\\sqrt{{5}},8/3)",color:"blue",showLabel:true},{latex:"(-\\sqrt{{8}},4/3)",color:"blue",showLabel:true},{latex:"(\\sqrt{{8}},4/3)",color:"blue",showLabel:true}]);
+  var elt2 = document.getElementById('calculator2');
+  var calculator2 = Desmos.GraphingCalculator(elt2,{expressions:false,lockViewport:false,xAxisStep:0});
+  calculator2.setMathBounds({left:4,right:4,bottom:-1,top:5});
+  calculator2.setExpressions( [{id: 'graph1', latex: 'y = 4\\sqrt{-\\frac{x^2}{{9}}+1} ',color:"blue"},{latex: '(0,4)',color:"blue",showLabel:true},{latex:"(-3,0)",color:"blue",showLabel:true},{latex:"(3,0)",color:"blue",showLabel:true},{latex:"(-\\sqrt{{5}},8/3)",color:"blue",showLabel:true},{latex:"(\\sqrt{{5}},8/3)",color:"blue",showLabel:true},{latex:"(-\\sqrt{{8}},4/3)",color:"blue",showLabel:true},{latex:"(\\sqrt{{8}},4/3)",color:"blue",showLabel:true}]);
+  });
+</script>
+</p>
+</div>
+</body>
+</html>
