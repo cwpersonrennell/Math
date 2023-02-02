@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>DevelopingSkillsSolvingQuadraticInequalities</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+       MathJax.typeset();
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div class="fa">
+<p>Solve the following equations:</p>
+\[ \begin{array}{rcl} x^2 -2 &amp;\gt&amp;0\\ x^2+7x - 10&amp;\lt&amp;20\\ -x^2-2x+1 &amp;\leq&amp; 3x+5 \end{array} \]
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>I will demonstrate how to solve these questions algebraically. If you would like more than the steps laid out below, don't hesitate to reach out and ask for clarifications.</p>
+<p>We will need to identify the Zeros of the functions:</p>
+<p>\[ \begin{array}{rcl} x^2 -2 &amp;=&amp;0\\ x^2 &amp;=&amp;2\\ x &amp;=&amp;\pm\sqrt{{2}} \\ \hline x^2+7x - 10&amp;=&amp;20\\ x^2 + 7x -30 &amp;=&amp;0\\ {\color{{green}}-3\times 10 = -30}&amp;&amp;{\color{{green}} -3+10 = 7}\\ x^2 -3x +10x - 30 &amp;=&amp;0\\ x(x-3)+10(x-3)&amp;=&amp;0\\ (x-3)(x+10)&amp;=&amp;0\\ x&amp;=&amp;3\text{ or }-10\\ \hline -x^2-2x+1 &amp;=&amp; 3x+5 \\ -x^2 -5x -4 &amp;=&amp;0\\ x^2 +5x +4 &amp;=&amp;0\\ (x+1)(x+4)&amp;=&amp;0\\ x&amp;=&amp;-1 \text{ or }-4 \end{array} \]</p>
+<p>As usual, it pays to double check our answers. However, more than just using graphs to check our work, it is of particular interest to note how the solution to these equations can be visualized as the intersections of graphs. In each of the graphs below, you can see that I graph both the left and right side of the equation. The solution, then, is the x-coordinate of where the graphs intersect. In a very real way, we can mentally interpret <strong>any</strong> equation as the intersection of some graphs.</p>
+<div id="calculator" style="width: 600px; height: 400px; text-align: center;"></div>
+<div id="calculator2" style="width: 600px; height: 400px; text-align: center;"></div>
+<div id="calculator3" style="width: 600px; height: 400px; text-align: center;"></div>
+</div>
+</div>
+<p>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt,{expressions:true,lockViewport:true,xAxisStep:0.5});
+  calculator.setMathBounds({left:-6,right:6,bottom:-6,top:6});
+  calculator.setExpressions( [{latex: 'x^2-2\\gt 0'}]);
+
+    var elt2 = document.getElementById('calculator2');
+  var calculator2 = Desmos.GraphingCalculator(elt,{expressions:true,lockViewport:true,xAxisStep:0.5});
+  calculator2.setMathBounds({left:-12,right:12,bottom:0,top:30});
+  calculator2.setExpressions( [{latex: 'x^2+7x - 10\\lt20'}]);
+
+    var elt3 = document.getElementById('calculator3');
+  var calculator3 = Desmos.GraphingCalculator(elt,{expressions:true,lockViewport:true,xAxisStep:0.5});
+  calculator3.setMathBounds({left:-5,right:5,bottom:-10,top:5});
+  calculator3.setExpressions( [{latex: '-x^2-2x+1\\geq3x+5'}]);});
+</script>
+</body>
+</html>
