@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html style="height:100%;margin:0px;padding:0px">
 <head>
-	<title>Math 120R </title>
-	<link rel="stylesheet" href="https://cwpersonrennell.github.io/Math/Math120R/styles.css">
+	<title>Math 120R Navigator</title>
 </head>
 <body>
 	
 <div class="container">
-	<h2 class="title">Chapter 5 Notes</h2>
-	<div class="carousel-viewport">
+	<h2 class="title">Math 120R Navigator</h2>
+	<select name="notes" id="notes">
+		
+	</select>
 		
 		<iframe class="frame" id="iframe" frameborder="0" src="" style="width:100%;height:100%"></iframe>
 
-	</div>
 	<button class="carousel-control prev" id="previous" title="Go to previous item">
 		<svg viewBox="0 0 256 512">
 			<path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" />
 		</svg>
 	</button>
+
 	<button class="carousel-control next" id="next" title="Go to next item">
 		<svg viewBox="0 0 256 512">
 			<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
 		</svg>
 	</button>
-	<ol class="carousel-dots">
-		<li class="dot active">1</li>
-		<li class="dot">2</li>
-		<li class="dot">3</li>
-		<li class="dot">4</li>
-	</ol>
+	
 </div>
 
 </body>
@@ -37,17 +33,39 @@
 	let nextButton = document.getElementById("next");
 	let previousButton = document.getElementById("previous");
 	let iframeElement=document.getElementById("iframe");
+	let notesDropdownElement=document.getElementById("notes");
 	let fileIndex = 0;
 	let files=[
-		"https://cwpersonrennell.github.io/Math/Math120R/Chapter5/Introduction5.3.1.html",
-		"https://cwpersonrennell.github.io/Math/Math120R/Chapter5/Introduction5.3.2.html",
-		"https://cwpersonrennell.github.io/Math/Math120R/Chapter5/Introduction5.3.3.html",
-		"https://cwpersonrennell.github.io/Math/Math120R/Chapter5/Example5.3.1.html",
-		"https://cwpersonrennell.github.io/Math/Math120R/Chapter5/Example5.3.2.html"
+		"Chapter5/Introduction5.3.1",
+		"Chapter5/Introduction5.3.2",
+		"Chapter5/Introduction5.3.3",
+		"Chapter5/Example5.3.1",
+		"Chapter5/Example5.3.2.html"
 	]
 
+	function loadSourceFile(src){
+		iframeElement.src=`https://cwpersonrennell.github.io/Math/Math120R/${src}.html`;
+	}
+
+	function loadHash(){
+		let url = new URL(document.URL);
+		let target = url.hash;
+		if(target.length==0)
+			target = files[0];
+		else
+			target=target.replace("#","");
+		loadSourceFile(target);
+	}
+
 	function init(){
-		iframeElement.src=files[0];
+		for(let i =0; i <files.length;i++){
+			let anchor = document.createElement('a');
+			anchor.href=`#${files[i]}`;
+			let option = document.createElement('option');
+			option.appendChild(anchor);
+			notesDropdownElement.appendChild(option);
+		}
+		loadHash();
 	}
 
 	function advanceToNextFile(){
@@ -55,7 +73,7 @@
 		if(fileIndex>files.length-1){
 			fileIndex--;
 		}
-		iframeElement.src=files[fileIndex];
+		loadSourceFile(files[fileIndex]);
 	}
 
 	function advanceToPreviousFile(){
@@ -63,12 +81,13 @@
 		if(fileIndex<0){
 			fileIndex=0;
 		}
-		iframeElement.src=files[fileIndex];
+		loadSourceFile(files[fileIndex]);
 	}
 
 	nextButton.addEventListener("mouseup",advanceToNextFile);
 	previousButton.addEventListener("mouseup",advanceToPreviousFile);
-	document.addEventListener("DOMContentLoaded",init)
+	document.addEventListener("DOMContentLoaded",init);
+	document.addEventListener("hashchange",loadHash);
 
 </script>
 </html>
