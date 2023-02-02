@@ -40,7 +40,7 @@
 		"Chapter5/Introduction5.3.2",
 		"Chapter5/Introduction5.3.3",
 		"Chapter5/Example5.3.1",
-		"Chapter5/Example5.3.2.html"
+		"Chapter5/Example5.3.2"
 	]
 
 	function loadSourceFile(src){
@@ -59,10 +59,12 @@
 
 	function init(){
 		for(let i =0; i <files.length;i++){
-			let anchor = document.createElement('a');
-			anchor.href=`#${files[i]}`;
+			//let anchor = document.createElement('a');
+			//anchor.href=`#${files[i]}`;
 			let option = document.createElement('option');
-			option.appendChild(anchor);
+			option.value=files[i];
+			option.innerText=files[i];
+			//option.appendChild(anchor);
 			notesDropdownElement.appendChild(option);
 		}
 		loadHash();
@@ -84,10 +86,17 @@
 		loadSourceFile(files[fileIndex]);
 	}
 
+	function selectFromDropDown(){
+		let url = new URL(document.URL);
+		url.hash = notesDropdownElement.value;
+		window.history.pushState({},'',url);
+
+	}
 	nextButton.addEventListener("mouseup",advanceToNextFile);
 	previousButton.addEventListener("mouseup",advanceToPreviousFile);
 	document.addEventListener("DOMContentLoaded",init);
 	document.addEventListener("hashchange",loadHash);
+	notesDropdownElement.addEventListener("change",selectFromDropDown)
 
 </script>
 </html>
