@@ -1,0 +1,34 @@
+<div class="fa">
+<p>Solve the following equations:</p>
+\[ \begin{array}{rcl} 2x-6 &amp;=&amp;0\\ 4&amp;=&amp;-2x-9\\ -\displaystyle\frac{{x}}{{3}}+1&amp;=&amp;\displaystyle\frac{{2}}{{5}}x-7 \end{array} \]
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>I will demonstrate how to solve these questions algebraically. If you would like more than the steps laid out below, don't hesistate to reach out and ask for clarifications.</p>
+<p>\[ \begin{array}{rcl} 2x-6 &amp;=&amp; 0\\ 2x &amp;=&amp; 6\\ x &amp;=&amp; \boxed{{3}}\\ \hline 4 &amp;=&amp;-2x-9\\ 13 &amp;=&amp; -2x\\ \boxed{\displaystyle-\frac{{13}}{{2}}}&amp;=&amp;x\\ \hline -\displaystyle\frac{{x}}{{3}} +1 &amp;=&amp; \displaystyle \frac{{2}}{{5}}x - 7\\ {\color{{red}}15}\left(-\displaystyle\frac{{x}}{{3}}+1\right)&amp;=&amp;{\color{{red}}15}\left(\displaystyle\frac{{2}}{{5}}x - 7\right)\\ -5x +15 &amp;=&amp;6x-105\\ 120 &amp;=&amp;11x\\ \boxed{\displaystyle\frac{{120}}{{11}}} &amp;=&amp;x \end{array} \]</p>
+<p>As usual, it pays to double check our answers. However, more than just using graphs to check our work, it is of particular interest to note how the solution to these equations can be visualized as the intersections of graphs. In each of the graphs below, you can see that I graph both the left and right side of the equation. The solution, then, is the x-coordinate of where the graphs intersect. In a very real way, we can mentally interpret <strong>any</strong> equation as the intersection of some graphs.</p>
+<div id="calculator" style="width: 600px; height: 400px; text-align: center;"></div>
+<div id="calculator2" style="width: 600px; height: 400px; text-align: center;"></div>
+<div id="calculator3" style="width: 600px; height: 400px; text-align: center;"></div>
+</div>
+</div>
+<p>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt,{expressions:true,lockViewport:true,xAxisStep:0.5});
+  calculator.setMathBounds({left:-6,right:6,bottom:-6,top:6});
+  calculator.setExpressions( [{latex: 'y=2x-6'},{latex:'y=0'}]);
+
+    var elt2 = document.getElementById('calculator');
+  var calculator2 = Desmos.GraphingCalculator(elt,{expressions:true,lockViewport:true,xAxisStep:0.5});
+  calculator2.setMathBounds({left:-10,right:10,bottom:-10,top:10});
+  calculator2.setExpressions( [{latex: 'y=4'},{latex:'y=-2x-9'}]);
+
+    var elt3 = document.getElementById('calculator');
+  var calculator3 = Desmos.GraphingCalculator(elt,{expressions:true,lockViewport:true,xAxisStep:0.5});
+  calculator3.setMathBounds({left:-2,right:15,bottom:-6,top:6});
+  calculator3.setExpressions( [{latex: 'y=-x/3+1'},{latex:'y=2/5x-7'},{latex:'120/11'}]);
+  });
+</script>
