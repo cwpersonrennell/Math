@@ -90,6 +90,7 @@
 		let url = new URL(document.URL);
 		url.hash = notesDropdownElement.value;
 		window.history.pushState({},'',url);
+		loadHash();
 
 	}
 	nextButton.addEventListener("mouseup",advanceToNextFile);
