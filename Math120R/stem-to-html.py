@@ -10,7 +10,7 @@ import os
 import re
 
 def removeDoubleBraces(string):
-    regex = re.compile("\{\{\w*\}\}")
+    regex = re.compile("\{\{-?\w*\}\}")
     bracesList = regex.findall(string)
     for i in range(0,len(bracesList)):
         string=string.replace(bracesList[i],"{"+bracesList[i].strip("{}")+"}")

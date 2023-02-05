@@ -1,0 +1,21 @@
+<p class="fa">Determine the domain of the function. Give your answer in interval notation. \[ k(x) = \displaystyle\frac{\sqrt[8]{2x-5}}{4x^2-25} \]</p>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>This problem is nearly identical to the last, the only difference is that instead of the radical having an *odd* valued index, now it has an even valued index. This means we can use the work from the previous problem as our starting point: the domain based on that work is restricted to \( \left(-\infty, -\frac{{5}}{{2}}\right)\cup\left(-\frac{{5}}{{2}},\frac{{5}}{{2}}\right)\cup\left(\frac{{5}}{{2}},\infty\right) \). However, we will now consider what the radical restriction imposes as well. In the case of an even indexed radical, we cannot have a non-negative value in the radicand (inside). This leads us to a pattern to set up an inequality which we can solve in order to determine our domain restriction:</p>
+<h2>Given any radical expression \(\sqrt[n]{\text{{radicand}}}\). If the radical has an even index (if \(n\) is an even number), then the domain is restricted to the values given by the solution to the inequality \({\color{{red}} \text{{radicand}} }\geq 0\)</h2>
+<p>In our case, this means we need to solve the inequality: \(2x-5\geq 0\)</p>
+<p>\[ \begin{{array}}{{rcl}} 2x-5&amp;\geq&amp; 0 \\ 2x&amp;\geq&amp; 5\\ x &amp;\geq&amp; \frac{{5}}{{2}} \end{{array}}\] In interval notation, this would be equivalent to \(\left[\frac{{5}}{{2}},\infty\right)\). Of course, this leaves us with the issue of combining this interval with the interval from the denominator. We must <span style="color: red;">intersect</span> the two intervals we have found (which is to say, take the most restrictive interval where the two intervals overlap). Since the radical domain restriction requires all values greater than or equal to 5/2, and the denominator requires that we do *not* include -5/2 nor +5/2, we find that the domain must be restricted to all values strictly greater than 5/2. In interval notation: \(\left(\frac{{5}}{{2}},\infty\right)\). Notice that we took the bracket and turned it into a parenthesis to *exclude* the 5/2 value.</p>
+<p>As per our usual methodology, let's consider the graph of this function to verify our calculations and deductions. I will display the graph using the same window as our previous function. Notice the lack of any function on the left of 5/2!</p>
+<div id="calculator" style="width: 600px; height: 400px; text-align: center;"></div>
+</div>
+<p>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0.5});
+  calculator.setMathBounds({left:-3,right:3,bottom:-4,top:4});
+  calculator.setExpressions( [{id: 'graph1', latex: 'y=\\frac{\\sqrt[8]{2x-5}}{4x^2-25}'},{id:'x2',latex:'x=5/2',color:"#c74440",lineStyle:Desmos.Styles.DASHED}]);
+  });
+</script>
