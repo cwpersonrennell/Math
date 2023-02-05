@@ -11,7 +11,13 @@
   <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
   <script defer="defer"> 
      document.addEventListener("DOMContentLoaded", () => {
-       MathJax.typeset();
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typeset();
+       	}
+
 
        //Building the Desmos Calculator from the Desmos Calculator App: 
        //https://cwpersonrennell.github.io/DesmosAddons/
