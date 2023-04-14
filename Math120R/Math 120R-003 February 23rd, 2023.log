@@ -1,0 +1,213 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.21)  14 FEB 2023 14:20
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**"Math 120R-003 February 23rd, 2023.tex"
+(./Math 120R-003 February 23rd, 2023.tex
+LaTeX2e <2021-06-01> patch level 1
+L3 programming layer <2021-07-12>
+(c:/texlive/2021/texmf-dist/tex/latex/exam/exam.cls
+Document Class: exam 2021/02/26 Version 2.7 by Philip Hirschhorn
+(c:/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(c:/texlive/2021/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/02/12 v1.4n Standard LaTeX document class
+(c:/texlive/2021/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count182
+\c@section=\count183
+\c@subsection=\count184
+\c@subsubsection=\count185
+\c@paragraph=\count186
+\c@subparagraph=\count187
+\c@figure=\count188
+\c@table=\count189
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+\@extrawidth=\skip49
+\@rightmargin=\skip50
+\@extrahead=\skip51
+\@extrafoot=\skip52
+\run@exhd=\skip53
+\fp@exhd=\skip54
+\run@exft=\skip55
+\fp@exft=\skip56
+\covrun@exhd=\skip57
+\covfp@exhd=\skip58
+\covrun@exft=\skip59
+\covfp@exft=\skip60
+\c@num@coverpages=\count190
+\c@latest@ques=\count191
+\c@ques@end=\count192
+\c@last@object=\count193
+\c@incmp@ques=\count194
+\c@next@ques=\count195
+\c@next@page=\count196
+\c@tmp@hlfcntr=\count197
+\c@ifpos@cntr=\count198
+\c@question=\count199
+\c@partno=\count266
+\c@subpart=\count267
+\c@subsubpart=\count268
+\c@choice=\count269
+\c@numpoints=\count270
+\c@numbonuspoints=\count271
+\c@pointsof@thisquestion=\count272
+\c@bonuspointsof@thisquestion=\count273
+\c@numquestions=\count274
+\c@numparts=\count275
+\c@numsubparts=\count276
+\c@numsubsubparts=\count277
+\c@Curr@Page=\count278
+\c@@pagepoints=\count279
+\c@@pagebonuspoints=\count280
+\c@pageof@pagepoints=\count281
+\c@pageof@pagebonuspoints=\count282
+\c@latest@points=\count283
+\c@latest@bonuspoints=\count284
+\pageinfo@commands=\toks16
+\temp@toks=\toks17
+\pagepoint@commands=\toks18
+\point@toks=\toks19
+\c@ques@object=\count285
+\marginpointssep=\skip61
+\rightpointsmargin=\skip62
+\choice@toks=\toks20
+\answerlinelength=\skip63
+\answerskip=\skip64
+\answerclearance=\skip65
+\fillinlinelength=\skip66
+\linefillheight=\skip67
+\linefillthickness=\skip68
+\dottedlinefillheight=\skip69
+\gridsize=\skip70
+\gridlinewidth=\skip71
+\minboxheight=\skip72
+\c@@iterator=\count286
+\@cellwidth=\skip73
+\c@tbl@points=\count287
+\c@tbl@bonuspoints=\count288
+\c@pq@index=\count289
+\c@pq@index@pts=\count290
+\c@pq@index@bpts=\count291
+\c@num@cols=\count292
+\c@num@rows=\count293
+\c@current@row=\count294
+\c@cols@done=\count295
+\exam@box=\box50
+\saved@totalleftmargin=\dimen139
+\@sollistdepth=\count296
+\exam@FrameRule=\dimen140
+\exam@FrameSep=\dimen141
+)
+(c:/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+(c:/texlive/2021/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2021/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(c:/texlive/2021/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(c:/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen142
+\Gin@req@width=\dimen143
+)
+(c:/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count297
+\l__pdf_internal_box=\box51
+)
+(./Math 120R-003 February 23rd, 2023.aux)
+\openout1 = `"Math 120R-003 February 23rd, 2023.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+
+(c:/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count298
+\scratchdimen=\dimen144
+\scratchbox=\box52
+\nofMPsegments=\count299
+\nofMParguments=\count300
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count301
+\MPscratchDim=\dimen145
+\MPnumerator=\count302
+\makeMPintoPDFobject=\count303
+\everyMPtoPDFconversion=\toks23
+) (c:/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(c:/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 26.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 26.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 26.
+ [1{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+This exam contains 1 questions with 0 parts, 0 subparts, and 0 subsubparts.
+This exam has a total of 0 points.
+This exam has a total of 0 bonus points.
+
+Class exam Warning: Point totals have changed. Rerun to get point totals right.
+
+
+(./Math 120R-003 February 23rd, 2023.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2290 strings out of 478542
+ 33839 string characters out of 5854396
+ 343546 words of memory out of 5000000
+ 20262 multiletter control sequences out of 15000+600000
+ 406166 words of font info for 36 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,10n,66p,228b,178s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on "Math 120R-003 February 23rd, 2023.pdf" (1 page, 17639 bytes)
+.
+PDF statistics:
+ 13 PDF objects out of 1000 (max. 8388607)
+ 7 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
