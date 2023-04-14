@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>ExampleSolvingTrigEquations1</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typeset();
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div class="fa" style="width: 100%;">
+<p>Example: Find the exact, simplified solution(s) in the interval \(0\lt \theta \lt \pi\):</p>
+\[ \dfrac{1-\tan^2(\theta)}{1+\sin(\theta)} = 0 \]
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+
+</div>
+</div>
+</body>
+</html>
