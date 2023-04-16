@@ -18,6 +18,7 @@ def removeDoubleBraces(string):
 
 path=Path(".")
 Stem_filepaths = list(path.glob("Stems/*/*.html"))
+Stem_filepaths.extend(list(path.glob("Stems/*/*/*.html")))
 Stems=list(path.glob("Stems/*"))
 
 for i in range(0,len(Stems)):
