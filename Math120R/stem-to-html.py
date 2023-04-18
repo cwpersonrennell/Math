@@ -68,7 +68,9 @@ def makeHTMLFilesFromStems():
         template_file = open("D2L-template.html")
         new_contents = template_file.read().replace("{{{src}}}",D2Lsrc)
         try:
-            originalFile = open(D2Lpathname,'r')
+            originalFile=open(pathname,"w")
+            originalFile.close()
+            originalFile=open(pathname,"r")
             if originalFile.read() != new_contents:
                 print("Writing D2L Page...")
                 newFile = open(D2Lpathname,'w')
