@@ -17,6 +17,7 @@ def removeDoubleBraces(string):
     return string    
 
 path=Path(".")
+print(path)
 Stem_filepaths = list(path.glob("Stems/*/*.html"))
 Stem_filepaths.extend(list(path.glob("Stems/*/*/*.html")))
 Stems=list(path.glob("Stems/*[!.html]/"))
@@ -24,6 +25,7 @@ Stems.extend(list(path.glob("Stems/*/*[!.html]/")))
 
 for i in range(0,len(Stems)):
     pathname= os.fspath(Stems[i].absolute()).replace("Stems\\","")
+    print("STEMS",pathname)
     D2Lpathname= os.fspath(Stems[i].absolute()).replace("Stems","D2LPages")
     try:
         os.mkdir(pathname)
@@ -40,6 +42,7 @@ template_file = open("main-body-template.html")
 
 def makeHTMLFilesFromStems():
     for i in range(0,len(Stem_filepaths)):
+        print(Stem_filepaths[i].absolute())
         pathname= os.fspath(Stem_filepaths[i].absolute()).replace("Stems\\","")
         D2Lpathname= os.fspath(Stem_filepaths[i].absolute()).replace("Stems","D2LPages")
         body_contents = removeDoubleBraces(open(Stem_filepaths[i]).read())
@@ -48,12 +51,16 @@ def makeHTMLFilesFromStems():
         template_file = open("main-body-template.html")
         new_contents = template_file.read().replace("{{{body}}}",body_contents).replace("{{{title}}}",Stem_filepaths[i].name.split(".html")[0])
         try:
+            originalFile=open(pathname,"w")
+            originalFile.close()
             originalFile=open(pathname,"r")
+            print(pathname)
             if originalFile.read() != new_contents:
                 newFile = open(pathname,'w')
                 newFile.write(new_contents)
                 newFile.close()  
         except:
+            print("File Error")
             pass
         originalFile.close()
         template_file.close()
