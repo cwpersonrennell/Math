@@ -51,35 +51,30 @@ def makeHTMLFilesFromStems():
         template_file = open("main-body-template.html")
         new_contents = template_file.read().replace("{{{body}}}",body_contents).replace("{{{title}}}",Stem_filepaths[i].name.split(".html")[0])
         try:
-            originalFile=open(pathname,"w")
-            originalFile.close()
+            newFile = open(pathname,'w')            
             originalFile=open(pathname,"r")
-            print(pathname)
             if originalFile.read() != new_contents:
-                newFile = open(pathname,'w')
                 newFile.write(new_contents)
-                newFile.close()  
+            newFile.close()  
+            originalFile.close()
         except:
             print("File Error")
+            
             pass
-        originalFile.close()
-        template_file.close()
-        
-        template_file = open("D2L-template.html")
-        new_contents = template_file.read().replace("{{{src}}}",D2Lsrc)
+
+        D2Ltemplate_file = open("D2L-template.html")
+        new_contents = D2Ltemplate_file.read().replace("{{{src}}}",D2Lsrc)
+        D2Ltemplate_file.close()
         try:
-            originalFile=open(pathname,"w")
-            originalFile.close()
-            originalFile=open(pathname,"r")
+            newFile = open(D2Lpathname,'w')            
+            originalFile=open(D2Lpathname,"r")
             if originalFile.read() != new_contents:
-                print("Writing D2L Page...")
-                newFile = open(D2Lpathname,'w')
                 newFile.write(new_contents)
-                newFile.close()
+            newFile.close()  
+            originalFile.close()
         except:
             pass
         
-        originalFile.close()
-        template_file.close()
+        
         
 makeHTMLFilesFromStems()

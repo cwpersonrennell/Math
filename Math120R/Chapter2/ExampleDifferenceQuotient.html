@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>ExampleDifferenceQuotient</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typeset();
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div class="fa">
+<p>Find \(f(a)\), \(f(a+h)\) and the difference quotient: \[\frac{f(a+h)-f(a)}{h}\;\;h\neq 0\] where \[f(x) = x^2 - 1\]</p>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide"><bold>Solution:</bold>
+<p>I like to work through these types of questions in a series of steps, beginning with evaluating the function at \(a+h\) and \(a\) and then simplifying the numerator.</p>
+\[ \begin{array}{ rcl } \displaystyle f({\color{ red } a +h}) &amp;=&amp; ({\color{ red } a+h})^2-1\\ &amp;=&amp;(a+h)(a+h)-1\\ &amp;=&amp;a^2 + ah + ah + h^2 - 1\\ f(a+h)&amp;=&amp;a^2+2ah+h^2 - 1 \end{array} \]
+<p>The \(f(a)\) evaulation is really just a change of variables, so it is relatively simple to rewrite: \[f({\color{ red } a}) = {\color{ red }a}^2-1\]</p>
+<p>Next, I need to figure out \(f(a+h)-f(a)\). Notice that \(f(a)\) has two terms, so when I substitute it, I really need to use extra parenthesis.</p>
+\[ \begin{array}{rcl} {\color{ blue } f(a+h)}-{\color{ green } f(a)} &amp;=&amp; {\color{ blue } a^2+2ah+h^2-1}-({\color{ green } a^2-1})\\ &amp;=&amp;a^2+2ah+h^2-1 - a^2 + 1\\ f(a+h)-f(a) &amp;=&amp;2ah+h^2 \end{array} \]
+<p>Now that we have evaluated the numerator, let's put it all together and figure out the quotient:</p>
+\[\begin{array}{rcl} \displaystyle \frac{f(a+h)-f(a)}{h}&amp;=&amp; \displaystyle\frac{2ah+h^2}{h}\\ &amp;=&amp;\displaystyle\frac{h\left(2a+h\right)}{h}\\ \displaystyle\frac{f(a+h)-f(a)}{h}&amp;=&amp;\boxed{2a+h} \end{array} \]</div>
+</div>
+</body>
+</html>
