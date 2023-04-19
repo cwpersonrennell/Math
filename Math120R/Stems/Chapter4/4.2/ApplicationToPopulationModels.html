@@ -10,7 +10,21 @@
 <hr>
 <div id="solution" class="hide">
 <p><strong>Solution</strong></p>
+	<p>
+		First, let's tackle the initial infection. This will be when time is 0, so:
+		\[
+		\solve{
+			I(0)&=&\dfrac{10000}{0.5+15e^{-0.025\times 0}}\\
+			&=&\dfrac{10000}{0.5+15e^0}\\
+			&=&\dfrac{10000}{0.5+15}\\
+			&=&\dfrac{10000}{15.5}\\
+			&\approx&645
+		}
+		\]
+	</p>
+	<p>
+		Next, do answer the question about how many <strong>total</strong> people will be infected, we have to address what that means for this type of model. We know we are dealing with some kind of exponential growth, but if you look at the graph of this function, you can see that it stops growing past a certain point:
+		<calculator options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":false,"showXAxis":true,"showYAxis":true,"xAxisNumbers":false,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":true,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-27.376823237765436,"right":629.4874384809846,"top":29101.025356653092,"bottom":-6866.755293008926}' style="width:800px;height:600px" data-string='{"version":9,"randomSeed":"3b42252fecf8bda379778c2126138189","graph":{"viewport":{"xmin":-27.376823237765436,"ymin":-6866.755293008926,"xmax":629.4874384809846,"ymax":29101.025356653092},"showGrid":false,"xAxisNumbers":false,"squareAxes":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#c74440","latex":"I\\left(t\\right)=\\frac{10000}{0.5+15e^{-0.025t}}\\left\\{t\\ge0\\right\\}"},{"type":"expression","id":"2","color":"#c74440","latex":"\\left(0,I\\left(0\\right)\\right)","showLabel":true,"labelSize":"2","labelOrientation":"below_right"},{"type":"expression","id":"3","color":"#c74440","latex":"\\left(425,I\\left(425\\right)\\right)","showLabel":true,"labelSize":"2","labelOrientation":"below"},{"type":"expression","id":"4","color":"#388c46","latex":"y=20000","lineStyle":"DASHED"}]}}' ></calculator >
+	By looking at larger input values, it becomes increasingly clear that there is a horizontal asymptote around \(y=20000\), which means that the infected population will max out around 20,000 people.	</p>
 </div>
 </div>
-<p></p>
-<hr>
