@@ -35,14 +35,43 @@
 \)
 </p>
 <div class="fa" style="width: 100%;">
-
+	<h1>Quiz 6 Guided Solutions</h1>
+<p>
+	Formulas:
+	\[
+		\solve{
+			s=r\theta&&A=\frac{1}{2}r^2\theta\\
+			\sin^2\theta+\cos^2\theta =1&&\tan^2\theta + 1=\sec^2\theta\\
+			1+\cot^2\theta =\csc^2\theta&&\sin(2\theta)=2\sin\theta\cos\theta\\
+			\cos(2\theta)=\cos^2\theta-\sin^2\theta
+		}
+	\]
+</p>
+<ol>
+	<li>
 	<strong>Use the figure below to answer the question</strong>
 	<calculator options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":false,"showXAxis":false,"showYAxis":false,"xAxisNumbers":false,"yAxisNumbers":false,"trace":false,"pointsOfInterest":false,"settingsMenu":false,"zoomButtons":false,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":true,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-10.048248642860264,"right":17.03337443453232,"top":15.098919833132781,"bottom":-5.21229747491166}' style="width:800px;height:600px" data-string='{"version":9,"randomSeed":"874aaa7c38d093cf4afda66063b181a8","graph":{"viewport":{"xmin":-10.048248642860264,"ymin":-5.21229747491166,"xmax":17.03337443453232,"ymax":15.098919833132781},"showGrid":false,"showXAxis":false,"showYAxis":false,"xAxisNumbers":false,"yAxisNumbers":false},"expressions":{"list":[{"type":"expression","id":"6","color":"#c74440","latex":"R=9"},{"type":"expression","id":"1","color":"#000000","latex":"R\\cdot\\left(\\cos\\left(t\\right),\\sin\\left(t\\right)\\right)","parametricDomain":{"min":"","max":"\\pi"},"domain":{"min":"0","max":"\\pi"}},{"type":"expression","id":"2","color":"#2d70b3","latex":"T\\ =\\ \\frac{\\pi}{6}"},{"type":"expression","id":"3","color":"#000000","latex":"x=0\\left\\{0\\le y\\le R\\right\\}"},{"type":"expression","id":"8","color":"#000000","latex":"y=0\\left\\{-R\\le x\\le R\\right\\}"},{"type":"expression","id":"4","color":"#000000","latex":"y=\\tan\\left(T\\right)x\\left\\{0\\le y\\le R\\cdot\\sin\\left(T\\right)\\right\\}"},{"type":"expression","id":"9","color":"#c74440","latex":"y=\\tan\\left(T\\right)x\\left\\{R\\cdot\\sin\\left(T\\right)\\le y\\le R\\right\\}"},{"type":"expression","id":"5","color":"#000000","latex":"y=R\\left\\{0\\le x\\le R\\cdot\\cot\\left(T\\right)\\right\\}"},{"type":"expression","id":"7","color":"#c74440","latex":"\\left(0,\\frac{R}{2}\\right)","showLabel":true,"label":"`${R}`","hidden":true,"labelSize":"2","labelOrientation":"left"},{"type":"expression","id":"10","color":"#c74440","latex":"R\\cdot\\left(\\cos\\left(T\\right)+\\frac{\\cot\\left(T\\right)}{4},\\sin\\left(T\\right)\\right)","showLabel":true,"label":"`a`","hidden":true,"labelSize":"2","labelOrientation":"above"},{"type":"expression","id":"11","color":"#2d70b3","latex":"\\sqrt{R^{2}+\\left(R\\cdot\\cot\\left(T\\right)\\right)^{2}}\\cdot\\left(\\cos\\left(T\\right)\\cdot0.8,\\sin\\left(T\\right)\\cdot0.85\\right)","showLabel":true,"label":"`\\theta`","hidden":true,"labelSize":"2","labelOrientation":"left"},{"type":"expression","id":"12","color":"#2d70b3","latex":"H\\ =\\ \\sqrt{R^{2}+\\left(R\\cdot\\cot\\left(T\\right)\\right)^{2}}"},{"type":"expression","id":"13","color":"#2d70b3","latex":"\\left(3\\cos\\left(t\\right)+H\\cdot\\cos\\left(T\\right),3\\sin\\left(t\\right)+H\\cdot\\sin\\left(T\\right)\\right)","parametricDomain":{"min":"\\pi","max":"\\pi+T"},"domain":{"min":"\\pi","max":"\\pi+T"}},{"type":"expression","id":"14","color":"#000000","latex":"y=0.9R\\left\\{0\\le x\\le0.1R\\right\\}"},{"type":"expression","id":"15","color":"#000000","latex":"x=0.1R\\left\\{0.9R\\le y\\le R\\right\\}"}]}}' ></calculator >
 	<p>Given that the circle has a radius of <span style="color:red">9</span>, express \(a\) (the length highlighted in red) as a function of \(\theta\).</p>
 	\[
 	a(\theta)=
 	\]
+	<p><strong>Solution</strong>The key to answering this question is to label the radius that is adjoined to \(a\). By doing so, it becomes clear that the length of the hypotenuse is \(9+a\). Thus, we can use the Sine function to get:
+	\[
+		\solve{
+			\sin\theta &=&\dfrac{9}{9+a}\\
+			\left(9+a\right)\sin\theta &=&9\\
+			9\sin\theta+a\sin\theta &=&9\\
+			a\sin\theta &=&9-9\sin\theta\\
+			a(\theta)&=&\dfrac{9-9\sin\theta}{\sin\theta}
 
+		}
+	\]
+</p>
+</li>
+<li>
+	
+</li>
+</ol>
 </div>
 </body>
 </html>
