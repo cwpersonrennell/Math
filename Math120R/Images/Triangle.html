@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>Triangle</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typeset();
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<calculator options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":false,"showXAxis":false,"showYAxis":false,"xAxisNumbers":true,"yAxisNumbers":true,"trace":false,"pointsOfInterest":false,"settingsMenu":false,"zoomButtons":false,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":true,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-1.026515356896708,"right":21.55160964310329,"top":12.445179418420269,"bottom":-4.488414331579728}' style="width:800px;height:600px" data-string='{"version":9,"randomSeed":"f0b97bf9207c9fd4931b91736f5c6b8a","graph":{"viewport":{"xmin":-1.026515356896708,"ymin":-4.488414331579728,"xmax":21.55160964310329,"ymax":12.445179418420269},"showGrid":false,"showXAxis":false,"showYAxis":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#c74440","latex":"x_{s}=8"},{"type":"expression","id":"2","color":"#2d70b3","latex":"y_{s}=-6"},{"type":"expression","id":"3","color":"#388c46","latex":"d\\ =\\ 16"},{"type":"expression","id":"4","color":"#000000","latex":"y=0\\left\\{0\\le x\\le d\\right\\}"},{"type":"expression","id":"5","color":"#000000","latex":"t_{1}=\\arctan\\left(\\frac{x_{s}}{d+y_{s}}\\right)"},{"type":"expression","id":"8","color":"#000000","latex":"y=\\tan\\left(t_{1}\\right)x\\left\\{0\\le x\\le d+y_{s}\\right\\}"},{"type":"expression","id":"9","color":"#000000","latex":"x=d+y_{s}\\left\\{0\\le y\\le\\left(d+y_{s}\\right)\\cdot\\tan\\left(t_{1}\\right)\\right\\}"},{"type":"expression","id":"10","color":"#000000","latex":"t_{2}=\\arctan\\left(\\frac{x_{s}}{y_{s}}\\right)"},{"type":"expression","id":"11","color":"#000000","latex":"y=\\tan\\left(t_{2}\\right)\\left(x-d\\right)\\left\\{0\\le y\\le\\left(d+y_{s}\\right)\\tan\\left(t_{1}\\right)\\right\\}"},{"type":"expression","id":"12","color":"#c74440","latex":"\\left(\\frac{d}{2},0\\right)","showLabel":true,"label":"`15` mi","hidden":true,"labelSize":"2","labelOrientation":"below"},{"type":"expression","id":"13","color":"#000000","latex":"\\left(d+\\frac{y_{s}}{2},0\\right)","label":"`x`","hidden":true,"labelSize":"2","labelOrientation":"below"},{"type":"expression","id":"14","color":"#000000","latex":"\\left(d+y_{s},\\left(d+y_{s}\\right)\\cdot\\frac{\\tan\\left(t_{1}\\right)}{2}\\right)","showLabel":true,"label":"`x`","hidden":true,"labelSize":"2","labelOrientation":"right"},{"type":"expression","id":"16","color":"#c74440","latex":"T_{1}=\\operatorname{round}\\left(\\frac{180}{\\pi}t_{1},2\\right)"},{"type":"expression","id":"15","color":"#c74440","latex":"\\frac{d}{4}\\cdot\\left(\\cos\\left(\\frac{t_{1}}{2}\\right),\\frac{1}{2}\\sin\\left(\\frac{t_{1}}{2}\\right)\\right)","showLabel":true,"label":"`47.73`deg","hidden":true,"labelSize":"1.25"},{"type":"expression","id":"17","color":"#2d70b3","latex":"T_{2}=\\operatorname{round}\\left(\\frac{180}{\\pi}t_{2},2\\right)"},{"type":"expression","id":"18","color":"#c74440","latex":"\\left(\\left(d\\right)+\\cos\\left(\\frac{t_{2}}{2}\\right),\\frac{1}{2}\\sin\\left(\\frac{t_{1}}{2}\\right)\\right)","showLabel":true,"label":"`65.56` deg","hidden":true,"labelSize":"1.25","labelOrientation":"above_left"},{"type":"expression","id":"19","color":"#6042a6","latex":"D=d+y_{s}"},{"type":"expression","id":"20","color":"#000000","latex":"x=D\\cdot0.95\\left\\{0\\le y\\le0.05D\\right\\}"},{"type":"expression","id":"21","color":"#000000","latex":"y=0.05D\\left\\{0.95D\\le x\\le D\\right\\}"},{"type":"expression","id":"6","color":"#c74440","latex":"y=-0.3\\left\\{0\\le x\\le d\\right\\}","lineStyle":"DASHED","lineOpacity":".5"},{"type":"expression","id":"7","color":"#2d70b3"}]}}' ></calculator >
+</body>
+</html>
