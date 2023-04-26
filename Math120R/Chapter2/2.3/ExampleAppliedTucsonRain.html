@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>ExampleAppliedTucsonRain</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typeset();
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div class="fa">
+<p><strong>During a monsoon in Tucson, Arizona, it is a growing practice amongst homeowners to use their roofs and cisterns to capture and store rainwater for the dry season for irrigation. The following graph represents \(W(t)\), a function of the number of gallons stored during a storm lasting \(t\) minutes. How much water is in the cistern at the start of the storm? How many gallons will be stored after two hours? How long will it take to fill up to 500 gallons stored? What is the capacity of the cisterns?</strong></p>
+<div id="calculator" style="width: 100%; height: 600px; text-align: center;"></div>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>Use Desmos above and enter the following:</p>
+\[\begin{array}{c} W(0)\\ W(120)\\ y=500\\ W(10000) \end{array} \]
+<p>You can evaluate the function at the specific values to get an answer, and you can find the intersection of \(y=500\) to determine the time it takes to fill up to that value. Finally, we use a <strong>large</strong> time value to approximate the capacity of the cistern (you can also zoom out and look far to the right).</p>
+<div></div>
+</div>
+<!-- End Solution--></div>
+<p>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt,{projectorMode: true,expressions:true,lockViewport:false});
+  calculator.setMathBounds({left:0,right:600,bottom:0,top:2000});
+  calculator.setExpressions( [{latex:'W\\left(t\\right)=\\frac{15000}{91e^{-0.02t}+9}\\left\\{t\\geq 0\\right\\}',color:"blue",hidden:false,secret:true}]);
+  });
+</script>
+</body>
+</html>

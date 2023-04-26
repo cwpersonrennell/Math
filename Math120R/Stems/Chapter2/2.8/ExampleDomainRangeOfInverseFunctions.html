@@ -1,0 +1,44 @@
+<p>Given the function, answer the questions.</p>
+\[ h(x) = \sqrt{x^3-27} \]
+<ol>
+<li>What is the domain of \(h(x)\)?</li>
+<li>What is the range of \(h(x)\)?</li>
+<li>Find \(h^{-1}(x)\)?</li>
+<li>What is the domain and range of \(h^{-1}(x)\)?</li>
+</ol>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<ol>
+<ol>
+<li>\([3,\infty)\)</li>
+<li>\([0,\infty)\)</li>
+</ol>
+</ol>
+<hr>
+<p>3. \[ \begin{{array}}{{rcl}} y&amp;=&amp;\sqrt{x^3-27}\\ \text{Swap }x\text{ and }y\\ x&amp;=&amp;\sqrt{y^3-27}\\ x^2&amp;=&amp;y^3 - 27\\ x^2+27 &amp;=&amp;y^3\\ \sqrt[3]{x^2+27} &amp;=&amp;y\\ h^{-1}(x) &amp;=&amp;\sqrt[3]{x^2+27} \end{{array}} \]</p>
+<hr>
+<p>4. Domain: \([0,\infty)\) Range:\([3,\infty)\)</p>
+</div>
+</div>
+<p>
+<script>
+  var show_solution = false;
+    var button = document.getElementById('toggle_solution');
+    button.addEventListener("click",function(){
+      var el = document.getElementById('solution');
+      if(show_solution){
+        
+        button.innerHTML = "Show Solution";
+        el.classList.add('hide');
+        el.classList.remove('show');
+      }else{
+        button.innerHTML = "Hide Solution";
+        el.classList.add('show');
+        el.classList.remove('hide');
+      }
+      show_solution = !show_solution;
+      
+    });
+  </script>

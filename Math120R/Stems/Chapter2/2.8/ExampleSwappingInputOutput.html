@@ -1,0 +1,37 @@
+<p>Suppose that \(W(t)\) represents the amount of water, in gallons, in a cistern \(t\) minutes after the start of a monsoon. The tank continuously fills with water during the storm, until it is full.</p>
+<ol>
+<li>Based on the description, is \(W(t)\) invertible over the time from the start of the monsoon until it is full? If it is not, determine a reasonable domain that it <i>is</i> invertible.</li>
+<li>Suppose that up to 90 minutes the function is invertible. Provide an interpretation of the equation: \(W^{-1}(50) = 45\)</li>
+<li>Suppose that \(W(t) = 3t+50\) for \(0\leq t \leq 120\). Find the inverse function.</li>
+</ol>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<ol>
+<li><i>I</i> believe it is invertible up to the point it is full, so long as the tank is <strong> always filling</strong>. If the rain lets up before the tank is full, there would be a horizontal line that would make the function non-invertible.</li>
+<li>\(W^{-1}(50) = 45\) should be interpreted as: When there are 50 gallons of water in the tank, 45 minutes have passed. Remember, the input/output are swapped in the inverse function!</li>
+<li>When working with inverse functions, I find it easier to separate out the function variable with a little subtle re-configuration of the setup: \(W = f(t) = 3t+50\). Then, solve \(W=3t+50\) for \(t\): \[\begin{{array}}{{rcl}} W &amp;=&amp;3t + 50\\ W-50&amp;=&amp;3t\\ t&amp;=&amp;\displaystyle\frac{W-50}{{3}}\\ f^{-1}(W)&amp;=&amp;\displaystyle\frac{W-50}{{3}} \end{{array}} \] The use of \(f^{-1}(W)\) is deliberate to remind myself that this is the inverse function to \(f(t) = 3t+50\). Once again, notice the swapping of the input/output. It is critical to undestanding the applied problems because it clearly identifies what the input variable units should be. Sadly, the convention isn't to do this rewrite, so you will typically see the answer expressed as something like \(W^{-1}(x)=...\) or even worse \(W^{-1}(t)\). In the first case, \(x\) is just an arbitrary input variable with no associated units and in the second case, the input variable is <strong>quite erroneously</strong> indicating it is the same input variable as for \(W(t)\), time in minutes. However, as we have seen, that is most emphatically not the case. Whenever I am unsure of the units, I always fall back to the rewrite you have seen above to more clearly track the units of the inputs/outputs of the inverse function..</li>
+</ol>
+</div>
+</div>
+<p>
+<script>
+  var show_solution = false;
+    var button = document.getElementById('toggle_solution');
+    button.addEventListener("click",function(){
+      var el = document.getElementById('solution');
+      if(show_solution){
+        
+        button.innerHTML = "Show Solution";
+        el.classList.add('hide');
+        el.classList.remove('show');
+      }else{
+        button.innerHTML = "Hide Solution";
+        el.classList.add('show');
+        el.classList.remove('hide');
+      }
+      show_solution = !show_solution;
+      
+    });
+  </script>
