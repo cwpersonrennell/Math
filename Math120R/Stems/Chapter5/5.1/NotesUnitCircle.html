@@ -1,0 +1,38 @@
+<script defer="defer">
+    function Point(x,y){
+         return "`"+String.raw`\left(${{x}},${{y}}\right)`+"`";
+       }
+       function Sqrt(x){
+         return String.raw`\sqrt{${{x}}}`;
+       }
+       function Frac(x,y){
+         return String.raw`\frac{ ${{x}} }{ ${{y}} }`;
+       }
+
+       let points = [];
+       points.push(Point(1,0));
+       points.push(Point(Frac(Sqrt(3),2),Frac(1,2)));
+       points.push(Point(Frac(Sqrt(2),2),Frac(Sqrt(2),2)));
+       points.push(Point(Frac(1,2),Frac(Sqrt(3),2)));
+       points.push(Point(0,1));
+       points.push(Point("-"+Frac(1,2),Frac(Sqrt(3),2)));
+       points.push(Point("-"+Frac(Sqrt(2),2),Frac(Sqrt(2),2)));
+       points.push(Point("-"+Frac(Sqrt(3),2),Frac(1,2)));
+       points.push(Point(-1,0));
+       points.push(Point("-"+Frac(Sqrt(3),2),"-"+Frac(1,2)));
+       points.push(Point("-"+Frac(Sqrt(2),2),"-"+Frac(Sqrt(2),2)));
+       points.push(Point("-"+Frac(1,2),"-"+Frac(Sqrt(3),2)));
+       points.push(Point(0,-1));
+       points.push(Point(Frac(1,2),"-"+Frac(Sqrt(3),2)));
+       points.push(Point(Frac(Sqrt(2),2),"-"+Frac(Sqrt(2),2)));
+       points.push(Point(Frac(Sqrt(3),2),"-"+Frac(1,2)));
+     document.addEventListener("DOMContentLoaded", () => {
+        //DEFAULT_OPTIONS.expressions=true;
+        //DEFAULT_OPTIONS.fontSize = 12;
+        getCalculators();
+  });
+</script>
+<div class="fa" style="width: 100%;">
+<p>The <strong>Unit Circle</strong> is really just a circle drawn with its center at the origin and the radius fixed to 1. This means we can algebraically represent the unit circle with the equation \(x^2+y^2=1\). Note that we are deviating from the notion of a function here, and are instead focusing on a relationship between \(x\) and \(y\) described by an equation. The solutions to that equation just so happen to plot out points on a graph that are identically a circle with a radius of one centered at the origin. Below is a graph of the unit circle with some coordinates shown.</p>
+<p>Pick 4 points (one from each quadrant) and verify that \(x^2+y^2=1\) by plugging the point values into the equation and simplifying.</p>
+<calculator style="width: 1000px; height: 1000px;" options="{fontSize:18, expressions:false, lockViewport:false}" mathbounds="{left:-1.5,right:1.5,bottom:-1.5,top:1.5}"> x^2+y^2 = 1 ;{color:black, lineWidth:5}\ (1,0); {showLabel:true,label:points[0],color:black, labelOrientation:Desmos.LabelOrientations.RIGHT}\ (\cos(\pi/6),\sin(\pi/6)) ; {showLabel:true,label:points[1],color:black,labelOrientation:Desmos.LabelOrientations.RIGHT}\ (\cos(\pi/4),\sin(\pi/4)) ; {showLabel:true,label:points[2],color:black}\ (\cos(2\pi/6),\sin(2\pi/6)) ; {showLabel:true,label:points[3],color:black, labelOrientation:Desmos.LabelOrientations.RIGHT}\ (\cos(2\pi/4),\sin(2\pi/4)) ; {showLabel:true,label:points[4],color:black, labelOrientation:Desmos.LabelOrientations.ABOVE}\ (\cos(4\pi/6),\sin(4\pi/6)) ; {showLabel:true,label:points[5],color:black, labelOrientation:Desmos.LabelOrientations.LEFT}\ (\cos(3\pi/4),\sin(3\pi/4)) ; {showLabel:true,label:points[6],color:black}\ (\cos(5\pi/6),\sin(5\pi/6)) ; {showLabel:true,label:points[7],color:black, labelOrientation:Desmos.LabelOrientations.LEFT}\ (\cos(\pi),\sin(\pi)) ; {showLabel:true,label:points[8],color:black, labelOrientation:Desmos.LabelOrientations.LEFT}\ (\cos(7\pi/6),\sin(7\pi/6)) ; {showLabel:true,label:points[9],color:black, labelOrientation:Desmos.LabelOrientations.LEFT}\ (\cos(5\pi/4),\sin(5\pi/4)) ; {showLabel:true,label:points[10],color:black}\ (\cos(8\pi/6),\sin(8\pi/6)) ; {showLabel:true,label:points[11],color:black, labelOrientation:Desmos.LabelOrientations.LEFT}\ (\cos(3\pi/2),\sin(3\pi/2)) ; {showLabel:true,label:points[12],color:black, labelOrientation:Desmos.LabelOrientations.BELOW}\ (\cos(10\pi/6),\sin(10\pi/6)) ; {showLabel:true,label:points[13],color:black, labelOrientation:Desmos.LabelOrientations.RIGHT}\ (\cos(7\pi/4),\sin(7\pi/4)) ; {showLabel:true,label:points[14],color:black}\ (\cos(11\pi/6),\sin(11\pi/6)) ; {showLabel:true,label:points[15],color:black, labelOrientation:Desmos.LabelOrientations.RIGHT}</calculator>

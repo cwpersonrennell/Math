@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>ExampleGraphingTangentFunctionPart1</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typeset();
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div class="fa" style="width: 100%;">
+<p>Example: Determine the period, phase shift, and the vertical asymptotes of the function. Then sketch at least two full periods.</p>
+\[ \psi(x) = 4\tan\left(x-\frac{\pi}{2}\right) \]
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<ul>
+<li>Period: \(\pi\)</li>
+<li>Phase Shift: \(\frac{\pi}{2}\)</li>
+<li>Vertical Asymptotes: Start at the phase shift (\(\pi/2\)) then subtract a half-period (also \(\pi/2\). Then add or subtract the period as many times as necessary to indicate the asymptotes.\(x=0,\;x=\pi,\;x=2\pi,\;x=3\pi,\dots\)</li>
+</ul>
+<p>The 4 indicates that this is a positive tangent, so going up to the right between asymptotes. The \(x\) intercepts will be at the phase shift, \(\pi/2\), plus and minus the period as many times as necessary, so \((\pi/2, 0),\;(3\pi/2,0),\dots\)</p>
+<p>Graph: The \(y\) values are not required to be precise, just the values noted above, so:</p>
+<calculator options="{&quot;expressions&quot;:false,&quot;keypad&quot;:true,&quot;graphpaper&quot;:true,&quot;showGrid&quot;:false,&quot;showXAxis&quot;:false,&quot;showYAxis&quot;:false,&quot;xAxisNumbers&quot;:true,&quot;yAxisNumbers&quot;:true,&quot;trace&quot;:true,&quot;pointsOfInterest&quot;:true,&quot;settingsMenu&quot;:false,&quot;zoomButtons&quot;:false,&quot;expressionsCollapsed&quot;:false,&quot;capExpressionSize&quot;:false,&quot;lockViewport&quot;:true,&quot;projectorMode&quot;:true,&quot;invertedColors&quot;:true}" mathbounds="{&quot;left&quot;:-1.7832131436129552,&quot;right&quot;:11.300391871603342,&quot;top&quot;:8.890681185006546,&quot;bottom&quot;:-7.463825084013823}" style="width: 800px; height: 600px;" data-string="{&quot;version&quot;:9,&quot;randomSeed&quot;:&quot;f4c82e7abe23456ea94d6edb9f9d0def&quot;,&quot;graph&quot;:{&quot;viewport&quot;:{&quot;xmin&quot;:-1.7832131436129552,&quot;ymin&quot;:-7.463825084013823,&quot;xmax&quot;:11.300391871603342,&quot;ymax&quot;:8.890681185006546},&quot;showGrid&quot;:false,&quot;showXAxis&quot;:false,&quot;showYAxis&quot;:false,&quot;squareAxes&quot;:false},&quot;expressions&quot;:{&quot;list&quot;:[{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;1&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;x=0&quot;,&quot;lineStyle&quot;:&quot;DASHED&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;7&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;4\\tan\\left(x-\\frac{\\pi}{2}\\right)\\left\\{0\\le x\\le3\\pi\\right\\}&quot;,&quot;lineWidth&quot;:&quot;4&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;2&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=0\\left\\{x>0\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;3&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(0,0\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`0`&quot;,&quot;hidden&quot;:true,&quot;labelOrientation&quot;:&quot;below&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;4&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;x=\\pi&quot;,&quot;lineStyle&quot;:&quot;DASHED&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;5&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(\\pi,0\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`\\pi`&quot;,&quot;hidden&quot;:true,&quot;labelOrientation&quot;:&quot;below&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;6&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(\\frac{\\pi}{2},0\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`\\left(\\frac{\\pi}{2},0\\right)`&quot;,&quot;hidden&quot;:true,&quot;labelOrientation&quot;:&quot;below&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;8&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;x=2\\pi&quot;,&quot;lineStyle&quot;:&quot;DASHED&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;9&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;x=3\\pi&quot;,&quot;lineStyle&quot;:&quot;DASHED&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;10&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(\\frac{3\\pi}{2},0\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`\\left(\\frac{3\\pi}{2},0\\right)`&quot;,&quot;hidden&quot;:true,&quot;labelOrientation&quot;:&quot;below&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;11&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(\\frac{3\\pi}{2}+\\pi,0\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`\\left(\\frac{5\\pi}{2},0\\right)`&quot;,&quot;hidden&quot;:true,&quot;labelOrientation&quot;:&quot;below&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;12&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(2\\pi,0\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`2\\pi`&quot;,&quot;hidden&quot;:true,&quot;labelOrientation&quot;:&quot;below&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;13&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(3\\pi,0\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`3\\pi`&quot;,&quot;hidden&quot;:true,&quot;labelOrientation&quot;:&quot;below&quot;}]}}"></calculator></div>
+</div>
+</body>
+</html>
