@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>NotesOnLinearFunctions</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typeset();
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<p>A quick reminder about some of the basics of a linear function:\[ \begin{array} {rrcl} \text{Slope-Intercept Form:}&amp;f(x)&amp;=mx+b\\ \text{Domain:}&amp;(-\infty,\infty) \end{array} \]In this form, \(m\) represents the slope of the function, often described as the "rise over run" and \(b\) represents the vertical intercept, \((0,b)\).</p>
+<p><strong>Some other formulas:</strong> \[ \begin{array}{rrcl} \text{Slope: }&amp;m&amp;=&amp;\displaystyle\frac{y_2-y_1}{x_2-x_1}\\ \text{Standard Form:}&amp;Ax+By&amp;=&amp;C\\ \text{Point Slope Form:}&amp;y-y_1&amp;=&amp;m(x-x_1)\\ \text{Point Slope Form(2):}&amp;y&amp;=&amp;m(x-x_1)+y_1 \end{array} \]</p>
+<p>In these formulas, \(m\) represents the slope, \((x_1,y_1)\) and/or \((x_2,y_2)\) represent points on the lines and \(A\), \(B\) and \(C\) can be any real number.</p>
+</body>
+</html>
