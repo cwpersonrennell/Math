@@ -1,0 +1,22 @@
+<div class="fa">
+<p><strong>A bird flying into a headwind will use more energy to maintain its speed. If the headwind is blowing at a constant 5mph, the energy required to fly a fixed distance of 50 miles at a speed of&nbsp;v miles per hour is given by:&nbsp;</strong></p>
+\[E(v) = 0.0005v^3\displaystyle\frac{{50}}{v-5} \]
+<p><strong>Find the speed the bird can fly at which will minimize the energy it uses.</strong></p>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>The hard part of these types of questions can be getting the window just right. This particular example wasn't too hard, but we can use context to help. The bird needs to fly more than 5 miles per hour to make any headway, and we can see that the graph does some *weird* things around \(v=5\). The energy should most likely be positive, so it makes sense to set the vertical view to only positive values, and the upper limit I determined through some mild guessing until I could clearly see a "minimum" in the graph. Using Desmos, I can just click the minimum, but using a TI-83/84 you will need to use the *min* function.</p>
+<p>The speed the bird will need to fly to minimize its energy use is \(v=7.5mph\)</p>
+<div id="calculator" style="width: 100%; height: 600px; text-align: center;"></div>
+</div>
+<!-- End Solution--></div>
+<p>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt,{projectorMode: true,expressions:false,lockViewport:false});
+  calculator.setMathBounds({left:-4,right:20,bottom:0,top:30});
+  calculator.setExpressions( [{latex:'E(v)=0.0005v^3\\frac{{50}}{v-5}',color:"blue"}]);
+  });
+</script>

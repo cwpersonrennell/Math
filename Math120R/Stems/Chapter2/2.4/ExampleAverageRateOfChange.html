@@ -1,0 +1,27 @@
+<div class="fa">
+<p><strong>Determine the average rate of change for the function between the values given:</strong></p>
+<p>\[ f(x) = -x-x^2\text{ for }x=-5\text{ and }x=a\text{ where }a&gt;-5 \]</p>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>To determine the average rate of change, it helps to first calculate the net change. Since \(a\gt -5\), the net change will be \(f(a) - f(-5)\):</p>
+\[\begin{{array}}{{rcl}} f(a) - f(-5) &amp;=&amp;\left(-a-a^2\right)-\left(-(-5)-(-5)^2\right)\\ f(a) - f(-5) &amp;=&amp;-a-a^2-(5-25)\\ f(a) - f(-5) &amp;=&amp;-a^2-a+20 \end{{array}}\]
+<p>Next we determine the horizontal change: \(a - (-5) = a+5\). Finally, we calculate the average rate of change by dividing the net change by the horizontal change:</p>
+\[ \frac{-a^2-a+20}{a+5} \]
+<p>This, it turns out, be simplified:</p>
+\[ \solve{ \dfrac{-a^2-a+20}{a+5}&amp;=&amp;-\dfrac{a^2+a-20}{a+5}\\&amp;=&amp;-\dfrac{(a+5)(a-4)}{a+5}\\&amp;=&amp;-(a-4)\\&amp;=-a+4 } \]
+<p>As a reminder, the <strong>average rate of change</strong> between two points on a function is the same thing as the <strong>slope between the line connecting those points.</strong> Using the point \((-5, -20)\) on the function and the average rate of change as the slope, we can use a program like Desmos to create a graph, with a slider for different \(a\) values to see how it works:</p>
+\[ \text{Equation of line: } y =(-a+4)\left(x+5\right)-20 \]
+<div id="calculator" style="height: 600px; text-align: center;"></div>
+</div>
+</div>
+<p>
+<script>
+   document.addEventListener("DOMContentLoaded", () => {
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt,{expressions:true,lockViewport:false,xAxisStep:0,projectorMode:true,fontSize:24});
+  calculator.setMathBounds({left:-8,right:5,bottom:-30,top:5});
+  calculator.setExpressions( [{latex: 'f(x)=-x-x^2',color:"blue"},{latex:"(-5,f(-5))",color:"red",showLabel:true},{latex:"a=-2.5",sliderBounds:{min:"-4.5",max:"3",step:"0.5"}},{latex:"(a,f(a))",color:"red",showLabel:true,label:"`(a,f(a))`"},{latex:"y=\\frac{f(a)-f(-5)}{a+5}\\left(x+5\\right)-20",color:"red"},{latex:"y=\\frac{-a^2-a+20}{a+5}\\left(x+5\\right)-20\\left\\{-5\\lt x \\lt a\\right\\}",color:"green"},{latex:"y=-20\\left\\{-5 \\lt x \\lt a\\right\\}",color:"green",lineStyle:Desmos.Styles.DASHED},{latex:"((a-5)/2,-20)",showLabel:true,label:"`a+5`",hidden:true,color:"green",labelOrientation:Desmos.LabelOrientations.BELOW},{latex:"x=a\\left\\{-20 \\lt y \\lt f(a)\\right\\}",color:"green",lineStyle:Desmos.Styles.DASHED},{latex:"(a,(f(a)-20)/2)",showLabel:true,label:"`f(a)-f(-5)`",hidden:true,color:"green",labelOrientation:Desmos.LabelOrientations.RIGHT}]);
+   });
+</script>
