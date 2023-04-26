@@ -1,0 +1,50 @@
+<div class="fa" style="width: 100%;">
+<p>A rectangle is inscribed on the parabola \(y=6-x^2\), as shown in the image below. Determine the dimensions of the rectangle which:</p>
+<ol>
+<li>Maximize the area of the rectangle.</li>
+<li>Maximize the perimeter of the rectangle.</li>
+<li>Minimize the perimeter of the rectangle.</li>
+</ol>
+<p></p>
+<p>As a bonus, do you think it is possible to maximize the area between the perimeter and the \(x\)-axis <i>excluding</i> the rectangle?</p>
+<div id="calculator" style="width: 100%; height: 600px;"></div>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution: </strong> First, we can see that the base of the rectangle is made up of <strong>two</strong> \(x\)'s. This is because \(x\) only measures from the origin to the value on the right. Secondly, the height of the rectangle must be determined by the formula \(y=6-x^2\). Thus, the area of the rectangle is given by \(A=2x(6-x^2)\) whereas the perimeter is given by \(P=4x+2(6-x^2)\). Before we consider graphing these to identify the max/min, we should seriously reflect on what a reasonable domain for the these function should be. Since \(x\) is the distance from the origin to the right, it makes sense that it should be greater than or equal to zero. However, the edge of the parabola to the right is the furthest we can go, so we should solve \(0=6-x^2\) to determine that right endpoint. Solving this gives \(x=\sqrt{{6}}\), where we take the positive root since the negative is to the left. Thus the domain is \([0,\sqrt{{6}}]\). When graphing (for instance on a TI device) we should set the window so that the minimum \(x\) value is 0 and the maximium \(x\) value is \(\sqrt{{6}}\).</p>
+<p>First up, here is the graph of the area function:</p>
+<div id="area" style="width: 100%; height: 600px;"></div>
+<p>And then the graph of the perimeter function:</p>
+<div id="perimeter" style="width: 100%; height: 600px;"></div>
+<p>We can use the calculator functions to determine the local min/max and the global min/max too.</p>
+</div>
+</div>
+<p>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true,invertedColors:true,xAxisNumbers:false,yAxisNumbers:false,showGrid:false,pointsOfInterest:false,trace:false});
+  calculator.setMathBounds({left:-5,right:5,bottom:-10,top:10});
+  calculator.setExpressions( [
+    {latex: 'f(x)=6-x^2'},
+    {latex: 'a=1',sliderBounds:{min:'0',max:"\\sqrt{{6}}",step:"0.1"}},
+    {latex:"(a,f(a))",showLabel:true,label:"`(x,y)`"},
+    {latex:String.raw`y=0\left\{-a \leq x \leq a\right\}`, color:'blue'},
+    {latex:String.raw`y=f(a)\left\{-a \leq x \leq a\right\}`, color:'blue'},
+    {latex:String.raw`x=-a\left\{0 \leq y \leq f(a)\right\}`, color:'blue'},
+    {latex:String.raw`x=a\left\{0 \leq y \leq f(a)\right\}`, color:'blue'}
+  ]);
+
+  let area = document.getElementById('area');
+  let perimeter = document.getElementById('perimeter');
+  let area_calc = Desmos.GraphingCalculator(area,{expressions:true,lockViewport:false,xAxisStep:0,fontSize:24, projectorMode:true,invertedColors:true,xAxisNumbers:false,yAxisNumbers:false,showGrid:false,pointsOfInterest:true,trace:true});
+  let perimeter_calc=Desmos.GraphingCalculator(perimeter,{expressions:true,lockViewport:false,xAxisStep:0,fontSize:24, projectorMode:true,invertedColors:true,xAxisNumbers:false,yAxisNumbers:false,showGrid:false,pointsOfInterest:true,trace:true});
+area_calc.setMathBounds({left:-1,right:2.5,bottom:0,top:15});
+  area_calc.setExpressions( [
+    {latex: 'f(x)=2x(6-x^2)'},
+    {latex: `(\\sqrt{ 2 },f(\\sqrt{ 2 })`,showLabel:true,label:"`(\\sqrt{ 2 },8\\sqrt{ 2 })`"},
+  ]);
+  perimeter_calc.setMathBounds({left:-1,right:2.5,bottom:0,top:15});
+  perimeter_calc.setExpressions([{latex:'4x+2(6-x^2)'}]);
+  });  
+</script>
