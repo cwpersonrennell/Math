@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>ExampleSketchingRationalFunctionWithAHole</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typeset();
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div class="fa" style="width: 100%;">
+<p>Example: Sketch the graph of the function</p>
+\[ f(x) = \dfrac{x^2+x-42}{x^2-x-30} \]
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong> When sketching a rational function, we need to identify the critical features of the graph:</p>
+<ol>
+<li>Vertical Asymptote(s)/Holes (Domain Restrictions)</li>
+<li>End Behavior</li>
+<li>Horizontal Intercepts</li>
+<li>Vertical Intercepts</li>
+</ol>
+<p>The order is not mandatory, rather we need all of the above before we can be confident in sketching the graph. In general, I recommend factoring the numerator/denominator of the rational function as our first step (although we will use the un-factored form too!)</p>
+\[ \solve{ f(x)&amp;=&amp;\dfrac{x^2+x-42}{x^2-x-30}\\ f(x)&amp;=&amp;\dfrac{(x+7)(x-6)}{(x+5)(x-6)} } \]
+<p>Now that the function is fully factored, it is easier to identify the zeros and domain restrictions, while the non-factored version of the equation is easier to identify the end behavior and vertical intercepts.</p>
+<ol>
+<li>Domain Restrictions: Based on the fact there are no common factors between the numerator and denominator, there is one <strong>hole</strong> in the graph at \(x=6\). To calculate the \(y\) value of the hole, we <i>simplify</i> the rational function and then evaluate the result at \(x=6\): \(\dfrac{(x+7)(x-6)}{(x+5)(x-6)}=\dfrac{x+7}{x+5}\rightarrow y=\dfrac{13}{11}\). Thus, we have a hole located at \(\left(6,\frac{13}{11}\right)\). Based on the factored denominator, the vertical asymptote is \(x=-5\)</li>
+<li>End Behavior: Using the non-factored form, we divide the leading terms: \(\dfrac{x^2}{x^2} = 1\). The constant result means we have a horizontal asymptote at \(y=1\).</li>
+<li>Horizontal Intercepts: Using the factored form, we can see the zeros are at \(x= -7\). We must omit the other <i>potential</i> zero because \(x=6\) coincides with a domain restriction and is the location of a hole in the graph!.</li>
+<li>Vertical Intercept: Using either form (although non-factored is easier) by setting \(x=0\) we find the vertical intercept. \(y=\dfrac{0^2+0-42}{0^2-0-30}=\dfrac{42}{30}=\dfrac{7}{5}\)</li>
+</ol>
+<p>Now that we have all the features, we put it together for to sketch the graph.</p>
+<p><strong>Features:</strong></p>
+<div id="features" style="width: 100%; height: 600px;"></div>
+<br><br>
+<p><strong>Features + Graph:</strong></p>
+<div id="full_graph" style="width: 100%; height: 600px;"></div>
+</div>
+</div>
+<p>
+<script>
+  var show_solution = false;
+    var button = document.getElementById('toggle_solution');
+    button.addEventListener("click",function(){
+      var el = document.getElementById('solution');
+      if(show_solution){
+        
+        button.innerHTML = "Show Solution";
+        el.classList.add('hide');
+        el.classList.remove('show');
+      }else{
+        button.innerHTML = "Hide Solution";
+        el.classList.add('show');
+        el.classList.remove('hide');
+      }
+      show_solution = !show_solution;
+      
+    });
+  </script>
+ 
+<script> 
+  document.addEventListener("DOMContentLoaded", () => {
+    var elt = document.getElementById('features');
+    let options  = {expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true,showGrid:true, xAxisNumbers:true,yAxisNumbers:false,trace:false};
+    var calculator = Desmos.GraphingCalculator(elt,options);
+    let full_graph = document.getElementById('full_graph');
+    let full_graph_calc = Desmos.GraphingCalculator(full_graph,options);
+  calculator.setMathBounds({left:-10,right:10,bottom:-10,top:10});
+  calculator.setExpressions( [
+    {latex:String.raw`g(x)=\frac{x+7}{x+5}`,hidden:true, secret:true,color:"blue"},
+    {latex: String.raw`(0,42/30)`,showLabel:true, secret:true,color:"blue"},
+    {latex: String.raw`(-7,0)`,showLabel:true, secret:true,color:"blue"},
+    {latex: String.raw`(6,g(6))`,showLabel:true,secret:true, color:"red",pointStyle:Desmos.Styles.OPEN},
+    {latex: String.raw`x=-5`,lineStyle:Desmos.Styles.DASHED, secret:true,color:"red"},
+    {latex: String.raw`y=1`,lineStyle:Desmos.Styles.DASHED, secret:true,color:"purple"},
+
+  ]);
+  full_graph_calc.setMathBounds({left:-10,right:10,bottom:-10,top:10});
+  full_graph_calc.setExpressions( [
+    {latex:String.raw`f(x)=\frac{x^2+x-42}{x^2-x-30}`,color:"blue"},
+{latex:String.raw`g(x)=\frac{x+7}{x+5}`,hidden:true, secret:true,color:"blue"},
+    {latex: String.raw`(0,42/30)`,showLabel:true, secret:true,color:"blue"},
+    {latex: String.raw`(-7,0)`,showLabel:true, secret:true,color:"blue"},
+    {latex: String.raw`(6,g(6))`,showLabel:true,secret:true, color:"red",pointStyle:Desmos.Styles.OPEN},
+    {latex: String.raw`x=-5`,lineStyle:Desmos.Styles.DASHED, secret:true,color:"red"},
+    {latex: String.raw`y=1`,lineStyle:Desmos.Styles.DASHED, secret:true,color:"purple"},
+    
+  ]);
+
+  });
+</script>
+</body>
+</html>

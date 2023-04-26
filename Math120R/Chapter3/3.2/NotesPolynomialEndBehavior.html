@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>NotesPolynomialEndBehavior</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typeset();
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<style>
+    body{
+      font-size:2rem;
+    }
+
+  .hide{
+    opacity:0;
+  }
+
+  .show{
+    opacity:1;
+    transition:opacity:1s;
+    }
+td{
+  border-right:1px solid black;
+  padding:0px;
+  margin:0px;
+}
+    tr{
+      border-top:1px solid black;
+      border-bottom:1px solid black;
+    }
+</style>
+<div class="fa" style="width: 100%;">
+<p>End Behavior</p>
+<p>To determine the end behavior of a polynomial, the key features to identify are the Degree of the polynomial and the&nbsp;sign of the leading coefficient. The leading coefficient is the coefficient in front of the input variable with the largest exponent, typically located at the front of the equation, but not always. If the polynomial is factored, the leading coefficient is usually the value outside the factors.</p>
+<table style="width: 100%;">
+<tbody>
+<tr>
+<th></th>
+<th>Positive Leading Coefficient</th>
+<th>Negative Leading Coefficient</th>
+</tr>
+<tr>
+<td><strong>Even Degree</strong></td>
+<td>
+<div id="x1" style="width: 100%; height: 300px;"></div>
+</td>
+<td>
+<div id="x2" style="width: 100%; height: 300px;"></div>
+</td>
+</tr>
+<tr>
+<td><strong>Odd Degree</strong></td>
+<td>
+<div id="x3" style="width: 100%; height: 300px;"></div>
+</td>
+<td>
+<div id="x4" style="width: 100%; height: 300px;"></div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Each of the pictures above is valid only for the <strong>end behavior!</strong> Anything can happen near the vertical axis and the functions shown are simple representations of polynomial functions as placeholders for the more general even and odd polynomials.</p>
+<p>For each of the images above, there is a corresponding algebraic way we represent the end behavior:</p>
+<table style="width: 100%;">
+<tbody>
+<tr>
+<th></th>
+<th>Positive Leading Coefficient</th>
+<th>Negative Leading Coefficient</th>
+</tr>
+<tr>
+<td><strong>Even Degree</strong></td>
+<td>\[ \solve{ y\rightarrow \infty &amp;\text{as}&amp; x\rightarrow -\infty\\ y\rightarrow \infty &amp;\text{as}&amp; x\rightarrow \infty } \]</td>
+<td>\[ \solve{ y\rightarrow -\infty &amp;\text{as}&amp; x\rightarrow -\infty\\ y\rightarrow -\infty &amp;\text{as}&amp; x\rightarrow \infty } \]</td>
+</tr>
+<tr>
+<td><strong>Odd Degree</strong></td>
+<td style="border-top: 1px solid black;">\[ \solve{ y\rightarrow -\infty &amp;\text{as}&amp; x\rightarrow -\infty\\ y\rightarrow \infty &amp;\text{as}&amp; x\rightarrow \infty } \]</td>
+<td style="border-top: 1px solid black;">\[ \solve{ y\rightarrow \infty &amp;\text{as}&amp; x\rightarrow -\infty\\ y\rightarrow -\infty &amp;\text{as}&amp; x\rightarrow \infty } \]</td>
+</tr>
+</tbody>
+</table>
+<p>And a corresponding verbal description:</p>
+<table style="width: 100%;">
+<tbody>
+<tr>
+<th></th>
+<th>Positive Leading Coefficient</th>
+<th>Negative Leading Coefficient</th>
+</tr>
+<tr>
+<td><strong>Even Degree</strong></td>
+<td style="border: 1px solid black;">The function goes up to the left and up to the right.</td>
+<td style="border: 1px solid black;">The function goes down to the left and down to the right.</td>
+</tr>
+<tr>
+<td><strong>Odd Degree</strong></td>
+<td style="border: 1px solid black;">The function goes down to the left and up to the right.</td>
+<td style="border: 1px solid black;">The function goes up to the left and down to the right.</td>
+</tr>
+</tbody>
+</table>
+<p>
+<script> 
+  document.addEventListener("DOMContentLoaded", () => {
+    let x1 = document.getElementById('x1');
+    let x2 = document.getElementById('x2');
+    let x3 = document.getElementById('x3');
+    let x4 = document.getElementById('x4');
+    let options = {expressions:false,lockViewport:true,xAxisStep:0,fontSize:20, projectorMode:true,showGrid:false, showXAxis:false, showYAxis:false,xAxisNumbers:false,yAxisNumbers:false,trace:false,settingsMenu:false,invertedColors:true};
+    let x1c = Desmos.GraphingCalculator(x1,options);
+    let x2c = Desmos.GraphingCalculator(x2,options);
+    let x3c = Desmos.GraphingCalculator(x3,options);
+    let x4c = Desmos.GraphingCalculator(x4,options);
+
+    x1c.setMathBounds({left:-10,right:10,bottom:-10,top:10});
+    x2c.setMathBounds({left:-10,right:10,bottom:-10,top:10});
+    x3c.setMathBounds({left:-10,right:10,bottom:-10,top:10});
+    x4c.setMathBounds({left:-10,right:10,bottom:-10,top:10});
+
+    x1c.setExpressions( [{latex:String.raw`(1/2.5x)^2-5`,color:"blue"},{latex:"(0,0)",showLabel:true, label:"`f(x)=\\frac{1}{6}x^2`",hidden:true,color:"blue"}]);
+   x2c.setExpressions( [{latex:String.raw`-(x+4)^2(x-4)^2/100+5`,color:"blue"},{latex:"(0,-5)",showLabel:true, label:"`f(x)=-\\frac{1}{100}(x+4)^2(x-4)^2`",hidden:true,color:"blue"}]);
+   x3c.setExpressions( [{latex:String.raw`(1/125)x^3`,color:"blue"},{latex:"(0,-5)",showLabel:true, label:"`f(x)=\\frac{1}{125}x^3`",hidden:true,color:"blue"}]);
+    x4c.setExpressions( [{latex:String.raw`-(1/12)x^3+2x`,color:"blue"},{latex:"(0,-5)",showLabel:true, label:"`f(x)=-\\frac{1}{12}x^3+2x`",hidden:true,color:"blue"}]);  
+  });
+</script>
+</body>
+</html>
