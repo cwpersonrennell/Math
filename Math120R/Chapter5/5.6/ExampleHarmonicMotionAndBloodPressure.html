@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>ExampleHarmonicMotionAndBloodPressure</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typeset();
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div class="fa" style="width: 100%;">
+<p>Example: Each time your heart beats, your blood pressure increases, then decreases as the heart rests between beats. A particular individual has blood pressure which has been modeled with the function:</p>
+\[ BP(t) = 103+17\cos(120\pi t) \]
+<p>where \(BP\) is pressure measured in mmHg and \(t\) is time in minutes.&nbsp;</p>
+<ul>
+<li>What is the amplitude, period, and frequency of the blood pressure?</li>
+<li><em>Systolic blood pressure</em> refers to the&nbsp;<strong>peak</strong> blood pressure, which happens when the heart contracts, whereas&nbsp;<em>diastolic pressure</em> is when the heart fully expands, and the blood pressure is the lowest. What is this individual's systolic and diastolic values?</li>
+<li>Sketch a graph of \(BP(t)\) with at least two periods.</li>
+<li>What is this individual's heart rate?</li>
+</ul>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<ul>
+<li>Amplitude: 17, Period: \(\frac{2\pi}{120\pi}=\frac{1}{60}\), Frequency: \(\frac{1}{P} = 60\)</li>
+<li>120/86</li>
+<li>See sketch below</li>
+<li>The person's heart rate can be measured as the distance between peaks (contractions of the heart) which is the the period: 1 beat every 1/60 minutes, e.g., 1 beat per second or 60 beats per minute.</li>
+</ul>
+<calculator options="{&quot;expressions&quot;:false,&quot;keypad&quot;:true,&quot;graphpaper&quot;:true,&quot;showGrid&quot;:false,&quot;showXAxis&quot;:true,&quot;showYAxis&quot;:true,&quot;xAxisNumbers&quot;:true,&quot;yAxisNumbers&quot;:true,&quot;trace&quot;:false,&quot;pointsOfInterest&quot;:true,&quot;settingsMenu&quot;:false,&quot;zoomButtons&quot;:false,&quot;expressionsCollapsed&quot;:false,&quot;capExpressionSize&quot;:false,&quot;lockViewport&quot;:true,&quot;projectorMode&quot;:true,&quot;invertedColors&quot;:true}" mathbounds="{&quot;left&quot;:-0.0005959921813210808,&quot;right&quot;:0.03938610417284559,&quot;top&quot;:132.89538520311615,&quot;bottom&quot;:72.92224067186616}" style="width: 1000px; height: 600px;" data-string="{&quot;version&quot;:9,&quot;randomSeed&quot;:&quot;a6567286d539cf21d131717772fa4b1c&quot;,&quot;graph&quot;:{&quot;viewport&quot;:{&quot;xmin&quot;:-0.0005959921813210808,&quot;ymin&quot;:72.92224067186616,&quot;xmax&quot;:0.03938610417284559,&quot;ymax&quot;:132.89538520311615},&quot;showGrid&quot;:false,&quot;squareAxes&quot;:false},&quot;expressions&quot;:{&quot;list&quot;:[{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;1&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;P\\left(x\\right)\\ =\\ 103+17\\cos\\left(120\\pi x\\right)\\left\\{0\\le x\\le\\frac{5}{120}\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;2&quot;,&quot;color&quot;:&quot;#2d70b3&quot;,&quot;latex&quot;:&quot;y=103&quot;,&quot;lineStyle&quot;:&quot;DASHED&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;3&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(\\frac{1}{4\\cdot60},103\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`\\frac{1}{240}`&quot;,&quot;hidden&quot;:true,&quot;labelOrientation&quot;:&quot;below&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;4&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(\\frac{1}{2\\cdot60},103\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`\\frac{1}{120}`&quot;,&quot;labelOrientation&quot;:&quot;below&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;5&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(\\frac{3}{4\\cdot60},103\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`\\frac{1}{80}`&quot;,&quot;labelOrientation&quot;:&quot;below&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;6&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(\\frac{1}{60},103\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`\\frac{1}{60}`&quot;,&quot;labelOrientation&quot;:&quot;below&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;7&quot;,&quot;color&quot;:&quot;#388c46&quot;,&quot;latex&quot;:&quot;y=120&quot;,&quot;lineStyle&quot;:&quot;DASHED&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;8&quot;,&quot;color&quot;:&quot;#388c46&quot;,&quot;latex&quot;:&quot;y=86&quot;,&quot;lineStyle&quot;:&quot;DASHED&quot;}]}}"></calculator></div>
+</div>
+</body>
+</html>
