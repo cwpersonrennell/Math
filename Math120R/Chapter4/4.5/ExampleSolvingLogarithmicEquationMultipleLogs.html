@@ -35,11 +35,29 @@
 \)
 </p>
 <div class="fa" style="width: 100%;">
-<p>Example: Solve the equation \[\log_3(x+6)-\log_3(x-6)=3\]</p>
+<p>Example: Solve the equation \[\log_3(x+6)-\log_3(6-x)=3\]</p>
 <div><button id="toggle_solution">Show Solution</button></div>
 <hr>
 <div id="solution" class="hide">
 <p><strong>Solution</strong></p>
+<p>
+	When we have a problem with multiply logarithms, our goal should be to condense the logarithms into a <strong>single </strong> logarithm and then apply the definition of logarithm to get the problem in the exponential form. However, different form exponential equations, we <strong>must</strong> keep the domain of the logarithmic functions closely in mind.
+
+	\[
+	\log_3(\underbrace{x+6}_{\gt 0})-\log_3(\underbrace{6-x}_{\gt 0})=3
+	\]
+
+	Since we have multiply logarithms, the overall valid set of solutions will entirely depend on the overlapping domains of each:
+	\[\solve{
+		x+6&\gt&0\\
+		x&\gt&-6\\\hline
+		6-x&\gt&0\\
+		-x&\gt&-6\\
+		x&\lt&6
+	}
+	\]
+	These two domain restrictions combined give a solution domain of \((-6,6)\). Thus, any answer we find algebraically, we must check against this restriction. Let's now turn to solving the question as presented.
+	</p>
 </div>
 </div>
 </body>
