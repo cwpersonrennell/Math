@@ -40,6 +40,17 @@
 <hr>
 <div id="solution" class="hide">
 <p><strong>Solution</strong></p>
+<p>
+	We need to convert the simple exponential model's annual rate into the continuous exponential model's relative rate. Thus, we need both formulas: \(A=P(1+r)^t\) and \(A=Pe^{rt}\). In this question, it is implied that only 1 year has passed, so we should set \(t=1\). While we do not know the initial investment, \(P\), that investment must be the same, regardless of which model we use. Thus, we can set up the following equation to solve for \(r\), the relative rate:
+	\[
+	\solve{
+		P(1+0.07)^1&=&Pe^{r(1)}\\
+		1.07&=&e^r\\
+		\ln(1.07)&=&r
+		r&\approx&6.77\%
+	}
+	\]
+</p>
 </div>
 </div>
 </body>

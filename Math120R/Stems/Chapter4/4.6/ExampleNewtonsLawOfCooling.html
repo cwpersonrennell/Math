@@ -11,5 +11,24 @@
 <hr>
 <div id="solution" class="hide">
 <p><strong>Solution</strong></p>
+<p>
+	<ol>
+<li>What is the initial temperature of the turkey? \[
+T(0)=60+240(1)=300^\circ
+\]</li>
+<li>How hot will it be after 15 minutes?\[
+T(15)=137.9^\circ\]</li>
+<li>How long before it is cool enough to eat, if the typical person is comfortable eating something that is \(100^\circ\)?\[
+\solve{
+	100 &=&60+240e^{-0.075t}\\
+	40&=&240e^{-0.075t}\\
+	\frac{1}{6}&=&e^{-0.075t}\\
+	\ln\left(\frac{1}{6}\right)&=&-0.075t\\
+	\frac{\ln\left(\frac{1}{6}\right)}{-0.075}&=&t\\
+	t&\approx&24\text{ min}
+}\]</li>
+</ol>
+
+</p>
 </div>
 </div>

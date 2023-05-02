@@ -40,7 +40,20 @@
 <hr>
 <div id="solution" class="hide">
 <p><strong>Solution</strong></p>
-
+<p>
+	Recall that "relative rate" always refers to the rate of the continuous exponential model, \(A=Pe^{rt}\). In order to convert the relative rate into the annual rate, we will set this equal to the annual rate formula, \(A=P(1+r)^t\) and then solve for the annual rate, \(r\):
+	\[
+	\solve{
+		Pe^{0.0325t}&=&P(1+r)^t\\
+		e^{0.0325t}&=&(1+r)^t\\
+		\left(e^{0.0325t}\right)^\frac{1}{t}&=&1+r\\
+		e^{0.0325}&=&1+r\\
+		e^{0.0325}-1 &=&r\\
+		r&\approx&3.3\%
+	}
+	\]
+	<strong>Note:</strong> In this example, I left \(t\) in the problem, but it is equally valid (both based on how the question was asked and the nature of these types of questions) to simply let \(t=1\) and solve it that way. Either method will yield the same answer.
+</p>
 </div>
 </div>
 </body>
