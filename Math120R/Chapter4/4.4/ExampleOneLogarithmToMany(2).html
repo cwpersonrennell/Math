@@ -41,7 +41,19 @@
 <hr>
 <div id="solution" class="hide">
 <p><strong>Solution</strong></p>
-
+In my solution below, I shall separate each step as a one-at-time step. However, do note that you can figure out that all the terms in the numerator should have a positive logarithm, while those in the denominator need a negative logarithm, and thereby skip many of the individual steps below. 
+\[
+\solve{
+	\ln\left(\dfrac{7e^3w^7}{h^2\sqrt{r^3}}\right)&=&
+	\ln\left(\frac{7e^3}{h^2r^{\frac{3}{2}}}\right)+\ln(w^7)\\
+	&=&\ln\left(\frac{7}{h^2r^{\frac{3}{2}}}\right)+\ln(e^3)+7\ln(w)\\
+	&=&\ln\left(\frac{7}{h^2}\right)-\ln(r^\frac{3}{2})+3+7\ln(w)\\
+	&=&\ln(7)-\ln(h^2)-\frac{3}{2}\ln(r)+3+7\ln(w)\\
+	&=&\ln(7)-2\ln(h)-\frac{3}{2}\ln(r)+3+7\ln(w)\\
+	&=&\ln(7)+3+7\ln(2)-2\ln(h)-\frac{3}{2}\ln(r)
+}
+\]
+I reorganized the terms in the last line to emphasis that you can really go from the first expression almost directly to the last expression as long as you keep the exponenents and signs under careful consideration.
 </div>
 </div>
 
