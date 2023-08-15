@@ -38,27 +38,6 @@
 <p>Given a polynomial function \(g(t)\), it is important to know some key vocabulary related to one of the most critical features of the polynomial: the <strong>zeros</strong>.</p>
 <p>Practically, this is just a slightly fancier way of referring to the horizontal intercepts, however, while horizontal intercepts should always be interpreted as points, the zeros usually refer only to the input component. We say that a value \(a\) is a <i>zero</i> of \(g(t)\) if \(g(a) = 0\).</p>
 <p>Let's consider a polynomial \(L(s)\) which has zeros at \(s = 1,2,-3\). If these values are the zeros, then the horizontal intercepts are \((1,0),\;(2,0),\;(-3,0)\). Moreover, because we know the zeros/horizontal intercepts, we can also write down the <strong>factors</strong> of the polynomial: \((s-1)\), \((s-2)\), and \((s+3)\). Why can we say this? Well, suppose we have a polynomial with these factors. It would look something like: \(D(s) = \dfrac{1}{100}(s-1)(s-2)(s+3)\). This polynomial <i>must</i> have zeros at \(s=1,2,-3\) because \(0=\dfrac{1}{100}(s-1)(s-2)(s+3)\) has solutions at exactly those values! Note that we didn't say the polynomial \(L(s)\) because we don't necessarily know the leading coefficient. We will see how and when we can calculate that in future examples.</p>
-<div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
-<p><strong>Solution</strong></p>
-</div>
-</div>
-<p>
 
-<script> 
-  document.addEventListener("DOMContentLoaded", () => {
-    var elt = document.getElementById('calculator');
-    
-    var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true,showGrid:false, xAxisNumbers:false,yAxisNumbers:false,trace:false});
-  calculator.setMathBounds({left:-10,right:10,bottom:-10,top:10});
-  calculator.setExpressions( [
-    {latex: String.raw`f(x) = a(x-h)^2+k`,secret:true,color:"blue"},
-
-  ]);
-
-
-  });
-</script>
 </body>
 </html>
