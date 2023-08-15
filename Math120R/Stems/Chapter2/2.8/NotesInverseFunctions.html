@@ -5,28 +5,6 @@
 </ol>
 <p>If you can draw a horizontal line through the graph of a function and only intersect once, no matter where you draw the line, then the function is invertible. This is called the "Horizontal Line Test". Finally, We say a function is <i>one-to-one</i> if each \(x\) maps to only one \(y\) and vice versa. One-to-one functions are automatically invertible.</p>
 <div id="calculator" style="width: 100%; height: 600px;"></div>
-<p>
-<script>
-  var show_solution = false;
-  
-    var button = document.getElementById('toggle_solution');
-    button.addEventListener("click",function(){
-      var el = document.getElementById('solution');
-      if(show_solution){
-        
-        button.innerHTML = "Show Solution";
-        el.classList.add('hide');
-        el.classList.remove('show');
-      }else{
-        button.innerHTML = "Hide Solution";
-        el.classList.add('show');
-        el.classList.remove('hide');
-      }
-      show_solution = !show_solution;
-      
-    });
-  </script>
- 
 <script>
   var pointCounter = 0;
   const RIGHT = String.raw`\pi`;
