@@ -37,28 +37,11 @@
 <p>The graph below shows the first function we looked at, which does have an inverse function. By swapping the input and output variables it is possible to algebraically derive the inverse function formula. Graphically, this results in a reflection over the line \(y=x\), which you can see in the graph below. <i>Be careful</i> when interpreting a function after swapping variables it is very easy to mix up units!!</p>
 <div id="calculator" style="width: 100%; height: 600px;"></div>
 <p>
-<script>
-  var show_solution = false;
-  
-    var button = document.getElementById('toggle_solution');
-    button.addEventListener("click",function(){
-      var el = document.getElementById('solution');
-      if(show_solution){
-        
-        button.innerHTML = "Show Solution";
-        el.classList.add('hide');
-        el.classList.remove('show');
-      }else{
-        button.innerHTML = "Hide Solution";
-        el.classList.add('show');
-        el.classList.remove('hide');
-      }
-      show_solution = !show_solution;
-      
-    });
-  </script>
+
  
 <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      try{
   var pointCounter = 0;
   const RIGHT = String.raw`\pi`;
   const LEFT = String.raw`0`;
@@ -95,6 +78,10 @@
   //calculator.setExpressions(arrowAtPoint(String.raw`g(y_3)`,2,RIGHT,"green"));//x_3,y_3
   //calculator.setExpressions(arrowAtPoint(String.raw`g(y_3)`,0,DOWN,"green"));//x_4,y_4
   //calculator.setExpressions([{latex:String.raw`y=y_3\left\{0\leq x \leq g(y_3)\right\}`,color:"green",lineStyle:Desmos.Styles.DASHED,secret:true},{latex:String.raw`x=g(y_3)\left\{0\leq y \leq y_3\right\}`,color:"green",lineStyle:Desmos.Styles.DASHED,secret:true}, {latex:"(g(y_3),0)",label:"`f^{-1}(y)`",color:"green",showLabel:true,secret:true,hidden:true, labelOrientation:Desmos.LabelOrientations.BELOW}]);
+      }catch(err){
+    console.log(err);
+  }
+});
 </script>
 </p>
 <p></p>

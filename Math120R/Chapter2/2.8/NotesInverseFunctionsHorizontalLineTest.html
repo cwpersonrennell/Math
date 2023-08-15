@@ -37,28 +37,11 @@
 <p>The graph below represents a function with a domain of all real numbers, \(f(x) = x^2\). This function does <strong>not</strong> have an inverse function on this domain. Notice that for most horizontal lines, there are two possible paths back to the input space (one positive, one negative). This <i>fails</i> the horizontal line test and thus does not have an inverse function.</p>
 <div id="calculator" style="width: 100%; height: 600px;"></div>
 <p>
-<script>
-  var show_solution = false;
-  
-    var button = document.getElementById('toggle_solution');
-    button.addEventListener("click",function(){
-      var el = document.getElementById('solution');
-      if(show_solution){
-        
-        button.innerHTML = "Show Solution";
-        el.classList.add('hide');
-        el.classList.remove('show');
-      }else{
-        button.innerHTML = "Hide Solution";
-        el.classList.add('show');
-        el.classList.remove('hide');
-      }
-      show_solution = !show_solution;
-      
-    });
-  </script>
+
  
 <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      try{
   var pointCounter = 0;
   const RIGHT = String.raw`\pi`;
   const LEFT = String.raw`0`;
@@ -97,6 +80,10 @@
   calculator.setExpressions(arrowAtPoint(String.raw`-g(y_3)`,"y_3",LEFT,"green"));//x_3,y_3
   calculator.setExpressions(arrowAtPoint(String.raw`-g(y_3)`,0,DOWN,"green"));
   calculator.setExpressions([{latex:String.raw`y=y_3\left\{-g(y_3)\leq x \leq 0\right\}`,color:"green",lineStyle:Desmos.Styles.DASHED,secret:true},{latex:String.raw`y=y_3\left\{0\leq x \leq g(y_3)\right\}`,color:"green",lineStyle:Desmos.Styles.DASHED,secret:true},{latex:String.raw`x=g(y_3)\left\{0\leq y \leq y_3\right\}`,color:"green",lineStyle:Desmos.Styles.DASHED,secret:true}, {latex:String.raw`x=-g(y_3)\left\{0\leq y \leq y_3\right\}`,color:"green",lineStyle:Desmos.Styles.DASHED,secret:true},{latex:"(g(y_3),0)",label:"`?f^{-1}(y)?`",color:"green",showLabel:true,secret:true,hidden:true, labelOrientation:Desmos.LabelOrientations.BELOW},{latex:"(-g(y_3),0)",label:"`?f^{-1}(y)?`",color:"green",showLabel:true,secret:true,hidden:true, labelOrientation:Desmos.LabelOrientations.BELOW}]);
+    }catch(err){
+    console.log(err);
+  }
+});
 </script>
 </p>
 <p></p>
