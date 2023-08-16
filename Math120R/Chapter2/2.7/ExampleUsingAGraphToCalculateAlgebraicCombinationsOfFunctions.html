@@ -42,6 +42,14 @@
 <hr>
 <div id="solution" class="hide">
 <p><strong>Solution</strong></p>
+<p>Pay close attention to the colors of the graphs and the order the functions are written in (in this example, I put \(f\) first, but you should always look closely!). Next, the number in the parenthesis following the function combination is the \(x\) (input) value. The results of each combination is the combination of the respective \(y\) (output) values of the functions:</p>
+\[ \begin{array}{rclcl} 
+(f+g)(0)&=&f(0)+g(0) &=& 1+ 3 = 4\\ 
+(f-g)(0.6)&=& f(0.6) - g(0.6) &=& 1.84 - 2.639=-0.799\\ 
+(f\cdot g)(1)&=&f(1)\cdot g(1) &=& 1\cdot 2 = 2\\ 
+\left(\displaystyle\frac{f}{g}\right)(2)&=&\frac{f(2)}{g(2)}&=&\frac{1}{0.68}\approx 1.471\\ 
+(f+g)(3)&=&f(3)+g(3)&=&1 + 2 =3\\ 
+\end{array} \]
 <p></p>
 </div>
 </div>
@@ -51,7 +59,7 @@
   var elt = document.getElementById('calculator');
   var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true});
   calculator.setMathBounds({left:-1,right:6.5,bottom:-1,top:4});
-  calculator.setExpressions( [{latex: 'f\\left(x\\right)\\ =\\ 2^{-.3x}\\sin\\left(x\\pi\\right)+1\\left\\{0\\le x\\le6\\right\\}'},{latex:"g\\left(x\\right)=2^{0.2x}\\cos\\left(\\frac{x\\pi}{2}\\right)+2\\left\\{0\\le x\\le6\\right\\}"},{latex:"(0,f(0))",color:"red",showLabel:true},{latex:"(0,g(0))",color:"red",showLabel:true},{latex:"(0.6,f(0.6))",color:"green",showLabel:true},{latex:"(0.6,g(0.6))",color:"green",showLabel:true},{latex:"(1,f(1))",color:"red",showLabel:true},{latex:"(1,g(1))",color:"red",showLabel:true},{latex:"(2,f(2))",color:"green",showLabel:true},{latex:"(2,g(2))",color:"green",showLabel:true},{latex:"(3,f(3))",color:"red",showLabel:true},{latex:"(3,g(3))",color:"red",showLabel:true},{latex:"(0,f(0))",color:"blue",showLabel:true,label:"`f(x)`"},{latex:"(0,g(0))",color:"green",showLabel:true,label:"`g(x)`"},]);
+  calculator.setExpressions( [{latex: 'f\\left(x\\right)\\ =\\ 2^{-.3x}\\sin\\left(x\\pi\\right)+1\\left\\{0\\le x\\le6\\right\\}',color:"red"},{latex:"g\\left(x\\right)=2^{0.2x}\\cos\\left(\\frac{x\\pi}{2}\\right)+2\\left\\{0\\le x\\le6\\right\\}"},{latex:"(0,f(0))",color:"red",showLabel:true},{latex:"(0,g(0))",color:"green",showLabel:true},{latex:"(0.6,f(0.6))",color:"red",showLabel:true},{latex:"(0.6,g(0.6))",color:"green",showLabel:true},{latex:"(1,f(1))",color:"red",showLabel:true},{latex:"(1,g(1))",color:"green",showLabel:true},{latex:"(2,f(2))",color:"red",showLabel:true},{latex:"(2,g(2))",color:"green",showLabel:true},{latex:"(3,f(3))",color:"red",showLabel:true},{latex:"(3,g(3))",color:"green",showLabel:true},{latex:"(0,f(0))",color:"red",showLabel:true,label:"`f(x)`"},{latex:"(0,g(0))",color:"green",showLabel:true,label:"`g(x)`"},]);
   });</script>
 </body>
 </html>
