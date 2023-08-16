@@ -9,30 +9,14 @@
 </div>
 </div>
 <p>
-<script>
-  var show_solution = false;
-    var button = document.getElementById('toggle_solution');
-    button.addEventListener("click",function(){
-      var el = document.getElementById('solution');
-      if(show_solution){
-        
-        button.innerHTML = "Show Solution";
-        el.classList.add('hide');
-        el.classList.remove('show');
-      }else{
-        button.innerHTML = "Hide Solution";
-        el.classList.add('show');
-        el.classList.remove('hide');
-      }
-      show_solution = !show_solution;
-      
-    });
-  </script>
+
  
 <script>
+  document.addEventListener("DOMContentLoaded", () => {
   var elt = document.getElementById('calculator');
   var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true,invertedColors:true,xAxisNumbers:true,yAxisNumbers:true,showGrid:false,pointsOfInterest:true,trace:true});
   calculator.setMathBounds({left:-1,right:15,bottom:-1,top:15});
   calculator.setExpressions( [
     {latex: String.raw`f(x)=\frac{{1}}{4\pi}x^2+\frac{{1}}{{16}}x^2-\frac{{3}}{{2}}x+9 \left\{0\leq x\leq 12\right\}`}]);
+});
 </script>

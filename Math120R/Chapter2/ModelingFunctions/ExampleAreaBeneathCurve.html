@@ -44,27 +44,9 @@
 </div>
 </div>
 <p>
-<script>
-  var show_solution = false;
-    var button = document.getElementById('toggle_solution');
-    button.addEventListener("click",function(){
-      var el = document.getElementById('solution');
-      if(show_solution){
-        
-        button.innerHTML = "Show Solution";
-        el.classList.add('hide');
-        el.classList.remove('show');
-      }else{
-        button.innerHTML = "Hide Solution";
-        el.classList.add('show');
-        el.classList.remove('hide');
-      }
-      show_solution = !show_solution;
-      
-    });
-  </script>
  
 <script>
+  document.addEventListener("DOMContentLoaded", () => {
   var elt = document.getElementById('calculator');
   var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true,invertedColors:true,xAxisNumbers:false,yAxisNumbers:false,showGrid:false,pointsOfInterest:false,trace:false});
   calculator.setMathBounds({left:-1,right:2,bottom:-1,top:5});
@@ -76,6 +58,7 @@
     {latex:String.raw`y=0\left\{0\leq x \leq a\right\}`,color:"blue"},
     {latex:String.raw`x=a\left\{0\leq y \leq f(a)\right\}`,color:"blue"},
   ]);
+});
 </script>
 </body>
 </html>

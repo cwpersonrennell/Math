@@ -136,31 +136,15 @@ ctx.beginPath();
   ctx.fillText("20 in",5,y_1/2);
 </script>
  
-<script>
-  var show_solution = false;
-    var button = document.getElementById('toggle_solution');
-    button.addEventListener("click",function(){
-      var el = document.getElementById('solution');
-      if(show_solution){
-        
-        button.innerHTML = "Show Solution";
-        el.classList.add('hide');
-        el.classList.remove('show');
-      }else{
-        button.innerHTML = "Hide Solution";
-        el.classList.add('show');
-        el.classList.remove('hide');
-      }
-      show_solution = !show_solution;
-      
-    });
-  </script>
+
  
 <script>
+  document.addEventListener("DOMContentLoaded", () => {
   var elt = document.getElementById('calculator');
   var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true,invertedColors:true,xAxisNumbers:false,yAxisNumbers:false,showGrid:false,pointsOfInterest:false,trace:false});
   calculator.setMathBounds({left:-10,right:10,bottom:-10,top:10});
   calculator.setExpressions( [{latex: 'y=3/32x^3+5/16x^2'},{latex: '(2,2)',showLabel:true},{latex:"y=0.5(x-2)+2"},{latex:"(0,1)",showLabel:true,label:"`(0,b)`"},{latex:"(-4,-1)",showLabel:true,label:"`(-4, y )`"}]);
+});
 </script>
 </body>
 </html>
