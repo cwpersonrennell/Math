@@ -66,6 +66,7 @@ def makeHTMLFilesFromStems():
         #Write the actual Source Html File        
         template_file = open("main-body-template.html")
         new_contents = template_file.read().replace("{{{body}}}",body_contents).replace("{{{title}}}",Stem_filepaths[i].name.split(".html")[0])
+        new_contents = new_contents.replace("{{{src}}}",D2Lsrc)
         CreateAndWriteContentsToFile(new_contents,pathname)
         
         #Write the HTML stub for D2L integration (copy paste into D2L new file for link to HTML source)
