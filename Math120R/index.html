@@ -7,11 +7,11 @@
 <body style="width:100%;height:100%">
 	
 <div class="container" style="width:100%;height:100%;">
-	<iframe src="https://drive.google.com/file/d/1Hr3tYMSF7UaVCtOVoyrb-2nS2LJ_rsTB/preview" width="640" height="480" allow="autoplay"></iframe>
 	<h2 class="title">Math 120R Navigator</h2>
-	<select name="notes" id="notes">
-		
-	</select>
+	<label for="exam">Exam Content</label><select name="exam" id="exam"></select>
+	<label for="chapter">Chapter</label><select name="chapter" id="chapter"></select>
+	<label for="section">Section</label><select name="section" id="section"></select>
+	<label for="notes">Notes</label><select name="notes" id="notes"></select>
 		
 		<iframe class="frame" id="iframe" frameborder="0" src="" style="width:100%;height:100%"></iframe>
 
@@ -32,20 +32,121 @@
 </body>
 <script type="text/javascript">
 	iFrameResize({log:false},"#iframe");
+	function splitOnCaps(s){
+		return s.split(/(?=[A-Z])/).join(" ");
+	}
+	const Exams = {
+		"Exam 1":{
+		//Exam 1
+			2:{
+				2.1:["ExampleEvaluatingAFunction","ExampleDomainRestrictionsPart1","ExamplesDomainRestrictionsPart2","ExampleDifferenceQuotient"],
+				2.2:["ExampleDomainRangeVisuallyGraphically","ExampleEquationsAsFunctions","ExampleGraphingPiecewiseFunctions"],
+				2.3:["ExampleAppliedTucsonRain","ExampleAppliedEnergyAndVelocity","ExampleIncreasingDecreasingPositiveNegativeGraph","ExampleWhereIsAFunctionPositive"],
+				2.4:["ExampleAverageRateOfChange","ExampleAverageRateOfChangeNumerical","ExampleAverageRateOfChangeVariable","ExampleNetChangeAndAverageRateOfChange"],
+				2.6:["NotesFunctionTransformationsRefresher","ExampleApplyingTransformationsToAPoint","ExampleInterpretingTransformationsIntoEnglish","ExampleTransformingTrigFunction"],
+				2.7:["NotesEvenVsOdd","ExampleAlgebraicCombintionsOfFunctions","ExampleUsingAGraphToCalculateAlgebraicCombinationsOfFunctions","ExampleUsingTablesForCombiningFunctions"]
+			},
+			1:{
+				1.5:[],
+				1.8:[],
+				1.9:[],
+				1.10:[]
+			},
+		},
+		//Exam 2
+		"Exam 2":{
+
+		},
+		//Exam 3
+		"Exam 3":{
+
+		},
+		//Exam 4
+		"Exam 4":{
+
+		}};
+
+	function buildSelection(selection,options){
+		selection.replaceChildren();
+		for(let i = 0; i <options.length;i++){
+			let option = document.createElement('option');
+			option.value = options[i];
+			option.innerText = options[i];
+			selection.appendChild(option);
+		}
+	}
+
+	const examDropdownElement=document.getElementById("exam");
+	const chapterDropdownElement=document.getElementById("chapter");
+	const sectionDropdownElement=document.getElementById("section");
+	const notesDropdownElement=document.getElementById("notes");
+
+	let examChoices    =["---"].concat(Object.keys(Exams));
+	let chapterChoices =["---"];
+	let sectionChoices =["---"];
+	let notesChoices   =["---"];
+
+	buildSelection(examDropdownElement,examChoices);
+	buildSelection(chapterDropdownElement,chapterChoices);
+	buildSelection(sectionDropdownElement,sectionChoices);
+	buildSelection(notesDropdownElement,notesChoices);
+	
+	function updateChapters(){
+		if(examDropdownElement.selectedIndex>0){
+			buildSelection(chapterDropdownElement,["---"].concat(
+				Object.keys(
+					Exams[examDropdownElement.value])
+				));
+		}
+		else{
+			buildSelection(chapterDropdownElement,["---"]);
+			buildSelection(sectionDropdownElement,["---"]);
+			buildSelection(notesDropdownElement,["---"]);
+		}
+	}
+
+	examDropdownElement.addEventListener("change",updateChapters);
+
+	function updateSection(){
+		if(chapterDropdownElement.selectedIndex>0){
+			buildSelection(sectionDropdownElement,["---"].concat(
+				Object.keys(
+					Exams[examDropdownElement.value][chapterDropdownElement.value]
+					)
+				));
+		}else{
+			buildSelection(sectionDropdownElement,["---"]);
+			buildSelection(notesDropdownElement,["---"]);
+		}
+	}
+
+	chapterDropdownElement.addEventListener("change",updateSection);
+	let files=[];
+
+	function updateNotes(){
+		if(sectionDropdownElement.selectedIndex>0){
+			buildSelection(notesDropdownElement,["---"].concat(
+				Object.keys(
+					Exams[examDropdownElement.value][chapterDropdownElement.value][sectionDropdownElement.value].map(splitOnCaps)
+					)
+				));
+			files = Exams[examDropdownElement.value][chapterDropdownElement.value][sectionDropdownElement.value];
+		}else{
+			buildSelection(notesDropdownElement,["---"]);
+			files=[];
+		}
+	}
+
+	sectionDropdownElement.addEventListener("change",updateNotes);
+
 	let nextButton = document.getElementById("next");
 	let previousButton = document.getElementById("previous");
 	let iframeElement=document.getElementById("iframe");
-	let notesDropdownElement=document.getElementById("notes");
 	let fileIndex = 0;
-	let files=[
-		"Chapter4/4.1/ExponentialModelFromTwoPoints",
-		"Chapter4/4.1/ExponentialModelFromTwoPoints(2)",
-		"Chapter4/4.1/HorizontalAsymptoteOfExponentialFunction",
-		"Chapter4/4.1/ApplicationOfExponentialModel",
-		"Chapter4/4.1/ExponentialVsLinear",
-	];
+	
 
 	function loadSourceFile(src){
+		src = `Chapter${chapterDropdownElement.value}/${sectionDropdownElement.value}/${src}`;
 		iframeElement.src=`https://cwpersonrennell.github.io/Math/Math120R/${src}.html`;
 	}
 
@@ -59,20 +160,8 @@
 		loadSourceFile(target);
 	}
 
-	function init(){
-		for(let i =0; i <files.length;i++){
-			//let anchor = document.createElement('a');
-			//anchor.href=`#${files[i]}`;
-			let option = document.createElement('option');
-			option.value=files[i];
-			option.innerText=files[i];
-			//option.appendChild(anchor);
-			notesDropdownElement.appendChild(option);
-		}
-		loadHash();
-	}
-
 	function advanceToNextFile(){
+		if(files.length == 0) return;
 		fileIndex++;
 		if(fileIndex>files.length-1){
 			fileIndex--;
@@ -81,6 +170,7 @@
 	}
 
 	function advanceToPreviousFile(){
+		if(files.length == 0) return;
 		fileIndex--;
 		if(fileIndex<0){
 			fileIndex=0;
@@ -90,7 +180,7 @@
 
 	function selectFromDropDown(){
 		let url = new URL(document.URL);
-		url.hash = notesDropdownElement.value;
+		url.hash = `Chapter${chapterDropdownElement.value}/${sectionDropdownElement.value}/${notesDropdownElement.value}`;
 		window.history.pushState({},'',url);
 		loadHash();
 
@@ -99,6 +189,12 @@
 	previousButton.addEventListener("mouseup",advanceToPreviousFile);
 	document.addEventListener("DOMContentLoaded",init);
 	document.addEventListener("hashchange",loadHash);
+	
+	function loadNote(){
+		if(notesDropdownElement.selectedIndex>0){
+			selectFromDropDown();
+		}
+	}
 	notesDropdownElement.addEventListener("change",selectFromDropDown)
 
 </script>
