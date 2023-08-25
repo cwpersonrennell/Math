@@ -126,10 +126,7 @@
 	function updateNotes(){
 		if(sectionDropdownElement.selectedIndex>0){
 			buildSelection(notesDropdownElement,["---"].concat(
-				Object.keys(
-					Exams[examDropdownElement.value][chapterDropdownElement.value][sectionDropdownElement.value]
-					)
-				));
+				Exams[examDropdownElement.value][chapterDropdownElement.value][sectionDropdownElement.value].map(splitOnCaps)));
 			files = Exams[examDropdownElement.value][chapterDropdownElement.value][sectionDropdownElement.value];
 			console.log(files);
 		}else{
