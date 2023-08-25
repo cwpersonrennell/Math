@@ -2,11 +2,14 @@
 .nav{
   transform-style:preserve-3d;
   background:white;
+  margin:0px;
+  padding:0px;
+  position:relative;
 }
 .nav::before{
   content:"";
   position:absolute;
-  inset:-5px;
+  inset:-2px;
   transform:translate3d(2px, 8px, -1px);
   background:conic-gradient(from 90deg at 40% -25%, #ffd700, #f79d03, #ee6907, #e6390a, #de0d0d, #d61039, #cf1261, #c71585, #cf1261, #d61039, #de0d0d, #ee6907, #f79d03, #ffd700, #ffd700, #ffd700);
   filter:blur(10px);
