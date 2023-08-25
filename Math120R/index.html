@@ -128,7 +128,6 @@
 			buildSelection(notesDropdownElement,["---"].concat(
 				Exams[examDropdownElement.value][chapterDropdownElement.value][sectionDropdownElement.value].map(splitOnCaps)));
 			files = Exams[examDropdownElement.value][chapterDropdownElement.value][sectionDropdownElement.value];
-			console.log(files);
 		}else{
 			buildSelection(notesDropdownElement,["---"]);
 			files=[];
@@ -178,7 +177,9 @@
 
 	function selectFromDropDown(){
 		let url = new URL(document.URL);
-		url.hash = `Chapter${chapterDropdownElement.value}/${sectionDropdownElement.value}/${notesDropdownElement.value.replace(" ","")}`;
+		let note = notesDropdownElement.value.replace(" ","");
+		console.log(note);
+		url.hash = `Chapter${chapterDropdownElement.value}/${sectionDropdownElement.value}/${note}`;
 		window.history.pushState({},'',url);
 		loadHash();
 
