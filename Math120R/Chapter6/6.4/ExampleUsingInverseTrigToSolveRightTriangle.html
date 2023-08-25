@@ -16,7 +16,7 @@
        		MathJax.typeset();
        	}catch(err){
        		console.log(err);
-       		MathJax.typeset();
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
        	}
 
 
