@@ -150,10 +150,8 @@
 	function loadHash(){
 		let url = new URL(document.URL);
 		let target = url.hash;
-		if(target.length==0)
-			target = files[0];
-		else
-			target=target.replace("#","");
+		if(target.length==0)return;
+		target=target.replace("#","");
 		loadSourceFile(target);
 	}
 
@@ -186,7 +184,7 @@
 
 	nextButton.addEventListener("mouseup",advanceToNextFile);
 	previousButton.addEventListener("mouseup",advanceToPreviousFile);
-	//document.addEventListener("DOMContentLoaded",init);
+	document.addEventListener("DOMContentLoaded",loadHash);
 	document.addEventListener("hashchange",loadHash);
 	
 	function loadNote(){
