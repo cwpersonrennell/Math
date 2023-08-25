@@ -177,8 +177,7 @@
 
 	function selectFromDropDown(){
 		let url = new URL(document.URL);
-		let note = notesDropdownElement.value.replace(" ","");
-		console.log(note);
+		let note = notesDropdownElement.value.replaceAll(" ","");
 		url.hash = `Chapter${chapterDropdownElement.value}/${sectionDropdownElement.value}/${note}`;
 		window.history.pushState({},'',url);
 		loadHash();
