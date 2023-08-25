@@ -10,7 +10,8 @@
   background:/*...*/;
   filter:blur(10px);
 }
-.container {
+
+/*.container {
   display: grid;
   grid-template: "container" 1fr;
   place-items: center;
@@ -27,7 +28,7 @@
 .title {
   place-self: start center;
 }
-
+*/
 .carousel-control.prev {
   place-self: center left;
   left:-5rem;
@@ -73,14 +74,14 @@ body {
   color: white;
 }
 
-
+/*
 .carousel-viewport {
   position: relative;
   margin: 0 auto;
   min-width: 100%;
   height:100%;
 }
-
+*/
 .carousel-control {
   --size: clamp(2.5rem, 10vw, 4rem);
 
