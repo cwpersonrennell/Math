@@ -1,3 +1,15 @@
+
+.nav{
+  transform-style:preserve-3d;
+}
+.nav::before{
+  content:"";
+  position:absolute;
+  inset:-5px;
+  transform:translate3d(10px, 8px, -1px);
+  background:/*...*/;
+  filter:blur(10px);
+}
 .container {
   display: grid;
   grid-template: "container" 1fr;
