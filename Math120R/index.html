@@ -90,19 +90,40 @@
 		"---":Chapters,
 		"Exam 1":{
 		//Exam 1
-			2:Chapters['Chapter2'],
-			1:Chapters['Chapter1'],
+			2:{
+				2.1:Chapters['2']['2.1'],
+				2.2:Chapters['2']['2.2'],
+				2.3:Chapters['2']['2.3'],
+				2.4:Chapters['2']['2.4'],
+				2.6:Chapters['2']['2.6'],
+				2.7:Chapters['2']['2.7'],
+			},
+			1:{			
+				1.5:Chapters['1']['1.5'],
+				1.8:Chapters['1']['1.8'],
+				1.9:Chapters['1']['1.9'],
+				'1.10':Chapters['1']['1.10'],
+			},
 		},
 		//Exam 2
 		"Exam 2":{
-			3:Chapters['Chapter3']
+			1:{
+				1.4:Chapters['1']['1.4']
+			},
+			2:{
+				2.8:Chapters['2']['2.8'],
+				'ModelingFunctions':Chapters['2']['ModelingFunctions']
+			},
+			3:Chapters['3'],
+			13:Chapters['13']
+			
 
 		},
 		//Exam 3
 		"Exam 3":{
-			5:Chapters['Chapter5'],
-			6:Chapters['Chapter6'],
-			7:Chapters['Chapter7']
+			5:Chapters['5'],
+			6:Chapters['6'],
+			7:Chapters['7']
 		},
 		//Exam 4
 		"Exam 4":{
@@ -150,7 +171,7 @@
 	}
 
 	examDropdownElement.addEventListener("change",updateChapters);
-
+	updateChapters();
 	function updateSection(){
 		if(chapterDropdownElement.selectedIndex>0){
 			buildSelection(sectionDropdownElement,["---"].concat(
