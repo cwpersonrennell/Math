@@ -87,6 +87,7 @@
 		return s.split(/(?=[A-Z])/).join(" ");
 	}
 	const Exams = {
+		"---":Chapters,
 		"Exam 1":{
 		//Exam 1
 			2:Chapters['Chapter2'],
@@ -135,7 +136,7 @@
 	buildSelection(notesDropdownElement,notesChoices);
 	
 	function updateChapters(){
-		if(examDropdownElement.selectedIndex>0){
+		if(examDropdownElement.selectedIndex>=0){
 			buildSelection(chapterDropdownElement,["---"].concat(
 				Object.keys(
 					Exams[examDropdownElement.value])
