@@ -35,15 +35,13 @@
 </body>
 <script>
 	const Chapters = {
-		'Chapter1': {
-			'1.10': ['ExampleFindingPerpendicularAndParallelLines', 'NotesOnLinearFunctions', 'NotesOnPerpendicularAndParallelLines'], 
+		'1': {
 			'1.4': ['ExampleDomainOfRationalExpressions', 'ExampleSimplifyingCompoundRationalExpression', 'ExampleSimplifyingRationalExpression'], 
 			'1.5': ['DevelopingSkillsSolvingAbsoluteValueEquations', 'DevelopingSkillsSolvingFractionalEquations', 'DevelopingSkillsSolvingLinearEquations1.5.1', 'DevelopingSkillsSolvingQuadraticEquations', 'DevelopingSkillsSolvingRadicalEquations', 'ExampleSolvingEquationFromGraphPart1', 'ExampleSolvingEquationFromGraphPart2', 'ExampleSolvingMultivariableEquation'], 
 			'1.8': ['DevelopingSkillsSolvingAbsoluteValueInequalities', 'DevelopingSkillsSolvingLinearInequalities', 'DevelopingSkillsSolvingQuadraticInequalities'], 
-			'1.9': ['ExampleInterceptsOfEquation', 'ExampleTableAndGraphCircle', 'ExampleTableAndGraphFromEquation']}, 
-		'Chapter13': {
-			'13.1': ['ExampleLimitsPart1', 'ExampleLimitsPart2', 'NotesLimits']}, 
-		'Chapter2': {
+			'1.9': ['ExampleInterceptsOfEquation', 'ExampleTableAndGraphCircle', 'ExampleTableAndGraphFromEquation'],
+			'1.10': ['ExampleFindingPerpendicularAndParallelLines', 'NotesOnLinearFunctions', 'NotesOnPerpendicularAndParallelLines']},  
+		'2': {
 			'2.1': ['ExampleDifferenceQuotient', 'ExampleDomainRestrictionsPart1', 'ExampleDomainRestrictionsPart2', 'ExampleEvaluatingAFunction'], 
 			'2.2': ['ExampleDomainRangeVisuallyGraphically', 'ExampleEquationsAsFunctions', 'ExampleGraphingPiecewiseFunctions'], 
 			'2.3': ['ExampleAppliedEnergyAndVelocity', 'ExampleAppliedTucsonRain', 'ExampleIncreasingDecreasingPositiveNegativeGraph', 'ExampleWhereIsAFunctionPositive'], 
@@ -52,33 +50,35 @@
 			'2.7': ['ExampleAlgebraicCombinationsOfFunctions', 'ExampleUsingAGraphToCalculateAlgebraicCombinationsOfFunctions', 'ExampleUsingTablesForCombiningFunctions', 'NotesEvenVsOdd'], 
 			'2.8': ['ExampleDomainRangeOfInverseFunctions', 'ExampleInverseOnRestrictedDomain', 'ExampleSwappingInputOutput', 'NotesInverseFunctions', 'NotesInverseFunctionsHorizontalLineTest', 'NotesInverseFunctionsSwapXY'], 
 			'ModelingFunctions': ['ExampleApplicationsOfSpeedAndVelocity', 'ExampleAreaBeneathCurve', 'ExampleCylinderInscribedInCone', 'ExampleNormanWindow', 'ExampleRectangleInscribedOnParabola', 'ExampleWireProblem', 'NotesGeneralizedProblemSolving']}, 
-			'Chapter3': {
-				'3.1': ['ExampleQuadraticFunctionBasicFormPart1', 'ExampleQuadraticFunctionBasicFormPart2', 'ExampleQuadraticFunctionFromGraphPart1', 'ExampleQuadraticFunctionFromGraphPart2', 'ExampleWhenIsAQuadraticPositive', 'NotesQuadraticFunctionsAndTheirUses'], 
-				'3.2': ['ExampleEquationOfPolynomialFromGraph', 'ExampleGraphingFactoredPolynomial', 'ExamplePolynomialEndBehavior', 'ExampleSketchingPolynomialWith4Terms', 'ExampleWhereIsPolynomialPositive', 'NotesPolynomialEndBehavior', 'NotesPolynomialFunctionAndDegree', 'NotesPolynomialIntercepts'], 
-				'3.6': ['ExampleEndBehaviorOfRationals', 'ExampleSketchingRationalFunction', 'ExampleSketchingRationalFunctionWithAHole', 'ExampleWhereIsRationalFunctionPositive', 'FurtherPracticeCombiningAndGraphingRationalFunctions', 'NotesRationalFunctions']}, 
-			'Chapter4': {
-				'4.1': ['ApplicationOfExponentialModel', 'ExponentialModelFromTwoPoints(2)', 'ExponentialModelFromTwoPoints', 'ExponentialVsLinear', 'HorizontalAsymptoteOfExponentialFunction', 'IntroductionExponentialModelAndFunction'], 
-				'4.2': ['ApplicationToPopulationModels', 'ExampleGraphingExponentialFunctions', 'ExampleRelativeVsNonRelativeGrowth', 'ExampleSolvingAppliedExponentialQuestionWithGraphingDevice', 'IntroductionNaturalBase'], 
-				'4.3': ['ExampleDomainOfLogarithm', 'ExampleGraphingLogarithms', 'ExampleLogarithmEquationFromGraph', 'GeneralLogarithmFeatures', 'InverseFunctionOfExponential'], 
-				'4.4': ['ExampleManyLogarithmsToOne(1)', 'ExampleManyLogarithmsToOne(2)', 'ExampleOneLogarithmToMany(1)', 'ExampleOneLogarithmToMany(2)', 'IntroductionLawsOfLogarithms'], 
-				'4.5': ['ExampleSolvingExponentialEquation', 'ExampleSolvingExponentialEquationExactly', 'ExampleSolvingLogarithmicEquationMultipleLogs', 'ExampleSolvingQuadraticExponentialEquation', 'ExampleSolvingSimpleLogarithmicEquation', 'ExmapleFindingInverseOfLogarithm'], 
-				'4.6': ['ExampleAnnualVsRelativeGrowth', 'ExampleDoublingTriplingProblem', 'ExampleNewtonsLawOfCooling', 'ExampleRelativeGrowthRate']}, 
-			'Chapter5': {
-				'5.1': ['ExampleFindingPointsOnUnicCircle', 'ExampleUnitCircleAndReferenceAngles', 'NotesRadiansVsDegrees', 'NotesTerminalPointAngleSide', 'NotesUnitCircle'], 
-				'5.2': ['ExampleEvenOddTrigFunctions', 'ExampleFindingSineAndCosineFromTangent', 'ExampleFindingTrigonometricValuesFromConstraints', 'ExampleFindingTrigonometricValuesFromUnitCircle', 'ExampleOtherTrigonometricFunctionsOnUnitCircle', 'NotesTrigonometricFunctions'], 
-				'5.3': ['ExampleGraphingCosine', 'ExampleGraphingSine', 'ExampleGraphingSineWithVerticalShift', 'FurtherPracticeGraphingCosine', 'NotesAllSineGraphicalFeaturesAndTransforms', 'NotesCosineVsSine', 'NotesGraphingSine', 'NotesTransformingSinePart1', 'NotesTransformingSinePart2'], 
-				'5.4': ['ExampleGraphingTangentFunctionPart1', 'ExampleGraphingTangentFunctionPart2', 'ExampleGraphingTangentFunctionPart3', 'NotesTangentFunction'], 
-				'5.5': ['ExampleFindingExactInverseTrigValues', 'ExampleNestedTrigInverseTrig', 'ExampleNestedTrigInverseTrigAndAlgebra', 'NotesInverseCosine', 'NotesInverseSine', 'NotesInverseTangent', 'ReferenceInverseTrigSemiCircles'], 
-				'5.6': ['ExampleHarmonicMotionAndBloodPressure', 'ExampleHarmonicMotionAndFerrisWheel', 'ExampleSpringMotion']}, 
-			'Chapter6': {
-				'6.1': ['ExampleApplyingArcLengthSectorAreaToFloorPlan', 'ExampleArcLength', 'ExampleRadiusAndArcLength', 'NotesAngleMeasureAndRadians', 'ReferenceArcLengthSectorAreaFormulas'], 
-				'6.2': ['ExampleMeasuringAtADistance', 'ExampleNavigatingWithTrigonometry', 'ExampleSolvingRightTriangles', 'NotesRightAngleTrigonometry'], 
-				'6.3': ['ExampleApplicationsToAstronomy', 'ExampleFindingTrigValuesUsingRightTriangles', 'ExampleMoreTrigValues'], 
-				'6.4': ['ExampleNestedTrigInverseTrigExpressions', 'ExampleRewritingTrigAsAlgebraicExpressions', 'ExampleSolvingTrigFromInverse', 'ExampleUsingInverseTrigToSolveRightTriangle']}, 
-			'Chapter7': {
-				'7.1': ['ExampleExploringUnitCircleAndTrigRelations', 'ExampleShowingTwoTrigExpressionsAreEqual', 'ExampleShowingTwoTrigExpressionsAreEqual2', 'ExampleSimplifyingTrigExpressions', 'ExampleSimplifyingTrigExpressions2'], 
-				'7.3': ['ExamplePowerReduction', 'ExampleUsingDoubleAngleFormulas', 'ExampleUsingDoubleAngleFormulasToSimplify', 'NotesDoubleAngleCosine', 'NotesDoubleAngleSine', 'NotesDoubleAngleTangent'], 
-				'7.5': ['ExampleSolvingAppliedTrigEquations', 'ExampleSolvingTrigEquations1', 'ExampleSolvingTrigEquations2', 'ExampleSolvingTrigEquations3', 'ExampleSolvingTrigEquations4', 'ExampleSolvingTrigEquations5', 'ExampleSolvingTrigEquations6']}
+		'3': {
+			'3.1': ['ExampleQuadraticFunctionBasicFormPart1', 'ExampleQuadraticFunctionBasicFormPart2', 'ExampleQuadraticFunctionFromGraphPart1', 'ExampleQuadraticFunctionFromGraphPart2', 'ExampleWhenIsAQuadraticPositive', 'NotesQuadraticFunctionsAndTheirUses'], 
+			'3.2': ['ExampleEquationOfPolynomialFromGraph', 'ExampleGraphingFactoredPolynomial', 'ExamplePolynomialEndBehavior', 'ExampleSketchingPolynomialWith4Terms', 'ExampleWhereIsPolynomialPositive', 'NotesPolynomialEndBehavior', 'NotesPolynomialFunctionAndDegree', 'NotesPolynomialIntercepts'], 
+			'3.6': ['ExampleEndBehaviorOfRationals', 'ExampleSketchingRationalFunction', 'ExampleSketchingRationalFunctionWithAHole', 'ExampleWhereIsRationalFunctionPositive', 'FurtherPracticeCombiningAndGraphingRationalFunctions', 'NotesRationalFunctions']}, 
+		'4': {
+			'4.1': ['ApplicationOfExponentialModel', 'ExponentialModelFromTwoPoints(2)', 'ExponentialModelFromTwoPoints', 'ExponentialVsLinear', 'HorizontalAsymptoteOfExponentialFunction', 'IntroductionExponentialModelAndFunction'], 
+			'4.2': ['ApplicationToPopulationModels', 'ExampleGraphingExponentialFunctions', 'ExampleRelativeVsNonRelativeGrowth', 'ExampleSolvingAppliedExponentialQuestionWithGraphingDevice', 'IntroductionNaturalBase'], 
+			'4.3': ['ExampleDomainOfLogarithm', 'ExampleGraphingLogarithms', 'ExampleLogarithmEquationFromGraph', 'GeneralLogarithmFeatures', 'InverseFunctionOfExponential'], 
+			'4.4': ['ExampleManyLogarithmsToOne(1)', 'ExampleManyLogarithmsToOne(2)', 'ExampleOneLogarithmToMany(1)', 'ExampleOneLogarithmToMany(2)', 'IntroductionLawsOfLogarithms'], 
+			'4.5': ['ExampleSolvingExponentialEquation', 'ExampleSolvingExponentialEquationExactly', 'ExampleSolvingLogarithmicEquationMultipleLogs', 'ExampleSolvingQuadraticExponentialEquation', 'ExampleSolvingSimpleLogarithmicEquation', 'ExmapleFindingInverseOfLogarithm'], 
+			'4.6': ['ExampleAnnualVsRelativeGrowth', 'ExampleDoublingTriplingProblem', 'ExampleNewtonsLawOfCooling', 'ExampleRelativeGrowthRate']}, 
+		'5': {
+			'5.1': ['ExampleFindingPointsOnUnicCircle', 'ExampleUnitCircleAndReferenceAngles', 'NotesRadiansVsDegrees', 'NotesTerminalPointAngleSide', 'NotesUnitCircle'], 
+			'5.2': ['ExampleEvenOddTrigFunctions', 'ExampleFindingSineAndCosineFromTangent', 'ExampleFindingTrigonometricValuesFromConstraints', 'ExampleFindingTrigonometricValuesFromUnitCircle', 'ExampleOtherTrigonometricFunctionsOnUnitCircle', 'NotesTrigonometricFunctions'], 
+			'5.3': ['ExampleGraphingCosine', 'ExampleGraphingSine', 'ExampleGraphingSineWithVerticalShift', 'FurtherPracticeGraphingCosine', 'NotesAllSineGraphicalFeaturesAndTransforms', 'NotesCosineVsSine', 'NotesGraphingSine', 'NotesTransformingSinePart1', 'NotesTransformingSinePart2'], 
+			'5.4': ['ExampleGraphingTangentFunctionPart1', 'ExampleGraphingTangentFunctionPart2', 'ExampleGraphingTangentFunctionPart3', 'NotesTangentFunction'], 
+			'5.5': ['ExampleFindingExactInverseTrigValues', 'ExampleNestedTrigInverseTrig', 'ExampleNestedTrigInverseTrigAndAlgebra', 'NotesInverseCosine', 'NotesInverseSine', 'NotesInverseTangent', 'ReferenceInverseTrigSemiCircles'], 
+			'5.6': ['ExampleHarmonicMotionAndBloodPressure', 'ExampleHarmonicMotionAndFerrisWheel', 'ExampleSpringMotion']}, 
+		'6': {
+			'6.1': ['ExampleApplyingArcLengthSectorAreaToFloorPlan', 'ExampleArcLength', 'ExampleRadiusAndArcLength', 'NotesAngleMeasureAndRadians', 'ReferenceArcLengthSectorAreaFormulas'], 
+			'6.2': ['ExampleMeasuringAtADistance', 'ExampleNavigatingWithTrigonometry', 'ExampleSolvingRightTriangles', 'NotesRightAngleTrigonometry'], 
+			'6.3': ['ExampleApplicationsToAstronomy', 'ExampleFindingTrigValuesUsingRightTriangles', 'ExampleMoreTrigValues'], 
+			'6.4': ['ExampleNestedTrigInverseTrigExpressions', 'ExampleRewritingTrigAsAlgebraicExpressions', 'ExampleSolvingTrigFromInverse', 'ExampleUsingInverseTrigToSolveRightTriangle']}, 
+		'7': {
+			'7.1': ['ExampleExploringUnitCircleAndTrigRelations', 'ExampleShowingTwoTrigExpressionsAreEqual', 'ExampleShowingTwoTrigExpressionsAreEqual2', 'ExampleSimplifyingTrigExpressions', 'ExampleSimplifyingTrigExpressions2'], 
+			'7.3': ['ExamplePowerReduction', 'ExampleUsingDoubleAngleFormulas', 'ExampleUsingDoubleAngleFormulasToSimplify', 'NotesDoubleAngleCosine', 'NotesDoubleAngleSine', 'NotesDoubleAngleTangent'], 
+			'7.5': ['ExampleSolvingAppliedTrigEquations', 'ExampleSolvingTrigEquations1', 'ExampleSolvingTrigEquations2', 'ExampleSolvingTrigEquations3', 'ExampleSolvingTrigEquations4', 'ExampleSolvingTrigEquations5', 'ExampleSolvingTrigEquations6']},
+		'13': {
+			'13.1': ['ExampleLimitsPart1', 'ExampleLimitsPart2', 'NotesLimits']}
 		};
 	</script>	
 <script type="text/javascript">
