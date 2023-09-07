@@ -5,7 +5,8 @@
   margin:0px;
   padding:0px;
   position:relative;
-}
+  border-bottom:solid 1px black;
+}/*
 .nav::before{
   content:"";
   position:absolute;
@@ -13,5 +14,5 @@
   transform:translate3d(2px, 8px, -1px);
   background:conic-gradient(from 1080deg, #AB0520,  #0C234B);
   filter:blur(10px);
-}
+}*/
 
