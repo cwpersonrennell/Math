@@ -24,6 +24,6 @@ for root, dir_names, file_names in os.walk("./Stems"):
                 result[s[0]][s[1]]=[]
             
             for file in file_names:
-                result[s[0]][s[1]].append(file)
+                result[s[0]][s[1]].append(file.replace(".html",""))
         
 print(result)
