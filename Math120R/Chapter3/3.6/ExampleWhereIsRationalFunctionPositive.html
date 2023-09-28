@@ -40,19 +40,25 @@
 <div class="fa" style="width: 100%;">
 <p>Example: Determine where the rational function below is positive.</p>
 \[ k(x) = \dfrac{x^2+x-12}{27(3x+4)^2} \]
+<i>Bonus: Where is the function negative?</i>
 <div><button id="toggle_solution">Show Solution</button></div>
 <hr>
 <div id="solution" class="hide">
 <p><strong>Solution</strong></p>
-<p>To solve this question is effectively the same as solving any inequality. In this case, since the directions reference "positive", we are solving \(f(x) \gt 0\). Note that 0 is *not* included. Now, there is a "trick" to this problem which makes this a tiny bit easier: the denominator \(27(3x+4)^2\) is <strong>always</strong> positive! We still need to note that there is a domain restriction at \(x= -\frac{4}{3}\), but otherwise we are done with the denominator. What remains is to find the zeros from the numerator and pick some test values in the intervals: 
+<p>To solve this question is effectively the same as solving any inequality. In this case, since the directions reference "positive", we are solving \(f(x) \gt 0\). Note that 0 is *not* included. <br><br>Now, there is a "trick" to this problem which makes this a tiny bit easier: the denominator \(27(3x+4)^2\) is <strong>always</strong> positive! We still need to note that there is a domain restriction at \(x= -\frac{4}{3}\), but otherwise we are done with the denominator. </p><p>What remains now is to find the zeros from the numerator and then to identify the possible intervals for the solution: 
 	\[
 	\solve{
 		x^2+x-12 &=&0\\
 		(x-3)(x+4)&=&0
 	}
 	\]
-So, \(x=-4\) and \(x=3\) are the zeros while \(x=-\frac{4}{3}\) is the domain restriction. Thus, the intervals of consideration are \((-\infty, -4),\; \left(-4,-\frac{4}{3}\right),\;\left(-\frac{4}{3},3\right),\;(3,\infty\). After applying test values, you will be able to determine that the intervals where the function is positive are \((-\infty,-4)\cup(3,\infty)\). Finally, we can see this visually when we consider the graph of the function (though the exact answers may not necessarily be so easily determined from a graph on all questions).
-<calculator style="width: 100%; height: 600px;" options="{projectorMode:true}"> f(x) = \frac{x^2+x-12}{27(3x+4)^2}\ f(x)\gt0\left\{0\leq y\right\}; {color:red} </calculator></div>
+So, \(x=-4\) and \(x=3\) are the zeros while \(x=-\frac{4}{3}\) is the domain restriction. Thus, the intervals of consideration are \((-\infty, -4)\),\(\left(-4,-\frac{4}{3}\right)\), \(\left(-\frac{4}{3},3\right)\), and \((3,\infty)\). After applying test values and checking for positive outcomes, you should determine that the intervals where the function is positive are \((-\infty,-4)\cup(3,\infty)\). </p>
+
+<p>Finally, we can see this visually when we consider the graph of the function (though the exact answers may not necessarily be so easily determined from a graph on all questions).</p>
+<calculator style="width: 100%; height: 600px;" options="{projectorMode:true}"> f(x) = \frac{x^2+x-12}{27(3x+4)^2}\ f(x)\gt0\left\{0\leq y\right\}; {color:red} </calculator>
+<p>Bonus Answer</p> This function is negative on \(\left(-4,-\frac{4}{3}\right)\cup\left(-\frac{4}{3},3\right)\). Notice that we *still* need to exclude the domain restriction!!
+</div>
+
 </div>
 </body>
 </html>
