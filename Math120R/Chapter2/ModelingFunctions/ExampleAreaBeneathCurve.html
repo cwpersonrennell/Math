@@ -38,12 +38,32 @@
   <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/Chapter2\ModelingFunctions\ExampleAreaBeneathCurve.html">Source Page</a>
   </div>
 <div class="fa" style="width: 100%;">
-<p>Find the area of the right triangle formed by a point on the curve \(y=\dfrac{1}{x^2}\) restricted to \([0,\infty)\), and perpendicular to the horizontal axis. Further, determine the perimeter of the triangle.</p>
+<p>Find the area of the right triangle formed by a point on the curve \(y=\dfrac{1}{x^2}\) restricted to \([0,\infty)\), and perpendicular to the horizontal axis in terms of \(x\). Bonus: Determine the perimeter of the triangle.</p>
 <div id="calculator" style="width: 100%; height: 600px;"></div>
 <div><button id="toggle_solution">Show Solution</button></div>
 <hr>
 <div id="solution" class="hide">
 <p><strong>Solution: </strong></p>
+<p>As you can see from the graph, the area we are trying to determine is made up of a triangle, with a base of \(x\) and and height of \(y\). Now, the area of a triangle is given by \[A=\frac{1}{2}bh\]so, for our purposes, this means that the area is:\[A=\frac{1}{2}xy\]The problem, however, is that we want the area to only depend on the \(x\) variable. This is where we can use the definition provided, which is that any \(y\) coordinate on the graph is exactly determined by \(y=\frac{1}{x^2}\). Thus, substituting this value in, we get the following:
+\[
+A = \frac{1}{2}x\left(\frac{1}{x^2}\right) = \frac{1}{2x}
+\]</p>
+<p>For the bonus: using the same substitution for \(y\), we can determine the hypotenuse using the pythagorean formula: \(c^2=a^2+b^2\). Once we have the hypotenuse, the perimeter is just the sum of all sides.
+\[
+\solve{
+  c^2 &=& x^2+\left(\dfrac{1}{x^2}\right)^2\\\\
+  c^2 &=&x^2 + \dfrac{1}{x^4}\\\\
+  c^2 &=&\dfrac{x^6+1}{x^4}\\\\
+  c &=& \sqrt{\dfrac{x^4+1}{x^2}}\\\\
+  c &=& \dfrac{\sqrt{x^4+1}}{x^2}
+}
+\]Here, we drop the plus/minus because the hypotenuse is a distance measurement and must be positive. Finally, the perimeter:
+\[
+P = x+\dfrac{1}{x^2}+\dfrac{\sqrt{x^4+1}}{x^2}
+\]You can combine  this into one fraction (see below), or leave as is.
+\[
+P = \dfrac{x^3+1+\sqrt{x^4+1}}{x^2}
+\]</p>
 </div>
 </div>
 <p>
