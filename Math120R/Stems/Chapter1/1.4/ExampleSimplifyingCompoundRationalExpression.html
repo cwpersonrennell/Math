@@ -1,8 +1,51 @@
 <div class="fa" style="width: 100%;">
-<p>Example: Simplify the rational expression: \[ \dfrac{ 1+\frac{ 10 }{ x-3 } }{ 1-\frac{ 10 }{ x-3 } } \]</p>
+<p>Example: Simplify the rational expressions: (a)\[ \dfrac{ 1+\frac{ 10 }{ x-3 } }{ 1-\frac{ 10 }{ x-3 } } \]
+(b)
+\[
+\dfrac{\frac{x}{y}-\dfrac{y}{x}}{\frac{1}{6x^2}- \frac{1}{6y^2}}
+\]</p>
 <div><button id="toggle_solution">Show Solution</button></div>
 <hr>
 <div id="solution" class="hide">
 <p><strong>Solution</strong></p>
-\[ \solve{ \dfrac{ 1+\frac{ 10 }{ x-3 } }{ 1-\frac{ 10 }{ x-3 } }&amp;=&amp;\dfrac{ \left(1+\frac{ 10 }{ x-3 } \right)}{\left( 1-\frac{ 10 }{ x-3 }\right) }\times{\color{ red }\dfrac{ x - 3 }{ x-3 } }\\ &amp;=&amp;\dfrac{ x-3+10 }{ x-3 - 10 }\\ &amp;=&amp;\dfrac{ x+7 }{ x- 13 } } \]</div>
+(a)	To simplify this type of compound fraction, we have the choice of either combining the numerator and denominator first and then simplyfing, or we can multiply the top and bottom by the least common denominator. I will use the latter for part (a) and the former for part (b).
+\[ 
+\solve{ 
+\dfrac{ 1+\frac{ 10 }{ x-3 } }{ 1-\frac{ 10 }{ x-3 } }&amp;=&amp;\dfrac{ \left(1+\frac{ 10 }{ x-3 } \right)}{\left( 1-\frac{ 10 }{ x-3 }\right) }\times {\color{red}\dfrac{ x - 3 }{ x-3 } }\\ 
+&amp;=&amp;\dfrac{ x-3+10 }{ x-3 - 10 }\\ 
+&amp;=&amp;\dfrac{ x+7 }{ x- 13 } } \]
+(b) For this part, we will separate the numerator and denominator into two separate steps, simplifying each in turn before we use the "multiply by the reciprocal of the denominator" trick to condense the compound fraction into a simpler one. We begin with the Numerator:
+\[
+\begin{array}{rcl}
+\frac{x}{y}-\frac{y}{x} &=&\frac{{\color{red}x}x}{{\color{red}x}y} - \frac{{\color{red}y}y}{{\color{red}y}x}\\
+&=&\frac{x^2}{xy} - \frac{y^2}{xy}\\
+&=&\frac{x^2-y^2}{xy}\\
+&=&\frac{(x-y)(x+y)}{xy}
+\end{array}
+\]
+Then the Denominator:
+\[
+\begin{array}{rcl}
+\frac{1}{6x^2}- \frac{1}{6y^2}&=&\frac{{\color{red}y^2}}{6x^2{\color{red}y^2}} - \frac{{\color{red}x^2}}{6y^2{\color{red}x^2}} \\
+&=&\frac{y^2}{6x^2y^2}-\frac{x^2}{6x^2y^2}\\
+&=&\frac{y^2 - x^2}{6x^2y^2}\\
+&=&\frac{(y-x)(y+x)}{6x^2y^2}
+\end{array}
+\]Finally, we put these all together via substitution into the original compound fraction and start simplifying, relying on turning division of two fractions into multiplication by the reciprocal of the denominator:
+\[
+\dfrac{\frac{x}{y}-\frac{y}{x}}{\frac{1}{6x^2}- \frac{1}{6y^2}}&=&\dfrac{\frac{(x-y)(x+y)}{xy}}{\frac{(y-x)(y+x)}{6x^2y^2}}\\
+&=&\frac{(x-y)(x+y)}{xy}\times\frac{6x^2y^2}{(y-x)(y+x)}\\
+&=&\frac{6x^2y^2(x-y)(x+y)}{xy(y-x)(y+x)}\\
+&=&\frac{6xy(x-y)}{(y-x)}\\
+&=&-6xy
+\end{array}
+\]The first step after substitution is to turn the main division into multiplying by the reciprocal of the denominator then we cancel like factors the final step is a little more nuanced, but can be seen to be true via these separate steps:
+\[
+\begin{array}{rcl}
+\frac{x-y}{y-x} &=& \frac{-(-x+y)}{y-x}\\
+&=&\frac{-(y-x)}{(y-x)}\\
+&=&-1
+\end{array}
+\]Thus, our final answer to (b) is \(-6xy\) as stated above.
+</div>
 </div>
