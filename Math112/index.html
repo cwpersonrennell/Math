@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>Math 112 Navigator</title>
+	<link rel="stylesheet" href="https://cwpersonrennell.github.io/Math/Math112/styles.css">
+	<script src="https://cwpersonrennell.github.io/Math/iframeResizer.min.js"></script>
+</head>
+<body style="width:100%;height:100%">
+	
+	<div id = "nav" class="nav">
+		<h2 class="title">Math 112 Navigator</h2>
+		<label for="exam">Exam Content</label><select name="exam" id="exam"></select>
+		<label for="chapter">Chapter</label><select name="chapter" id="chapter"></select>
+		<label for="section">Section</label><select name="section" id="section"></select>
+		<label for="notes">Notes</label><select name="notes" id="notes"></select>
+	</div>
+<div class="container" style="width:100%;height:80%;">
+
+		<iframe class="frame" id="iframe" frameborder="0" src="" style="width:100%;height:100%"></iframe>
+	
+</div>
+
+</body>
+<script>
+	const Chapters = {
+		'1': {
+			'1.4': ['ExampleDomainOfRationalExpressions', 'ExampleSimplifyingCompoundRationalExpression', 'ExampleSimplifyingRationalExpression'], 
+			'1.5': ['DevelopingSkillsSolvingAbsoluteValueEquations', 'DevelopingSkillsSolvingFractionalEquations', 'DevelopingSkillsSolvingLinearEquations1.5.1', 'DevelopingSkillsSolvingQuadraticEquations', 'DevelopingSkillsSolvingRadicalEquations', 'ExampleSolvingEquationFromGraphPart1', 'ExampleSolvingEquationFromGraphPart2', 'ExampleSolvingMultivariableEquation'], 
+			'1.8': ['DevelopingSkillsSolvingAbsoluteValueInequalities', 'DevelopingSkillsSolvingLinearInequalities', 'DevelopingSkillsSolvingQuadraticInequalities'], 
+			'1.9': ['ExampleInterceptsOfEquation', 'ExampleTableAndGraphCircle', 'ExampleTableAndGraphFromEquation'],
+			'1.10': ['ExampleFindingPerpendicularAndParallelLines', 'NotesOnLinearFunctions', 'NotesOnPerpendicularAndParallelLines']},  
+		'2': {
+			'2.1': ['ExampleDifferenceQuotient', 'ExampleDomainRestrictionsPart1', 'ExampleDomainRestrictionsPart2', 'ExampleEvaluatingAFunction'], 
+			'2.2': ['ExampleDomainRangeVisuallyGraphically', 'ExampleEquationsAsFunctions', 'ExampleGraphingPiecewiseFunctions'], 
+			'2.3': ['ExampleAppliedEnergyAndVelocity', 'ExampleAppliedTucsonRain', 'ExampleIncreasingDecreasingPositiveNegativeGraph', 'ExampleWhereIsAFunctionPositive'], 
+			'2.4': ['ExampleAverageRateOfChange', 'ExampleAverageRateOfChangeNumerical', 'ExampleAverageRateOfChangeVariable', 'ExampleNetChangeAndAverageRateOfChange'], 
+			'2.6': ['ExampleApplyingTransformationsToAPoint', 'ExampleInterpretingTransformationsIntoEnglish', 'ExampleTransformingTrigFunction', 'NotesFunctionTransformationsRefresher'], 
+			'2.7': ['ExampleAlgebraicCombinationsOfFunctions', 'ExampleUsingAGraphToCalculateAlgebraicCombinationsOfFunctions', 'ExampleUsingTablesForCombiningFunctions', 'NotesEvenVsOdd'], 
+			'2.8': ['ExampleDomainRangeOfInverseFunctions', 'ExampleInverseOnRestrictedDomain', 'ExampleSwappingInputOutput', 'NotesInverseFunctions', 'NotesInverseFunctionsHorizontalLineTest', 'NotesInverseFunctionsSwapXY'], 
+			'ModelingFunctions': ['ExampleApplicationsOfSpeedAndVelocity', 'ExampleAreaBeneathCurve', 'ExampleCylinderInscribedInCone', 'ExampleNormanWindow', 'ExampleRectangleInscribedOnParabola', 'ExampleWireProblem', 'NotesGeneralizedProblemSolving']}, 
+		'3': {
+			'3.1': ['ExampleQuadraticFunctionBasicFormPart1', 'ExampleQuadraticFunctionBasicFormPart2', 'ExampleQuadraticFunctionFromGraphPart1', 'ExampleQuadraticFunctionFromGraphPart2', 'ExampleWhenIsAQuadraticPositive', 'NotesQuadraticFunctionsAndTheirUses'], 
+			'3.2': ['ExampleEquationOfPolynomialFromGraph', 'ExampleGraphingFactoredPolynomial', 'ExamplePolynomialEndBehavior', 'ExampleSketchingPolynomialWith4Terms', 'ExampleWhereIsPolynomialPositive', 'NotesPolynomialEndBehavior', 'NotesPolynomialFunctionAndDegree', 'NotesPolynomialIntercepts'], 
+			'3.6': ['ExampleEndBehaviorOfRationals', 'ExampleSketchingRationalFunction', 'ExampleSketchingRationalFunctionWithAHole', 'ExampleWhereIsRationalFunctionPositive', 'FurtherPracticeCombiningAndGraphingRationalFunctions', 'NotesRationalFunctions']}, 
+		'4': {
+			'4.1': ['ApplicationOfExponentialModel', 'ExponentialModelFromTwoPoints(2)', 'ExponentialModelFromTwoPoints', 'ExponentialVsLinear', 'HorizontalAsymptoteOfExponentialFunction', 'IntroductionExponentialModelAndFunction'], 
+			'4.2': ['ApplicationToPopulationModels', 'ExampleGraphingExponentialFunctions', 'ExampleRelativeVsNonRelativeGrowth', 'ExampleSolvingAppliedExponentialQuestionWithGraphingDevice', 'IntroductionNaturalBase'], 
+			'4.3': ['ExampleDomainOfLogarithm', 'ExampleGraphingLogarithms', 'ExampleLogarithmEquationFromGraph', 'GeneralLogarithmFeatures', 'InverseFunctionOfExponential'], 
+			'4.4': ['ExampleManyLogarithmsToOne(1)', 'ExampleManyLogarithmsToOne(2)', 'ExampleOneLogarithmToMany(1)', 'ExampleOneLogarithmToMany(2)', 'IntroductionLawsOfLogarithms'], 
+			'4.5': ['ExampleSolvingExponentialEquation', 'ExampleSolvingExponentialEquationExactly', 'ExampleSolvingLogarithmicEquationMultipleLogs', 'ExampleSolvingQuadraticExponentialEquation', 'ExampleSolvingSimpleLogarithmicEquation', 'ExmapleFindingInverseOfLogarithm'], 
+			'4.6': ['ExampleAnnualVsRelativeGrowth', 'ExampleDoublingTriplingProblem', 'ExampleNewtonsLawOfCooling', 'ExampleRelativeGrowthRate']}, 
+		'5': {
+			'5.1': ['ExampleFindingPointsOnUnicCircle', 'ExampleUnitCircleAndReferenceAngles', 'NotesRadiansVsDegrees', 'NotesTerminalPointAngleSide', 'NotesUnitCircle'], 
+			'5.2': ['ExampleEvenOddTrigFunctions', 'ExampleFindingSineAndCosineFromTangent', 'ExampleFindingTrigonometricValuesFromConstraints', 'ExampleFindingTrigonometricValuesFromUnitCircle', 'ExampleOtherTrigonometricFunctionsOnUnitCircle', 'NotesTrigonometricFunctions'], 
+			'5.3': ['ExampleGraphingCosine', 'ExampleGraphingSine', 'ExampleGraphingSineWithVerticalShift', 'FurtherPracticeGraphingCosine', 'NotesAllSineGraphicalFeaturesAndTransforms', 'NotesCosineVsSine', 'NotesGraphingSine', 'NotesTransformingSinePart1', 'NotesTransformingSinePart2'], 
+			'5.4': ['ExampleGraphingTangentFunctionPart1', 'ExampleGraphingTangentFunctionPart2', 'ExampleGraphingTangentFunctionPart3', 'NotesTangentFunction'], 
+			'5.5': ['ExampleFindingExactInverseTrigValues', 'ExampleNestedTrigInverseTrig', 'ExampleNestedTrigInverseTrigAndAlgebra', 'NotesInverseCosine', 'NotesInverseSine', 'NotesInverseTangent', 'ReferenceInverseTrigSemiCircles'], 
+			'5.6': ['ExampleHarmonicMotionAndBloodPressure', 'ExampleHarmonicMotionAndFerrisWheel', 'ExampleSpringMotion']}, 
+		'6': {
+			'6.1': ['ExampleApplyingArcLengthSectorAreaToFloorPlan', 'ExampleArcLength', 'ExampleRadiusAndArcLength', 'NotesAngleMeasureAndRadians', 'ReferenceArcLengthSectorAreaFormulas'], 
+			'6.2': ['ExampleMeasuringAtADistance', 'ExampleNavigatingWithTrigonometry', 'ExampleSolvingRightTriangles', 'NotesRightAngleTrigonometry'], 
+			'6.3': ['ExampleApplicationsToAstronomy', 'ExampleFindingTrigValuesUsingRightTriangles', 'ExampleMoreTrigValues'], 
+			'6.4': ['ExampleNestedTrigInverseTrigExpressions', 'ExampleRewritingTrigAsAlgebraicExpressions', 'ExampleSolvingTrigFromInverse', 'ExampleUsingInverseTrigToSolveRightTriangle']}, 
+		'7': {
+			'7.1': ['ExampleExploringUnitCircleAndTrigRelations', 'ExampleShowingTwoTrigExpressionsAreEqual', 'ExampleShowingTwoTrigExpressionsAreEqual2', 'ExampleSimplifyingTrigExpressions', 'ExampleSimplifyingTrigExpressions2'], 
+			'7.3': ['ExamplePowerReduction', 'ExampleUsingDoubleAngleFormulas', 'ExampleUsingDoubleAngleFormulasToSimplify', 'NotesDoubleAngleCosine', 'NotesDoubleAngleSine', 'NotesDoubleAngleTangent'], 
+			'7.5': ['ExampleSolvingAppliedTrigEquations', 'ExampleSolvingTrigEquations1', 'ExampleSolvingTrigEquations2', 'ExampleSolvingTrigEquations3', 'ExampleSolvingTrigEquations4', 'ExampleSolvingTrigEquations5', 'ExampleSolvingTrigEquations6']},
+		'13': {
+			'13.1': ['ExampleLimitsPart1', 'ExampleLimitsPart2', 'NotesLimits']}
+		};
+	</script>	
+<script type="text/javascript">
+	iFrameResize({log:false},"#iframe");
+	function splitOnCaps(s){
+		return s.split(/(?=[A-Z])/).join(" ");
+	}
+	const Exams = {
+		"---":Chapters,
+		"Exam 1":{
+		//Exam 1
+			2:{
+				2.1:Chapters['2']['2.1'],
+				2.2:Chapters['2']['2.2'],
+				2.3:Chapters['2']['2.3'],
+				2.4:Chapters['2']['2.4'],
+				2.6:Chapters['2']['2.6'],
+				2.7:Chapters['2']['2.7'],
+			},
+			1:{			
+				1.5:Chapters['1']['1.5'],
+				1.8:Chapters['1']['1.8'],
+				1.9:Chapters['1']['1.9'],
+				'1.10':Chapters['1']['1.10'],
+			},
+		},
+		//Exam 2
+		"Exam 2":{
+			1:{
+				1.4:Chapters['1']['1.4'],
+				1.5:Chapters['1']['1.5']
+			},
+			2:{
+				2.8:Chapters['2']['2.8'],
+				'ModelingFunctions':Chapters['2']['ModelingFunctions']
+			},
+			3:Chapters['3'],
+			13:Chapters['13']
+			
+
+		},
+		//Exam 3
+		"Exam 3":{
+			5:Chapters['5'],
+			6:Chapters['6'],
+			7:Chapters['7']
+		},
+		//Exam 4
+		"Exam 4":{
+			4:Chapters['Chapter4']
+
+		}};
+
+	function buildSelection(selection,options){
+		selection.replaceChildren();
+		for(let i = 0; i <options.length;i++){
+			let option = document.createElement('option');
+			option.value = options[i];
+			option.innerText = options[i];
+			selection.appendChild(option);
+		}
+	}
+
+	const examDropdownElement=document.getElementById("exam");
+	const chapterDropdownElement=document.getElementById("chapter");
+	const sectionDropdownElement=document.getElementById("section");
+	const notesDropdownElement=document.getElementById("notes");
+
+	let examChoices    =[].concat(Object.keys(Exams));
+	let chapterChoices =["---"];
+	let sectionChoices =["---"];
+	let notesChoices   =["---"];
+
+	buildSelection(examDropdownElement,examChoices);
+	buildSelection(chapterDropdownElement,chapterChoices);
+	buildSelection(sectionDropdownElement,sectionChoices);
+	buildSelection(notesDropdownElement,notesChoices);
+	
+	function updateChapters(){
+		if(examDropdownElement.selectedIndex>=0){
+			buildSelection(chapterDropdownElement,["---"].concat(
+				Object.keys(
+					Exams[examDropdownElement.value])
+				));
+		}
+		else{
+			buildSelection(chapterDropdownElement,["---"]);
+			buildSelection(sectionDropdownElement,["---"]);
+			buildSelection(notesDropdownElement,["---"]);
+		}
+	}
+
+	examDropdownElement.addEventListener("change",updateChapters);
+	updateChapters();
+	function updateSection(){
+		if(chapterDropdownElement.selectedIndex>0){
+			buildSelection(sectionDropdownElement,["---"].concat(
+				Object.keys(
+					Exams[examDropdownElement.value][chapterDropdownElement.value]
+					)
+				));
+		}else{
+			buildSelection(sectionDropdownElement,["---"]);
+			buildSelection(notesDropdownElement,["---"]);
+		}
+	}
+
+	chapterDropdownElement.addEventListener("change",updateSection);
+	let files=[];
+
+	function updateNotes(){
+		if(sectionDropdownElement.selectedIndex>0){
+			buildSelection(notesDropdownElement,["---"].concat(
+				Exams[examDropdownElement.value][chapterDropdownElement.value][sectionDropdownElement.value].map(splitOnCaps)));
+			files = Exams[examDropdownElement.value][chapterDropdownElement.value][sectionDropdownElement.value];
+		}else{
+			buildSelection(notesDropdownElement,["---"]);
+			files=[];
+		}
+	}
+
+	sectionDropdownElement.addEventListener("change",updateNotes);
+
+	//let nextButton = document.getElementById("next");
+	//let previousButton = document.getElementById("previous");
+	let iframeElement=document.getElementById("iframe");
+	let fileIndex = 0;
+	
+
+	function loadSourceFile(src){
+		//src = `Chapter${chapterDropdownElement.value}/${sectionDropdownElement.value}/${src}`;
+		iframeElement.src=`https://cwpersonrennell.github.io/Math/Math112/${src}.html`;
+	}
+
+	function loadHash(){
+		let url = new URL(document.URL);
+		let target = url.hash;
+		if(target.length==0)return;
+		target=target.replace("#","");
+		loadSourceFile(target);
+	}
+
+	function advanceToNextFile(){
+		if(files.length == 0) return;
+		fileIndex++;
+		if(fileIndex>files.length-1){
+			fileIndex--;
+		}
+		loadSourceFile(files[fileIndex]);
+	}
+
+	function advanceToPreviousFile(){
+		if(files.length == 0) return;
+		fileIndex--;
+		if(fileIndex<0){
+			fileIndex=0;
+		}
+		loadSourceFile(files[fileIndex]);
+	}
+
+	function selectFromDropDown(){
+		let url = new URL(document.URL);
+		let note = notesDropdownElement.value.replaceAll(" ","");
+		url.hash = `Chapter${chapterDropdownElement.value}/${sectionDropdownElement.value}/${note}`;
+		window.history.pushState({},'',url);
+		loadHash();
+
+	}
+
+	//nextButton.addEventListener("mouseup",advanceToNextFile);
+	//previousButton.addEventListener("mouseup",advanceToPreviousFile);
+	document.addEventListener("DOMContentLoaded",loadHash);
+	document.addEventListener("hashchange",loadHash);
+	
+	function loadNote(){
+		if(notesDropdownElement.selectedIndex>0){
+			selectFromDropDown();
+		}
+	}
+	notesDropdownElement.addEventListener("change",selectFromDropDown)
+
+</script>
+</html>
