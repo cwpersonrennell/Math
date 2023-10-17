@@ -39,11 +39,81 @@
   </div>
 <div class="fa">
 <p>Solve the following inequalities:</p>
-\[ \begin{array}{rcl} |2x-3| &amp;\lt&amp;5\\ |x^2-x-4|&amp;\leq&amp;x\\ |3x+2| &amp;\gt&amp; 0 \end{array} \]
+\[ 
+\begin{array}{rcl} 
+|2x-3| &amp;\lt&amp;5\\ 
+|x^2-x-4|&amp;\leq&amp;x\\ 
+|3x+2| &amp;\gt&amp; 0 
+\end{array} \]
 <div><button id="toggle_solution">Show Solution</button></div>
 <hr>
 <div id="solution" class="hide">
 <p><strong>Solution</strong></p>
+<p>With absolute value inequalities, similar to when we solve absolute value equations, we need to consider the <strong>positive</strong> or <strong>negative</strong> possibilities. The main difference with inequalities, is that when we consider the negative outcome, we must <strong>flip the inequality</strong>. Let's take a look at the first example.
+
+\[
+\solve{
+	|2x-3|&\lt&5\\
+	2x-3\lt5&\text{ and }&2x-3{\bf \gt}-5\\
+	2x\lt8&\text{ and }&2x\gt-2\\
+	x\lt4&\text{ and }&x\gt-1
+}
+\]
+Taking both inequalities into consideration (and putting the values in order) we can see that \(x\) must be greater than \(-1\) while also being less that \(4\), which in interval notation gives the answer \((-1,4)\). Note that these are strictly less than/greater than, so we exclude both endpoints.
+</p>
+<p>
+	For the next problem, we proceed in a very similar fashion, only, there is an \(x\) on the opposite side. Due to the quadratic nature of the absolute value, I will demonstrate the positive and negative possibilities separately.
+\[
+	\solve{
+		|x^2-x-4|&\leq& x\\
+		x^2-x-4 &\leq&x\\
+		x^2 -2x -4  \leq 0\\
+	}
+\]	
+This quadratic is prime, so we cannot factor it, but we can still apply the quadratic formula to determine the critical values:
+\[
+\solve{
+	x&=&\dfrac{2\pm\sqrt{4-4(1)(-4)}}{2}\\
+	&=&\dfrac{2\pm\sqrt{4+16}}{2}\\
+	&=&\dfrac{2\pm\sqrt{20}}{2}\\
+	&=&\dfrac{2\pm2\sqrt{5}}{2}\\
+	&=&1\pm\sqrt{5}
+	x=1+\sqrt{5}&&x=1-\sqrt{5}
+}
+\]
+Now, remember, these are simply the <strong>critical values</strong> that we will use to test our inequalities against. We will need to pick values from the intervals, so knowing the approximate values will help me pick appropriate test values: \(1-\sqrt{5}\appox -1.23\dots\) and \(1+\sqrt{5}\approx 3.23\dots\). <br><br>
+However, we have only found the critical values for <strong>half the possibilities</strong>. We still need to solve for the <strong>negative</strong>outcomes:
+\[
+	\solve{
+		|x^2-x-4|&\leq& x\\
+		x^2-x-4 &\geq&-x\\
+		x^2 -4  \geq 0\\
+		(x-2)(x+2)\geq 0
+	}
+\]
+This gives us our next two critical values, which are thankfully whole numbers. Now, we need to put all the critical values together in order and get the intervals. Finally, when we pick test points from each interval, we <strong>must</strong> use the original absolute value inequality to apply the test values. First, the intervals are:
+\[
+(-\infty,-2]\cup[-2,1-\sqrt{5}]\cup[1-\sqrt{5},2]\cup[2,1+\sqrt{5}]\cup[1+\sqrt{5},\infty)
+\]
+I will use the following test values: -3, -1.5, 0, 3, and 4.
+\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+(-\infty,-2]&[-2,1-\sqrt{5}]&[1-\sqrt{5},2]&[2,1+\sqrt{5}]&[1+\sqrt{5},\infty)\\\hline
+\cross&\cross&\cross&\check&\cross\\\hline
+\end{array}
+\]
+To determine that the interval \([2,1+\sqrt{5}]\) was the correct interval, as a reminder, I am plugging the value \(3\) into the inequality: 
+\[
+\solve{
+	|x^2-x-4|&\leq&x\\
+	|(3)^2-3-4|&\leq &3\\
+	|9-3-4|&\leq3\\
+	|2|\leq&3
+}
+\]
+Since the inequality is <strong>true</strong> for my test value, I accept the whole interval. Feel free to check for yourself that the inequality <strong>fails</strong> for my other test values!
+</p>
 <hr></div>
 </div>
 </body>
