@@ -9,6 +9,7 @@ sub polynomial_eval{
     }
     return $output;
     }
+
 sub polynomial_add{
     my $a_ref = $_[0];
     my $b_ref = $_[1];
@@ -20,6 +21,9 @@ sub polynomial_add{
         $result[$i] = $A[$i]+$B[$i];
     }
     return \@result;
+}
+sub padd{
+    return polynomial_add($_[0],$_[1]);
 }
 sub polynomial_multiply{
     my $a_ref = $_[0]; 
@@ -39,13 +43,20 @@ sub polynomial_multiply{
     }   
     return \@result;
 }
-sub sign{my $result =$_[0]<0?"-":"+";
+sub pmul{
+    return polynomial_multiply($_[0],$_[1]);
+}
+
+sub sign{
+    my $result =$_[0]<0?"-":"+";
 	if($_[0] == 0){
         return "";
 	}
     return $result;
 }
-sub polynomial_latex{my $ref = $_[0];
+
+sub polynomial_latex{
+    my $ref = $_[0];
 	my $v = $_[1];
 	my @poly = @$ref;
 	my $n = @poly;
@@ -73,31 +84,33 @@ sub polynomial_latex{my $ref = $_[0];
     }
     return $result;
 }
-sub polynomial_from_zeros{my $ref = $_[0];
+sub polynomial_from_zeros{
+    my $ref = $_[0];
 	my @zeros = @$ref;
 	my $n = @zeros;
 	my @result = (-$zeros[0],1);
-	for(my $i = 1;
-	 $i<$n;
-	 $i = $i+1){my @p2 = (-$zeros[$i],1);
-	my $ref = polynomial_multiply(\@result,\@p2);
-	@result = @$ref;
-	}return \@result;
+	for(my $i = 1; $i<$n; $i = $i+1){
+        my @p2 = (-$zeros[$i],1);
+        my $ref = polynomial_multiply(\@result,\@p2);
+        @result = @$ref;
 	}
+    return \@result;
+}
 sub polynomial_derivative{my @poly = @{$_[0]};
 	my $n = @poly;
 	my @result = ();
-	for(my $i=$n-1;
-	 1<=$i;
-	 $i = $i - 1){$result[$i-1]=$poly[$i]*$i;
-	}return \@result;
+	for(my $i=$n-1;	 1<=$i;	 $i = $i - 1){
+        $result[$i-1]=$poly[$i]*$i;
 	}
-sub polynomial_integrate{my @poly = @{$_[0]};
+    return \@result;
+}
+sub polynomial_integrate{
+    my @poly = @{$_[0]};
 	my $C = $_[1];
 	my $n = @poly;
 	my @result = ($C);
-	for(my $i=1;
-	 $i<=$n;
-	 $i = $i +1){$result[$i]=$poly[$i-1]/$i;
-	}return \@result;
+	for(my $i=1; $i<=$n; $i = $i +1){
+        $result[$i]=$poly[$i-1]/$i;
 	}
+    return \@result;
+}
