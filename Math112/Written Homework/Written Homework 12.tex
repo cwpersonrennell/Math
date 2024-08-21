@@ -1,0 +1,59 @@
+\documentclass[addpoints, 12pt] {exam}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\bracketedpoints
+\pagestyle{headandfoot}
+\runningheadrule
+\firstpageheader{Math 112}{Written Homework 12}{Due April 12th 2024}
+\runningheader{Math 112}{ Page\; \thepage\; of\; \numpages}{Written Homework 12}
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+\setlength\answerskip{2ex}
+\setlength\answerlinelength{1.5in}
+\begin{document}
+
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering
+Directions:\\Please only put your final, well written solutions, in the space provided.\\ Give exact answers (simplified radicals or fractions).\\If you use additional paper clearly label the question and upload pages after the question page.\\Use complete sentences and explain your reason as much as possible.\\There are \numquestions\,  questions and \numpoints\, points total
+}}}\end{center}
+\vspace{0.1in}
+\makebox[\textwidth]{Name:\enspace\hrulefill}
+%\qformat{Question \thequestion \dotfill \thepoints}%
+
+\begin{questions}
+\question A ham is taken out of a \(210\) degrees Farhenheit (F) oven, and placed in a room that is only \(70\). We can model the the time \(T\) it takes for the ham to reach a temperature of \(x\) using:
+\[
+T=f(x) = 100\cdot\ln\left(\displaystyle\frac{140}{x-70}\right)
+\]
+\begin{parts}
+\part[1] Your tongue will \emph{instantly burn} if you eat food that is above \(160\) degrees F. According to this model, how long should you wait to avoid the instant burn? (It will \emph{still} be hot enough for superficial burns!) \answerline
+\part[1] Most superficial burns stop occurring when the food is below \(110\) degrees F. How long will you need to wait to avoid any superficial burns?\answerline
+\part[3] How hot will the ham be if you only wait \(10\) minutes? Try solving this algebraically and show your steps:\vspace{1in}\answerline
+\part[5] Showing each algebraic step below, convert this equation into the \emph{exponential form} of the equation (Hint: solve for \(x\)). 
+\end{parts}
+\newpage
+\question You will use the continuous interest model, \(A=f(t)=Pe^{rt}\) for this question. Suppose you invest \(\$5,000\) into an account paying \(7.1\%\) interest, continously compounded.
+\begin{parts}
+\part[2] Using the formula, write down the exponential model for this scenario.\answerline
+\part[1] What is an appropriate domain and range for this function?\vspace{0.5in}
+\part[5] Rewrite the formula from the previous part in \emph{logarithmic} form; this is equivalent to finding the inverse function, \(t=f^{-1}(A)\). Please use the \emph{natural log} when writing your answer. The parameter \(A\) will be used in your answer. Show all your steps.\vspace{2in}\answerline
+\part[1] What is an appropriate domain and range for this inverse function?\vspace{0.5in}
+\part[1] How long will it take for the account to reach \(\$15,000\)?
+\end{parts}
+\newpage
+\question After studying the growth and diversity of animals in a certain archipelago, scientists determined a model to approximate the number of species \(S\) which might be found on a island based soley on the area of the island, \(A\), in square kilometers:
+\[
+S = f(A) = -3.1701 + 75\ln(A+1)
+\]
+\begin{parts}
+\part[4] What is an appropriate domain and range for this function? Discuss your reasoning thoroughly \vspace{1.75in}
+\part[1] How many species should the scientists expect on an island with \(200\) square kilometers of land?\answerline
+\part[3] Sketch a graph of the function.
+\vspace{1.5in}
+\part[2] Find \(f^{-1}(600)\) and provide an explanation of the meaning of the answer.\answerline
+\end{parts}
+\newpage
+\end{questions}
+
+
+\end{document}
