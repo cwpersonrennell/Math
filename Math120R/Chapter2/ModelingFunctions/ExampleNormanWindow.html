@@ -37,6 +37,36 @@
 <div id="alternate" style="display:block;float:right">
   <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/Chapter2\ModelingFunctions\ExampleNormanWindow.html">Source Page</a>
   </div>
+<p> In this example, we are going to determine the formula of the area of an irregular shape made up of a circle and a rectangle:</p>
 
+	<calculator options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":false,"showXAxis":false,"showYAxis":false,"xAxisNumbers":false,"yAxisNumbers":false,"trace":false,"pointsOfInterest":false,"settingsMenu":false,"zoomButtons":false,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":true,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-16.948490668132944,"right":17.56512384979469,"top":21.95645527257778,"bottom":-3.928755615867942}' style="width:800px;height:600px" data-string='{"version":9,"randomSeed":"d88a71cd9e0af25f92c9fb4502221d30","graph":{"viewport":{"xmin":-16.948490668132944,"ymin":-3.928755615867942,"xmax":17.56512384979469,"ymax":21.95645527257778},"showGrid":false,"showXAxis":false,"showYAxis":false,"xAxisNumbers":false,"yAxisNumbers":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#000000","latex":"\\left|x\\right|\\ =\\ 5\\left\\{0\\le y\\le15\\right\\}"},{"type":"expression","id":"2","color":"#000000","latex":"y=\\sqrt{25-x^{2}}+15"},{"type":"expression","id":"3","color":"#000000","latex":"y=0\\left\\{\\left|x\\right|\\le5\\right\\}"},{"type":"expression","id":"4","color":"#000000","latex":"y=15\\left\\{\\left|x\\right|\\le5\\right\\}"},{"type":"expression","id":"5","color":"#c74440","latex":"y=15\\left\\{0\\le x\\le5\\right\\}","lineWidth":"5"},{"type":"expression","id":"6","color":"#c74440","latex":"\\left(2.5,15\\right)","showLabel":true,"label":"`r`","hidden":true,"labelSize":"1.5","labelOrientation":"above"}]}}' ></calculator >
+
+<p>The only additional information we are given is this: the total external perimeter of the shape is 20 feet. </p>
+	<p>Conceptually, the problem is relatively straightforward: the total area is the area of the half-circle (usually called a semicircle) added to the area of the rectangle. The semicircle we actually already know: \(A_{c} = \frac{1}{2}\pi r^2\). The rectangle is where things get more tricky. Look closely at the top of the rectangle and convince yourself of this: the top length of the rectangle is \(2r\). If the top of the rectangle is \(2r\), then so to must the the bottom be. That leaves the left and right (both the same) as some unknown. Let's call the unknown left/right values \(h\) (since it is kind of a height): </p>
+		<calculator options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":false,"showXAxis":false,"showYAxis":false,"xAxisNumbers":false,"yAxisNumbers":false,"trace":false,"pointsOfInterest":false,"settingsMenu":false,"zoomButtons":false,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":true,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-16.948490668132944,"right":17.56512384979469,"top":21.95645527257778,"bottom":-3.928755615867942}' style="width:800px;height:600px" data-string='{"version":9,"randomSeed":"a3176651d61192bbeba4e4b3753818ab","graph":{"viewport":{"xmin":-16.948490668132944,"ymin":-3.928755615867942,"xmax":17.56512384979469,"ymax":21.95645527257778},"showGrid":false,"showXAxis":false,"showYAxis":false,"xAxisNumbers":false,"yAxisNumbers":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#000000","latex":"\\left|x\\right|\\ =\\ 5\\left\\{0\\le y\\le15\\right\\}"},{"type":"expression","id":"2","color":"#000000","latex":"y=\\sqrt{25-x^{2}}+15"},{"type":"expression","id":"3","color":"#000000","latex":"y=0\\left\\{\\left|x\\right|\\le5\\right\\}"},{"type":"expression","id":"4","color":"#000000","latex":"y=15\\left\\{\\left|x\\right|\\le5\\right\\}"},{"type":"expression","id":"5","color":"#c74440","latex":"y=105\\left\\{-5\\le x\\le5\\right\\}","lineWidth":"2.5"},{"type":"expression","id":"6","color":"#c74440","latex":"\\left(0,15\\right)","showLabel":false,"label":"`2r`","hidden":true,"labelSize":"1.5","labelOrientation":"above"},{"type":"expression","id":"7","color":"#c74440","latex":"\\left(0,0\\right)","showLabel":true,"label":"`2r`","hidden":true,"labelSize":"1.5","labelOrientation":"below"},{"type":"expression","id":"8","color":"#000000","latex":"\\left(5,7.5\\right)","showLabel":true,"label":"`h`","hidden":true,"labelSize":"1.5","labelOrientation":"right"},{"type":"expression","id":"9","color":"#000000","latex":"\\left(-5,7.5\\right)","showLabel":true,"label":"`h`","hidden":true,"labelSize":"1.5","labelOrientation":"left"}]}}' ></calculator >
+
+		<p>From this, we can see the most of the exterior pieces of the perimeter. Note that the bottom of the circle (the top of the rectangle) is not included in the perimeter. The total perimeter then must be made up of the 3 sides of the rectangle and the circumference of the semicircle: 
+		\[P = 2r + h +h +\frac{1}{2}(2\pi r) = 2r+2h + \pi r\]</p>
+		<p>From this formula, we can substitute the known value of the perimeter, 20 feet, and use that to solve for \(h\), thus eliminating the "extra" variable we introduced into this problem:
+			\[\solve{
+				20 &=&2r + 2h + \pi r\\
+				20-2r-\pi r &=& 2 h \\
+				10 - r -\frac{\pi}{2}r &=& h
+			}
+			\]</p>
+
+		<p>Known \(h\) in terms of \(r\), we can now return to our original idea for the area by adding the area of the semicircle with the area of the rectangle:
+			\[
+			\solve{
+				A &=& \frac{1}{2}\pi r^2 + (2r)(h)\\
+				A &=& \frac{\pi}{2} r^2 + (2r)(10-r-\frac{\pi}{2}r)\\
+				A &=& \frac{\pi}{2} r^2 + 20r - r^2 - \pi r^2\\
+				A &=& -r^2 - \frac{\pi}{2} r^2 +20r\\
+				A &=& -r^2(1+\frac{\pi}{2})+20r
+			}
+			\]</p>
+
+
+<p>This final statement can be rewritten a few way that are all equally correct; the final step involves rearranging the values, but also combines all the \(\pi r^2\) terms. It basically is the same as taking \(1/2 - 1\) to get \(-1/2\) just with \(\pi\)!</p>
 </body>
 </html>
