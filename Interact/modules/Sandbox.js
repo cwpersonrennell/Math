@@ -1,5 +1,5 @@
-import data from "./database/testing.json" with {type:"json"};
-import {polynomial} from "./modules/Polynomial.js";
+import data from "../database/testing.json" with {type:"json"};
+import {polynomial} from "./Polynomial.js";
 
 function initializeVars(_vars_){
 	let result = `var _exports_ = {};\n`;
