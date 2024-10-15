@@ -20,7 +20,7 @@ function initializeVars(){
 	let result = `var _exports_ = {};\n`;
 	for(let i =0;i<_vars_.length;i++){
 		result+=`var ${_vars_[i]} = '';\n`;
-		result+=`_exports_.${_vars_[i]}.='';\n`;
+		result+=`_exports_.${_vars_[i]}='';\n`;
 	}
 	return result;
 }
