@@ -52,7 +52,9 @@ function saveToLocalStorage(){
 
 function updateFields(database){
 	let name = loadEl.value;
+	if(name == '') return;
 	let data = database[name];
+
 	nameEl.value = data.name;
 	codeEl.value = data.code;
 	varsEl.value = data.vars.join(", ");
