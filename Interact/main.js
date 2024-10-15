@@ -20,7 +20,7 @@ function test(){
 		`
 		"use strict";
 		console.log(window);
-		parser = function(){
+		function parser(){
 			{
 				let newVar = "hello World";
 				let p1 = new polynomial([1,2,0,-1]);
