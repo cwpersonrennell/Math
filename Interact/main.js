@@ -118,7 +118,7 @@ saveEl.addEventListener("click",()=>{
 
 deleteEl.addEventListener("click",()=>{
 	deleteSelected();
-	loadLocalStorageList();
+	loadLocalStorageList(loadEl);
 });
 
 
