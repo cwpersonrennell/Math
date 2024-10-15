@@ -1,7 +1,8 @@
 import {polynomial} from "./modules/Polynomial.js";
 
 let p1 = new polynomial([1,1,-1]);
-var _exports_ ={};
+
+var _eval_context_ ={polynomial};
 
 console.log(`${p1}`);
 var x = 0;
@@ -16,8 +17,15 @@ console.log(f(2));
 
 
 eval(
-	`var newVar = "hello World";
-	_exports_.newVar = newVar;
+	`
+	parser = function(){
+		with(_eval_context_){
+			let newVar = "hello World";
+			let p1 = new polynomial([1,2,0,-1]);
+		}
+	}
+	console.log(parser);
+	_exports_.parser = parser;
 	`);
 
 
