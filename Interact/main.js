@@ -13,6 +13,14 @@ var varsEl = document.getElementById("vars");
 var bodyEl =document.getElementById("body");
 var currentValue = '';
 
+function clearEls(){
+	nameEl.value = '';
+	codeEl.value = '';
+	varsEl.value = '';
+	bodyEl.value = '';
+	jsonEl.innerHTML = "";	
+	previewEl.innerHTML = "";	
+}
 function renderJSONandBody(){
 	let name=nameEl.value;
 	let code=codeEl.value;
@@ -53,10 +61,7 @@ function saveToLocalStorage(){
 
 function updateFields(database){
 	let name = loadEl.value;
-	nameEl.value = '';
-	codeEl.value = '';
-	varsEl.value = '';
-	bodyEl.value = ''; 
+	clearEls();
 
 	if(name == '') return;
 	let data = database[name];
@@ -66,8 +71,6 @@ function updateFields(database){
 	varsEl.value = data.vars.join(", ");
 	bodyEl.value = data.body;
 
-	jsonEl.innerHTML = "";
-	previewEl.innerHTML = "";	
 
 	renderJSONandBody();
 }
