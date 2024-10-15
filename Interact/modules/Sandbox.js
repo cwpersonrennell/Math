@@ -1,4 +1,3 @@
-import data from "../database/testing.json" with {type:"json"};
 import {polynomial} from "./Polynomial.js";
 
 function initializeVars(_vars_){
@@ -28,11 +27,11 @@ function sandbox(_vars_,code){
 		`);
 	return result;
 }
-console.log(data);
-var _exports_;
-try{
-	_exports_ = sandbox(data["vars"],data["code"]);
-}
-catch(err){console.log(err);}
+
+// var _exports_;
+// try{
+// 	_exports_ = sandbox(data["vars"],data["code"]);
+// }
+// catch(err){console.log(err);}
 
 export {sandbox}
