@@ -28,10 +28,14 @@ function test(){
 		console.log(parser);
 		parser;
 		`);
-	console.log(parser);
-	console.log(a);
+	try{
+		console.log(parser);
+		console.log(a);
+	}catch(err){}
+
 	return result;
 }
+
 var _exports_;
 try{
 	_exports_ = test();
