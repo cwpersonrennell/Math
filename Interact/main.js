@@ -32,6 +32,10 @@ function test(){
 	console.log(a);
 	return result;
 }
-var _exports_ = test();
+var _exports_;
+try{
+	_exports_ = test();
+}
+catch(err){}
 
 console.log(_exports_);
