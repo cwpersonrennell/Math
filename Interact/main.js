@@ -18,6 +18,7 @@ console.log(f(2));
 
 eval?.(
 	`
+	use strict;
 	parser = function(){
 		with(_eval_context_){
 			let newVar = "hello World";
