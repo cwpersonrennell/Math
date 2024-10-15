@@ -16,7 +16,7 @@ eval(`
 console.log(f(2));
 
 function test(){
-	result = eval?.(
+	let result = eval?.(
 		`
 		"use strict";
 		console.log(window);
