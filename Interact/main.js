@@ -1,5 +1,6 @@
 import {polynomial} from "./modules/Polynomial.js";
 import {sandbox} from "./modules/Sandbox.js";
+import {getCalculators} from "./modules/DesmosAddon.js";
 
 var loadEl = document.getElementById("load");
 var saveEl = document.getElementById("save");
@@ -9,7 +10,7 @@ var nameEl = document.getElementById("name");
 var codeEl = document.getElementById("code");
 var varsEl = document.getElementById("vars");
 var bodyEl =document.getElementById("body");
-
+var currentValue = '';
 
 function renderJSONandBody(){
 	let name=nameEl.value;
@@ -27,12 +28,14 @@ function renderJSONandBody(){
 	previewEl.innerHTML = body;
 	try{
 		MathJax.typeset();
+		getCalculators();
 	}catch(err){console.log(err);}
 	
 }
 
 function saveToLocalStorage(){
 	let name=nameEl.value;
+	currentValue = name;
 	let code=codeEl.value;
 	let vars=varsEl.value.replaceAll(" ","").split(",");
 	let body=bodyEl.value;
@@ -62,7 +65,9 @@ function updateFields(database){
 }
 
 function loadLocalStorageList(loadEl){
+	if(loadEl.value) currentValue = loadEl.value;
 	loadEl.innerHTML = "";
+
 	let keys = Object.keys(localStorage);
 	let results = [];
 	let DB = {};
@@ -81,6 +86,7 @@ function loadLocalStorageList(loadEl){
 		loadEl.appendChild(el);
 	}
 	updateFields(DB);
+	loadEl.value = currentValue;
 	return DB;
 } 
 
