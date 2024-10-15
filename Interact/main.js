@@ -85,8 +85,9 @@ function loadLocalStorageList(loadEl){
 		DB[results[i].name] = results[i];
 		loadEl.appendChild(el);
 	}
-	updateFields(DB);
 	loadEl.value = currentValue;
+	updateFields(DB);
+
 	return DB;
 } 
 
