@@ -70,8 +70,6 @@ function updateFields(database){
 	codeEl.value = data.code;
 	varsEl.value = data.vars.join(", ");
 	bodyEl.value = data.body;
-
-
 	renderJSONandBody();
 }
 
@@ -103,7 +101,6 @@ function loadLocalStorageList(loadEl){
 } 
 
 function deleteSelected(){
-	console.log(`${location.href}:${loadEl.value}`);
 	localStorage.removeItem(`${location.href}:${loadEl.value}`);
 	delete database[currentValue];
 	loadEl.value = '';
