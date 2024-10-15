@@ -1,4 +1,5 @@
 import {polynomial} from "./modules/Polynomial.js";
+import data from "./database/testing.json" with {type:"json"};
 
 function initializeVars(_vars_){
 	let result = `var _exports_ = {};\n`;
@@ -17,26 +18,20 @@ function readyExport(_vars_){
 	return result;
 }
 
-function sandbox(_vars_){
+function sandbox(_vars_,code){
 	let result = eval?.(
 		`
 		"use strict";
 		${initializeVars(_vars_)}
-			function f(x){
-				return x*x;
-			}
-			a = f(2);
-			b = 5;
-			x = a*b;
-			y = a/b;
+		${code}
 		${readyExport(_vars_)}
 		`);
 	return result;
 }
-
+console.log(data);
 var _exports_;
 try{
-	_exports_ = test(['a','b','x','y']);
+	_exports_ = test(data["vars"],data["code"]);
 }
 catch(err){console.log(err);}
 
