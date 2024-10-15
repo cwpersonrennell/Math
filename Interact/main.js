@@ -10,6 +10,22 @@ var codeEl = document.getElementById("code");
 var varsEl = document.getElementById("vars");
 var bodyEl =document.getElementById("body");
 
+function updateFields(database){
+	let name = loadEl.value;
+	console.log(name);
+	console.log(database);
+
+	let data = database[name];
+	nameEl.value = data.name;
+	codeEl.value = data.code;
+	varsEl.value = data.vars;
+	bodyEl.value = data.body;
+
+	jsonEl.innerHTML = "";
+	previewEl.innerHTML = "";	
+
+}
+
 function loadLocalStorageList(loadEl){
 	loadEl.innerHTML = "";
 	let keys = Object.keys(localStorage);
@@ -30,24 +46,14 @@ function loadLocalStorageList(loadEl){
 	}
 	console.log(`Database should be: `);
 	console.log(database);
+	updateFields(database);
 	return database;
 }
 
 var database = loadLocalStorageList(loadEl);
 
-loadEl.addEventListener("change",function(){
-	let name = loadEl.value;
-	console.log(name);
-	console.log(database);
-
-	let data = database[name];
-	nameEl.value = data.name;
-	codeEl.value = data.code;
-	varsEl.value = data.vars;
-	bodyEl.value = data.body;
-
-	jsonEl.innerHTML = "";
-	previewEl.innerHTML = "";	
+loadEl.addEventListener("change",()=>{
+	updateFields(database);
 });
 
 saveEl.addEventListener("click",()=>{
@@ -68,7 +74,7 @@ saveEl.addEventListener("click",()=>{
 	try{
 		MathJax.typeset();
 		localStorage[`${location.href}:${name}`]=json;
-		databse = loadLocalStorageList();
+		database = loadLocalStorageList();
 	}catch(err){console.log(err);}
 
 });
