@@ -16,18 +16,22 @@ eval(`
 console.log(f(2));
 
 function test(){
-	eval?.(
+	result = eval?.(
 		`
 		"use strict";
 		console.log(window);
+		var a = 1;
 		function parser(){
 			let newVar = "hello World";
 			let p1 = new polynomial([1,2,0,-1]);
 		}
 		console.log(parser);
-		(parser);
+		parser;
 		`);
-	}
+	console.log(parser);
+	console.log(a);
+	return result;
+}
 var _exports_ = test();
 
 console.log(_exports_);
