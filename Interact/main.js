@@ -18,7 +18,7 @@ function updateFields(database){
 	let data = database[name];
 	nameEl.value = data.name;
 	codeEl.value = data.code;
-	varsEl.value = data.vars;
+	varsEl.value = data.vars.join(", ");
 	bodyEl.value = data.body;
 
 	jsonEl.innerHTML = "";
