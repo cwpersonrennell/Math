@@ -12,3 +12,9 @@ eval(`
 	f = function(x){return x*x}
 	`);
 console.log(f(2));
+
+
+eval('var newVar = "hello World";');
+
+
+console.log(newVar);
