@@ -2,7 +2,6 @@ import {polynomial} from "./modules/Polynomial.js";
 import {sandbox} from "./modules/Sandbox.js";
 
 var loadEl = document.getElementById("load");
-var database = loadLocalStorageList(loadEl);
 var saveEl = document.getElementById("save");
 var jsonEl = document.getElementById("json-content");
 var previewEl = document.getElementById("preview");
@@ -29,11 +28,18 @@ function loadLocalStorageList(loadEl){
 		database[name] = results[i];
 		loadEl.appendChild(el);
 	}
+	console.log(`Database should be: `);
+	console.log(database);
 	return database;
 }
 
+var database = loadLocalStorageList(loadEl);
+
 loadEl.addEventListener("change",function(){
 	let name = loadEl.value;
+	console.log(name);
+	console.log(database);
+
 	let data = database[name];
 	nameEl.value = data.name;
 	codeEl.value = data.code;
