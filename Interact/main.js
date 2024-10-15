@@ -28,6 +28,6 @@ function test(){
 		(parser);
 		`);
 	}
-test();
+var _exports_ = test();
 
 console.log(_exports_);
