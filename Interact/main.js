@@ -1,13 +1,21 @@
 import {polynomial} from "./modules/Polynomial.js";
 import {sandbox} from "./modules/Sandbox.js";
 
-let button = document.getElementById("go");
+var button = document.getElementById("go");
+var jsonEl = document.getElementById("json-content");
+var previewEl = document.getElementById("preview");
+
 button.addEventListener("click",()=>{
 	let code=document.getElementById("code").value;
 	let vars=document.getElementById("vars").value.replaceAll(" ","").split(",");
-	let data = {"vars":vars,"code":code};
+	let body=document.getElementById("body").value;
+	let data = {"vars":vars,"code":code,"body":body};
 	let json = JSON.stringify(data)
-	document.getElementById("content").innerText = json;	
+	jsonEl.value = json;
+
+	let output = sandbox(vars,code);
+	console.log(output);
+	
 });
 
 

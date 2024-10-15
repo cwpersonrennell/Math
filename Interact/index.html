@@ -12,13 +12,17 @@
   </head>
   <body>
     <div id="json-maker">
+      <label for="name">Name?</label>
+      <textarea id="name" name="name" rows="1", cols="120"></textarea><br><br>
       <label for="vars">Declare Variables</label><br>
       <textarea id="vars" name="vars" rows="1", cols="120"></textarea><br>
       <label for="code">Enter code here</label><br>
       <textarea id="code" name="code", cols="120", rows="10"></textarea><Br>
+      <label for="body">Body</label><br>
+      <textarea id="body" name="body", cols="120" row="10"></textarea><br>
       <button id="go">Go</button>
     </div>
-    <div id="content">
-    </div>
+    <textarea id="json-content"></textarea>
+    <div id="preview"></div>
   </body>
 </html>

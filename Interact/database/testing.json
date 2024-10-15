@@ -1,4 +1,6 @@
 {
+	"name":"test",
 	"vars":["a","b","c","x"],
-	"code":"a=1;b=1;c=2;x=a+b-c;"
+	"code":"a=1;b=1;c=2;x=a+b-c;",
+	"body":"{{a}} is the number."
 }
