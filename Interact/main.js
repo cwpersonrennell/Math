@@ -1,20 +1,5 @@
 import {polynomial} from "./modules/Polynomial.js";
 
-let p1 = new polynomial([1,1,-1]);
-
-var _eval_context_ ={polynomial};
-
-console.log(`${p1}`);
-var x = 0;
-eval("x++;");
-console.log(x);
-var f;
-
-eval(`
-	f = function(x){return x*x}
-	`);
-console.log(f(2));
-
 function initializeVars(_vars_){
 	let result = `var _exports_ = {};\n`;
 	for(let i =0;i<_vars_.length;i++){
@@ -37,10 +22,10 @@ function sandbox(_vars_){
 		`
 		"use strict";
 		${initializeVars(_vars_)}
-		function f(x){
-			return x*x;
-		}
-			a=f(2);
+			function f(x){
+				return x*x;
+			}
+			a = f(2);
 			b = 5;
 			x = a*b;
 			y = a/b;
@@ -53,6 +38,6 @@ var _exports_;
 try{
 	_exports_ = test(['a','b','x','y']);
 }
-catch(err){}
+catch(err){console.log(err);}
 
 console.log(_exports_);
