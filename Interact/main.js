@@ -44,7 +44,7 @@ function saveToLocalStorage(){
 	let json = JSON.stringify(data)
 	jsonEl.value = json;
 	try{
-		localStorage[`${location.href}:${name}`]=json;
+		localStorage.setItem(`${location.href}:${name}`,json);
 		database = loadLocalStorageList(loadEl);
 	}catch(err){console.log(err);}
 	renderJSONandBody();
@@ -81,7 +81,7 @@ function loadLocalStorageList(loadEl){
 	let DB = {};
 	for(let i = 0;i<keys.length;i++){
 		if(keys[i].search(location.href)>=0){
-			results.push(JSON.parse(localStorage[keys[i]]));
+			results.push(JSON.parse(localStorage.getItem(keys[i])));
 		}
 	}
 	
