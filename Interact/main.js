@@ -16,6 +16,10 @@ function renderJSONandBody(){
 	let code=codeEl.value;
 	let vars=varsEl.value.replaceAll(" ","").split(",");
 	let body=bodyEl.value;
+	let data = {"name":name,"vars":vars,"code":code,"body":body};
+	let json = JSON.stringify(data)
+	jsonEl.value = json;
+	
 	let output = sandbox(vars,code);
 	for(let i = 0;i<vars.length;i++){
 		body = body.replaceAll(`{{${vars[i]}}}`,`${output[vars[i]]}`);
@@ -78,7 +82,7 @@ function loadLocalStorageList(loadEl){
 	}
 	updateFields(DB);
 	return DB;
-}
+} 
 
 var database = loadLocalStorageList(loadEl);
 
