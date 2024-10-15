@@ -15,19 +15,21 @@ eval(`
 	`);
 console.log(f(2));
 
-
-eval?.(
-	`
-	use strict;
-	parser = function(){
-		with(_eval_context_){
-			let newVar = "hello World";
-			let p1 = new polynomial([1,2,0,-1]);
+test= function(){
+	eval?.(
+		`
+		"use strict";
+		console.log(window);
+		parser = function(){
+			{
+				let newVar = "hello World";
+				let p1 = new polynomial([1,2,0,-1]);
+			}
 		}
+		console.log(parser);
+		(parser);
+		`);
 	}
-	console.log(parser);
-	_exports_.parser = parser;
-	`);
-
+test();
 
 console.log(_exports_);
