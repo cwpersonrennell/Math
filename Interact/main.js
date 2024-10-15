@@ -14,7 +14,7 @@ function loadLocalStorageList(loadEl){
 	}
 	
 	for(let i=0;i<results.length;i++){
-		let el = document.createElement
+		let el = document.createElement("option");
 		el.innerText = results[i].name;
 		el.value = results[i].name;
 		database[name] = results[i];
