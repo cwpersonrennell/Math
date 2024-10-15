@@ -19,7 +19,7 @@ function renderJSONandBody(){
 	let data = {"name":name,"vars":vars,"code":code,"body":body};
 	let json = JSON.stringify(data)
 	jsonEl.value = json;
-	
+
 	let output = sandbox(vars,code);
 	for(let i = 0;i<vars.length;i++){
 		body = body.replaceAll(`{{${vars[i]}}}`,`${output[vars[i]]}`);
@@ -41,7 +41,7 @@ function saveToLocalStorage(){
 	jsonEl.value = json;
 	try{
 		localStorage[`${location.href}:${name}`]=json;
-		database = loadLocalStorageList();
+		database = loadLocalStorageList(loadEl);
 	}catch(err){console.log(err);}
 	renderJSONandBody();
 
