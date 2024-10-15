@@ -31,7 +31,7 @@ function sandbox(_vars_,code){
 console.log(data);
 var _exports_;
 try{
-	_exports_ = test(data["vars"],data["code"]);
+	_exports_ = sandbox(data["vars"],data["code"]);
 }
 catch(err){console.log(err);}
 
