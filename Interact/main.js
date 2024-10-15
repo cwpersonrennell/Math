@@ -5,6 +5,8 @@ let p1 = new polynomial([1,1,-1]);
 console.log(`${p1}`);
 var x = 0;
 eval("x++;");
+console.log(x);
+var f;
 
 eval(`
 	f = function(x){return x*x}
