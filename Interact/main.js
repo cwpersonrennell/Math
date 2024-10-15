@@ -1,9 +1,18 @@
 import {polynomial} from "./modules/Polynomial.js";
 import {sandbox} from "./modules/Sandbox.js";
 
-
+var loadEl = document.getElementById("load");
+var database = loadLocalStorageList(loadEl);
+var saveEl = document.getElementById("save");
+var jsonEl = document.getElementById("json-content");
+var previewEl = document.getElementById("preview");
+var nameEl = document.getElementById("name");
+var codeEl = document.getElementById("code");
+var varsEl = document.getElementById("vars");
+var bodyEl =document.getElementById("body");
 
 function loadLocalStorageList(loadEl){
+	loadEl.innerHTML = "";
 	let keys = Object.keys(localStorage);
 	let results = [];
 	let database = {};
@@ -22,24 +31,20 @@ function loadLocalStorageList(loadEl){
 	}
 	return database;
 }
-var loadEl = document.getElementById("load");
-var database = loadLocalStorageList(loadEl);
 
 loadEl.addEventListener("change",function(){
 	let name = loadEl.value;
-	console.log(name);
-})
+	let data = database[name];
+	nameEl.value = data.name;
+	codeEl.value = data.code;
+	varsEl.value = data.vars;
+	bodyEl.value = data.body;
 
-var save = document.getElementById("save");
+	jsonEl.innerHTML = "";
+	previewEl.innerHTML = "";	
+});
 
-var jsonEl = document.getElementById("json-content");
-var previewEl = document.getElementById("preview");
-var nameEl = document.getElementById("name");
-var codeEl = document.getElementById("code");
-var varsEl = document.getElementById("vars");
-var bodyEl =document.getElementById("body");
-
-save.addEventListener("click",()=>{
+saveEl.addEventListener("click",()=>{
 	let name=nameEl.value;
 	let code=codeEl.value;
 	let vars=varsEl.value.replaceAll(" ","").split(",");
@@ -57,6 +62,7 @@ save.addEventListener("click",()=>{
 	try{
 		MathJax.typeset();
 		localStorage[`${location.href}:${name}`]=json;
+		databse = loadLocalStorageList();
 	}catch(err){console.log(err);}
 
 });
