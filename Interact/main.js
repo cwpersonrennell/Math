@@ -4,6 +4,7 @@ import {getCalculators} from "./modules/DesmosAddon.js";
 
 var loadEl = document.getElementById("load");
 var saveEl = document.getElementById("save");
+var deleteEl = document.getElementById("delete");
 var jsonEl = document.getElementById("json-content");
 var previewEl = document.getElementById("preview");
 var nameEl = document.getElementById("name");
@@ -52,6 +53,11 @@ function saveToLocalStorage(){
 
 function updateFields(database){
 	let name = loadEl.value;
+	nameEl.value = '';
+	codeEl.value = '';
+	varsEl.value = '';
+	bodyEl.value = ''; 
+
 	if(name == '') return;
 	let data = database[name];
 
@@ -93,6 +99,13 @@ function loadLocalStorageList(loadEl){
 	return DB;
 } 
 
+function deleteSelected(){
+	localStorage.removeItem(`${location.href}:${currentValue}`);
+	delete database[currentValue];
+	loadEl.value = '';
+	currentValue = '';
+}
+
 var database = loadLocalStorageList(loadEl);
 
 loadEl.addEventListener("change",()=>{
@@ -103,5 +116,9 @@ saveEl.addEventListener("click",()=>{
 	saveToLocalStorage();
 });
 
+deleteEl.addEventListener("click",()=>{
+	deleteSelected();
+	loadLocalStorageList();
+});
 
 
