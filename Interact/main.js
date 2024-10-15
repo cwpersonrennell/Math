@@ -8,8 +8,8 @@ function loadLocalStorageList(loadEl){
 	let results = [];
 	let database = {};
 	for(let i = 0;i<keys.length;i++){
-		if(keys.search(location.href)>=0){
-			results.push(JSON.parse(localStorage[key]));
+		if(keys[i].search(location.href)>=0){
+			results.push(JSON.parse(localStorage[keys[i]]));
 		}
 	}
 	
