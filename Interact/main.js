@@ -14,9 +14,8 @@ eval(`
 	f = function(x){return x*x}
 	`);
 console.log(f(2));
-var _vars_=['a', 'b', 'x', 'y'];
-var __vars__ = '';
-function initializeVars(){
+
+function initializeVars(_vars_){
 	let result = `var _exports_ = {};\n`;
 	for(let i =0;i<_vars_.length;i++){
 		result+=`var ${_vars_[i]} = '';\n`;
@@ -24,7 +23,7 @@ function initializeVars(){
 	}
 	return result;
 }
-function readyExport(){
+function readyExport(_vars_){
 	let result = `\n`;
 	for(let i =0;i<_vars_.length;i++){
 		result+=`_exports_.${_vars_[i]}=${_vars_[i]};\n`;
@@ -33,23 +32,26 @@ function readyExport(){
 	return result;
 }
 
-function test(){
+function sandbox(_vars_){
 	let result = eval?.(
 		`
 		"use strict";
-		${initializeVars()}
-			a=2;
+		${initializeVars(_vars_)}
+		function f(x){
+			return x*x;
+		}
+			a=f(2);
 			b = 5;
 			x = a*b;
 			y = a/b;
-		${readyExport()}
+		${readyExport(_vars_)}
 		`);
 	return result;
 }
 
 var _exports_;
 try{
-	_exports_ = test();
+	_exports_ = test(['a','b','x','y']);
 }
 catch(err){}
 
