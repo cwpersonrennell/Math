@@ -100,6 +100,7 @@ function loadLocalStorageList(loadEl){
 } 
 
 function deleteSelected(){
+	console.log(`${location.href}:${currentValue}`);
 	localStorage.removeItem(`${location.href}:${currentValue}`);
 	delete database[currentValue];
 	loadEl.value = '';
