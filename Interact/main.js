@@ -39,9 +39,10 @@ function loadLocalStorageList(loadEl){
 	
 	for(let i=0;i<results.length;i++){
 		let el = document.createElement("option");
+		console.log(`Result: ${results[i].name}`)
 		el.innerText = results[i].name;
 		el.value = results[i].name;
-		DB[name] = results[i];
+		DB[results[i].name] = results[i];
 		loadEl.appendChild(el);
 	}
 	console.log(`Database should be: `);
