@@ -16,7 +16,7 @@ eval(`
 console.log(f(2));
 
 
-eval(
+eval?.(
 	`
 	parser = function(){
 		with(_eval_context_){
