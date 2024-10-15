@@ -7,7 +7,7 @@ var json = JSON.stringify({"vars":vars,"code":code});
 let button = document.getElementById("go");
 button.addEventListener("click",()=>{
 	document.getElementById("content").innerText = json;	
-})
+});
 
 
 
