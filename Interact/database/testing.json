@@ -1,4 +1,4 @@
 {
 	"vars":["a","b","c","x"],
-	"code":"a=1;b=1;c=2;x=a+b-c;\\n"
+	"code":"a=1;b=1;c=2;x=a+b-c;"
 }
