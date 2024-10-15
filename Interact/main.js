@@ -30,7 +30,7 @@ function loadLocalStorageList(loadEl){
 	loadEl.innerHTML = "";
 	let keys = Object.keys(localStorage);
 	let results = [];
-	let database = {};
+	let DB = {};
 	for(let i = 0;i<keys.length;i++){
 		if(keys[i].search(location.href)>=0){
 			results.push(JSON.parse(localStorage[keys[i]]));
@@ -41,13 +41,13 @@ function loadLocalStorageList(loadEl){
 		let el = document.createElement("option");
 		el.innerText = results[i].name;
 		el.value = results[i].name;
-		database[name] = results[i];
+		DB[name] = results[i];
 		loadEl.appendChild(el);
 	}
 	console.log(`Database should be: `);
-	console.log(database);
-	updateFields(database);
-	return database;
+	console.log(DB);
+	updateFields(DB);
+	return DB;
 }
 
 var database = loadLocalStorageList(loadEl);
