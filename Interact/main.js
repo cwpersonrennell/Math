@@ -1,6 +1,7 @@
 import {polynomial} from "./modules/Polynomial.js";
 
 let p1 = new polynomial([1,1,-1]);
+var _exports_ ={};
 
 console.log(`${p1}`);
 var x = 0;
@@ -14,7 +15,10 @@ eval(`
 console.log(f(2));
 
 
-eval('var newVar = "hello World";');
+eval(
+	`var newVar = "hello World";
+	_exports_.newVar = newVar;
+	`);
 
 
-console.log(newVar);
+console.log(_exports_);
