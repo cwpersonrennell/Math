@@ -1,7 +1,7 @@
 import {polynomial} from "./modules/Polynomial.js";
 import {sandbox} from "./modules/Sandbox.js";
 import {getCalculators} from "./modules/DesmosAddon.js";
-import {math} from "./modules/mathjs.js";
+import * as math from "./modules/math-min.js";
 
 console.log(math);
 
