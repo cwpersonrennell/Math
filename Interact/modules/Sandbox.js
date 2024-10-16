@@ -18,7 +18,11 @@ function evaluate(math,vars,code){
 	let lines = code.split("\n");
 	
 	for(let i = 0;i<lines.length;i++){
-		math.evaluate(lines[i],scope);
+		try{
+			math.evaluate(lines[i],scope); 
+		}catch(err){
+			console.log(err);
+		}
 	}
 
 	return scope;
