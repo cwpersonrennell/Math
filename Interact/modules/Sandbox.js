@@ -3,7 +3,7 @@ function create(imports = {},randomSeed = null){
 	let config = {
 		randomSeed:randomSeed,
 	}
-	let mathjs = math.create(all,config);
+	let mathjs = math.create(math.all,config);
 	mathjs.import(imports);
 	return mathjs;
 }
