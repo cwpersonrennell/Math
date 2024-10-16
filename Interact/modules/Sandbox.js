@@ -15,14 +15,11 @@ function readyExport(_vars_){
 	return result;
 }
 
-function sandbox(_vars_,code){
+function sandbox(_vars_,code,context={}){
 	if(_vars_.length == 0 || code.length == 0) return {};
 	let result={};
-	console.log(this);
 	try{
-		result = eval?.call(this,
-			`
-			"use strict";
+		result = eval?.(`
 			${initializeVars(_vars_)}
 			${code}
 			${readyExport(_vars_)}
