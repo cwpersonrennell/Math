@@ -15,8 +15,12 @@ var linksEl= document.getElementById("links");
 
 var currentValue = '';
 
+function Polynomial(coef){
+	return new polynomial(coef);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-	math = create({polynomial:polynomial});
+	math = create({polynomial:Polynomial});
 });
 
 function clearEls(){
