@@ -20,7 +20,7 @@ function Polynomial(coef){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-	math = create({polynomial:Polynomial,console:console});
+	math = create({polynomial:Polynomial,_log_:console.log});
 });
 
 function clearEls(){
