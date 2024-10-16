@@ -20,15 +20,16 @@ function readyExport(_vars_){
 
 function sandbox(_vars_,code){
 	if(_vars_.length == 0 || code.length == 0) return {};
+	let result={};
 	try{
-		let result = eval?.call(context,
+		result = eval?.call(context,
 			`
 			"use strict";
 			${initializeVars(_vars_)}
 			${code}
 			${readyExport(_vars_)}
 			`);
-	}catch(err){console.log(err); result = {};}
+	}catch(err){console.log(err);}
 	return result;
 }
 
