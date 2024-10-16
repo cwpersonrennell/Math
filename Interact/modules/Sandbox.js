@@ -1,4 +1,5 @@
 import {polynomial} from "./Polynomial.js";
+var context ={polynomial:polynomial};
 
 function initializeVars(_vars_){
 	let result = `var _exports_ = {};\n`;
@@ -19,13 +20,15 @@ function readyExport(_vars_){
 
 function sandbox(_vars_,code){
 	if(_vars_.length == 0 || code.length == 0) return {};
-	let result = eval?.(
-		`
-		"use strict";
-		${initializeVars(_vars_)}
-		${code}
-		${readyExport(_vars_)}
-		`);
+	try{
+		let result = eval?.call(context,
+			`
+			"use strict";
+			${initializeVars(_vars_)}
+			${code}
+			${readyExport(_vars_)}
+			`);
+	}catch(err){console.log(err); result = {};}
 	return result;
 }
 
