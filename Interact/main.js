@@ -1,6 +1,9 @@
 import {polynomial} from "./modules/Polynomial.js";
 import {sandbox} from "./modules/Sandbox.js";
 import {getCalculators} from "./modules/DesmosAddon.js";
+import {evaluate} from "./modules/mathjs.js";
+
+console.log(evaluate('12 / (2.3 + 0.7)'));
 
 var loadEl = document.getElementById("load");
 var saveEl = document.getElementById("save");
