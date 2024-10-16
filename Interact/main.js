@@ -1,9 +1,7 @@
 import {polynomial} from "./modules/Polynomial.js";
 import {sandbox} from "./modules/Sandbox.js";
 import {getCalculators} from "./modules/DesmosAddon.js";
-//import * as math from "./modules/math-min.js";
 
-//console.log(math);
 document.addEventListener("DOMContentLoaded", () => {
 	console.log(math);
 });
@@ -28,6 +26,21 @@ function clearEls(){
 	jsonEl.innerHTML = "";	
 	previewEl.innerHTML = "";	
 }
+
+function evaluate(vars,code){
+	let scope = {};
+	for(let i=0;i<vars.length;i++){
+		scope[vars[i]]=0;
+	}
+
+	let lines = code.split("\n");
+	for(let i = 0;i<lines.length;i++){
+		math.evaluate(lines[i],scope);
+	}
+
+	return scope;
+}
+
 function renderJSONandBody(){
 	let name=nameEl.value;
 	let code=codeEl.value;
@@ -39,7 +52,8 @@ function renderJSONandBody(){
 	let json = JSON.stringify(data)
 	jsonEl.value = json;
 
-	let output = sandbox(vars,code,{polynomial:polynomial});
+	let output = evaluate(vars,code);
+
 	for(let i = 0;i<vars.length;i++){
 		body = body.replaceAll(`{{${vars[i]}}}`,`${output[vars[i]]}`);
 	}
