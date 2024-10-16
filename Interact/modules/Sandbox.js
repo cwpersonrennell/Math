@@ -1,37 +1,28 @@
-function initializeVars(_vars_){
-	let result = `var _exports_ = {};\n`;
-	for(let i =0;i<_vars_.length;i++){
-		result+=`var ${_vars_[i]} = '';\n`;
-		result+=`_exports_.${_vars_[i]}='';\n`;
+//Requires MathJS installation (can't use ES6 Module at this time)
+function create(imports = {},randomSeed = null){
+	let config = {
+		randomSeed:randomSeed,
 	}
-	return result;
+	let mathjs = math.create(all,config);
+	mathjs.import(imports);
+	return mathjs;
 }
-function readyExport(_vars_){
-	let result = `\n`;
-	for(let i =0;i<_vars_.length;i++){
-		result+=`_exports_.${_vars_[i]}=${_vars_[i]};\n`;
+
+function evaluate(math,vars,code){
+	let scope = {};
+	
+	for(let i=0;i<vars.length;i++){
+		scope[vars[i]]=0;
 	}
-	result+=`\n_exports_;\n`;
-	return result;
+
+	let lines = code.split("\n");
+	
+	for(let i = 0;i<lines.length;i++){
+		math.evaluate(lines[i],scope);
+	}
+
+	return scope;
 }
 
-function sandbox(_vars_,code,context={}){
-	if(_vars_.length == 0 || code.length == 0) return {};
-	let result={};
-	try{
-		result = eval?.(`
-			${initializeVars(_vars_)}
-			${code}
-			${readyExport(_vars_)}
-			`);
-	}catch(err){console.log(err);}
-	return result;
-}
 
-// var _exports_;
-// try{
-// 	_exports_ = sandbox(data["vars"],data["code"]);
-// }
-// catch(err){console.log(err);}
-
-export {sandbox}
+export {create, evaluate}

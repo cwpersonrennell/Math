@@ -1,10 +1,7 @@
 import {polynomial} from "./modules/Polynomial.js";
-import {sandbox} from "./modules/Sandbox.js";
+import {create, evaluate} from "./modules/Sandbox.js";
 import {getCalculators} from "./modules/DesmosAddon.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-	console.log(math);
-});
 var loadEl = document.getElementById("load");
 var saveEl = document.getElementById("save");
 var deleteEl = document.getElementById("delete");
@@ -18,6 +15,10 @@ var linksEl= document.getElementById("links");
 
 var currentValue = '';
 
+document.addEventListener("DOMContentLoaded", () => {
+	math = create();
+});
+
 function clearEls(){
 	nameEl.value = '';
 	codeEl.value = '';
@@ -27,19 +28,6 @@ function clearEls(){
 	previewEl.innerHTML = "";	
 }
 
-function evaluate(vars,code){
-	let scope = {};
-	for(let i=0;i<vars.length;i++){
-		scope[vars[i]]=0;
-	}
-
-	let lines = code.split("\n");
-	for(let i = 0;i<lines.length;i++){
-		math.evaluate(lines[i],scope);
-	}
-
-	return scope;
-}
 
 function renderJSONandBody(){
 	let name=nameEl.value;
@@ -52,7 +40,7 @@ function renderJSONandBody(){
 	let json = JSON.stringify(data)
 	jsonEl.value = json;
 
-	let output = evaluate(vars,code);
+	let output = evaluate(math,vars,code);
 
 	for(let i = 0;i<vars.length;i++){
 		body = body.replaceAll(`{{${vars[i]}}}`,`${output[vars[i]]}`);
