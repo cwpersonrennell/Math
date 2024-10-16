@@ -1,10 +1,12 @@
 import {polynomial} from "./modules/Polynomial.js";
 import {sandbox} from "./modules/Sandbox.js";
 import {getCalculators} from "./modules/DesmosAddon.js";
-import * as math from "./modules/math-min.js";
+//import * as math from "./modules/math-min.js";
 
-console.log(math);
-
+//console.log(math);
+document.addEventListener("DOMContentLoaded", () => {
+	console.log(math);
+});
 var loadEl = document.getElementById("load");
 var saveEl = document.getElementById("save");
 var deleteEl = document.getElementById("delete");
