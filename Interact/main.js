@@ -11,6 +11,8 @@ var nameEl = document.getElementById("name");
 var codeEl = document.getElementById("code");
 var varsEl = document.getElementById("vars");
 var bodyEl =document.getElementById("body");
+var linksEl= document.getElementById("links");
+
 var currentValue = '';
 
 function clearEls(){
@@ -26,7 +28,9 @@ function renderJSONandBody(){
 	let code=codeEl.value;
 	let vars=varsEl.value.replaceAll(" ","").split(",");
 	let body=bodyEl.value;
-	let data = {"name":name,"vars":vars,"code":code,"body":body};
+	let links=linksEl.value.replaceAll(" ","").split(",");
+
+	let data = {"name":name,"vars":vars,"code":code,"body":body,"links":links};
 	let json = JSON.stringify(data)
 	jsonEl.value = json;
 
@@ -48,7 +52,9 @@ function saveToLocalStorage(){
 	let code=codeEl.value;
 	let vars=varsEl.value.replaceAll(" ","").split(",");
 	let body=bodyEl.value;
-	let data = {"name":name,"vars":vars,"code":code,"body":body};
+	let links=linksEl.value.replaceAll(" ","").split(",");
+
+	let data = {"name":name,"vars":vars,"code":code,"body":body,"links":links};
 	let json = JSON.stringify(data)
 	jsonEl.value = json;
 	try{
@@ -66,10 +72,14 @@ function updateFields(database){
 	if(name == '') return;
 	let data = database[name];
 
-	nameEl.value = data.name;
-	codeEl.value = data.code;
-	varsEl.value = data.vars.join(", ");
-	bodyEl.value = data.body;
+	try{
+		nameEl.value = data.name;
+		codeEl.value = data.code;
+		varsEl.value = data.vars.join(", ");
+		bodyEl.value = data.body;
+		linksEl.value = data.links.join(", ");
+	}catch(err){console.log(err);}
+
 	renderJSONandBody();
 }
 
