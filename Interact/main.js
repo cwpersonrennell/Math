@@ -1,9 +1,9 @@
 import {polynomial} from "./modules/Polynomial.js";
 import {sandbox} from "./modules/Sandbox.js";
 import {getCalculators} from "./modules/DesmosAddon.js";
-import {sqrt} from "./modules/mathjs.js";
+import {math} from "./modules/mathjs.js";
 
-console.log(sqrt(4));
+console.log(math);
 
 var loadEl = document.getElementById("load");
 var saveEl = document.getElementById("save");
