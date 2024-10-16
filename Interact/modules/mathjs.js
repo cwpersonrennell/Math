@@ -1,7 +1,7 @@
 /*! For license information please see math.js.LICENSE.txt */
 !(function (e, t) {
     "object" == typeof exports && "object" == typeof module ? (module.exports = t()) : "function" == typeof define && define.amd ? define([], t) : "object" == typeof exports ? (exports.math = t()) : (e.math = t());
-    export t as "math";
+    
 })(this, () =>
     (() => {
         var e = {
