@@ -15,11 +15,11 @@ function readyExport(_vars_){
 	return result;
 }
 
-function sandbox(_vars_,code,context={}){
+function sandbox(_vars_,code){
 	if(_vars_.length == 0 || code.length == 0) return {};
 	let result={};
 	try{
-		result = eval?.call(context,
+		result = eval?.call(this,
 			`
 			"use strict";
 			${initializeVars(_vars_)}
