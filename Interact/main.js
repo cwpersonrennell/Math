@@ -16,7 +16,7 @@ var linksEl= document.getElementById("links");
 var currentValue = '';
 
 document.addEventListener("DOMContentLoaded", () => {
-	math = create();
+	math = create({polynomial:polynomial});
 });
 
 function clearEls(){
