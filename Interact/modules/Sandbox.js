@@ -18,6 +18,7 @@ function readyExport(_vars_){
 function sandbox(_vars_,code){
 	if(_vars_.length == 0 || code.length == 0) return {};
 	let result={};
+	console.log(this);
 	try{
 		result = eval?.call(this,
 			`
