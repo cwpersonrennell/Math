@@ -2,6 +2,7 @@
 function create(imports = {},randomSeed = null){
 	let config = {
 		randomSeed:randomSeed,
+		matrix:'Array'
 	}
 	let mathjs = math.create(math.all,config);
 	mathjs.import(imports);
