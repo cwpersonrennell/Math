@@ -47,9 +47,9 @@ function renderJSONandBody(){
 	jsonEl.value = json;
 
 	let output = evaluate(math,vars,code);
-
-	for(let i = 0;i<vars.length;i++){
-		body = body.replaceAll(`{{${vars[i]}}}`,`${output[vars[i]]}`);
+	let keys = Object.keys(output);
+	for(let i = 0;i<keys;i++){
+		body = body.replaceAll(`{{${keys[i]}}}`,`${output[keys[i]]}`);
 	}
 	previewEl.innerHTML = body;
 	try{
