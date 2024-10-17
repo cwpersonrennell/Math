@@ -37,7 +37,9 @@ function evaluate(math,vars,code){
 				temp = line.split("=");
 				temp[0] = temp[0].replaceAll(" ","");
 				let a = math.parse(temp[1]);
-				a = new polynomial(JSON.parse(a.toString()));
+				a = a.toString();
+				if(a.slice(-1)==";") a = a.slice(0,-1);
+				a = new polynomial(JSON.parse(a));
 				scope[`${temp[0]}_pol`] = a.toString();
 				break;
 			default:
