@@ -1,4 +1,6 @@
 //Requires MathJS installation (can't use ES6 Module at this time)
+import {polynomial} from "./Polynomial.js";
+
 function create(imports = {},randomSeed = null){
 	let config = {
 		randomSeed:randomSeed,
@@ -20,20 +22,29 @@ function evaluate(math,vars,code){
 	
 	for(let i = 0;i<lines.length;i++){
 		let line = lines[i];
-		if(line.search("TEX")==0){
-			try{
+		let macro = line.slice(0,3);
+		let temp;
+		try{
+		switch(macro){
+			case "TEX":
 				line=line.replace("TEX","");
-				let temp = line.split("=");
+				temp = line.split("=");
 				temp[0]=temp[0].replaceAll(" ","");
-				scope[temp[0]] = math.parse(temp[1]).toTex();
-			}catch(err){console.log(err);}
-		}else{
-			try{
-				math.evaluate(lines[i],scope); 
-			}catch(err){
-				console.log(err);
-			}
+				scope[`${temp[0]}_tex`] = math.parse(temp[1]).toTex();
+				break;
+			case "POL":
+				line=line.replace("POL","");
+				temp = line.split("=");
+				temp[0] = temp[0].replaceAll(" ","");
+				let a = math.parse(temp[1]);
+				a = new polynomial(JSON.parse(a.toString()));
+				scope[`${temp[0]}_pol`] = a.toString();
+				break;
+			default:
+				math.evaluate(lines[i],scope);
+
 		}
+		}catch(err){console.log(err);}
 	}
 
 	return scope;
