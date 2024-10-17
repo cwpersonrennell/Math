@@ -51,6 +51,8 @@ function renderJSONandBody(){
 	console.log(keys);
 	console.log(output);
 	for(let i = 0;i<keys;i++){
+		console.log(`{{${keys[i]}}}-->`+`${output[keys[i]]}`);
+
 		body = body.replaceAll(`{{${keys[i]}}}`,`${output[keys[i]]}`);
 	}
 	previewEl.innerHTML = body;
