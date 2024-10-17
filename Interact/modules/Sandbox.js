@@ -19,10 +19,20 @@ function evaluate(math,vars,code){
 	let lines = code.split("\n");
 	
 	for(let i = 0;i<lines.length;i++){
-		try{
-			math.evaluate(lines[i],scope); 
-		}catch(err){
-			console.log(err);
+		let line = lines[i];
+		if(line.search("TEX")==0){
+			try{
+				line=line.replace("TEX","");
+				let temp = line.split("=");
+				temp[0]=temp[0].replaceAll(" ","");
+				scope[temp[0]] = math.parse(temp[1]).toTex();
+			}catch(err){console.log(err);}
+		}else{
+			try{
+				math.evaluate(lines[i],scope); 
+			}catch(err){
+				console.log(err);
+			}
 		}
 	}
 
