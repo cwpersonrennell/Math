@@ -13,7 +13,8 @@ function create(imports = {},randomSeed = null){
 
 function evaluate(math,vars,code){
 	let scope = {};
-	
+	let parser = math.parser();
+
 	for(let i=0;i<vars.length;i++){
 		scope[vars[i]]=0;
 	}
@@ -30,20 +31,21 @@ function evaluate(math,vars,code){
 				line=line.replace("TEX","");
 				temp = line.split("=");
 				temp[0]=temp[0].replaceAll(" ","");
-				scope[`${temp[0]}_tex`] = math.parse(temp[1]).toTex();
+				scope[`${temp[0]}_tex`] = parser.parse(temp[1]).toTex();
 				break;
 			case "POL":
 				line=line.replace("POL","");
 				temp = line.split("=");
 				temp[0] = temp[0].replaceAll(" ","");
-				let a = math.parse(temp[1]);
+				let a = parser.parse(temp[1]);
 				a = a.toString();
 				if(a.slice(-1)==";") a = a.slice(0,-1);
+				console.log(a);
 				a = new polynomial(JSON.parse(a));
 				scope[`${temp[0]}_pol`] = a.toString();
 				break;
 			default:
-				math.evaluate(lines[i],scope);
+				parser.evaluate(lines[i],scope);
 
 		}
 		}catch(err){console.log(err);}
