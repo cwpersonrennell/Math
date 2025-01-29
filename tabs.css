@@ -20,8 +20,8 @@
   }
 .page-content {
 	max-width: 700px; 
-	margin: 32px auto; 
-	padding: 32px; 
+	margin: 2px auto; 
+	padding: 2px; 
 	background: #fff;
   font-family: "Computer Modern";
 }
@@ -35,8 +35,8 @@ a:hover {
 
 .tabbed {
 	overflow-x: hidden; /* so we could easily hide the radio inputs */
-	margin: 32px 0;
-	padding-bottom: 16px;
+	margin: 2px 0;
+	padding-bottom: 1px;
 	border-bottom: 1px solid #ccc;
 }
 
