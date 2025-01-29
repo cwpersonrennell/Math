@@ -49,6 +49,10 @@ a:hover {
 	display:revert;
 }
 
+.plotmc [type="radio"]{
+	display:revert;
+}
+
 .tabs {
 	display: flex;
 	align-items: stretch;
