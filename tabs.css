@@ -20,7 +20,7 @@
   }
 .page-content {
 	max-width: 1000px; 
-	margin: 2px auto; 
+	margin-right: auto; 
 	padding: 2px; 
 	background: #fff;
   font-family: "Computer Modern";
