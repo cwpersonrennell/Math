@@ -1,4 +1,4 @@
-  @font-face {
+@font-face {
     font-family: "Computer Modern";
     src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
   }
@@ -18,3 +18,8 @@
     font-weight: bold;
     font-style: italic, oblique;
   }
+
+li{
+  font-family:"Computer Modern";
+  font-size:1rem;
+}
