@@ -5,6 +5,43 @@
 <hr>
 <div id="solution" class="hide">
 <p><strong>Solution</strong></p>
+Given the nature of the equation, there are no immediate domain restrictions we need to worry about. Given there are only Cosine functions, I will gather all the terms on one side to see if we can factor:
 
+\[
+\solve{
+  2\cos^2(\theta)&=&1-\cos(\theta)\\
+  2\cos^2(\theta)+\cos(\theta)-1&=&0
+}
+\]
+While more advanced mathematicians may feel perfectly comfortable factoring this expression, I do find it easier for factoring via visual simplification by making the substitution: \(A = \cos(\theta)\):
+
+\[\solve{
+2\cos^2(\theta)+\cos(\theta)-1&=&0\\
+2A^2+A-1 &=& 0
+}
+\]
+Now, we can use the usual rules of factoring. In this case, we will need to use the Group Factoring method since the leading coefficient is a \(2\): we need factors of \(2\times (-1)=-2\) that add up to \(1\), which is conveniently just \(2\) and \(-1\):
+\[\solve{
+2A^2+A-1 &=& 0\\
+2A^2 +2A - A -1 &=&0\\
+2A(A+1)-1(A+1)&=&0\\
+(A+1)(2A-1)&=&0\\
+A+1=0&&2A-1=0\\
+A=-1&&A=\frac{1}{2}
+}
+\]
+Now, we have found what our temporary variable \(A\) becomes by factoring and applying the Zero Product Principle, but we need to revert to the original problem statement using substitution again: \(A = \cos(\theta)\)
+
+\[
+\cos(\theta) =-1, \frac{1}{2}
+\]
+Under our constraint of \(0\leq \theta\lt2\pi\), this will give us the solutions:
+\[
+\theta = \pi, \frac{\pi}{3}, \frac{5\pi}{3}
+\]
+
+Note that visually, this equation \(2\cos^2(\theta)=1-\cos(\theta)\) is effectively asking us to find the intersection of two separate curves. This is demonstrated in the graph below.
+
+<calculator options='{"expressions":true,"keypad":true,"graphpaper":true,"showGrid":false,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":true,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-0.35069357445712235,"right":7.185754036425031,"top":3,"bottom":-1}' style="width:800px;height:600px" data-string='{"version":9,"randomSeed":"ef83a3ed11bee1ff9f8d14a8265f1176","graph":{"viewport":{"xmin":-0.35069357445712235,"ymin":-1,"xmax":7.185754036425031,"ymax":3},"showGrid":false,"squareAxes":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#2d70b3","latex":"2\\cos^{2}\\left(x\\right)"},{"type":"expression","id":"2","color":"#c74440","latex":"1-\\cos\\left(x\\right)"},{"type":"expression","id":"3","color":"#000000","latex":"\\left(\\frac{\\pi}{3},2\\cos^{2}\\left(\\frac{\\pi}{3}\\right)\\right)","showLabel":true,"label":"`\\left(\\frac{\\pi}{3},\\frac{1}{2}\\right)`","labelOrientation":"below"},{"type":"expression","id":"4","color":"#000000","latex":"\\left(\\pi,2\\cos^{2}\\left(\\pi\\right)\\right)","showLabel":true,"label":"`\\left(\\pi,2\\right)`"},{"type":"expression","id":"5","color":"#000000","latex":"\\left(\\frac{5\\pi}{3},2\\cos^{2}\\left(\\frac{5\\pi}{3}\\right)\\right)","showLabel":true,"label":"`\\left(\\frac{5\\pi}{3},\\frac{1}{2}\\right)`","labelOrientation":"below"}]}}' ></calculator >
 </div>
 </div>

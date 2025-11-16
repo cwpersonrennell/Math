@@ -5,6 +5,32 @@
 <hr>
 <div id="solution" class="hide">
 <p><strong>Solution</strong></p>
+Recall that for any given fraction, it can only ever be exactly zero if the numerator is zero. We still need to consider the denominator, at least with regards to domain restrictions and possible extraneous solutions. 
 
+To identify the domain restrictions we set the denominator equal to zero:
+\[
+\solve{
+1+\sin(\theta)&=& 0\\
+\sin(\theta)&=&-1\\
+\theta &=& \frac{3\pi}{2}
+}
+\]
+This, however, is outside the constraints of \(0\lt \theta \lt \pi\), so we should already ignore this solution.
+
+In addition, we *also* need to consider the domain restriction for \(\tan(\theta)\) since \(\theta \neq n\frac{\pi}{2}\), given the domain constraints, specifically we should note that \(\theta \neq \frac{\pi}{2}\) since the tangent function is undefined there.
+
+
+To find the zeros, we set the numerator equal to zero:
+\[
+\solve{
+  1-\tan^2(\theta)&=&0\\
+  1 &=&\tan^2(\theta)\\
+  \pm 1&=&\tan(\theta)\\
+  \theta&=&\frac{\pi}{4}, \frac{3\pi}{4}
+}
+\]
+Here I have *stopped* at \(\frac{3\pi}{4}\) because of the initial constraint for \(0\lt \theta \lt \pi\).
+
+<calculator options='{"expressions":true,"keypad":true,"graphpaper":true,"showGrid":false,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":false,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":true,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-0.30853466913673183,"right":3.2380289124548707,"top":15.134928385416666,"bottom":-13.087727864583334}' style="width:800px;height:600px" data-string='{"version":9,"randomSeed":"62b89110dc01e99021ab7371d90631d7","graph":{"viewport":{"xmin":-0.30853466913673183,"ymin":-13.087727864583334,"xmax":3.2380289124548707,"ymax":15.134928385416666},"showGrid":false,"yAxisNumbers":false,"squareAxes":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#000000","latex":"\\frac{1-\\tan^{2}\\left(x\\right)}{1+\\sin\\left(x\\right)}"},{"type":"expression","id":"3","color":"#2d70b3","latex":"x=\\frac{\\pi}{2}","lineStyle":"DASHED"},{"type":"expression","id":"4","color":"#000000","latex":"\\left(\\frac{\\pi}{4},0\\right)","showLabel":true,"label":"`\\left(\\frac{\\pi}{4},0\\right)`","labelOrientation":"above"},{"type":"expression","id":"5","color":"#000000","latex":"\\left(\\frac{3\\pi}{4},0\\right)","showLabel":true,"label":"`\\left(\\frac{3\\pi}{4},0\\right)`","labelOrientation":"above"},{"type":"expression","id":"6","color":"#2d70b3","latex":"\\left(\\frac{\\pi}{2},0\\right)","showLabel":true,"label":"`\\frac{\\pi}{2}`","hidden":true,"labelOrientation":"above_left"}]}}' ></calculator >
 </div>
 </div>
