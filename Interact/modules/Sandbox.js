@@ -46,7 +46,9 @@ function evaluate(math,vars,code){
 				scope[`${temp[0]}_pol`] = a.toString();
 				break;
 			default:
-				parser.evaluate(lines[i],scope);
+				console.log(line,scope);
+				parser.evaluate(line,scope);
+				console.log(line,scope);
 
 		}
 		}catch(err){console.log(err);}
