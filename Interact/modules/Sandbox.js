@@ -20,11 +20,12 @@ function evaluate(math,vars,code){
 	}
 
 	let lines = code.split("\n");
-	
+	console.log(lines);
 	for(let i = 0;i<lines.length;i++){
 		let line = lines[i];
 		let macro = line.slice(0,3);
 		let temp;
+		console.log(line);
 		try{
 		switch(macro){
 			case "TEX":
