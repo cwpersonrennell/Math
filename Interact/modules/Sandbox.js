@@ -25,20 +25,19 @@ function evaluate(math,vars,code){
 		let line = lines[i];
 		let macro = line.slice(0,3);
 		let temp;
-		console.log(line);
 		try{
 		switch(macro){
 			case "TEX":
 				line=line.replace("TEX","");
 				temp = line.split("=");
 				temp[0]=temp[0].replaceAll(" ","");
-				scope[`${temp[0]}_tex`] = parser.parse(temp[1]).toTex();
+				scope[`${temp[0]}_tex`] = parser.evaluate(temp[1]).toTex();
 				break;
 			case "POL":
 				line=line.replace("POL","");
 				temp = line.split("=");
 				temp[0] = temp[0].replaceAll(" ","");
-				let a = parser.parse(temp[1]);
+				let a = parser.evaluate(temp[1]);
 				a = a.toString();
 				if(a.slice(-1)==";") a = a.slice(0,-1);
 				console.log(a);
@@ -46,12 +45,19 @@ function evaluate(math,vars,code){
 				scope[`${temp[0]}_pol`] = a.toString();
 				break;
 			default:
-				console.log(line,scope);
-				parser.evaluate(line,scope);
-				console.log(line,scope);
-
+				parser.evaluate(line);
 		}
 		}catch(err){console.log(err);}
+	}
+	for(let key in parser.scope.keys()){
+		let value = parser.scope.get(key);
+		try{
+			'_data' in value;
+			value = value._data;
+		}catch(err){
+			//Regular numerical value
+		}
+		scope[key] = value;
 	}
 
 	return scope;
