@@ -45,10 +45,10 @@ function renderJSONandBody(){
 	let data = {"name":name,"vars":vars,"code":code,"body":body,"links":links};
 	let json = JSON.stringify(data)
 	jsonEl.value = json;
-
+	console.log(json);
 	let output = evaluate(math,vars,code);
 	let keys = Object.keys(output);
-	//console.log(keys);
+	console.log(keys);
 	//console.log(output);
 	for(let i = 0;i<keys.length;i++){
 		console.log(`{{${keys[i]}}}-->`+`${output[keys[i]]}`);
