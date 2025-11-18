@@ -49,7 +49,8 @@ function evaluate(math,vars,code){
 		}
 		}catch(err){console.log(err);}
 	}
-	for(let key in parser.scope.keys()){
+	for(let key of parser.scope.keys()){
+		console.log(key)
 		let value = parser.scope.get(key);
 		try{
 			'_data' in value;
