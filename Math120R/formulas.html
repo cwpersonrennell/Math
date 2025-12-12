@@ -72,9 +72,9 @@
 		let value = choiceElement.value;
 		for(let val of choices){
 			let el = document.getElementById(val);
-			el.addClass("hidden");
+			el.classList.add("hidden");
 			if(val == value){
-				el.addClass("visible");
+				el.classList.remove("visible");
 			}
 		}
 
