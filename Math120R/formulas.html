@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>Math Formulas</title>
+	<link rel="stylesheet" href="https://cwpersonrennell.github.io/Math/Math120R/styles.css">
+	<script src="https://cwpersonrennell.github.io/Math/iframeResizer.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body style="width:100%;height:100%">
+	
+	<div id = "nav" class="nav">
+		<h2 class="title">Formulas</h2>
+		<label for="choice">Content Area</label><select name="choice" id="choice">
+			<option id="Linear">Linear</option>
+			<option id="Geometric">Geometric</option>
+			<option id="Exponential">Exponential/Logarithmic</option>
+			<option id="Trigonometric">Logarithmic</option>
+		</select>
+		
+	</div>
+
+	<div class = "visible" id="Linear_Formulas"></div>
+	\[\begin{array}{lrcl}
+\text{Lines}&y &=& mx + b\\
+&Ax + By &=& C\\
+&y-y_1&=&m(x-x_1)\\
+&y &=&m(x-x_1)+y_1\\
+\text{Perpendicular Slopes}&m_1&=&-\dfrac{1}{m_2}\\
+\text{Parallel Slopes}&m_1&=&m_2\\\\\hline
+\]
+	<div class = "hidden" id="Geometric_Formulas"></div>
+	<div class = "hidden" id="Exponential_Formulas"></div>
+	<div class = "hidden" id="Trigonometric_Formulas"></div>
+
+</body>
+
+	
+<script type="text/javascript">
+	const choiceElement=document.getElementById("choice");
+	
+	const linearFormulaElement=document.getElementById("Linear_Formulas");
+
+	let choices  = ["Linear", "Geometric","Exponential","Trigonometric"];
+	
+	choiceElement.addEventListener("change",update);
+	function update(){
+		let value = choiceElement.value;
+
+
+	}
+</script>
+</html>
