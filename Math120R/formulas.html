@@ -73,8 +73,10 @@
 		for(let val of choices){
 			let el = document.getElementById(val);
 			el.classList.add("hidden");
+			el.classList.remove("visible");
 			if(val == value){
-				el.classList.remove("visible");
+				el.classList.add("visible");
+				el.classList.remove("hidden");
 			}
 		}
 
