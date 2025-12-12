@@ -33,15 +33,15 @@
 	<div id = "nav" class="nav">
 		<h2 class="title">Formulas</h2>
 		<label for="choice">Content Area</label><select name="choice" id="choice">
-			<option id="Linear">Linear</option>
-			<option id="Geometric">Geometric</option>
-			<option id="Exponential">Exponential/Logarithmic</option>
-			<option id="Trigonometric">Logarithmic</option>
+			<option value="Linear">Linear</option>
+			<option value="Geometric">Geometric</option>
+			<option value="Exponential">Exponential/Logarithmic</option>
+			<option value="Trigonometric">Logarithmic</option>
 		</select>
 		
 	</div>
 
-	<div class = "visible" id="Linear_Formulas">
+	<div class = "visible" id="Linear">
 		
 			\[\begin{array}{lrcl}
 			\text{Lines}&y &=& mx + b\\
@@ -55,24 +55,28 @@
 
 	</div>
 
-	<div class = "hidden" id="Geometric_Formulas"></div>
-	<div class = "hidden" id="Exponential_Formulas"></div>
-	<div class = "hidden" id="Trigonometric_Formulas"></div>
+	<div class = "hidden" id="Geometric"></div>
+	<div class = "hidden" id="Exponential"></div>
+	<div class = "hidden" id="Trigonometric"></div>
 
 </body>
 
 	
 <script type="text/javascript">
 	const choiceElement=document.getElementById("choice");
-	
-	const linearFormulaElement=document.getElementById("Linear_Formulas");
 
 	let choices  = ["Linear", "Geometric","Exponential","Trigonometric"];
 	
 	choiceElement.addEventListener("change",update);
 	function update(){
 		let value = choiceElement.value;
-
+		for(let val of choices){
+			let el = document.getElementById(val);
+			el.addClass("hidden");
+			if(val == value){
+				el.addClass("visible");
+			}
+		}
 
 	}
 </script>
