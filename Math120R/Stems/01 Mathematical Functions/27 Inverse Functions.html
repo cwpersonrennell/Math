@@ -1,42 +1,3 @@
-<!DOCTYPE html>
-<html style="height:100%;margin:0px;padding:0px">
-<head>
-	<title>NotesInverseFunctions</title>
-  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
-  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
-  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
-  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
-  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
-  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
-  <script defer="defer"> 
-     document.addEventListener("DOMContentLoaded", () => {
-     	try{
-       		MathJax.typeset();
-       	}catch(err){
-       		console.log(err);
-       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
-       	}
-
-
-       //Building the Desmos Calculator from the Desmos Calculator App: 
-       //https://cwpersonrennell.github.io/DesmosAddons/
-       //DEFAULT_OPTIONS.expressions=true;
-       getCalculators();
-  });
-</script>
-</head>
-<body>
-	<p style="display: none;" comment="LaTex Macros">
-\( 
-	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
-	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
-\)
-</p>
-<div id="alternate" style="display:block;float:right">
-  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/Chapter2\2.8\NotesInverseFunctions.html">Source Page</a>
-  </div>
 <p>Below is a little Desmos application which is designed to assist in visualizing what the inverse of a function is. Two considerations are key when considering the inverse of a function:</p>
 <ol>
 <li>On what domain are we considering the function? Some functions may be invertible on <i>part</i> of their domain, but not all.</li>
@@ -62,12 +23,12 @@
       hide=true;
       
       return [
-        {latex:String.raw`x_{${pointCounter}}=${x}`,hidden:true,secret:hide},
-        {latex:String.raw`y_{${pointCounter}}=${y}`,hidden:true,secret:hide},
-        //{latex:String.raw`(x_{${pointCounter}},y_{${pointCounter}})`,hidden:true,secret:true},
-        {latex:String.raw`t_{${pointCounter}}=${theta}`,hidden:true,secret:hide},
-        {latex:String.raw`k_{${pointCounter}}\left(t\right)\ =\left(${m}\left|t\right|\cdot\cos\left(t_{${pointCounter}}\right)-t\cdot\sin\left(t_{${pointCounter}}\right)+x_{${pointCounter}},${m}\left|t\right|\cdot\sin\left(t_{${pointCounter}}\right)+t\cdot\cos\left(t_{${pointCounter}}\right)+y_{${pointCounter}}\right)`,hidden:true,secret:hide},
-        {latex:String.raw`k_{${pointCounter}}(t)`,parametricDomain:{min:"-0.2",max:".2"},color:color,secret:hide}
+        {latex:String.raw`x_{${{pointCounter}}}=${{x}}`,hidden:true,secret:hide},
+        {latex:String.raw`y_{${{pointCounter}}}=${{y}}`,hidden:true,secret:hide},
+        //{latex:String.raw`(x_{${{pointCounter}}},y_{${{pointCounter}}})`,hidden:true,secret:true},
+        {latex:String.raw`t_{${{pointCounter}}}=${{theta}}`,hidden:true,secret:hide},
+        {latex:String.raw`k_{${{pointCounter}}}\left(t\right)\ =\left(${{m}}\left|t\right|\cdot\cos\left(t_{${{pointCounter}}}\right)-t\cdot\sin\left(t_{${{pointCounter}}}\right)+x_{${{pointCounter}}},${{m}}\left|t\right|\cdot\sin\left(t_{${{pointCounter}}}\right)+t\cdot\cos\left(t_{${{pointCounter}}}\right)+y_{${{pointCounter}}}\right)`,hidden:true,secret:hide},
+        {latex:String.raw`k_{${{pointCounter}}}(t)`,parametricDomain:{min:"-0.2",max:".2"},color:color,secret:hide}
       ];
     }
     var elt = document.getElementById('calculator');
@@ -77,7 +38,7 @@
     calculator.setExpressions(arrowAtPoint(1,"f(x_1)",String.raw`-\pi/2`,"blue"));//x_1,y_1
     calculator.setExpressions(arrowAtPoint("0","f(x_1)",String.raw`0`,"blue"));//x_2,y_2
     calculator.setExpressions([{latex:"(x_1,0)",label:"`x`",color:"blue",showLabel:true,secret:true},{latex:String.raw`x=x_1\left\{0\leq y \leq f(x_1)\right\}`,color:"blue",lineStyle:Desmos.Styles.DASHED,secret:true},{latex:String.raw`y=f(x_1)\left\{0\leq x \leq x_1\right\}`,color:"blue",lineStyle:Desmos.Styles.DASHED,secret:true},{latex:"(0,f(x_1))",label:"`f(x)`",showLabel:true,color:"blue",hidden:true,labelOrientation:Desmos.LabelOrientations.LEFT}]);
-    calculator.setExpression({latex:"g(x) = \\sqrt{x}",hidden:true,secret:true});
+    calculator.setExpression({latex:"g(x) = \\sqrt{{x}}",hidden:true,secret:true});
     
     calculator.setExpressions([{latex:String.raw`(0,y_3)`,label:"`y`",color:"green",showLabel:true,secret:true}]);
     calculator.setExpressions(arrowAtPoint(String.raw`g(y_3)`,2,RIGHT,"green"));//x_3,y_3
@@ -91,5 +52,3 @@
 </p>
 <p></p>
 <hr></div>
-</body>
-</html>
