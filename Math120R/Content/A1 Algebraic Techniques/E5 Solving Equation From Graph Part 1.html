@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>E5 Solving Equation From Graph Part 1</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Determine the equation of the line in the graph. The other curve is&nbsp; \(y=\dfrac{3}{32}x^3+\dfrac{5}{16}x^2\)</p>
+<div id="calculator" style="width: 100%; height: 600px;"></div>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution: </strong>Since we do not know what the \(b\) value is, we need to determine the slope <i>in terms of \(b\)</i>:</p>
+\[ \solve{ m&amp;=&amp;\dfrac{2-b}{2-0}\\ m&amp;=&amp;\dfrac{2-b}{2} } \]
+<p>Then, we can use the Point-Slope form of a line to get the equation:</p>
+\[ \solve{y&amp;=&amp;m(x-x_1)+y_1\\y&amp;=&amp;\dfrac{2-b}{2}(x-2)+2} \]</div>
+</div>
+<p>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true,invertedColors:true,xAxisNumbers:false,yAxisNumbers:false,showGrid:false,pointsOfInterest:false,trace:false});
+  calculator.setMathBounds({left:-10,right:10,bottom:-10,top:10});
+  calculator.setExpressions( [{latex: 'y=3/32x^3+5/16x^2'},{latex: '(2,2)',showLabel:true},{latex:"y=0.5(x-2)+2"},{latex:"(0,1)",showLabel:true,label:"`(0,b)`"}]);
+  });
+</script>
+</body>
+</html>

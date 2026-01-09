@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>03 Exponential Model From Two Points </title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example: Determine an exponential function of the form \(f(x) = C\cdot B^x\) which passes through the points \((-1,8)\) and \((1,2)\)</p>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>Similar to our previous example, we will apply both points to the model. The main difference is that one of the points is not the vertical intercept, so we will need to use some different substitution techniques to fully answer the question:
+\[
+\solve{
+	8&=&C\cdot B^{-1}\\
+	8&=&\frac{C}{B}\\
+	8B&=&C
+}
+\]This time we don't get the exact value for \(C\), but instead solve it in terms of \(B\). In general, with these exponential models, I <strong>strongly</strong> suggest always solving for the \(C\) parameter first. You can do it either way, but I find it slightly easier to just focus on that parameter first. Using the second point and substituting the \(x\), \(y\), and \(C\) values:
+\[\solve{
+2 &=&(8B)\cdot B^1\\
+2&=&8\cdot B^2\\
+\frac{1}{4}&=&B^2\\
+\pm\frac{1}{2}&=&B\\
+\frac{1}{2}&=&B
+}
+\]As before, we drop the negative solution since the Base must be positive. This time, we need to <strong>back-substitute</strong> in order to get \(C\):
+\[
+C=8B=8\cdot \left(\frac{1}{2}\right)=4
+\]
+This gives us our final answer:
+\[
+f(x) = 4\left(\frac{1}{2}\right)^x
+\]</p>
+</div>
+</div>
+</body>
+</html>

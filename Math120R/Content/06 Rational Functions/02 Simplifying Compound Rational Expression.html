@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>02 Simplifying Compound Rational Expression</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">\[\require{color}\]
+<p>Example: Simplify the rational expressions: <Br>(a)\[ \dfrac{ 1+\frac{ 10 }{ x-3 } }{ 1-\frac{ 10 }{ x-3 } } \]
+(b)
+\[
+\dfrac{\frac{x}{y}-\frac{y}{x}}{\frac{1}{6x^2}- \frac{1}{6y^2}}
+\]</p>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+(a)	To simplify this type of compound fraction, we have the choice of either combining the numerator and denominator first and then simplyfing, or we can multiply the top and bottom by the least common denominator. I will use the latter for part (a) and the former for part (b).
+\[ 
+\solve{ 
+\dfrac{ 1+\frac{ 10 }{ x-3 } }{ 1-\frac{ 10 }{ x-3 } }&amp;=&amp;\dfrac{ \left(1+\frac{ 10 }{ x-3 } \right)}{\left( 1-\frac{ 10 }{ x-3 }\right) }\times {\bf \dfrac{ x - 3 }{ x-3 } }\\ 
+&amp;=&amp;\dfrac{ x-3+10 }{ x-3 - 10 }\\ 
+&amp;=&amp;\dfrac{ x+7 }{ x- 13 } } \]
+(b) For this part, we will separate the numerator and denominator into two separate steps, simplifying each in turn before we use the "multiply by the reciprocal of the denominator" trick to condense the compound fraction into a simpler one. We begin with the Numerator:
+\[
+\begin{array}{rcl}
+\frac{x}{y}-\frac{y}{x} &=&\frac{{\bf x}x}{{\bf x}y} - \frac{{\bf y}y}{{\bf y}x}\\
+&=&\frac{x^2}{xy} - \frac{y^2}{xy}\\
+&=&\frac{x^2-y^2}{xy}\\
+&=&\frac{(x-y)(x+y)}{xy}
+\end{array}
+\]
+Then the Denominator:
+\[
+\begin{array}{rcl}
+\frac{1}{6x^2}-\frac{1}{6y^2}
+&=&\frac{{\bf y^2}}{6x^2{\bf y^2}} - \frac{{\bf x^2}}{6y^2{\bf x^2}} \\
+&=&\frac{y^2}{6x^2y^2}-\frac{x^2}{6x^2y^2}\\
+&=&\frac{y^2 - x^2}{6x^2y^2}\\
+&=&\frac{(y-x)(y+x)}{6x^2y^2}
+\end{array}
+\]Finally, we put these all together via substitution into the original compound fraction and start simplifying, relying on turning division of two fractions into multiplication by the reciprocal of the denominator:
+\[
+\begin{array}{rcl}
+\dfrac{\frac{x}{y}-\frac{y}{x}}{\frac{1}{6x^2}- \frac{1}{6y^2}}
+&=&\dfrac{\frac{(x-y)(x+y)}{xy}}{\frac{(y-x)(y+x)}{6x^2y^2}}\\
+&=&\frac{(x-y)(x+y)}{xy}\times\frac{6x^2y^2}{(y-x)(y+x)}\\
+&=&\frac{6x^2y^2(x-y)(x+y)}{xy(y-x)(y+x)}\\
+&=&\frac{6xy(x-y)}{(y-x)}\\
+&=&-6xy
+\end{array}
+\]The first step after substitution is to turn the main division into multiplying by the reciprocal of the denominator then we cancel like factors the final step is a little more nuanced, but can be seen to be true via these separate steps:
+\[
+\begin{array}{rcl}
+\frac{x-y}{y-x} &=& \frac{-(-x+y)}{y-x}\\
+&=&\frac{-(y-x)}{(y-x)}\\
+&=&-1
+\end{array}
+\]Thus, our final answer to (b) is \(-6xy\) as stated above.
+</div>
+</div>
+</body>
+</html>

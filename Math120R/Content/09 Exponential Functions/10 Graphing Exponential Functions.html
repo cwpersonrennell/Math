@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>10 Graphing Exponential Functions</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example: Graph the functions:</p>
+<ol>
+<li>\(f(x)=e^x\)</li>
+<li>\(g(x)=e^{-x}\)</li>
+<li>\(k(x)=e^{3x}\)</li>
+<li>\(h(x)=5-2e^{x}\)</li>
+</ol>
+<p>
+	<calculator options='{"expressions":true,"keypad":true,"graphpaper":true,"showGrid":true,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":false,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-7.3134094500167866,"right":5.000571740775021,"top":8.049974733281267,"bottom":-7.342500189404973}' style="width:1000px;height:800px" data-string='{"version":9,"randomSeed":"ee5305dd852081e20d30f1fc386423c3","graph":{"viewport":{"xmin":-7.3134094500167866,"ymin":-7.342500189404973,"xmax":5.000571740775021,"ymax":8.049974733281267}},"expressions":{"list":[{"type":"expression","id":"2","color":"#2d70b3"}]}}' ></calculator >
+	</p>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+	<ol>
+		<li><calculator options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":true,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":false,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-10,"right":10,"top":12.499998728434374,"bottom":-12.499998728434374}' style="width:800px;height:600px" data-string='{"version":9,"randomSeed":"a63e3398ad1253d15e347165cc34b675","graph":{"viewport":{"xmin":-10,"ymin":-12.499998728434374,"xmax":10,"ymax":12.499998728434374},"squareAxes":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#c74440","latex":"f\\left(x\\right)=e^{x}"}]}}' ></calculator ></li>
+		<li><calculator options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":true,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":false,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-9.344793751160145,"right":10.655206248839855,"top":12.210458149164007,"bottom":-12.789539307704741}' style="width:800px;height:600px" data-string='{"version":9,"randomSeed":"a6f7598445ba4b89ae3d53bf71156ae8","graph":{"viewport":{"xmin":-9.344793751160145,"ymin":-12.789539307704741,"xmax":10.655206248839855,"ymax":12.210458149164007},"squareAxes":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#c74440","latex":"g\\left(x\\right)=e^{-x}"}]}}' ></calculator ></li>
+		<li><calculator options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":true,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":false,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-7.3134094500167866,"right":5.000571740775021,"top":8.049974733281267,"bottom":-7.342500189404973}' style="width:800px;height:600px" data-string='{"version":9,"randomSeed":"63ded9b59d1fdf0ad390fcdf91c13cb4","graph":{"viewport":{"xmin":-7.3134094500167866,"ymin":-7.342500189404973,"xmax":5.000571740775021,"ymax":8.049974733281267},"squareAxes":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#c74440","latex":"k\\left(x\\right)=e^{3x}"}]}}' ></calculator ></li>
+		<li><calculator options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":true,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":false,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-7.3134094500167866,"right":5.000571740775021,"top":8.049974733281267,"bottom":-7.342500189404973}' style="width:800px;height:600px" data-string='{"version":9,"randomSeed":"1062b5d70ac58cafd1c94ef0b854a48c","graph":{"viewport":{"xmin":-7.3134094500167866,"ymin":-7.342500189404973,"xmax":5.000571740775021,"ymax":8.049974733281267},"squareAxes":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#c74440","latex":"h\\left(x\\right)=5-2e^{x}"}]}}' ></calculator ></li>
+	</ol>
+</div>
+</div>
+
+</body>
+</html>

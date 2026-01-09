@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>08 One Logarithm To Many</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example: Use the Laws of Logarithms to expand the logarithm:</p>
+\[ \ln\left(\dfrac{7e^3w^7}{h^2\sqrt{r^3}}\right) \]
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+In my solution below, I shall separate each step as a one-at-time step. However, do note that you can figure out that all the terms in the numerator should have a positive logarithm, while those in the denominator need a negative logarithm, and thereby skip many of the individual steps below. 
+\[
+\solve{
+	\ln\left(\dfrac{7e^3w^7}{h^2\sqrt{r^3}}\right)&=&
+	\ln\left(\frac{7e^3}{h^2r^{\frac{3}{2}}}\right)+\ln(w^7)\\
+	&=&\ln\left(\frac{7}{h^2r^{\frac{3}{2}}}\right)+\ln(e^3)+7\ln(w)\\
+	&=&\ln\left(\frac{7}{h^2}\right)-\ln(r^\frac{3}{2})+3+7\ln(w)\\
+	&=&\ln(7)-\ln(h^2)-\frac{3}{2}\ln(r)+3+7\ln(w)\\
+	&=&\ln(7)-2\ln(h)-\frac{3}{2}\ln(r)+3+7\ln(w)\\
+	&=&\ln(7)+3+7\ln(w)-2\ln(h)-\frac{3}{2}\ln(r)
+}
+\]
+I reorganized the terms in the last line to emphasis that you can really go from the first expression almost directly to the last expression as long as you keep the exponenents and signs under careful consideration.
+</div>
+</div>
+
+</body>
+</html>

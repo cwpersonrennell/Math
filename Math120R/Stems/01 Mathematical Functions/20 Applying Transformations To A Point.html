@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>ExampleApplyingTransformationsToAPoint</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/Chapter2\2.6\ExampleApplyingTransformationsToAPoint.html">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+	<p>While transformations are often discussed in the context of graphs and functions, it is <strong>vital</strong> to recognize that transformations occur on a point-by-point basis for every point on the graph of a function. This example is intended to help highlight how we can apply the language/notation of transformations to an arbitrary point of an otherwise unknown function. </p>
+<p>Suppose that the point \((8,-10)\) is on the graph of the function \(y=f(x)\). Find the corresponding point on the transformed graph \(y=-3f(x+3)+1\)</p>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>The strategy here is to read the transformations and then divy them up into horizontal and vertical operations. The transformations being applied are:</p>
+<ol>
+<li>Reflection over the \(x\)-axis (vertical)</li>
+<li>Vertical stretch by a factor of 3</li>
+<li>Horizontal shift left by 3 units</li>
+<li>Vertical shift up by 1 unit</li>
+</ol>
+<p>Now that we know all the transformations, we applying them in the order of operations to the horizontal and vertical components of the point. Note that when we have reflections and stretching/compressing happening to the same component, it is the same as multiplying by a negative. I will color code the coordinates to emphasize where they appear in the calculations: \(({\color{blue} 8},{\color{red} -10})\)</p>
+\[ \begin{array}{rrcl} \text{Horizontal:}&amp;{\color{blue} 8}-3&amp;=&amp;5\\ \text{Vertical:}&amp;-3({\color{red} -10})+1&amp;&amp;31\\ \text{New Point:}&amp;(5,31) \end{array} \]</div>
+</div>
+</body>
+</html>

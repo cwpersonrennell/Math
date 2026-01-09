@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>59 Using Double Angle Formulas To Simplify</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example: Simplify the trigonometric expression into a purely algebraic expression (no trig functions in final answer):</p>
+<p>\[\sin(2\tan^{-1}(x))\]</p>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>Recall from chapter 6 that any Inverse Trig algebraic statement can be expressed as the angle of some right triangle. Thus, let's say that \(\theta = \tan^{-1}(x)\) and then draw the corresponding right triangle:</p>
+<calculator options="{&quot;expressions&quot;:false,&quot;keypad&quot;:true,&quot;graphpaper&quot;:true,&quot;showGrid&quot;:false,&quot;showXAxis&quot;:true,&quot;showYAxis&quot;:true,&quot;xAxisNumbers&quot;:false,&quot;yAxisNumbers&quot;:false,&quot;trace&quot;:true,&quot;pointsOfInterest&quot;:true,&quot;settingsMenu&quot;:true,&quot;zoomButtons&quot;:true,&quot;expressionsCollapsed&quot;:false,&quot;capExpressionSize&quot;:false,&quot;lockViewport&quot;:false,&quot;projectorMode&quot;:true,&quot;invertedColors&quot;:false}" mathbounds="{&quot;left&quot;:-0.11819638061523427,&quot;right&quot;:1.2364911193847659,&quot;top&quot;:10.242192993561401,&quot;bottom&quot;:-17.98046325643859}" style="width: 800px; height: 600px;" data-string="{&quot;version&quot;:9,&quot;randomSeed&quot;:&quot;50841d8161d4ab109a65dd424c0fe943&quot;,&quot;graph&quot;:{&quot;viewport&quot;:{&quot;xmin&quot;:-0.11819638061523427,&quot;ymin&quot;:-17.98046325643859,&quot;xmax&quot;:1.2364911193847659,&quot;ymax&quot;:10.242192993561401},&quot;showGrid&quot;:false,&quot;xAxisNumbers&quot;:false,&quot;yAxisNumbers&quot;:false,&quot;squareAxes&quot;:false},&quot;expressions&quot;:{&quot;list&quot;:[{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;1&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;x_{1}=1&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;2&quot;,&quot;color&quot;:&quot;#2d70b3&quot;,&quot;latex&quot;:&quot;y_{1}\\ =-\\ \\sqrt{143}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;3&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=\\frac{y_{1}}{x_{1}}x\\left\\{0\\le x\\le x_{1}\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;4&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;x=1\\left\\{y_{1}\\le y\\le0\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;5&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=0\\left\\{0\\le x\\le x_{1}\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;6&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(0.15,\\frac{0.15y_{1}}{2x_{1}}\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`\\theta`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;right&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;7&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(\\frac{x_{1}}{2},0\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`1`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;above&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;8&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(x_{1},\\frac{y_{1}}{2}\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`x`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;right&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;9&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(\\frac{x_{1}}{2},\\frac{y_{1}}{2}\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`H`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;below_left&quot;}]}}">Tangent Triangle</calculator>
+<p>Depsite having drawn this in the 4th quadrant, you can choose to draw it in the 1st quadrant as well:</p>
+<calculator options="{&quot;expressions&quot;:false,&quot;keypad&quot;:true,&quot;graphpaper&quot;:true,&quot;showGrid&quot;:false,&quot;showXAxis&quot;:true,&quot;showYAxis&quot;:true,&quot;xAxisNumbers&quot;:false,&quot;yAxisNumbers&quot;:false,&quot;trace&quot;:true,&quot;pointsOfInterest&quot;:true,&quot;settingsMenu&quot;:true,&quot;zoomButtons&quot;:true,&quot;expressionsCollapsed&quot;:false,&quot;capExpressionSize&quot;:false,&quot;lockViewport&quot;:false,&quot;projectorMode&quot;:true,&quot;invertedColors&quot;:false}" mathbounds="{&quot;left&quot;:-0.033006295596851976,&quot;right&quot;:1.2419937044031482,&quot;top&quot;:16.41410928204946,&quot;bottom&quot;:-10.148390717950534}" style="width: 800px; height: 600px;" data-string="{&quot;version&quot;:9,&quot;randomSeed&quot;:&quot;969b438df20c9bc563a4ca806e05ebec&quot;,&quot;graph&quot;:{&quot;viewport&quot;:{&quot;xmin&quot;:-0.033006295596851976,&quot;ymin&quot;:-10.148390717950534,&quot;xmax&quot;:1.2419937044031482,&quot;ymax&quot;:16.41410928204946},&quot;showGrid&quot;:false,&quot;xAxisNumbers&quot;:false,&quot;yAxisNumbers&quot;:false,&quot;squareAxes&quot;:false},&quot;expressions&quot;:{&quot;list&quot;:[{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;1&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;x_{1}=1&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;2&quot;,&quot;color&quot;:&quot;#2d70b3&quot;,&quot;latex&quot;:&quot;y_{1}\\ =\\ \\sqrt{143}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;3&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=\\frac{y_{1}}{x_{1}}x\\left\\{0\\le x\\le x_{1}\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;4&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;x=1\\left\\{0\\le y\\le y_{1}\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;5&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=0\\left\\{0\\le x\\le x_{1}\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;6&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(0.15,\\frac{0.15y_{1}}{2x_{1}}\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`\\theta`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;right&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;7&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(\\frac{x_{1}}{2},0\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`1`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;below&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;8&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(x_{1},\\frac{y_{1}}{2}\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`x`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;right&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;9&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(\\frac{x_{1}}{2},\\frac{y_{1}}{2}\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`H`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;above_left&quot;}]}}">1st quadrant</calculator>
+<p>In either case, we need to solve for the hypotenuse: \[ \solve{ H^2 &amp;=&amp; x^2+1\\ H &amp;=&amp; \sqrt{x^2+1} } \]</p>
+<p>Now that we have the hypotenuse, we can come back to the original statement: \[ \sin(2\tan^{-1}(x)) = \sin(2\theta) \]Where \(\theta\) is the angle as drawn in our triangle above. To find the double angle for Sine, we need both the Sine and Cosine of this triangle: \[ \solve{ \sin(\theta) &amp;=&amp; \frac{x}{\sqrt{x^2+1} }\\ \cos(\theta) &amp;=&amp; \frac{1}{\sqrt{x^2+1} } }\]So that when we apply the double sine angle formula: \[ \solve{ \sin(2\theta) &amp;=&amp;2\sin(\theta)\cos(\theta)\\ &amp;=&amp;2\left(\frac{x}{\sqrt{x^2+1} }\right)\left(\frac{1}{\sqrt{x^2+1} }\right)\\ \sin(2\theta)&amp;=&amp;\dfrac{ 2x }{ x^2 +1 } } \]</p>
+<p>Thus, our answer can finally be expressed: \[ \sin(2\tan^{-1}(x))=\sin(2\theta) = \dfrac{2x}{ x^2 +1} \]</p>
+</div>
+</div>
+</body>
+</html>

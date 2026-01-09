@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>ExampleIncreasingDecreasingPositiveNegativeGraph</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/Chapter2\2.3\ExampleIncreasingDecreasingPositiveNegativeGraph.html">Source Page</a>
+  </div>
+<div class="fa">
+<p>Using the graph below, determine the intervals of increasing/decreasing and where the function is positive/negative.</p>
+<div id="calculator" style="width: 100%; height: 600px; text-align: center;"></div>
+<hr>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>The function is represented with tailing ends (not fixed endpoints) so we can presume that the domain is \((-\infty,\infty)\). With that in mind:</p>
+<div>\[ \begin{array}{r|l} \text{Increasing:}&amp;(5.5,10.5)\\ \hline \text{Decreasing:}&amp;(-\infty,5.5)\cup(10.5,\infty)\\\hline \text{Positive:}&amp;(-\infty,3)\cup(8,13)\\ \hline \text{Negative:}&amp;(3,8)\cup(13,\infty) \end{array} \]</div>
+<div id="calculator2" class="solution" style="width: 100%; height: 600px;"></div>
+</div>
+<!-- End Solution--></div>
+<p>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt,{projectorMode: true,expressions:false,lockViewport:false});
+  calculator.setMathBounds({left:-4,right:20,bottom:-30,top:30});
+  calculator.setExpressions( [{latex:'f(x)=(x-3)(x-8)\\left\\{x\\le8\\right\\}',color:"blue"},{latex:'g(x)=-(x-10.5)^2+6.25\\left\\{x\\geq8\\right\\}',color:"blue"},{latex:"(3,f(3))",color:"blue", showLabel:true},{latex:"(8,f(8))",color:"blue", showLabel:true},{latex:"(13,g(13))",color:"blue", showLabel:true},{latex:"(10.5,g(10.5))",color:"blue", showLabel:true},{latex:"(5.5,f(5.5))",color:"blue", showLabel:true}]);
+
+  var elt2 = document.getElementById('calculator2');
+  var calculator2 = Desmos.GraphingCalculator(elt2,{projectorMode: true,expressions:false,lockViewport:false});
+  calculator2.setMathBounds({left:-4,right:20,bottom:-30,top:30});
+  calculator2.setExpressions( [{latex:'f(x)=(x-3)(x-8)\\left\\{x\\le8\\right\\}',color:"blue"},{latex:'g(x)=-(x-10.5)^2+6.25\\left\\{x\\geq8\\right\\}',color:"blue"},{latex:"(3,f(3))",color:"blue", showLabel:true},{latex:"(8,f(8))",color:"blue", showLabel:true},{latex:"(13,g(13))",color:"blue", showLabel:true},{latex:"(10.5,g(10.5))",color:"blue", showLabel:true},{latex:"(5.5,f(5.5))",color:"blue", showLabel:true},{latex:"0\\le y\\le f(x)",color:"blue"},{latex:"0\\le y\\le g(x)",color:"blue"},{latex:"0\\geq y\\geq f(x)",color:"red"},{latex:"0\\geq y\\geq g(x)",color:"red"},{latex:"f(x)\\left\\{5.5\\leq x \\leq 10.5\\right\\}",color:"green"},{latex:"g(x)\\left\\{5.5\\leq x \\leq 10.5\\right\\}",color:"green"},{latex:"f(x)\\left\\{x \\leq 5.5\\right\\}",color:"red"},{latex:"g(x)\\left\\{ x \\geq 10.5\\right\\}",color:"red"},]);});
+</script>
+</body>
+</html>

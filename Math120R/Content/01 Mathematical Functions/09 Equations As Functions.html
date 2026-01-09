@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>09 Equations As Functions</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>ExampleEquationsAsFunctions</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/Chapter2\2.2\ExampleEquationsAsFunctions.html">Source Page</a>
+  </div>
+<div class="fa">
+<p>Does the equation below represent \(y\) as a function of \(x\)?</p>
+\[x^2y^3-y = 1\]</div>
+<hr>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>Algebraically, this question is tough. The goal (algebraically) for this type of "is ___ a function of __" is to rewrite the equation so that the first variable is solved for. In this case, that would mean solving for \(y\). However, if you have already tried this, you should notice that no matter what algebraic trick you attempt, isolating \(y\) as a variable just doens't seem to work. Here are some "failed" attempts:</p>
+\[ \begin{array}{rcl} x^2y^3-y &amp;=&amp; 1\\ y(x^2y^2-1) &amp;=&amp; 1 \\y &amp;=&amp;\displaystyle\frac{1}{x^2{\color{red} y}^2-1} \\ \hline x^2y^3-y &amp;=&amp; 1\\ x^2y^3 &amp;=&amp; 1+y \\ x^2 &amp;=&amp; \displaystyle\frac{1+y}{y^3}\end{array} \]
+<p>This is by no means exhaustive of all the possible tricks we might employ, but certainly once you have attempted a few different algebraic approaches, choosing a visual approach instead makes plenty of sense. In this case, we can graph the function and seek to identify if the fails the <strong> vertical line test</strong> anywhere. Given our algebraic difficulties, it is reasonable to assume that might be the case.</p>
+<p>Our first graph doesn't make this super clear.</p>
+<div id="calculator" style="width: 600px; height: 400px; text-align: center;"></div>
+<p>However, zooming in a bit we can see that this most definitely fails the vertical line test, therefore \(y\) is <strong>not</strong> a function in \(x\) for the given equation.</p>
+<div id="calculator2" style="width: 600px; height: 400px; text-align: center;"></div>
+<script>
+     document.addEventListener("DOMContentLoaded", () => {
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0.5});
+  calculator.setMathBounds({left:-10,right:10,bottom:-10,top:10});
+  calculator.setExpressions( [{id: 'graph', latex: 'x^2y^3-y=1'}]);
+    var elt2 = document.getElementById('calculator2');
+  var calculator2 = Desmos.GraphingCalculator(elt2,{expressions:false,lockViewport:true,xAxisStep:0.5});
+  calculator2.setMathBounds({left:-1,right:0,bottom:-10,top:10});
+  calculator2.setExpressions( [{id: 'graph1', latex: 'x^2y^3-y=1'},{latex:"x=-0.35"}]);
+     });
+</script>
+</div>
+</body>
+</html>
+</body>
+</html>

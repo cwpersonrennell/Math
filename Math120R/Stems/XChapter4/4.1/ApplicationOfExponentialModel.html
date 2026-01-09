@@ -1,0 +1,40 @@
+<div class="fa" style="width: 100%;">
+<p>Example: A certain over the counter cold medication works on the body over the course of a few hours. Our bodies naturally break down and eventually remove all of the drug from our system, and the amount \(A\), in mg, that remains in our body after \(t\) hours since ingesting it, can be modeled by the equation \(A(t)=50(0.83)^t\). Answer each question.</p>
+<ol>
+<li>What is the initial dose?</li>
+<li>What percent of the drug does the body metabolize each hour? (this is the <i>decay rate of the drug</i>)</li>
+<li>How much of the drug remains in the body after four hours?</li>
+<li>How long after taking the dose does it take until there is only 1 mg remaining in the body?</li>
+</ol>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+	<p><strong>Solution</strong></p>
+	<ol>
+		<li>The initial dose is determined by setting \(t=0\):
+		\[
+			A(0)=50(0.83)^0=50
+	    \]
+		</li>
+		<li>
+			The percent that the metabolizes each hour is the rate of decay. We can determine that by taking 1 minus the <strong>base</strong>:
+			\[
+				1 - 0.83 = 0.17
+			\]
+			Thus, the rate of decay is \(17\%\), so the body metabolizes that much each hour.
+		</li>
+		<li>
+			This question is effectively setting \(t=4\) and simplifying/plugging it into our calculator:
+			\[
+				A(4)=50(0.83)^4 \approx 23.7
+			\]
+			So there is approximately 23.7 mg of the drug in the body after 4 hours.
+		</li>
+		<li>
+			For this final question, we are best able to answer it by graphing both the original function and the line \(y=1\) and looking for their intersection. I typically set the vertical window to be double the value I am looking for, so my ymin will be 0 and my ymax will be 2. Then I increase the xmax until I have a clear visual intersection:
+			<calculator options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":true,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":false,"zoomButtons":false,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":true,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":0,"right":30,"top":2,"bottom":0}' style="width:800px;height:600px" data-string='{"version":9,"randomSeed":"19e3b9750a43bce7587147190e7fc302","graph":{"viewport":{"xmin":0,"ymin":0,"xmax":30,"ymax":2},"squareAxes":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#c74440","latex":"A\\left(t\\right)=50\\left(0.83\\right)^{t}"},{"type":"expression","id":"2","color":"#2d70b3","latex":"y=1"},{"type":"expression","id":"3","color":"#388c46","latex":"s\\ =\\log_{0.83}\\left(\\frac{1}{50}\\right)"},{"type":"expression","id":"4","color":"#000000","latex":"\\left(s,A\\left(s\\right)\\right)","showLabel":true,"labelSize":"2","labelOrientation":"below_left"}]}}' ></calculator >
+			Thus, it takes about 21 hours for the body to reduce the amount of the drug to 1 mg.
+		</li>
+	</ol>
+</div>
+</div>

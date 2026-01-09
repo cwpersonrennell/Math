@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>12 Solving Logarithmic Equation Multiple Logs</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example: Solve the equation \[\log_3(x+6)-\log_3(6-x)=3\]</p>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>
+	When we have a problem with multiply logarithms, our goal should be to condense the logarithms into a <strong>single </strong> logarithm and then apply the definition of logarithm to get the problem in the exponential form. However, different form exponential equations, we <strong>must</strong> keep the domain of the logarithmic functions closely in mind.
+
+	\[
+	\log_3(\underbrace{x+6}_{\gt 0})-\log_3(\underbrace{6-x}_{\gt 0})=3
+	\]
+
+	Since we have multiply logarithms, the overall valid set of solutions will entirely depend on the overlapping domains of each:
+	\[\solve{
+		x+6&\gt&0\\
+		x&\gt&-6\\\hline
+		6-x&\gt&0\\
+		-x&\gt&-6\\
+		x&\lt&6
+	}
+	\]
+	These two domain restrictions combined give a solution domain of \((-6,6)\). Thus, any answer we find algebraically, we must check against this restriction. Let's now turn to solving the question as presented:
+	\[
+	\solve{
+		\log_3(x+6)-\log_3(6-x)&=&3\\
+		\log_3\left(\frac{x+6}{6-x}\right)&=&3\\
+		3^3&=&\frac{x+6}{6-x}\\
+		27\left(6-x\right)&=&x+6\\
+		162-27x&=&x+6\\
+		156&=&28x
+		\frac{39}{7}&=&x
+		\frac{39}{7}&\approx&5.57\dots
+
+	}
+	\]
+	Since the answer we found, \(\frac{39}{7}\), is in the domain \((-6,6)\), we have finished our problem.
+	</p>
+	<p>A few notes: Solving problems with multiple logarithms will require combining those logarithms together in order to apply the definition of logarithm and converting the equation to its exponential equivalent. The Domain of the logarithms will restrict the available solutions and should always be considered when solving these types of questions.</p>
+</div>
+</div>
+</body>
+</html>

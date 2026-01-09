@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>08 Finding Trigonometric Values From Constraints</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example:</p>
+Find the values of the trigonometric function of \(t\) given that \(\tan(t) = -\dfrac{7}{2}\) and \(\cos(t)\lt 0\). Specifically, identify:
+<ol>
+<li>\(\sin(t)=\)</li>
+<li>\(\cos(t)=\)</li>
+</ol>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong>First, we need to identify the correct quadrant we are in. Since the Tangent and Cosine are both negative (based on the given information) we know we must be in quadrant II. This is because the Tanget is \(\dfrac{y}{x}\) and since \(\cos(t)=x\lt 0\), and the Tangent is negative, it follows that \(y\gt 0\),hence, quadrant II.</p>
+<p>Now that we know that the Sine should be positive and Cosine negative, I will largely ignore the sign of the tangent function and instead draw what I call a "generic" right triangle: effectively, I will use the fact that the Tangent ratio in a right triangle is Opposite over Adjacent to make a basic right triangle with an angle \(t\) and then solve for the other trig ratios using that drawing. <strong>Note that the drawing is *not* to scale, intentionally in this case since we are just using it as a quick sketch for reference to find the appropriate relationships between the various sides!</strong></p>
+<calculator options="{&quot;expressions&quot;:false,&quot;lockViewport&quot;:true}" mathbounds="{&quot;left&quot;:-1.0138549272486141,&quot;right&quot;:6.5678517111101105,&quot;top&quot;:5.723964616628026,&quot;bottom&quot;:-3.7531686813203766}" style="width: 100%; height: 600px;" data-string="{&quot;version&quot;:9,&quot;randomSeed&quot;:&quot;8b193e6250f66be952bedc9a145d04c0&quot;,&quot;graph&quot;:{&quot;viewport&quot;:{&quot;xmin&quot;:-1.0138549272486141,&quot;ymin&quot;:-3.7531686813203766,&quot;xmax&quot;:6.5678517111101105,&quot;ymax&quot;:5.723964616628026},&quot;showGrid&quot;:false,&quot;showXAxis&quot;:false,&quot;showYAxis&quot;:false,&quot;xAxisNumbers&quot;:false,&quot;yAxisNumbers&quot;:false,&quot;polarNumbers&quot;:false},&quot;expressions&quot;:{&quot;list&quot;:[{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;9&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=\\frac{1}{2}x\\left\\{0\\le x\\le5\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;10&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;x=5\\left\\{0\\le y\\le2.5\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;11&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=0\\left\\{0\\le x\\le5\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;12&quot;,&quot;color&quot;:&quot;#2d70b3&quot;,&quot;latex&quot;:&quot;\\left(1,0.25\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`t`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;13&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(5,1.25\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`7`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;3&quot;,&quot;labelOrientation&quot;:&quot;right&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;14&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(2.5,0\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`2`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;3&quot;,&quot;labelOrientation&quot;:&quot;below&quot;}]}}"></calculator>
+<p>We can then solve for the hyptenuse using Pythagora's formula:</p>
+\[ \solve{ 2^2+7^2&amp;=&amp;c^2\\ 4+49&amp;=&amp;c^2\\ 53&amp;=&amp;c^2\\ \sqrt{53}&amp;=&amp;c } \]
+<p>Here, we only take the positive root since this is a distance. Armed with the hypotenuse , we can quickly fill in for the Sine and Cosine as long as we remember that Cosine is supposed to be negative!!</p>
+<ol>
+<li>\(\sin(t)=\dfrac{ 7 }{ \sqrt{53} }=\dfrac{7\sqrt{53} }{53}\)</li>
+<li>\(\cos(t)=-\dfrac{ 2 }{ \sqrt{53} }=-\dfrac{2\sqrt{53} }{53}\)</li>
+</ol>
+</div>
+</div>
+</body>
+</html>

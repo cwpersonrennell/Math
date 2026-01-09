@@ -1,0 +1,32 @@
+<div class="fa" style="width: 100%;">
+<p>Example: If the doubling time for a population is 15 days, what is the daily growth rate, as a percent? What is the relative growth rate, as a percent?</p>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>The principle difference between something like the daily growth rate and the <strong>relative</strong> growth rate, is that one uses the standard exponential model and the other uses the natural base:
+\[
+\solve{
+	A(t) &=& P(1+r)^t\\\hline
+	A(t) &=& Pe^{rt}
+}
+\]
+In both equations we are looking at future values for a given starting value \(P\) after \(t\) days. However, the <strong>rates</strong> for each equation are quite different. The first equation is the daily rate, while the second is the relative growth rate. Thus, to answer each part of the question, we will be using a different equation.
+Let's start with the daily growth rate:
+\[
+\solve{
+	A(15) = 2P&=&P(1+r)^{15}\\2&=&(1+r)^{15}\\\sqrt[15]{2}&=&1+r\\-1+\sqrt[15]{2}&=&r\\r&\approx& 4.7\%
+}
+\]
+Next, let's solve the relative growth rate:
+\[
+\solve{
+	A(15)=2P&=&Pe^{15r}\\2&=&e^{15r}
+}
+\]
+In the next section, we will be using Logarithms to solve this type of question algebraically, but for the moment, if we didn't know about logarithms, the only way to solve it would be graphically, so let's do that:
+<calculator options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":true,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":false,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-0.0287,"right":0.1,"top":4,"bottom":-0.0821}' style="width:800px;height:800px" data-string='{"version":9,"randomSeed":"de2136e810d1555aca58bf26eae92f6a","graph":{"viewport":{"xmin":-0.0287,"ymin":-0.0821,"xmax":0.1,"ymax":4},"squareAxes":false},"expressions":{"list":[{"type":"expression","id":"2","color":"#2d70b3","latex":"y=2"},{"type":"expression","id":"3","color":"#388c46","latex":"y=e^{15x}"},{"type":"expression","id":"4","color":"#6042a6","latex":"s=\\frac{\\ln2}{15}"},{"type":"expression","id":"5","color":"#000000","latex":"\\left(s,2\\right)","showLabel":true,"labelSize":"2","labelOrientation":"above_left"}]}}' ></calculator >
+Thus, we find that the <strong>relative</strong> rate is approximately \(4.6\%\).
+</p>
+</div>
+</div>

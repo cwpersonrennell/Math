@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>06 Horizontal Asymptote Of Exponential Function</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example: Find the horizontal asymptote of the function:</p>
+\[ g(x) = 13(2-4^{-x}) \]
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>This is most easily accomplished by simplifying the expression:
+\[g(x) = 26-13\cdot 4^{-x}\]Given that there is a vertical shift by +26, this function must have transformed the horizontal asymptote <strong>up</strong> by 26 units. Hence, the horizontal asymptote must be 26. A quick visual inspection of the graph validates this:</p>
+<calculator options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":false,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":true,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-1.3884940896977227,"right":11.355799123192899,"top":32.83058769876369,"bottom":-5.4022919399081815}' style="width:800px;height:600px" data-string='{"version":9,"randomSeed":"0d6a92d0c3c088aa1a00b0494af29133","graph":{"viewport":{"xmin":-1.3884940896977227,"ymin":-5.4022919399081815,"xmax":11.355799123192899,"ymax":32.83058769876369},"showGrid":false,"squareAxes":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#c74440","latex":"g\\left(x\\right)=13\\left(2-4^{-x}\\right)"},{"type":"expression","id":"2","color":"#2d70b3","latex":"y=26","lineStyle":"DASHED"},{"type":"expression","id":"3","color":"#2d70b3","latex":"\\left(0,26\\right)","showLabel":true,"label":"`y=26`","hidden":true,"labelSize":"2","labelOrientation":"above_right"}]}}' ></calculator >
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>16 Doubling Tripling Problem</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example: If a certain population of bacteria takes 12 hours to double, how long will it take for the same bacteria to triple its population?</p>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>
+	In this question, we leverage knowledge about the doubling time of a population to get information about the tripling time. Notably, these questions do not give a specific starting population. It turns out, that the doubling/tripling time do not depend on the starting amount, as we will see algebraically. Finally, we are not given any "relative rate" or "hourly rate", so we are free to choose any exponential model we desire. I will answer this question using the basic exponential function, \(A(t)=P\cdot B^x\), to demonstrate this fact. First, I will determine the base, given the doubling time:
+	\[
+	\solve{
+		A(12)=2P&=&P\cdot B^{12}\\
+		2&=&B^{12}\\
+		2^{\frac{1}{12}}&=&B
+	}
+	\]
+	Now that we have the base, we can apply this to the tripling time problem. Note that we are solving for <strong>time</strong>:
+	\[
+	\solve{
+		A(t)=3P&=&P\left(2^{\frac{1}{12}}\right)^t\\
+		3&=&2^{\frac{t}{12}}\\
+		\log_2(3)&=&\frac{t}{12}\\
+		12\log_2(3)&=&t\\\&hline\text{Alternately}&
+		3&=&2^{\frac{t}{12}}\\
+		\ln(3)&=&\ln\left(2^{\frac{t}{12}}\right)\\
+		\ln(3)&=&\frac{t}{12}\ln(2)\\
+		\frac{\ln(3)}{\ln(2)}&=&\frac{t}{12}\\
+		12\frac{\ln(3)}{\ln(2)}&=&t
+	}
+	\]
+	I include two approaches above as both are equally valid answers. While we do not use it in this course, you can also transform one of the above answers into the other via the Change of Base Formula.
+</p>
+</div>
+</div>
+</body>
+</html>

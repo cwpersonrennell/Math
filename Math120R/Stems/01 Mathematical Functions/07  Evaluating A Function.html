@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>ExampleEvaluatingAFunction</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/Chapter2\2.1\ExampleEvaluatingAFunction.html">Source Page</a>
+  </div>
+<h1 class="fa">Evaluate the function at the indicated values.</h1>
+<p>\[h(x) = \frac{x^2-1}{x+1}\]</p>
+<ul>
+<li>\(h(1) = \)</li>
+<li>\(h(2) = \)</li>
+<li>\(h(3) =\)</li>
+<li>\(h(-2) =\)</li>
+</ul>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p>The purpose of this example is to highlight the various parts of the algebraic function notation. To begin with, let's look at the left side of the equation: \(h(x)\). This particular notation is <span style="color: red;">re-using</span> parenthesis contextually to denote something new. It is a point of confusion for many students since parenthesis have always been used for grouping operations and implied multiplication. <span style="font-weight: bold;">Context Matters!</span> The context of this problem clearly defines a <span style="font-weight: bold;">function</span> named \(h\) whose input variable is \(x\). That is what the notation \(h(x)\) means in this context.</p>
+<p>It is possible to refer to a function without explicity defining it, but in this example, \(h(x)\) is set into an equation. This equation <span style="font-weight: bold;">defines</span> the function with a specific algebraic formula. This formula describes precisely what happens to any input, \(x\) in terms of algebraic operations like exponents, multiplication, division, addition and subtraction. It can also tke the form of other functions like radicals and trigonometric functions.</p>
+<p>Lesson aside, the answer to this question can be quickly attained by <span style="font-weight: bold;">applying</span> the formula to the inputs as follows:</p>
+<p>\[\begin{array}{ rcl } \displaystyle h(\color{ red }{ 1 }\color{black }) &amp;=&amp; \displaystyle\frac{\color{ red }{ 1 }\color{black}^2 - 1}{\color{red}{ 1}\color{black}+1} =\frac{0}{2} = 0\\ h(\color{red}2\color{black}) &amp;=&amp;\displaystyle\frac{\color{red}2\color{black}^2 - 1}{\color{red}2\color{black}+1} = \frac{3}{3} =1 \\ h({\color{red} 3}) &amp;=&amp;\displaystyle\frac{ {\color{red} 3}^2 - 1} {{\color{red} 3} +1}=\frac{8}{4}\end{array}\]</p>
+<p>While positive numbers didn't require any extra consideration, when the input is a negative number <span style="color: red;">always use extra parenthesis</span>!</p>
+<p>\[h(-2) = \displaystyle\frac{({\color{red} -2})^2-1}{({\color{red} -2})+1}=\frac{4-1}{-1} = \frac{3}{-1} =-3\]</p>
+<p>Perhaps the most common error when evaluating a function that I see is forgetting to include the negative when applying an exponent!</p>
+</div>
+<hr>
+</body>
+</html>

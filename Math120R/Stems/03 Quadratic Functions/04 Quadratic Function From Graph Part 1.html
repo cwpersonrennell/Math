@@ -1,0 +1,28 @@
+<div class="fa" style="width: 100%;">
+<p>Example: Use the graph below to determine the equation of the parabola.</p>
+<div id="calculator" style="width: 100%; height: 600px;"></div>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution:</strong> In this example, we can clearly identify that the vertex is located at \( (5,0)\) and the horizontal intercept is located at \( (0,-10) \). When consider the collection of possible forms to choose from in order to solve this equation, I recommend the standard form (quadratic vertex form) becuase we know the vertex. This would initially give us:</p>
+\[ y = a\left(x-5\right)^2 \]
+<p>Since \(k=0\) there is no trailing value in the equation. In fact, the only parameter left unknown is \(a\). However, we have one more point, so let's use that to solve for \(a\):</p>
+\[ \solve{ -10 &amp;=&amp; a\left(0-5\right)^2\\ -10 &amp;=&amp;25a\\ -\dfrac{{10}}{{25}}&amp;=&amp;a\\ -\dfrac{{2}}{{5}}&amp;=&amp;a } \]
+<p>Since we now know the \(a\) value, we can write our full answer: \(y=-\dfrac{{2}}{{5}}\left(x-5\right)^2\).</p>
+</div>
+</div>
+<p>
+
+ 
+<script> 
+  document.addEventListener("DOMContentLoaded", () => {
+    var elt = document.getElementById('calculator');
+    
+    var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true,showGrid:false, xAxisNumbers:false,yAxisNumbers:false,trace:false});
+  calculator.setMathBounds({left:-1,right:11,bottom:-15,top:5});
+  calculator.setExpressions( [{latex:String.raw`g(x)=-2/5(x-5)^2`,color:"blue"}, {latex:String.raw`(0,g(0))`,showLabel:true, label:"`-10`",color:"blue"},{latex:String.raw`(5,0)`,showLabel:true, label:"`5`",color:"blue"}
+  ]);
+
+
+  });
+</script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>E8 Solving Linear Inequalities</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa">
+<p>Solve the following equations:</p>
+\[ \begin{array}{rcl} 2x-6 &amp;\leq&amp;0\\ 4&amp;\leq&amp;-2x-9\\ -\displaystyle\frac{x}{3}+1&amp;\gt&amp;\displaystyle\frac{2}{5}x-7 \end{array} \]
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>I will demonstrate how to solve these questions algebraically. If you would like more than the steps laid out below, don't hesitate to reach out and ask for clarifications.</p>
+<p>\[ \begin{array}{rcl} 2x-6 &amp;\leq&amp; 0\\ 2x &amp;\leq&amp; 6\\ x &amp;\leq&amp; {3}\\ \hline 4 &amp;\leq&amp;-2x-9\\ 13 &amp;\leq&amp; -2x\\ \displaystyle-\frac{13}{2}&amp;\geq&amp;x\\ \hline -\displaystyle\frac{x}{3} +1 &amp;\gt&amp; \displaystyle \frac{2}{5}x - 7\\ {\color{ red }15}\left(-\displaystyle\frac{x}{3}+1\right)&amp;\gt&amp;{\color{red}15}\left(\displaystyle\frac{2}{5}x - 7\right)\\ -5x +15 &amp;\gt&amp;6x-105\\ 120 &amp;\gt&amp;11x\\ \displaystyle\frac{120}{11} &amp;\gt&amp;x \end{array} \]</p>
+<p>As usual, it pays to double check our answers. However, more than just using graphs to check our work, it is of particular interest to note how the solution to these equations can be visualized as the intersections of graphs. In each of the graphs below, you can see that I graph both the left and right side of the equation. The solution, then, is the x-coordinate of where the graphs intersect. In a very real way, we can mentally interpret <strong>any</strong> equation as the intersection of some graphs.</p>
+<div id="calculator" style="width: 600px; height: 400px; text-align: center;"></div>
+<div id="calculator2" style="width: 600px; height: 400px; text-align: center;"></div>
+<div id="calculator3" style="width: 600px; height: 400px; text-align: center;"></div>
+</div>
+</div>
+<p>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt,{expressions:true,lockViewport:true,xAxisStep:0.5});
+  calculator.setMathBounds({left:-6,right:6,bottom:-6,top:6});
+  calculator.setExpressions( [{latex: '2x-6\\leq0'}]);
+
+    var elt2 = document.getElementById('calculator');
+  var calculator2 = Desmos.GraphingCalculator(elt,{expressions:true,lockViewport:true,xAxisStep:0.5});
+  calculator2.setMathBounds({left:-10,right:10,bottom:-10,top:10});
+  calculator2.setExpressions( [{latex: '4\\leq -2x-9'}]);
+
+    var elt3 = document.getElementById('calculator');
+  var calculator3 = Desmos.GraphingCalculator(elt,{expressions:true,lockViewport:true,xAxisStep:0.5});
+  calculator3.setMathBounds({left:-2,right:15,bottom:-6,top:6});
+  calculator3.setExpressions( [{latex: '-x/3+1\\gt2/5x-7'}]);
+  });
+</script>
+</body>
+</html>

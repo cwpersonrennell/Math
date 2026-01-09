@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>06 End Behavior Of Rationals</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example: Determine the end behavior of the rational functions listed below.</p>
+<ol>
+  <li>\(f(x)=\dfrac{3x^4-x^2+2}{x+4}\)</li><br><br>
+  <li>\(g(x)=\dfrac{-7x^5-x^3+2x}{x^7+5x^4-3}\)</li><br><br>
+  <li>\(k(t)=\dfrac{-t^2+2t+5t^3}{t^3-27}\)</li>
+</ol>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<ol>
+<li>End Behavior determined by: \[\dfrac{3x^4}{x} =3x^3\]This is an odd degree polynomial with positive leading coefficient, thus, the end behavior is 
+\[
+  \solve{
+    y\rightarrow-\infty &\text{ as } &x\rightarrow -\infty\\
+    y\rightarrow \infty &\text{ as} &x\rightarrow \infty 
+  }
+\]</li>
+<li>End Behavior determined by: \[\dfrac{-7x^5}{x^7} =\dfrac{-7}{x^2}\] this confirms that the denominator dominates the rational function, thus, the end behavior is a horizontal asympotote at \(y=0\).</li>
+<li>End Behavior determined by: \[\dfrac{5t^3}{t^3} =5\] this confirms that the degree of the numerator and denominator are the same and that the end behavior is a horizontal asymptote at \(y=5\)</li>
+</ol>
+</div>
+</div>
+<p>
+
+<script> 
+  document.addEventListener("DOMContentLoaded", () => {
+    var elt = document.getElementById('calculator');
+    var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true,showGrid:false, xAxisNumbers:false,yAxisNumbers:false,trace:false});
+  calculator.setMathBounds({left:-10,right:10,bottom:-10,top:20});
+  calculator.setExpressions( [
+    {latex: `a=\\frac{-7}{10}`,secret:true},{latex: `b=\\frac{22}{5}`,secret:true},
+    {latex: `c=\\frac{-6}{5}`,secret:true},{latex: `x_1=\\frac{2}{7}`,secret:true},
+    {latex: `x_2=6`,secret:true},
+    {latex: String.raw`f(x) = ax^2+bx+c`,secret:true,color:"blue"},
+    {latex:`(0,c)`,secret:true,showLabel:true,label:"`(0,\\frac{-6}{5})`",color:"blue",dragMode:Desmos.DragModes.NONE},
+    {latex:`(22/7,40/7)`,secret:true,showLabel:true,label:"`(\\frac{22}{7},\\frac{40}{7})`",color:"blue",dragMode:Desmos.DragModes.NONE},
+    {latex:`(x_1,0)`,secret:true,showLabel:true,label:"`(\\frac{2}{7},0)`",color:"blue",dragMode:Desmos.DragModes.NONE},
+    {latex:`(x_2,0)`,secret:true,showLabel:true,label:"`(6,0)`",color:"blue",dragMode:Desmos.DragModes.NONE}
+  ]);
+
+
+  });
+</script>
+</body>
+</html>

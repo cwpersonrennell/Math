@@ -1,0 +1,34 @@
+<div class="fa" style="width: 100%;">
+<p>Example: When a turkey is removed from an oven, it begins to immediately cool. Initially, the turkey will be just as hot as the oven's temperature (assuming it is cooked!) but the temperature will decrease according to what is known as Newton's Law of Cooling. The following model is that law applied to a specific turkey after being removed from the oven:</p>
+\[ T(t) = 60+240e^{-0.075t} \]
+<p>where \(t\) is measured in minutes and \(T\) is temperature in Farenheit.</p>
+<ol>
+<li>What is the initial temperature of the turkey?</li>
+<li>How hot will it be after 15 minutes?</li>
+<li>How long before it is cool enough to eat, if the typical person is comfortable eating something that is \(100^\circ\)?</li>
+</ol>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>
+	<ol>
+<li>What is the initial temperature of the turkey? \[
+T(0)=60+240(1)=300^\circ
+\]</li>
+<li>How hot will it be after 15 minutes?\[
+T(15)=137.9^\circ\]</li>
+<li>How long before it is cool enough to eat, if the typical person is comfortable eating something that is \(100^\circ\)?\[
+\solve{
+	100 &=&60+240e^{-0.075t}\\
+	40&=&240e^{-0.075t}\\
+	\frac{1}{6}&=&e^{-0.075t}\\
+	\ln\left(\frac{1}{6}\right)&=&-0.075t\\
+	\frac{\ln\left(\frac{1}{6}\right)}{-0.075}&=&t\\
+	t&\approx&24\text{ min}
+}\]</li>
+</ol>
+
+</p>
+</div>
+</div>

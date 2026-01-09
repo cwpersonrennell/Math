@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>29 Inverse Functions Swaping Input and Output</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>NotesInverseFunctionsSwapXY</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/Chapter2\2.8\NotesInverseFunctionsSwapXY.html">Source Page</a>
+  </div>
+<p>The graph below shows the first function we looked at, which does have an inverse function. By swapping the input and output variables it is possible to algebraically derive the inverse function formula. Graphically, this results in a reflection over the line \(y=x\), which you can see in the graph below. <i>Be careful</i> when interpreting a function after swapping variables it is very easy to mix up units!!</p>
+<div id="calculator" style="width: 100%; height: 600px;"></div>
+<p>
+
+ 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      try{
+  var pointCounter = 0;
+  const RIGHT = String.raw`\pi`;
+  const LEFT = String.raw`0`;
+  const UP = String.raw`-\pi/2`;
+  const DOWN = String.raw`\pi/2`;
+  function arrowAtPoint(x,y,theta=0,color="red"){
+    //Theta = 0 --> Left 
+    //Theta = pi/2 --> Down
+    //Theta = -pi/2 --> Up
+    //Theta = pi -->Right
+    let m = 1;
+    pointCounter++;
+    hide=true;
+    
+    return [
+      {latex:String.raw`x_{${pointCounter}}=${x}`,hidden:true,secret:hide},
+      {latex:String.raw`y_{${pointCounter}}=${y}`,hidden:true,secret:hide},
+      //{latex:String.raw`(x_{${pointCounter}},y_{${pointCounter}})`,hidden:true,secret:true},
+      {latex:String.raw`t_{${pointCounter}}=${theta}`,hidden:true,secret:hide},
+      {latex:String.raw`k_{${pointCounter}}\left(t\right)\ =\left(${m}\left|t\right|\cdot\cos\left(t_{${pointCounter}}\right)-t\cdot\sin\left(t_{${pointCounter}}\right)+x_{${pointCounter}},${m}\left|t\right|\cdot\sin\left(t_{${pointCounter}}\right)+t\cdot\cos\left(t_{${pointCounter}}\right)+y_{${pointCounter}}\right)`,hidden:true,secret:hide},
+      {latex:String.raw`k_{${pointCounter}}(t)`,parametricDomain:{min:"-0.2",max:".2"},color:color,secret:hide}
+    ];
+  }
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:false,xAxisStep:0,fontSize:24, projectorMode:true,invertedColors:true});
+  calculator.setMathBounds({left:-8,right:8,bottom:-4,top:4});
+  calculator.setExpressions( [{latex: 'f(x)=x^2 \\left\\{0\\leq x\\right\\}',color:"red"}]);
+  //calculator.setExpressions(arrowAtPoint(1,"f(x_1)",String.raw`-\pi/2`,"blue"));//x_1,y_1
+ // calculator.setExpressions(arrowAtPoint("0","f(x_1)",String.raw`0`,"blue"));//x_2,y_2
+  //calculator.setExpressions([{latex:"(x_1,0)",label:"`x`",color:"blue",showLabel:true,secret:true},{latex:String.raw`x=x_1\left\{0\leq y \leq f(x_1)\right\}`,color:"blue",lineStyle:Desmos.Styles.DASHED,secret:true},{latex:String.raw`y=f(x_1)\left\{0\leq x \leq x_1\right\}`,color:"blue",lineStyle:Desmos.Styles.DASHED,secret:true},{latex:"(0,f(x_1))",label:"`f(x)`",showLabel:true,color:"blue",hidden:true,labelOrientation:Desmos.LabelOrientations.LEFT}]);
+  calculator.setExpression({latex:"g(x) = \\sqrt{x}",hidden:false,secret:true});
+    calculator.setExpression({latex:"x=y",hidden:false,secret:true,lineStyle:Desmos.Styles.DASHED,secret:true});
+  //calculator.setExpressions([{latex:String.raw`(0,y_3)`,label:"`y`",color:"green",showLabel:true,secret:true}]);
+  //calculator.setExpressions(arrowAtPoint(String.raw`g(y_3)`,2,RIGHT,"green"));//x_3,y_3
+  //calculator.setExpressions(arrowAtPoint(String.raw`g(y_3)`,0,DOWN,"green"));//x_4,y_4
+  //calculator.setExpressions([{latex:String.raw`y=y_3\left\{0\leq x \leq g(y_3)\right\}`,color:"green",lineStyle:Desmos.Styles.DASHED,secret:true},{latex:String.raw`x=g(y_3)\left\{0\leq y \leq y_3\right\}`,color:"green",lineStyle:Desmos.Styles.DASHED,secret:true}, {latex:"(g(y_3),0)",label:"`f^{-1}(y)`",color:"green",showLabel:true,secret:true,hidden:true, labelOrientation:Desmos.LabelOrientations.BELOW}]);
+      }catch(err){
+    console.log(err);
+  }
+});
+</script>
+</p>
+<p></p>
+<hr></div>
+</body>
+</html>
+</body>
+</html>

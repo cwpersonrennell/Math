@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>02 Quadratic Function Basic Form Part 1</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example: Graph the function by algebraically determining the vertex, horizontal intercepts, and vertical intercept.</p>
+\[ f(x) = -\dfrac{7}{10}x^2+\dfrac{22}{5}x-\dfrac{6}{5} \]
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong> This function is in the <strong>basic</strong> form, so the "easy" to get info is the <i>vertical</i> intercept: \( \left(0,-\frac{6}{5}\right)\). To ge the horizontal intercepts and vertex will require a bit more work. Let's start with the vertex, which can be found using the \(\left(\frac{-b}{2a},f\left(\frac{-b}{2a}\right)\right)\) formula:</p>
+\[ \solve{ \dfrac{-b}{2a} &amp;=&amp;\dfrac{-\frac{22}{5}}{2\left(-\frac{7}{10}\right)}\\ \dfrac{-b}{2a}&amp;=&amp;-\dfrac{22}{5}\times -\dfrac{5}{7}\\ \dfrac{-b}{2a}&amp;=&amp;\dfrac{22}{7} } \] To get the other coordinate, we plug this into the equation: \[ \solve{ f\left(\dfrac{22}{7}\right) &amp;=&amp;-\dfrac{7}{10}\left(\dfrac{22}{7}\right)^2+\dfrac{22}{5}\times\dfrac{22}{7}-\dfrac{6}{5}\\ &amp;=&amp;-\dfrac{7}{10}\times\dfrac{22^2}{7^2}+\dfrac{22^2}{5\times 7} -\dfrac{6}{5}\\ &amp;=&amp;-\dfrac{22^2}{10\times7}+\dfrac{22^2}{5\times 7} -\dfrac{6}{5}\\ &amp;=&amp;\dfrac{-22^2+2\times 22^2-6\times 14}{10\times 7}\\ &amp;=&amp;\dfrac{400}{70}\\ &amp;=&amp;\dfrac{40}{7}\\ } \] Thus the vertex is located at \(\left(\dfrac{22}{7},\dfrac{40}{7}\right)\).
+<p>Next, we lok for the horizontal intercepts by setting the function equal to 0. While we could technically use the quadratic formula right away, I will take a few steps to eliminate the fractions and see if the result is factorable. If not, then I will use the quadratic formula.</p>
+\[ \solve{ 0&amp;=&amp; -\dfrac{7}{10}x^2+\dfrac{22}{5}x-\dfrac{6}{5}\\ 0&amp;=&amp;-7x^2+44x-12\\ 0&amp;=&amp;7x^2-44x+12 } \] This is not easily factorable (if at all) so I will apply the quadratic formula to this equation instead. \[ \solve{ x&amp;=&amp;\dfrac{44\pm\sqrt{44^2-4(7)(12)}}{14}\\ x&amp;=&amp;\dfrac{44\pm\sqrt{1936-336}}{14}\\ x&amp;=&amp;\dfrac{44\pm\sqrt{1600}}{14}\\ x&amp;=&amp;\dfrac{44\pm40}{14}\\ x=\dfrac{84}{14}&amp;&amp;x=\dfrac{4}{14}\\ \boxed{x=6}&amp;&amp;\boxed{x=\dfrac{2}{7}} } \] Thus, the horizontal intercepts are \(\left(\frac{2}{7},0\right)\) and \((6,0)\).
+<p>With this information, we can now sketch the graph. One final piece of information we can take away is that because the leading coefficient is negative, the parabola should open down. We note this as one means of checking our work.</p>
+<div id="calculator" style="width: 100%; height: 600px;"></div>
+</div>
+</div>
+<p>
+
+ 
+<script> 
+  document.addEventListener("DOMContentLoaded", () => {
+    var elt = document.getElementById('calculator');
+    var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true,showGrid:false, xAxisNumbers:false,yAxisNumbers:false,trace:false});
+  calculator.setMathBounds({left:-10,right:10,bottom:-10,top:20});
+  calculator.setExpressions( [
+    {latex: `a=\\frac{-7}{10}`,secret:true},{latex: `b=\\frac{22}{5}`,secret:true},
+    {latex: `c=\\frac{-6}{5}`,secret:true},{latex: `x_1=\\frac{2}{7}`,secret:true},
+    {latex: `x_2=6`,secret:true},
+    {latex: String.raw`f(x) = ax^2+bx+c`,secret:true,color:"blue"},
+    {latex:`(0,c)`,secret:true,showLabel:true,label:"`(0,\\frac{-6}{5})`",color:"blue",dragMode:Desmos.DragModes.NONE},
+    {latex:`(22/7,40/7)`,secret:true,showLabel:true,label:"`(\\frac{22}{7},\\frac{40}{7})`",color:"blue",dragMode:Desmos.DragModes.NONE},
+    {latex:`(x_1,0)`,secret:true,showLabel:true,label:"`(\\frac{2}{7},0)`",color:"blue",dragMode:Desmos.DragModes.NONE},
+    {latex:`(x_2,0)`,secret:true,showLabel:true,label:"`(6,0)`",color:"blue",dragMode:Desmos.DragModes.NONE}
+  ]);
+
+
+  });
+</script>
+</body>
+</html>

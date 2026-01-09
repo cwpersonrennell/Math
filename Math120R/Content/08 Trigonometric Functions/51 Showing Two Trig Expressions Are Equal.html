@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>51 Showing Two Trig Expressions Are Equal</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example: Show (using algebra and Trigonometric identities) that the following trig expressions are equal:</p>
+\[ \cos\theta +\sin\theta = \dfrac{\sin\theta + \sin\theta \tan\theta}{\tan\theta} \]
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>When it comes to showing that two trigonometric expressions are equal, it is vital that we do <strong> not</strong> treat it like an equation! In fact, we have a choice: we need to pick <strong> one</strong> side and show, via algebra or trig identity, that we can derive the other. Typically, the "easier" approach is to start with the more complicated looking side, and then simplify into the other side. For us, that means we will start with the right hand side and show that we can derive the left hand side.
+	\[
+	\begin{array}{rlrr}
+		&\dfrac{\sin\theta +\sin\theta\tan\theta}{\tan\theta}\\=&\dfrac{\sin\theta+\sin\theta\frac{\sin\theta}{\cos\theta}}{\frac{\sin\theta}{\cos\theta}}&\text{Definition of Tangent}\\
+		=&\left(\dfrac{\sin\theta \cos\theta}{\cos\theta}+\dfrac{\sin^2\theta}{\cos\theta}\right)\times\dfrac{\cos\theta}{\sin\theta}&\text{Algebra}\\
+		=&\dfrac{\sin\theta \cos\theta +\sin^2\theta}{\cos\theta}\times\dfrac{\cos\theta}{\sin\theta}&\text{Algebra}\\
+		=&\dfrac{\sin\theta(\cos\theta+\sin\theta)}{\sin\theta}&\text{Algebra}\\
+		=&\cos\theta +\sin\theta&\text{Algebra}
+	\end{array}
+	\]
+	As you can see, to demonstrate that the original expressions are equal, we needed one trig identity (the definition of Tangent) and many, many algebraic steps to simplify. Once we reach the target expression, we are done! All steps should be shown and justified when you make this type of demonstration.
+</p> 
+</div>
+</div>
+</body>
+</html>

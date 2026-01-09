@@ -1,0 +1,68 @@
+<div class="fa" style="width: 100%;">
+<p>Example: Use the graph below to determine the equation of the polynomial. Use \(k\) for the leading coefficient, \(-k\) if it should be negative.</p>
+<div id="calculator" style="width: 100%; height: 600px;"></div>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution:</strong> The process for determining an equation for a polynomial can be laid out in a series of steps:</p>
+<ol>
+<li>We need to determine the zeros of the polynomial.</li>
+<li>We need to determine the (minimum) multiplicity of each zero.</li>
+<li>Using this, we write out each of the factors.</li>
+<li>To determine the sign of the leading coefficient, we look at the orientation and minimum degree of the polynomial.</li>
+<li>To determine the actual coefficient value, we need at least one point that is not a zero. If it is not provided, we cannot determine it. In this case, we have been instructed to just use \(k\).</li>
+</ol>
+<p>So, let's write down the zeros in order: -4, 0, and 5. To determine the multiplicity, we examine the graph in detail near each of the zeros:</p>
+<table style="width: 100%;">
+<tbody>
+<tr>
+<td>
+<div id="x1" style="width: 300px; height: 300px;"></div>
+</td>
+<td>
+<div id="x2" style="width: 300px; height: 300px;"></div>
+</td>
+<td>
+<div id="x3" style="width: 300px; height: 300px;"></div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>By looking closely at how the function crosses the horizontal axis, we can see that the factor near \(x=-4\) behaves <i>linearly</i>, the factor near \(x=0\) behaves like a <i>cubic</i>, and the factor near \(x=5\) behaves like a quadratic.Thus, we can state that the minimum degree of each factor reflects that behavior and write the following:</p>
+\[ f(x) = Ax^3(x+4)(x-5)^2 \]
+<p>Note that each factor has the exponent that corresponds to the behavior we observed. To determine the sign of the leading coefficient, first we get the degree: 3+1+2 = 6. Then we observe the end behavior (both go down) so we can state that it is Even degree with negative leading coefficient!</p>
+\[ f(x) = -kx^3(x+4)(x-5)^2 \]</div>
+</div>
+<p>
+
+ 
+<script> 
+  document.addEventListener("DOMContentLoaded", () => {
+    var elt = document.getElementById('calculator');
+    
+    var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:false,xAxisStep:0,fontSize:24, projectorMode:true,showGrid:false, xAxisNumbers:true,yAxisNumbers:false,trace:false});
+  calculator.setMathBounds({left:-5,right:6,bottom:-50,top:15});
+  calculator.setExpressions( [{latex:String.raw`g(x)=-2/500(x-5)^2(x+4)x^3`,color:"blue"}, {latex:String.raw`(0,g(0))`,showLabel:true,color:"blue"},{latex:String.raw`(5,0)`,showLabel:true,color:"blue"},{latex:String.raw`(-4,0)`,showLabel:true,color:"blue"}
+  ]);
+
+    let x1 = document.getElementById('x1');
+    let x2 = document.getElementById('x2');
+    let x3 = document.getElementById('x3');
+    let options = {expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true,showGrid:false, xAxisNumbers:false,yAxisNumbers:false,trace:false};
+    let x1c = Desmos.GraphingCalculator(x1,options);
+    let x2c = Desmos.GraphingCalculator(x2,options);
+    let x3c = Desmos.GraphingCalculator(x3,options);
+
+    x1c.setMathBounds({left:-4.2,right:-3.8,bottom:-10,top:10});
+    x2c.setMathBounds({left:-1,right:1,bottom:-1,top:1});
+    x3c.setMathBounds({left:4.5,right:5.5,bottom:-10,top:10});
+
+    x1c.setExpressions( [{latex:String.raw`g(x)=-2/500(x-5)^2(x+4)x^3`,color:"blue"}, {latex:String.raw`(0,g(0))`,showLabel:true,color:"blue"},{latex:String.raw`(5,0)`,showLabel:true,color:"blue"},{latex:String.raw`(-4,0)`,showLabel:true,color:"blue"}
+  ]);
+   x2c.setExpressions( [{latex:String.raw`g(x)=-2/500(x-5)^2(x+4)x^3`,color:"blue"}, {latex:String.raw`(0,g(0))`,showLabel:true,color:"blue"},{latex:String.raw`(5,0)`,showLabel:true,color:"blue"},{latex:String.raw`(-4,0)`,showLabel:true,color:"blue"}
+  ]);
+   x3c.setExpressions( [{latex:String.raw`g(x)=-2/500(x-5)^2(x+4)x^3`,color:"blue"}, {latex:String.raw`(0,g(0))`,showLabel:true,color:"blue"},{latex:String.raw`(5,0)`,showLabel:true,color:"blue"},{latex:String.raw`(-4,0)`,showLabel:true,color:"blue"}
+  ]);
+    
+  });
+</script>

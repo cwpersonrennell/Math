@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>E2 Area Beneath Curve</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>ExampleAreaBeneathCurve</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/Chapter2\ModelingFunctions\ExampleAreaBeneathCurve.html">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Find the area of the right triangle formed by a point on the curve \(y=\dfrac{1}{x^2}\) restricted to \([0,\infty)\), and perpendicular to the horizontal axis in terms of \(x\). Bonus: Determine the perimeter of the triangle.</p>
+<div id="calculator" style="width: 100%; height: 600px;"></div>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution: </strong></p>
+<p>As you can see from the graph, the area we are trying to determine is made up of a triangle, with a base of \(x\) and and height of \(y\). Now, the area of a triangle is given by \[A=\frac{1}{2}bh\]so, for our purposes, this means that the area is:\[A=\frac{1}{2}xy\]The problem, however, is that we want the area to only depend on the \(x\) variable. This is where we can use the definition provided, which is that any \(y\) coordinate on the graph is exactly determined by \(y=\frac{1}{x^2}\). Thus, substituting this value in, we get the following:
+\[
+A = \frac{1}{2}x\left(\frac{1}{x^2}\right) = \frac{1}{2x}
+\]</p>
+<p>For the bonus: using the same substitution for \(y\), we can determine the hypotenuse using the pythagorean formula: \(c^2=a^2+b^2\). Once we have the hypotenuse, the perimeter is just the sum of all sides.
+\[
+\solve{
+  c^2 &=& x^2+\left(\dfrac{1}{x^2}\right)^2\\\\
+  c^2 &=&x^2 + \dfrac{1}{x^4}\\\\
+  c^2 &=&\dfrac{x^6+1}{x^4}\\\\
+  c &=& \sqrt{\dfrac{x^4+1}{x^2}}\\\\
+  c &=& \dfrac{\sqrt{x^4+1}}{x^2}
+}
+\]Here, we drop the plus/minus because the hypotenuse is a distance measurement and must be positive. Finally, the perimeter:
+\[
+P = x+\dfrac{1}{x^2}+\dfrac{\sqrt{x^4+1}}{x^2}
+\]You can combine  this into one fraction (see below), or leave as is.
+\[
+P = \dfrac{x^3+1+\sqrt{x^4+1}}{x^2}
+\]</p>
+</div>
+</div>
+<p>
+ 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true,invertedColors:true,xAxisNumbers:false,yAxisNumbers:false,showGrid:false,pointsOfInterest:false,trace:false});
+  calculator.setMathBounds({left:-1,right:2,bottom:-1,top:5});
+  calculator.setExpressions( [
+    {latex: String.raw`f(x)=\frac{1}{x^2} \left\{x\geq 0\right\}`},
+    {latex:"a=1"},
+    {latex:"(a,f(a))",showLabel:true,label:"`(x,y)`"},
+    {latex:String.raw`y=\frac{f(a)}{a}(x-a)+f(a)\left\{0\leq x \leq a\right\}`,color:"blue"},
+    {latex:String.raw`y=0\left\{0\leq x \leq a\right\}`,color:"blue"},
+    {latex:String.raw`x=a\left\{0\leq y \leq f(a)\right\}`,color:"blue"},
+  ]);
+});
+</script>
+</body>
+</html>
+</body>
+</html>

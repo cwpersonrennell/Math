@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>13 Solving Quadratic Exponential Equation</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example: Find the exact solution(s) to the equation: \[2e^{2t}-13e^t-15=0\]</p>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>
+	When solving this type of question, it can be easy to feel intimidated by the fact that there are multiple expressions with exponential variables. However, it turns out that this is very similar to when we first transition from solving equations with only one variable to solving quadratic equations or other polynomial equations where the variable has different powers.
+</p>
+<p>One way to reconceptualize this question and make it easier/more visually approachable, is to replace the exponential expression with a standard variable, like this:
+\[
+\solve{
+	A&=&e^t\\\hline
+	2e^{2t}-13e^t-15=0&\rightarrow&2A^2-13A-15=0
+}
+\]
+This works out because \(e^{2t}=\left(e^t\right)^2=A^2\) so we can simply replace all the weird exponential expressions with standard algebraic variables. Now, we need to solve for \(A\) using any of the methods from our previous experiences (quadratic formula, factoring, square root principle, completing the square, graphing, etc.). For the purpose of demonstration, I will solve by factoring here.
+\[
+\solve{
+	2A^2-13A-15&=&0\\
+	2A^2+2A-15A-15&=&0\\
+	2A(A+1)-15(A+1)&=&0\\
+	(A+1)(2A-15)&=&0\\
+	A+1=0&&2A-15=0\\
+	A=-1&&A=\frac{15}{2}
+}
+\]
+The exact method above is the grouping method of factoring, which you can search for if you need a refresher. 
+</p>
+<p>Now that we have solved for \(A\), we substitute our exponential expression back into the two solutions and solve for \(t\):
+\[
+\solve{
+	A&=&-1\\
+	e^t&=&-1\\
+	&&\text{No Solution}\\\hline
+	A&=&\frac{15}{2}\\
+	e^t&=&\frac{15}{2}\\
+	t&=&\ln\left(\frac{15}{2}\right)\\
+	t&=&\ln(15)-\ln(2)\\
+	t&=&\ln(3)+\ln(5)-\ln(2)
+}
+\]
+Note that one of the \(A\) solutions results in <strong>no</strong> solution for \(t\). In the other solution, I used the properties of logarithms to rewrite it in a fully expanded way. Either condensed or expanded, both solutions are correct; just be aware that if you are verifying or checking your own work against someone else's, their answers may <strong>look </strong> different, but actually still be the same.</p>
+<p>Finally, here is a graph where we can verify that our solution is correct; this always serves to highlight that graphical solutions sometimes can only provide approximate decimal solutions, not exact:
+	<calculator options='{"expressions":true,"keypad":true,"graphpaper":true,"showGrid":false,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":false,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-2.887960467244746,"right":6.7743887780915415,"top":5.069390283893523,"bottom":-7.008545044145722}' style="width:800px;height:600px" data-string='{"version":9,"randomSeed":"1a360192847e8fcde5df844191118971","graph":{"viewport":{"xmin":-2.887960467244746,"ymin":-7.008545044145722,"xmax":6.7743887780915415,"ymax":5.069390283893523},"showGrid":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#c74440","latex":"f\\left(x\\right)=2e^{2x}-13e^{x}-15"},{"type":"expression","id":"2","color":"#2d70b3","latex":"t=\\ln\\left(\\frac{15}{2}\\right)"},{"type":"expression","id":"3","color":"#000000","latex":"\\left(t,f\\left(t\\right)\\right)","showLabel":true,"labelSize":"2"}]}}' ></calculator >
+</p>
+</div>
+</div>
+</body>
+</html>

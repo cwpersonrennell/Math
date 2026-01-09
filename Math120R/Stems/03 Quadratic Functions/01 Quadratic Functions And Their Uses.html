@@ -1,0 +1,62 @@
+<div class="fa" style="width: 100%;">
+<p>There are 3 forms of the quadratic function and each has a relative strength or weakness when it comes to interpreting the meaning behind the parameters in the function. First of all, all quadratic functions will produce a graph that is a <strong>parabola</strong>. The direction of the parabola, where its vertex is (denoted with the point/parameters \((h,k)\)), horizontal and vertical intercepts, are all determined by the parameters that make up the function. Note that in <strong>all</strong> of the forms below, the leading coefficient is the same variable, \(a\). This is important because the sign of \(a\) determines if the parabola opens up or down. In all cases, if \(a\) is negative, it opens down, if it is positive, it opens up. Okay, now let's take a look at each form in detail:</p>
+<ol>
+<li><strong>Basic Form</strong>: \(f(x)=ax^2+bx+c\). So called because it is the fully simplified version of the function, the parameters exactly correspond to the quadratic formula when looking for horizontal intercepts and the final parameter \(c\) is the vertical intercept of the function.
+<ol>
+<li>Horizontal Intercepts: \(x=\dfrac{-b\pm\sqrt{b^2-4ac}}{{2a}}\)</li>
+<li>Vertical Intercept: \((0,c)\)</li>
+<li>Vertex: \(\left(\frac{-b}{{2a}},f\left(\frac{-b}{{2a}}\right)\right)\)</li>
+<li>
+<div id="standard_form" style="width: 600px; height: 600px;"></div>
+</li>
+</ol>
+</li>
+<li><strong>Standard Form (aka Quadratic Vertex Form)</strong>: \(f(x) = a(x-h)^2+k\)
+<ol>
+<li>Horizontal Intercepts: \(x=\pm\sqrt{\frac{-k}{{a}}}+h\)</li>
+<li>Vertical Intercepts: \((0,ah^2+k)\)</li>
+<li>Vertex: \((h,k)\)</li>
+<li>
+<div id="vertex_form" style="width: 600px; height: 600px;"></div>
+</li>
+</ol>
+</li>
+<li><strong>Factored Form</strong>: \(f(x) = a(x-x_1)(x-x_2)\)
+<ol>
+<li>Horizontal Intercepts: \(x=x_1,x_2\)</li>
+<li>Vertical Intercepts: \((0,ax_1x_2)\)</li>
+<li>Vertex: \((\frac{x_1+x_2}{{2}},f\left(\frac{x_1+x_2}{{2}}\right))\)</li>
+<li>
+<div id="factored_form" style="width: 600px; height: 600px;"></div>
+</li>
+</ol>
+</li>
+</ol>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<div id="calculator" style="width: 100%; height: 600px;"></div>
+</div>
+</div>
+<p>
+
+ 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  var elt = document.getElementById('standard_form');
+
+  var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:false,xAxisStep:0,fontSize:24, projectorMode:true});
+  calculator.setMathBounds({left:-10,right:10,bottom:-10,top:10});
+  calculator.setExpressions( [{latex: 'a=1'},{latex: 'b=1'},{latex: 'c=-5'},{latex:"(0,c)",label:`(0,c)`,showLabel:true}, {latex:"f(x)=ax^2+bx+c"}, {latex:"(a,0)",showLabel:true,label:"`a`"},{latex:"(b,5)",showLabel:true,label:"`b`"}]);
+  elt2 = document.getElementById('vertex_form');
+
+  var calculator2 = Desmos.GraphingCalculator(elt2,{expressions:false,lockViewport:false,xAxisStep:0,fontSize:24, projectorMode:true});
+  calculator2.setMathBounds({left:-10,right:10,bottom:-10,top:10});
+  calculator2.setExpressions( [{latex: 'a=1'},{latex: 'h=1'},{latex: 'k=-5'},{latex:"(0,k)",label:`(0,k)`,showLabel:true}, {latex:"f(x)=a(x-h)^2+k"},{latex:"(h,k)",label:`(h,k)`,showLabel:true}, {latex:"(a,0)",showLabel:true,label:"`a`"},{latex:"(h,0)",label:`(h,0)`,showLabel:true}]);
+elt3 = document.getElementById('factored_form');
+      var calculator3 = Desmos.GraphingCalculator(elt3,{expressions:false,lockViewport:false,xAxisStep:0,fontSize:24, projectorMode:true});
+  calculator3.setMathBounds({left:-10,right:10,bottom:-40,top:40});
+  calculator3.setExpressions( [{latex: 'a=1'},{latex: 'x_1=-5'},{latex: 'x_2=5'},{latex:"(x_1,0)",label:"`(x_1,0)`",showLabel:true}, {latex:"f(x)=a(x-x_1)(x-x_2)"}, {latex:"(a,-5)",showLabel:true,label:"`a`"},{latex:"(x_2,0)",label:"`(x_2,0)`",showLabel:true}]);
+  });
+</script>

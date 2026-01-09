@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>49 Using Inverse Trig To Solve Right Triangle</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example: Given a right triangle with legs of length 13 cm and 11 cm, solve for the missing side and angles.</p>
+<p></p>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+First, let's draw the triangle: <calculator options="{&quot;expressions&quot;:false,&quot;keypad&quot;:true,&quot;graphpaper&quot;:true,&quot;showGrid&quot;:false,&quot;showXAxis&quot;:false,&quot;showYAxis&quot;:false,&quot;xAxisNumbers&quot;:true,&quot;yAxisNumbers&quot;:true,&quot;trace&quot;:false,&quot;pointsOfInterest&quot;:false,&quot;settingsMenu&quot;:false,&quot;zoomButtons&quot;:false,&quot;expressionsCollapsed&quot;:false,&quot;capExpressionSize&quot;:false,&quot;lockViewport&quot;:true,&quot;projectorMode&quot;:true,&quot;invertedColors&quot;:false}" mathbounds="{&quot;left&quot;:-3.5411764705882347,&quot;right&quot;:15.282352941176471,&quot;top&quot;:16.52450980392157,&quot;bottom&quot;:-7.004901960784309}" style="width: 800px; height: 600px;" data-string="{&quot;version&quot;:9,&quot;randomSeed&quot;:&quot;f6fd27115da7172a1694c2c025711ac6&quot;,&quot;graph&quot;:{&quot;viewport&quot;:{&quot;xmin&quot;:-3.5411764705882347,&quot;ymin&quot;:-7.004901960784309,&quot;xmax&quot;:15.282352941176471,&quot;ymax&quot;:16.52450980392157},&quot;showGrid&quot;:false,&quot;showXAxis&quot;:false,&quot;showYAxis&quot;:false,&quot;squareAxes&quot;:false},&quot;expressions&quot;:{&quot;list&quot;:[{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;1&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;x=11\\left\\{0\\le y\\le13\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;2&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=0\\left\\{0\\le x\\le11\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;3&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=\\frac{13}{11}x\\left\\{0\\le x\\le11\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;4&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(2,1\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`\\theta_1`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;right&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;5&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(10,10\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`\\theta_2`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;6&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(5.5,0\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`11`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;below&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;7&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(11,6.5\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`13`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;right&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;8&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(5.5,\\ 6.5\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`H`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;above_left&quot;}]}}"></calculator>
+<p>Using the Pythagorean theorem: \[\solve{ h^2 &amp;=&amp; 11^2+13^2 \\ h^2 &amp;=&amp;290\\h&amp;=&amp;\sqrt{ 290 } }\] Here we only take the positive square root since this is a geometric value. To solve for the angles, we will use the inverse trig functions: \[ \solve{\sin^{-1}\left(\frac{13}{\sqrt{290} }\right) &amp;=&amp; \theta_1\\ \sin^{-1}\left(\frac{11}{\sqrt{290} }\right) &amp;=&amp; \theta_2\\} \] Make sure your calculator is in degrees and then plug in the values (no need to simplify) and then we have our answers. \[ \solve{ \theta_1 &amp;=&amp; 49.8^\circ\\\theta_2 &amp;=&amp; 40.2^\circ } \]</p>
+</div>
+</div>
+</body>
+</html>

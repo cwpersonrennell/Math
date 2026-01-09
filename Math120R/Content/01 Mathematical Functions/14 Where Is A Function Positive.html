@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>14 Where Is A Function Positive</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>ExampleWhereIsAFunctionPositive</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/Chapter2\2.3\ExampleWhereIsAFunctionPositive.html">Source Page</a>
+  </div>
+<div class="fa">
+<p>Determine where the function is positive:</p>
+\[ f(x) = \displaystyle \frac{2x^2 -3x -14}{x-3} \]
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>To determine where the graph is positive (aka, \(f(x) \gt 0\)), we need to identify the Critical Values, aka, where the numerator and denominator are each exactly equal to zero. The denominator is the simplest in this case since it is exactly when \(x = 3\). The numerator, however, will require either the quadratic formula or factoring to determine the zeros:
+   \[
+   \solve{
+      2x^2-3x-14 &=& 2x^2 - 7x + 4x - 14\\
+      &=& x(2x-7) + 2(2x-7)\\
+      &=& (x+2)(2x-7)
+   }
+   \]
+   Here we see the factoring will lead us to the zeros at \(x=-2,\; \frac{7}{2}\). These critical values will allow us to divide the real number line into the intervals where the function is either positive or negative; the critical values simply give us the boundaries where the sign may change. The intervals will all use parenthesis because the inequality we are solving is \(f(x) \gt 0\), so we will exclude all critical values.
+   \[
+   (-\infty, -2)\cup(-2, 3)\cup(3,\frac{7}{2})\cup(\frac{7}{2},\infty)
+   \]
+   The simplest way to then answer this question is to then pick test points in each interval and apply the test value to the final answer. I have computed those test values and demonstrated a visualization in the graph below:
+<calculator options='{"expressions":true,"keypad":true,"graphpaper":true,"showGrid":true,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":false,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-4.7590214416503915,"right":7.24829105834961,"top":13.404654501689418,"bottom":-9.091481329692314}' style="width:800px;height:800px" data-string='{"version":9,"randomSeed":"d46fe40639f409c06ddc26ccfd910137","graph":{"viewport":{"xmin":-4.7590214416503915,"ymin":-9.091481329692314,"xmax":7.24829105834961,"ymax":13.404654501689418}},"expressions":{"list":[{"type":"expression","id":"1","color":"#000000","latex":"f\\left(x\\right)\\ =\\ \\frac{2x^{2}-3x-14}{x-3}"},{"type":"expression","id":"2","color":"#2d70b3","latex":"f\\left(x\\right)>0\\left\\{0<y<f\\left(x\\right)\\right\\}"},{"type":"text","id":"13","text":"Asymptote at x = 3:"},{"type":"expression","id":"3","color":"#c74440","latex":"x=3","lineStyle":"DASHED"},{"type":"text","id":"15","text":"Test point in interval (-infinity,-2):"},{"type":"expression","id":"6","color":"#000000","latex":"\\left(-3,f\\left(-3\\right)\\right)","showLabel":true},{"type":"text","id":"17","text":"Test point in interval (-2,3):"},{"type":"expression","id":"9","color":"#000000","latex":"\\left(0,f\\left(0\\right)\\right)","showLabel":true},{"type":"text","id":"19","text":"Test point in interval (3,3.5):"},{"type":"expression","id":"10","color":"#000000","latex":"\\left(3.4,f\\left(3.4\\right)\\right)","showLabel":true},{"type":"text","id":"21","text":"Test point in interval (3.5, infinity):"},{"type":"expression","id":"11","color":"#000000","latex":"\\left(4,f\\left(4\\right)\\right)","showLabel":true},{"type":"expression","id":"4","color":"#6042a6","latex":"f\\left(-3\\right)"},{"type":"expression","id":"5","color":"#000000","latex":"f\\left(0\\right)"},{"type":"expression","id":"7","color":"#2d70b3","latex":"f\\left(3.4\\right)"},{"type":"expression","id":"8","color":"#388c46","latex":"f\\left(4\\right)"},{"type":"expression","id":"22","color":"#fa7e19","latex":"y=0\\left\\{x<-2\\right\\}"},{"type":"expression","id":"23","color":"#388c46","latex":"y=0\\left\\{-2<x<3\\right\\}"},{"type":"expression","id":"24","color":"#fa7e19","latex":"y=0\\left\\{3<x<3.5\\right\\}"},{"type":"expression","id":"25","color":"#388c46","latex":"y=0\\left\\{x>3.5\\right\\}"},{"type":"expression","id":"26","color":"#000000","latex":"\\left(-2,0\\right)","showLabel":true,"dragMode":"NONE","labelOrientation":"above_left","pointSize":"3"},{"type":"expression","id":"27","color":"#000000","latex":"\\left(3.5,0\\right)","showLabel":true,"labelOrientation":"above_right","pointSize":"3"}]}}' ></calculator >
+Thanks to our test values, we can conclude that this function is positive (\(f(x)\gt 0 )\) on the interval: \(\left(-2,3\right)\cup\left(\frac{7}{2},\infty\right)\).
+<div>
+   
+</div>
+</div>
+<!-- End Solution--></div>
+<p>
+
+</body>
+</html>
+</body>
+</html>

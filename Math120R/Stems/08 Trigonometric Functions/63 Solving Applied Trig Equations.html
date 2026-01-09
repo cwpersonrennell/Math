@@ -1,0 +1,39 @@
+<div class="fa" style="width: 100%;">
+<p>Example: Find exact simplified solution(s) in the interval \(0\leq \theta\lt2\pi\):</p>
+\[ \sin(2\theta)-\cos(\theta)=0 \]
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+This particular equation does not present any immediate concerns for domain restrictions since there are no fractions, and no tangent or other reciprocal trig functions. Thus, other than the constraint \(0\leq \theta\lt2\pi\), we are looking for all possible solutions. 
+
+At first glance, this seems to be problematic, we have both Sine and Cosine functions, and we have a weird \(\sin(2\theta)\) which doesn't fit with using our usual Pythagorean identities to simplify. However, it does lend itself to an application of the Double Angle Formula, so let's see where that will get us:
+
+\[
+\solve{
+  \sin(2\theta)-\cos(\theta)&=&0\\
+  2\sin(\theta)\cos(\theta)-\cos(\theta)&=&0
+}
+\]
+
+Now, you may be asking if this really did help, but if you look carefully, you now have Cosine in both terms so we can factor and use the Zero Product Principle:
+
+\[
+\solve{
+  2\sin(\theta)\cos(\theta)-\cos(\theta)&=&0\\
+  \cos(\theta)\left(2\sin(\theta)-1\right)&=&0\\
+  \cos(\theta)=0&&2\sin(\theta)-1=0\\
+  \theta = \frac{\pi}{2}, \frac{3\pi}{2}&&\sin(\theta)=\frac{1}{2}\\
+  \theta = \frac{\pi}{2}, \frac{3\pi}{2}&&\theta=\frac{\pi}{6}, \frac{5\pi}{6}
+}
+\]
+
+Those solutions are drawn directly from the Unit Circle as constrained by \(0\leq \theta\lt2\pi\), and combined give us:
+\[
+\theta = \frac{\pi}{2}, \frac{\pi}{6}, \frac{5\pi}{6}, \frac{3\pi}{2}
+\]
+
+<calculator options='{"expressions":true,"keypad":true,"graphpaper":true,"showGrid":false,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":true,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-0.13089969389957473,"right":6.152285613280012,"top":12.416666666666668,"bottom":-12.583333333333332}' style="width:800px;height:600px" data-string='{"version":9,"randomSeed":"3c66bdd1c18034860ad98766b4b91427","graph":{"viewport":{"xmin":-0.13089969389957473,"ymin":-12.583333333333332,"xmax":6.152285613280012,"ymax":12.416666666666668},"showGrid":false,"squareAxes":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#000000","latex":"\\sin\\left(2x\\right)-\\cos\\left(x\\right)"},{"type":"expression","id":"2","color":"#000000","latex":"\\left(\\frac{\\pi}{6},0\\right)","showLabel":true,"label":"`\\left(\\frac{\\pi}{6},0\\right)`"},{"type":"expression","id":"3","color":"#000000","latex":"\\left(\\frac{\\pi}{2},0\\right)","showLabel":true,"label":"`\\left(\\frac{\\pi}{2},0\\right)`"},{"type":"expression","id":"4","color":"#000000","latex":"\\left(\\frac{5\\pi}{6},0\\right)","showLabel":true,"label":"`\\left(\\frac{5\\pi}{6},0\\right)`"},{"type":"expression","id":"5","color":"#000000","latex":"\\left(\\frac{3\\pi}{2},0\\right)","showLabel":true,"label":"`\\left(\\frac{3\\pi}{2},0\\right)`"}]}}' ></calculator >
+
+</div>
+</div>

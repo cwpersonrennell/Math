@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>05 Rational Functions</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<h1>Rational Function Section Goals:</h1>
+<ul>
+<li>Definition</li>
+<li>Horizontal Asymptotes (End Behavior)</li>
+<li>Vertical Asymptotes (Domain Restrictions)</li>
+<li>Holes in a Graph (Domain Restrictions)</li>
+<li>Sketching Rational Function Graphs
+<ul>
+<li>Horizontal Intercepts</li>
+<li>Vertical Intercepts</li>
+<li>All of the preceding concepts.</li>
+</ul>
+</li>
+</ul>
+<p>Let's begin with our definition! A rational function is, at its most simple, just a fraction with polynomials! AKA, what you get when you try to divide two polynomials. More formally,</p>
+\[ f(x)=\dfrac{N(x)}{D(x)} \]
+<p>\(f(x)\) is a <strong>rational function</strong> if \(N(x)\) and \(D(x)\) are polynomials.</p>
+<p>When we start working with rational functions, we end up with some new types of behavior. First of all, the end behavior of rational functions is quite similar to polynomials. In fact, we can determine the end behavior by looking at which polynomial (numerator or denominator) <strong>dominates</strong>. What I mean by "dominates" is which polynomial grows faster as \(x\rightarrow \pm \infty\). This can be precisely determined by identify the degree.</p>
+<p>There are 3 possibilities when we consider the relative degrees of the numerator or denominator:</p>
+<ol>
+<li>The Numerator Dominates (has the larger degree)</li>
+<li>The Denominator Dominates (has the larger degree)</li>
+<li>Neither dominates (they have the same degree</li>
+</ol>
+<p>Let's consider the first case, where the numerator has the greater degree. The <strong>end behavior</strong> in this case will be determined by <i>the ratio of the leading terms</i>. For example, consider the rational function:</p>
+\[ f(x) = \dfrac{x^3-2x+1}{-x-4} \]
+<p>The end behavior of this function is determined by \(\frac{x^3}{-x} = -x^2\), which is to say, \(f(x)\) will have end behavior similar to that of a negative quadratic polynomial, so both left and right ends will go down. Notice that we are using the polynomial end behavior!</p>
+<p>What about when the denominator dominates? In those cases, no matter what, the rational function will get closer and closer to 0, both to the left and to the right. Why? Since the denominator grows faster than the numerator, the function will divide by inceasingly larger and larger values. Divide a relatively small number by a relatively large number will always result in a value close to 0. This behavior is described as a <strong>Horizontal Asymptote</strong>, a value which the function approaches as the input values go to either positive or negative infinity. When dealing with horizontal asymptotes, we usuall represent them with a line. In this case, we say the horizontal asymptote is the line \(y=0\).</p>
+<p>What about when the numerator and denominator have the same degree? Then we determine the <strong>horizontal asymptote</strong> by the ratio of the leading terms. For example:</p>
+\[ b(s) = \dfrac{-2s^5 - 5s^2}{3s^2+6s^5} \]
+<p>In this example, the leading term in the numerator is \(-2s^5\) while the "leading" term in the denominator is actually \(6s^5\). Don't be fooled by the incorrect ordering, always identify the largest exponent as the leading term. The horizontal asymptote is then the line \(y = \frac{-2s^5}{6s^5} \rightarrow y=-\frac{1}{3}\)</p>
+</div>
+<p>
+
+ 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  var elt = document.getElementById('standard_form');
+
+  var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:false,xAxisStep:0,fontSize:24, projectorMode:true});
+  calculator.setMathBounds({left:-10,right:10,bottom:-10,top:10});
+  calculator.setExpressions( [{latex: 'a=1'},{latex: 'b=1'},{latex: 'c=-5'},{latex:"(0,c)",label:`(0,c)`,showLabel:true}, {latex:"f(x)=ax^2+bx+c"}, {latex:"(a,0)",showLabel:true,label:"`a`"},{latex:"(b,5)",showLabel:true,label:"`b`"}]);
+  elt2 = document.getElementById('vertex_form');
+
+  var calculator2 = Desmos.GraphingCalculator(elt2,{expressions:false,lockViewport:false,xAxisStep:0,fontSize:24, projectorMode:true});
+  calculator2.setMathBounds({left:-10,right:10,bottom:-10,top:10});
+  calculator2.setExpressions( [{latex: 'a=1'},{latex: 'h=1'},{latex: 'k=-5'},{latex:"(0,k)",label:`(0,k)`,showLabel:true}, {latex:"f(x)=a(x-h)^2+k"},{latex:"(h,k)",label:`(h,k)`,showLabel:true}, {latex:"(a,0)",showLabel:true,label:"`a`"},{latex:"(h,0)",label:`(h,0)`,showLabel:true}]);
+elt3 = document.getElementById('factored_form');
+      var calculator3 = Desmos.GraphingCalculator(elt3,{expressions:false,lockViewport:false,xAxisStep:0,fontSize:24, projectorMode:true});
+  calculator3.setMathBounds({left:-10,right:10,bottom:-40,top:40});
+  calculator3.setExpressions( [{latex: 'a=1'},{latex: 'x_1=-5'},{latex: 'x_2=5'},{latex:"(x_1,0)",label:"`(x_1,0)`",showLabel:true}, {latex:"f(x)=a(x-x_1)(x-x_2)"}, {latex:"(a,-5)",showLabel:true,label:"`a`"},{latex:"(x_2,0)",label:"`(x_2,0)`",showLabel:true}]);
+  });
+</script>
+</body>
+</html>

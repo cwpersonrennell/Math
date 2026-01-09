@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>ExampleSwappingInputOutput</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/Chapter2\2.8\ExampleSwappingInputOutput.html">Source Page</a>
+  </div>
+<p>Suppose that \(W(t)\) represents the amount of water, in gallons, in a cistern \(t\) minutes after the start of a monsoon. The tank continuously fills with water during the storm, until it is full.</p>
+<ol>
+<li>Based on the description, is \(W(t)\) invertible over the time from the start of the monsoon until it is full? If it is not, determine a reasonable domain that it <i>is</i> invertible.</li>
+<li>Suppose that up to 90 minutes the function is invertible. Provide an interpretation of the equation: \(W^{-1}(50) = 45\)</li>
+<li>Suppose that \(W(t) = 3t+50\) for \(0\leq t \leq 120\). Find the inverse function.</li>
+</ol>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<ol>
+<li><i>I</i> believe it is invertible up to the point it is full, so long as the tank is <strong> always filling</strong>. If the rain lets up before the tank is full, there would be a horizontal line that would make the function non-invertible.</li>
+<li>\(W^{-1}(50) = 45\) should be interpreted as: When there are 50 gallons of water in the tank, 45 minutes have passed. Remember, the input/output are swapped in the inverse function!</li>
+<li>When working with inverse functions, I find it easier to separate out the function variable with a little subtle re-configuration of the setup: \(W = f(t) = 3t+50\). Then, solve \(W=3t+50\) for \(t\): \[\begin{array}{rcl} W &amp;=&amp;3t + 50\\ W-50&amp;=&amp;3t\\ t&amp;=&amp;\displaystyle\frac{W-50}{3}\\ f^{-1}(W)&amp;=&amp;\displaystyle\frac{W-50}{3} \end{array} \] The use of \(f^{-1}(W)\) is deliberate to remind myself that this is the inverse function to \(f(t) = 3t+50\). Once again, notice the swapping of the input/output. It is critical to undestanding the applied problems because it clearly identifies what the input variable units should be. Sadly, the convention isn't to do this rewrite, so you will typically see the answer expressed as something like \(W^{-1}(x)=...\) or even worse \(W^{-1}(t)\). In the first case, \(x\) is just an arbitrary input variable with no associated units and in the second case, the input variable is <strong>quite erroneously</strong> indicating it is the same input variable as for \(W(t)\), time in minutes. However, as we have seen, that is most emphatically not the case. Whenever I am unsure of the units, I always fall back to the rewrite you have seen above to more clearly track the units of the inputs/outputs of the inverse function..</li>
+</ol>
+</div>
+</div>
+<p>
+</body>
+</html>

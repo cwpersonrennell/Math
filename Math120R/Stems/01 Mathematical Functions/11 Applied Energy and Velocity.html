@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>ExampleAppliedEnergyAndVelocity</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/Chapter2\2.3\ExampleAppliedEnergyAndVelocity.html">Source Page</a>
+  </div>
+<div class="fa">
+<p>A bird flying into a headwind will use more energy to maintain its speed. If the headwind is blowing at a constant 5mph, the energy required to fly a fixed distance of 50 miles at a speed of&nbsp;v miles per hour is given by:&nbsp;</p>
+\[E(v) = 0.0005v^3\displaystyle\frac{50}{v-5} \]
+<p>Find the speed the bird can fly at which will <strong>minimize</strong> the energy it uses.</p>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>The hard part of these types of questions can be getting the window just right. This particular example wasn't too hard, but we can use context to help. The bird needs to fly more than 5 miles per hour to make any headway, and we can see that the graph does some *weird* things around \(v=5\). The energy should most likely be positive, so it makes sense to set the vertical view to only positive values, and the upper limit I determined through some mild guessing until I could clearly see a "minimum" in the graph. Using Desmos, I can just click the minimum, but using a TI-83/84 you will need to use the *min* function.</p>
+<p>The speed the bird will need to fly to minimize its energy use is \(v=7.5mph\)</p>
+<div id="calculator" style="width: 100%; height: 600px; text-align: center;"></div>
+</div>
+<!-- End Solution--></div>
+<p>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt,{projectorMode: true,expressions:false,lockViewport:false});
+  calculator.setMathBounds({left:-4,right:20,bottom:0,top:30});
+  calculator.setExpressions( [{latex:'E(v)=0.0005v^3\\frac{50}{v-5}',color:"blue"}]);
+  });
+</script>
+</body>
+</html>

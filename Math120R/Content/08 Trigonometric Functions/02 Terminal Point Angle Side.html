@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>02 Terminal Point Angle Side</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example: Whenever we consider a point on the unit circle, we can also consider the <strong>terminal line</strong> drawn from the origin to that point. If we then consider a counter-clockwise angle from the positive horizontal axis, we have an angle that we can associate with that specific point too. The mathematical convention for angles in the coordinate plane is that counter-clockwise angles are positive, and clockwise angles are negative. Thus, the example angle below would be considered positive.</p>
+<calculator style="width: 1000px; height: 1000px;" options="{}" mathbounds="{left:-1.5,right:1.5,bottom:-1.5,top:1.5}"> x^2+y^2=1;{color:black}\ 0.2\cdot(\cos(t),\sin(t));{parametricDomain:{min:"0",max:"4.188790"}, color:red }\ (\cos(4\pi/3),\sin(4\pi/3));{color:red,showLabel:true,label:"`P(x,y)`"}\ x_1 = \cos(4\pi/3)\ y_1 = \sin(4\pi/3)\ m = y_1/x_1\ y=m\cdot x\left\{x_1\leq x\leq 0\right\};{color:red}\ (0,0.3);{showLabel:true,color:red,label:"Terminal Angle",hidden:true}\ 0.5\cdot(\cos(4\pi/3),\sin(4\pi/3));{showLabel:true, color:red,label:"Terminal Line",hidden:true}</calculator>
+<p>In addition to the terminal angle, line, and point, whenever we draw the angle, sometimes it is easier to just look at the nearest horizontal line, instead of going all the way back to the positive horizontal axis. This type of angle is called the <strong>reference angle</strong> OR <strong>reference number</strong> depending on different texts. I tend to favor reference angle, but I have seen it both ways. The reference angle is always considered positive, regardless of orientation of the angle.</p>
+<calculator style="width: 1000px; height: 1000px;" options="{}" mathbounds="{left:-1.5,right:1.5,bottom:-1.5,top:1.5}"> x^2+y^2=1;{color:black}\ 0.2\cdot(\cos(t),\sin(t));{parametricDomain:{min:"0",max:"4.188790"}, color:red }\ (\cos(4\pi/3),\sin(4\pi/3));{color:red,showLabel:true,label:"`P(x,y)`"}\ x_1 = \cos(4\pi/3)\ y_1 = \sin(4\pi/3)\ m = y_1/x_1\ y=m\cdot x\left\{x_1\leq x\leq 0\right\};{color:red}\ (0,0.3);{showLabel:true,color:red,label:"Terminal Angle",hidden:true}\ 0.5\cdot(\cos(4\pi/3),\sin(4\pi/3));{showLabel:true, color:red,label:"Terminal Line",hidden:true}\ 0.3\cdot(\cos(t),\sin(t));{lineWidth:10,parametricDomain:{min:"3.141592654",max:"4.188790"}, color:purple }\ (-0.5,-0.1);{showLabel:true,color:purple,label:"Reference Angle",hidden:true}</calculator>
+</body>
+</html>

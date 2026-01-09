@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>11 Solving Applied Exponential Question With Graphing Device</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example: When studying outbreaks, it is not always obvious when the first day of infection occurs in a population. A researcher in the field observed that when they first arrived, there were 40 people infected in the population. Two days later, that number jumped to 120. Using the model \(I=Pe^{rt}\), determine the relative rate of infection as well as an approximation for the number of days since the first infection.</p>
+<calculator options='{"expressions":true,"keypad":true,"graphpaper":true,"showGrid":true,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":false,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-7.3134094500167866,"right":5.000571740775021,"top":8.049974733281267,"bottom":-7.342500189404973}' style="width:1000px;height:800px" data-string='{"version":9,"randomSeed":"ee5305dd852081e20d30f1fc386423c3","graph":{"viewport":{"xmin":-7.3134094500167866,"ymin":-7.342500189404973,"xmax":5.000571740775021,"ymax":8.049974733281267}},"expressions":{"list":[{"type":"expression","id":"2","color":"#2d70b3"}]}}' ></calculator >
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+Treat the data as points to simplify the problem: we have two points, \((0,40)\) and \((2,120)\) and we want to fit these points to the model \(I=Pe^{rt}\). Since this is an exponential model, we actually already know \(P=40\) because the coefficient of the model is always the same as the vertical intercept. To determine the relative rate, we set up the equation:
+\[
+120 = 40e^{2r}
+\]
+While we can use logarithms to solve this, for now, we will rely on a calculator instead:
+<calculator options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":true,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":false,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-3.037434629174695,"right":3.584113862255846,"top":241.42198489151113,"bottom":-42.97501510848892}' style="width:800px;height:800px" data-string='{"version":9,"randomSeed":"f1f3210d2c6f1efdc1a07853d33bfb4a","graph":{"viewport":{"xmin":-3.037434629174695,"ymin":-42.97501510848892,"xmax":3.584113862255846,"ymax":241.42198489151113},"squareAxes":false},"expressions":{"list":[{"type":"expression","id":"2","color":"#2d70b3","latex":"B=120"},{"type":"expression","id":"3","color":"#388c46","latex":"y=40e^{2x}"},{"type":"expression","id":"6","color":"#c74440","latex":"y=B"},{"type":"expression","id":"4","color":"#6042a6","latex":"s=\\frac{\\ln\\left(\\frac{B}{40}\\right)}{2}"},{"type":"expression","id":"5","color":"#000000","latex":"\\left(s,B\\right)","showLabel":true,"dragMode":"NONE","labelSize":"2","labelOrientation":"below_right"}]}}' ></calculator >
+Thus, we can see that the rate is approximately \(r=\approx 54.9\%\). Using the model, we can then back track to see how many days ago the infection started:
+<calculator options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":true,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":false,"projectorMode":true,"invertedColors":false}' mathbounds='{"left":-12.279067456061874,"right":1.4268094964329983,"top":2.8473171866288745,"bottom":-1.2924627969301703}' style="width:800px;height:800px" data-string='{"version":9,"randomSeed":"ac3bce06b2365450b95f51e41d293fa0","graph":{"viewport":{"xmin":-12.279067456061874,"ymin":-1.2924627969301703,"xmax":1.4268094964329983,"ymax":2.8473171866288745},"squareAxes":false},"expressions":{"list":[{"type":"expression","id":"2","color":"#2d70b3","latex":"B=120"},{"type":"expression","id":"3","color":"#388c46","latex":"y=40e^{2x}","hidden":true},{"type":"expression","id":"6","color":"#c74440","latex":"y=B","hidden":true},{"type":"expression","id":"4","color":"#6042a6","latex":"s=\\frac{\\ln\\left(\\frac{B}{40}\\right)}{2}"},{"type":"expression","id":"5","color":"#000000","latex":"\\left(s,B\\right)","hidden":true,"dragMode":"NONE","labelSize":"2","labelOrientation":"below_right"},{"type":"expression","id":"7","color":"#2d70b3","latex":"f\\left(x\\right)=40e^{sx}"},{"type":"expression","id":"8","color":"#388c46","latex":"y=1"},{"type":"expression","id":"9","color":"#6042a6","latex":"u=\\frac{\\ln\\left(\\frac{1}{40}\\right)}{s}"},{"type":"expression","id":"10","color":"#000000","latex":"\\left(u,f\\left(u\\right)\\right)","showLabel":true,"labelSize":"2","labelOrientation":"below_right"}]}}' ></calculator >
+Here we can see that the infection started about 7 days <strong>before</strong> the initial observation of 40 infected people.
+</div>
+</div>
+
+</body>
+</html>

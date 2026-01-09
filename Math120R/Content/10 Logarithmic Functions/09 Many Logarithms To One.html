@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>09 Many Logarithms To One</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example: Rewrite the expression as a single logarithm:</p>
+\[ 5\log(x)-\frac{2}{3}\log(x^4+1)+\log(x-2) \]
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Solution</strong></p>
+<p>
+When I answer these questions, I usually take careful note of the positive and negative logarithms. I do this because all the positive logarithms will contribute to an answer in the numerator, whereas the negative logarithms will all contribute to the denominator. This is a useful check to make sure my final answer matches with my expectations, in case I make any errors along the way.
+</p>
+<p>
+	\[\solve{
+		5\log(x)-\frac{2}{3}\log(x^4+1)+\log(x-2)
+		&=&\log(x^5)-\log\left((x^4+1)^{\frac{2}{3}}\right)+\log(x-2)\\
+		&=&\log\left(\frac{x^5}{(x^4+1)^\frac{2}{3}\right) +\log(x-2)\\
+		&=&\log\left(\frac{x^5(x-2)}{(x^4+1)}^\frac{2}{3}\right)
+	}\]
+Note: Before we can use either the sum or difference properties of logarithms, we must first convert the coefficients outside of the logarithms into exponents within the logarithms. Next, when deciding how/when to use the sum or difference properties, the correct order is always from Left to Right. That is, I did the subtraction <strong>first</strong> because it was the first operation as I read from left to right. If you do the addition first, you will end up with the \(x-2\) terms in the denominator, which is incorrect.</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>42 Navigating With Trigonometry</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div id="alternate" style="display:block;float:right">
+  <a target="_blank" href="https://cwpersonrennell.github.io/Math/Math120R/{{{src}}}">Source Page</a>
+  </div>
+<div class="fa" style="width: 100%;">
+<p>Example: Navigation using a map, compass and trigonometry has existed for quite a long time. Let's consider the following, slightly contrived, scenario:</p>
+<p>Suppose you are hiking near two mountains. The mountains are exactly due east-west of one another (e.g., they form a horizontal line from east to west). You know that you are currently south of the mountains somewhere but would like to more accurately pinpoint your location so that you can reach a water source you know is nearby but cannot currently find.</p>
+<p>The mountain peaks are 45 miles apart from one another, according to your map.</p>
+<p>You position yourself to look north and measure the following angles:</p>
+<ul>
+<li>The eastern mountain is \(18^\circ\) east of north.</li>
+<li>The western mountain is \(22^\circ\) west of north.</li>
+</ul>
+<p>Using your map, you note that the water source you are seeking is 50 miles due south of the western mountain.</p>
+<ol>
+<li>Determine your location relative to the mountains.</li>
+<li>Determine the heading (relative to north) and distance you need to travel to reach the water source, assuming passable terrain.</li>
+</ol>
+<div><button id="toggle_solution">Show Solution</button></div>
+<hr>
+<div id="solution" class="hide">
+<p><strong>Hint Via an Image:</strong></p>
+<calculator options="{&quot;expressions&quot;:false,&quot;keypad&quot;:true,&quot;graphpaper&quot;:true,&quot;showGrid&quot;:true,&quot;showXAxis&quot;:false,&quot;showYAxis&quot;:false,&quot;xAxisNumbers&quot;:true,&quot;yAxisNumbers&quot;:true,&quot;trace&quot;:false,&quot;pointsOfInterest&quot;:false,&quot;settingsMenu&quot;:false,&quot;zoomButtons&quot;:false,&quot;expressionsCollapsed&quot;:false,&quot;capExpressionSize&quot;:false,&quot;lockViewport&quot;:true,&quot;projectorMode&quot;:true,&quot;invertedColors&quot;:false}" mathbounds="{&quot;left&quot;:-29.280962478193356,&quot;right&quot;:77.86628415509959,&quot;top&quot;:13.090351679673404,&quot;bottom&quot;:-67.27008329529633}" style="width: 800px; height: 600px;" data-string="{&quot;version&quot;:9,&quot;randomSeed&quot;:&quot;e09d2af316384de5dfa9f82196f27080&quot;,&quot;graph&quot;:{&quot;viewport&quot;:{&quot;xmin&quot;:-29.280962478193356,&quot;ymin&quot;:-67.27008329529633,&quot;xmax&quot;:77.86628415509959,&quot;ymax&quot;:13.090351679673404},&quot;showXAxis&quot;:false,&quot;showYAxis&quot;:false},&quot;expressions&quot;:{&quot;list&quot;:[{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;1&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;x_{1}\\ =\\ 0&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;2&quot;,&quot;color&quot;:&quot;#2d70b3&quot;,&quot;latex&quot;:&quot;x_{2}\\ =\\ 45&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;3&quot;,&quot;color&quot;:&quot;#388c46&quot;,&quot;latex&quot;:&quot;\\left(x_{1},0\\right)&quot;,&quot;hidden&quot;:true,&quot;dragMode&quot;:&quot;NONE&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;4&quot;,&quot;color&quot;:&quot;#6042a6&quot;,&quot;latex&quot;:&quot;\\left(x_{2},0\\right)&quot;,&quot;hidden&quot;:true,&quot;dragMode&quot;:&quot;NONE&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;5&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=0\\left\\{x_{1}\\le x\\le x_{2}\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;6&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;t_{1}=18\\cdot\\frac{\\pi}{180}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;7&quot;,&quot;color&quot;:&quot;#2d70b3&quot;,&quot;latex&quot;:&quot;t_{2}=22\\cdot\\frac{\\pi}{180}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;8&quot;,&quot;color&quot;:&quot;#388c46&quot;,&quot;latex&quot;:&quot;d_{1}=\\frac{45}{1+\\frac{\\cot t_{1}}{\\cot t_{2}}}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;11&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;d_{2}\\ =\\ 45-d_{1}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;12&quot;,&quot;color&quot;:&quot;#2d70b3&quot;,&quot;latex&quot;:&quot;h=\\frac{d_{1}}{\\tan t_{1}}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;9&quot;,&quot;color&quot;:&quot;#6042a6&quot;,&quot;latex&quot;:&quot;\\left(d_{2},-h\\right)&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;10&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;m_{1}=\\frac{-h}{d_{2}}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;13&quot;,&quot;color&quot;:&quot;#388c46&quot;,&quot;latex&quot;:&quot;m_{2}\\ =\\ \\frac{h}{d_{1}}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;14&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=m_{1}x\\left\\{0\\le x\\le d_{2}\\right\\}&quot;,&quot;lineWidth&quot;:&quot;3&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;15&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=m_{2}\\left(x-d_{2}\\right)-h\\left\\{d_{2}\\le x\\le45\\right\\}&quot;,&quot;lineWidth&quot;:&quot;3&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;16&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;x=d_{2}\\left\\{-h\\le y\\le0\\right\\}&quot;,&quot;lineStyle&quot;:&quot;DASHED&quot;,&quot;lineWidth&quot;:&quot;3&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;17&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(d_{2}-5,-h+25\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`22`deg&quot;,&quot;hidden&quot;:true},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;18&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(d_{2}+4,-h+25\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`18` deg&quot;,&quot;hidden&quot;:true},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;19&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(22.5,0\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`45` miles&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;above&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;20&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(d_{2},-h\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;You&quot;,&quot;labelOrientation&quot;:&quot;below&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;21&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(0,0\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;Western Mountain&quot;,&quot;hidden&quot;:true,&quot;labelOrientation&quot;:&quot;above&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;22&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(45,0\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;Eastern Mountain&quot;,&quot;hidden&quot;:true,&quot;labelOrientation&quot;:&quot;above&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;23&quot;,&quot;color&quot;:&quot;#2d70b3&quot;,&quot;latex&quot;:&quot;\\left(0,-50\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;Water Source&quot;,&quot;labelOrientation&quot;:&quot;below&quot;,&quot;pointSize&quot;:&quot;20&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;24&quot;,&quot;color&quot;:&quot;#2d70b3&quot;,&quot;latex&quot;:&quot;x=0\\left\\{-50\\le y\\le0\\right\\}&quot;,&quot;lineStyle&quot;:&quot;DASHED&quot;,&quot;lineWidth&quot;:&quot;4&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;25&quot;,&quot;color&quot;:&quot;#2d70b3&quot;,&quot;latex&quot;:&quot;\\left(0,-25\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`50` miles&quot;,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;left&quot;}]}}"></calculator>
+<p>An important note about this image: I have drawn that you are south of the water source, but you <strong>do not necessarily know this to be true!</strong> It is quite possible that you passed the water source and will need to backtrack. That is why the first order of business is to identify your location relative to the two mountains!</p>
+</div>
+</div>
+</body>
+</html>
