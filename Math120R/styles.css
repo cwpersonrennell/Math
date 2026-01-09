@@ -25,3 +25,17 @@
   filter:blur(10px);
 }*/
 
+.container{
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+  align-content:stretch;
+  gap:5px;
+}
+
+.navigate{
+  flex:1;
+}
+.content{
+  flex:8;
+}
