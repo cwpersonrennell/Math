@@ -11,7 +11,7 @@ import re
 DEBUG = False
 
 def debug(text):
-    if(DEBUG): print(text)
+    if(DEBUG): print("DEBUGGING.... ",text)
 
 def removeDoubleBraces(string):
     regex = re.compile("\{\{-?\w*\}\}")
@@ -38,7 +38,7 @@ def MakeTargetDirectoriesFromStems(Stems,target):
             debug("SKIPPING: "+pathname)
             continue
         pathname= os.fspath(Stems[i].absolute()).replace("Stems\\","")
-        debug("STEMS",pathname)
+        debug("STEMS"+pathname)
         targetpathname= os.fspath(Stems[i].absolute()).replace("Stems",target)
         try:
             os.mkdir(pathname)
@@ -76,7 +76,16 @@ def GenerateFilesFromStemAndTemplate(template_filename,directory):
         if(pathname[0]=='X'):
             debug("SKIPPING: "+pathname)
             continue
- 
+        #filename = os.path.basename(Stem_filepaths[i])
+        
+        next_page = ""
+        previous_page = ""
+        if(i<len(Stem_filepaths)):
+            next_page = os.fspath(Stem_filepaths[i+1]).replace("Stems\\","").replace("\\","/")
+        if(i>0):
+            previous_page = os.fspath(Stem_filepaths[i-1]).replace("Stems\\","").replace("\\","/")
+        
+        print(previous_page+"-->"+next_page)
         pathname= os.fspath(Stem_filepaths[i].absolute()).replace("Stems\\",directory+"\\")
         #Some older files from D2L doubled braces unneccessarily, this removes them.
         body_contents = removeDoubleBraces(open(Stem_filepaths[i]).read())
@@ -84,8 +93,10 @@ def GenerateFilesFromStemAndTemplate(template_filename,directory):
         #Write the actual Source Html File        
         template_file = open(template_filename)
         new_contents = template_file.read().replace("{{{body}}}",body_contents).replace("{{{title}}}",Stem_filepaths[i].name.split(".html")[0])
+        new_contents = new_contents.replace("{{{next_page}}}",next_page);
+        new_contents = new_contents.replace("{{{previous_page}}}",previous_page);
         CreateAndWriteContentsToFile(new_contents,pathname)
         
         
         
-GenerateFilesFromStemAndTemplate("main-body-template.html","Content")
+GenerateFilesFromStemAndTemplate("new-main-body-template.html","Content")
