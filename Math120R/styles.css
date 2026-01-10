@@ -36,6 +36,16 @@
 .navigate{
   flex:1;
 }
+
+a.navigate{
+  background:#322b4c;
+  border-radius:10px;
+  display:block;
+  color:white;
+  text-decoration:none;
+  text-align:center;
+  height:100%;
+}
 .content{
   flex:8;
 }

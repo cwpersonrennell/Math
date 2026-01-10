@@ -78,8 +78,8 @@ def GenerateFilesFromStemAndTemplate(template_filename,directory):
             continue
         #filename = os.path.basename(Stem_filepaths[i])
         
-        next_page = ""
-        previous_page = ""
+        next_page = "index.html"
+        previous_page = "index.html"
         if(i<len(Stem_filepaths)):
             next_page = os.fspath(Stem_filepaths[i+1]).replace("Stems\\","").replace("\\","/")
         if(i>0):
