@@ -37,7 +37,7 @@
   flex:1;
 }
 
-a.navigate{
+.navigate > a{
   background:#322b4c;
   border-radius:10px;
   display:block;
