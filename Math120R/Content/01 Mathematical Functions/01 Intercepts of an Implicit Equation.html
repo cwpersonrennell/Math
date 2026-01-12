@@ -45,7 +45,7 @@
   <style>
         .grid{
             display:grid;
-            grid-template-columns:repeat(3,minmax(200px,1fr));
+            grid-template-columns:repeat(4,minmax(200px,1fr));
             grid-template-rows:auto 1fr;
             column-gap: 1rem;
             }
@@ -55,7 +55,7 @@
             grid-template-columns:subgrid;
             grid-template-rows:subgrid;
             grid-column: 1 / -1;
-            grid-row: 1 / span 3;
+            grid-row: 1 / span 4;
         }
 
         details::details-content{
@@ -91,6 +91,10 @@
     
         details:nth-of-type(3) summary{
             grid-column: 3 / span 1;
+        }
+    
+        details:nth-of-type(4) summary{
+            grid-column: 4 / span 1;
         }
     
         summary{
@@ -146,7 +150,7 @@
      calculator.setMathBounds({left:-10,right:10,bottom:-20,top:20});
      calculator.setExpressions( [{id: 'graph1', latex: 'x^4 + y^3 -xy^2 = 4096'},{latex:"(-8,0)",color:"blue",showLabel:true},{latex:"(8,0)",color:"blue",showLabel:true},{latex:"(-0,16)",color:"blue",showLabel:true}]);
       });
-   </script> </div></details>
+   </script> </div></details><details class='item' name='alpha' open style='--n: 4'><summary class='subitem'>Video </summary><div> <p><a href="https://emailarizona-my.sharepoint.com/:v:/g/personal/cpersonrennell_arizona_edu/IQB2JpGQQzuDTrFvZENiR2gAAcinRWUyqmK6BNlAUoHfc0g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&amp;e=CKfIOc">Link to video</a></p> </div></details>
 
   </div>
 
