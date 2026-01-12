@@ -207,7 +207,7 @@ def CreateIndexFiles(top):
         body += f"<ul>\n"
         if(len(files)>0):
             for i in range(0,len(files)):
-                body+="<li>"+CreateLink(files[i],files[i].replace(".html",""))+"</li>\n"
+                body+="<li>"+CreateLink(f"{new_root}\{files[i]}",files[i].replace(".html",""))+"</li>\n"
         if(len(dirs)>0):
             for i in range(0, len(dirs)):
                 body+="<li>"+CreateLink(dirs[i]+"/index.html",dirs[i])+"</li>\n"
