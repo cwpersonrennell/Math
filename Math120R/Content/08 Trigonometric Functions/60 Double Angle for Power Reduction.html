@@ -35,26 +35,35 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>60 Double Angle for Power Reduction</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/08 Trigonometric Functions/59 Using Double Angle Formulas To Simplify.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa" style="width: 100%;">
+
+  
+
+  <div class="grid">
+
+  <div class="fa" style="width: 100%;">
 <p>Example: Express \(\cos^4(x)\) using only first powers of \(\cos(x)\).</p>
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong></p>
 <p>This one is a bit different than the last few where we needed to make some drawings. In this example, the process will be purely algebraic by looking for opportunities to apply the double angle formula for Cosine: \[ \solve{ \cos(2\theta) &amp;=&amp; 2\cos^2\theta-1\\ \cos(2\theta)+1 &amp;=&amp; 2\cos^2\theta \\ \dfrac{\cos(2\theta)+1}{ 2 } &amp;=&amp; \cos^2\theta } \]With this <strong>Power Reduction</strong> formula in hand, we can tackle the original problem:</p>
-\[ \solve{ \cos^4(x) &amp;=&amp; (\cos^2 x)^2 \\ &amp;=&amp; \left(\frac{\cos(2x)+1}{ 2 }\right)^2\\ &amp;=&amp;\dfrac{\cos^2(2x)+2\cos(2x)+1}{4}\\ &amp;=&amp;\dfrac{\left(\frac{\cos(4x)+1}{2}\right) + 2\cos(2x)+1}{4}\\ &amp;=&amp;\dfrac{\left(\frac{\cos(4x)+1}{2}\right) + 2\cos(2x)+1}{4}\times {\color{ red } \dfrac{ 2 }{ 2} }\\ &amp;=&amp;\dfrac{{\color{ red }2 }\left(\frac{\cos(4x)+1}{2}\right)+{\color{ red }2 }\cdot2\cos(2x)+{\color{ red }2 }\cdot 1}{ {\color{ red }2 } \cdot 4}\\ &amp;=&amp;\dfrac{\cos(4x)+1+4\cos(2x)+2}{ 8 } \\&amp;=&amp;\dfrac{\cos(4x)+4\cos(2x)+3}{ 8 } } \]</div>
+\[ \solve{ \cos^4(x) &amp;=&amp; (\cos^2 x)^2 \\ &amp;=&amp; \left(\frac{\cos(2x)+1}{ 2 }\right)^2\\ &amp;=&amp;\dfrac{\cos^2(2x)+2\cos(2x)+1}{{4}}\\ &amp;=&amp;\dfrac{\left(\frac{\cos(4x)+1}{{2}}\right) + 2\cos(2x)+1}{{4}}\\ &amp;=&amp;\dfrac{\left(\frac{\cos(4x)+1}{{2}}\right) + 2\cos(2x)+1}{{4}}\times {\color{ red } \dfrac{ 2 }{ 2} }\\ &amp;=&amp;\dfrac{{\color{ red }2 }\left(\frac{\cos(4x)+1}{{2}}\right)+{\color{ red }2 }\cdot2\cos(2x)+{\color{ red }2 }\cdot 1}{ {\color{ red }2 } \cdot 4}\\ &amp;=&amp;\dfrac{\cos(4x)+1+4\cos(2x)+2}{ 8 } \\&amp;=&amp;\dfrac{\cos(4x)+4\cos(2x)+3}{ 8 } } \]</div>
 <p>So, that is a lot of algebra, and I want to make sure that I didn't make any mistakes. What can I do? One way to double check your work in a situation like this, is to graph the original expression and the new expression and see if their graphs line up:</p>
-<calculator options="{&quot;expressions&quot;:true,&quot;keypad&quot;:true,&quot;graphpaper&quot;:true,&quot;showGrid&quot;:true,&quot;showXAxis&quot;:true,&quot;showYAxis&quot;:true,&quot;xAxisNumbers&quot;:true,&quot;yAxisNumbers&quot;:true,&quot;trace&quot;:true,&quot;pointsOfInterest&quot;:true,&quot;settingsMenu&quot;:true,&quot;zoomButtons&quot;:true,&quot;expressionsCollapsed&quot;:false,&quot;capExpressionSize&quot;:false,&quot;lockViewport&quot;:false,&quot;projectorMode&quot;:false,&quot;invertedColors&quot;:false}" mathbounds="{&quot;left&quot;:-0.8059513069911495,&quot;right&quot;:4.153851442885295,&quot;top&quot;:3.638874103496623,&quot;bottom&quot;:-2.5608793338489315}" style="width: 800px; height: 600px;" data-string="{&quot;version&quot;:9,&quot;randomSeed&quot;:&quot;f06139b5fd564fc0aedc599794a7d7ac&quot;,&quot;graph&quot;:{&quot;viewport&quot;:{&quot;xmin&quot;:-0.8059513069911495,&quot;ymin&quot;:-2.5608793338489315,&quot;xmax&quot;:4.153851442885295,&quot;ymax&quot;:3.638874103496623}},&quot;expressions&quot;:{&quot;list&quot;:[{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;1&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;\\left(\\cos x\\right)^{4}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;2&quot;,&quot;color&quot;:&quot;#2d70b3&quot;,&quot;latex&quot;:&quot;\\frac{\\cos\\left(4x\\right)+4\\cos\\left(2x\\right)+3}{8}&quot;}]}}">aligned graphs</calculator>
+<calculator data-string='{"version":9,"randomSeed":"f06139b5fd564fc0aedc599794a7d7ac","graph":{"viewport":{"xmin":-0.8059513069911495,"ymin":-2.5608793338489315,"xmax":4.153851442885295,"ymax":3.638874103496623}},"expressions":{"list":[{"type":"expression","id":"1","color":"#c74440","latex":"\\left(\\cos x\\right)^{{4}}"},{"type":"expression","id":"2","color":"#2d70b3","latex":"\\frac{\\cos\\left(4x\\right)+4\\cos\\left(2x\\right)+3}{{8}}"}]}}' mathbounds='{"left":-0.8059513069911495,"right":4.153851442885295,"top":3.638874103496623,"bottom":-2.5608793338489315}' options='{"expressions":true,"keypad":true,"graphpaper":true,"showGrid":true,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":false,"projectorMode":false,"invertedColors":false}' style="width: 800px; height: 600px;">aligned graphs</calculator>
 <p>As you can see (feel free to toggle the graphs on/off and pan around) the graphs are indeed identical, so we can be very confident that our solution is correct.</p>
 </div>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/08 Trigonometric Functions/61 Solving Applied Trig Equations.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

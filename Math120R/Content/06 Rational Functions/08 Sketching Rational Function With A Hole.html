@@ -35,17 +35,23 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>08 Sketching Rational Function With A Hole</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/06 Rational Functions/07 Sketching Rational Function.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa" style="width: 100%;">
+
+  
+
+  <div class="grid">
+
+  <div class="fa" style="width: 100%;">
 <p>Example: Sketch the graph of the function</p>
 \[ f(x) = \dfrac{x^2+x-42}{x^2-x-30} \]
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong> When sketching a rational function, we need to identify the critical features of the graph:</p>
 <ol>
 <li>Vertical Asymptote(s)/Holes (Domain Restrictions)</li>
@@ -57,22 +63,20 @@
 \[ \solve{ f(x)&amp;=&amp;\dfrac{x^2+x-42}{x^2-x-30}\\ f(x)&amp;=&amp;\dfrac{(x+7)(x-6)}{(x+5)(x-6)} } \]
 <p>Now that the function is fully factored, it is easier to identify the zeros and domain restrictions, while the non-factored version of the equation is easier to identify the end behavior and vertical intercepts.</p>
 <ol>
-<li>Domain Restrictions: Based on the fact there are no common factors between the numerator and denominator, there is one <strong>hole</strong> in the graph at \(x=6\). To calculate the \(y\) value of the hole, we <i>simplify</i> the rational function and then evaluate the result at \(x=6\): \(\dfrac{(x+7)(x-6)}{(x+5)(x-6)}=\dfrac{x+7}{x+5}\rightarrow y=\dfrac{13}{11}\). Thus, we have a hole located at \(\left(6,\frac{13}{11}\right)\). Based on the factored denominator, the vertical asymptote is \(x=-5\)</li>
+<li>Domain Restrictions: Based on the fact there are no common factors between the numerator and denominator, there is one <strong>hole</strong> in the graph at \(x=6\). To calculate the \(y\) value of the hole, we <i>simplify</i> the rational function and then evaluate the result at \(x=6\): \(\dfrac{(x+7)(x-6)}{(x+5)(x-6)}=\dfrac{x+7}{x+5}\rightarrow y=\dfrac{{13}}{{11}}\). Thus, we have a hole located at \(\left(6,\frac{{13}}{{11}}\right)\). Based on the factored denominator, the vertical asymptote is \(x=-5\)</li>
 <li>End Behavior: Using the non-factored form, we divide the leading terms: \(\dfrac{x^2}{x^2} = 1\). The constant result means we have a horizontal asymptote at \(y=1\).</li>
 <li>Horizontal Intercepts: Using the factored form, we can see the zeros are at \(x= -7\). We must omit the other <i>potential</i> zero because \(x=6\) coincides with a domain restriction and is the location of a hole in the graph!.</li>
-<li>Vertical Intercept: Using either form (although non-factored is easier) by setting \(x=0\) we find the vertical intercept. \(y=\dfrac{0^2+0-42}{0^2-0-30}=\dfrac{42}{30}=\dfrac{7}{5}\)</li>
+<li>Vertical Intercept: Using either form (although non-factored is easier) by setting \(x=0\) we find the vertical intercept. \(y=\dfrac{0^2+0-42}{0^2-0-30}=\dfrac{{42}}{{30}}=\dfrac{{7}}{{5}}\)</li>
 </ol>
 <p>Now that we have all the features, we put it together for to sketch the graph.</p>
 <p><strong>Features:</strong></p>
 <div id="features" style="width: 100%; height: 600px;"></div>
-<br><br>
+<br/><br/>
 <p><strong>Features + Graph:</strong></p>
 <div id="full_graph" style="width: 100%; height: 600px;"></div>
 </div>
 </div>
 <p>
-
- 
 <script> 
   document.addEventListener("DOMContentLoaded", () => {
     var elt = document.getElementById('features');
@@ -103,10 +107,13 @@
   ]);
 
   });
-</script>
+</script></p>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/06 Rational Functions/09 Where Is Rational Function Positive.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

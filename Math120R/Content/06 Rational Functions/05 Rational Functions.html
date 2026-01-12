@@ -35,12 +35,18 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>05 Rational Functions</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/06 Rational Functions/04 Combining And Graphing RationalFunctions.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa" style="width: 100%;">
+
+  
+
+  <div class="grid">
+
+  <div class="fa" style="width: 100%;">
 <h1>Rational Function Section Goals:</h1>
 <ul>
 <li>Definition</li>
@@ -71,11 +77,9 @@
 <p>What about when the denominator dominates? In those cases, no matter what, the rational function will get closer and closer to 0, both to the left and to the right. Why? Since the denominator grows faster than the numerator, the function will divide by inceasingly larger and larger values. Divide a relatively small number by a relatively large number will always result in a value close to 0. This behavior is described as a <strong>Horizontal Asymptote</strong>, a value which the function approaches as the input values go to either positive or negative infinity. When dealing with horizontal asymptotes, we usuall represent them with a line. In this case, we say the horizontal asymptote is the line \(y=0\).</p>
 <p>What about when the numerator and denominator have the same degree? Then we determine the <strong>horizontal asymptote</strong> by the ratio of the leading terms. For example:</p>
 \[ b(s) = \dfrac{-2s^5 - 5s^2}{3s^2+6s^5} \]
-<p>In this example, the leading term in the numerator is \(-2s^5\) while the "leading" term in the denominator is actually \(6s^5\). Don't be fooled by the incorrect ordering, always identify the largest exponent as the leading term. The horizontal asymptote is then the line \(y = \frac{-2s^5}{6s^5} \rightarrow y=-\frac{1}{3}\)</p>
+<p>In this example, the leading term in the numerator is \(-2s^5\) while the "leading" term in the denominator is actually \(6s^5\). Don't be fooled by the incorrect ordering, always identify the largest exponent as the leading term. The horizontal asymptote is then the line \(y = \frac{-2s^5}{6s^5} \rightarrow y=-\frac{{1}}{{3}}\)</p>
 </div>
 <p>
-
- 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
   var elt = document.getElementById('standard_form');
@@ -93,10 +97,13 @@ elt3 = document.getElementById('factored_form');
   calculator3.setMathBounds({left:-10,right:10,bottom:-40,top:40});
   calculator3.setExpressions( [{latex: 'a=1'},{latex: 'x_1=-5'},{latex: 'x_2=5'},{latex:"(x_1,0)",label:"`(x_1,0)`",showLabel:true}, {latex:"f(x)=a(x-x_1)(x-x_2)"}, {latex:"(a,-5)",showLabel:true,label:"`a`"},{latex:"(x_2,0)",label:"`(x_2,0)`",showLabel:true}]);
   });
-</script>
+</script></p>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/06 Rational Functions/06 End Behavior Of Rationals.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

@@ -35,16 +35,22 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>14 Solving Exponential Equation Exactly</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/09 Exponential Functions/13 Solving Quadratic Exponential Equation.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa" style="width: 100%;">
-<p>Example: Find the exact solution to the equation: \[100(1+e^{4w})=1000\]</p>
+
+  
+
+  <div class="grid">
+
+  <div class="fa" style="width: 100%;">
+<p>Example: Find the exact solution to the equation: \[100(1+e^{{4w}})=1000\]</p>
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong></p>
 <p>
 Whenever we are trying to solve an equation using the definition of logarithm, we must isolate the base entirely before we can do so. Recall that the definition is:
@@ -54,27 +60,30 @@ Whenever we are trying to solve an equation using the definition of logarithm, w
 So, if we isolate the base, we can rewrite using logarithms. Here are my algebraic steps to do so:
 \[
 \solve{
-	100(1+e^{4w})&=&1000\\
-	1+e^{4w}&=&10\\
-	e^{4w}&=&9
+	100(1+e^{4w})&amp;=&amp;1000\\
+	1+e^{4w}&amp;=&amp;10\\
+	e^{4w}&amp;=&amp;9
 }\]
 Now we can apply the definition of logarithm (using natural log since the base is \(e\)) to get:
 \[
 \solve{
-	4w&=&\ln(9)
-	4w&=&\ln(3^2)\\
-	4w&=&2\ln(3)\\
-	w&=&\frac{2\ln(3)}{4}\\
-	w&=&\frac{1}{2}\ln(3)
+	4w&amp;=&amp;\ln(9)
+	4w&amp;=&amp;\ln(3^2)\\
+	4w&amp;=&amp;2\ln(3)\\
+	w&amp;=&amp;\frac{2\ln(3)}{4}\\
+	w&amp;=&amp;\frac{1}{2}\ln(3)
 }
 \]
 Notice that I take advantage of the properties of logarithms and simplify the logarthim to get \(2\ln(3)\). When possible, you should simplify powers inside logarithms. Then, when we divide both sides by four, we end up with a coefficient of one-half. There is an option to write this as \(\ln(\sqrt{3})\), but I believe the way I originally wrote it is the most clear and simply answer.
 </p>
 </div>
 </div>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/10 Logarithmic Functions/01 Inverse Function Of Exponential.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

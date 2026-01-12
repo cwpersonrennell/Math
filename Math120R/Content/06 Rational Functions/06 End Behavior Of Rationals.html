@@ -35,28 +35,34 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>06 End Behavior Of Rationals</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/06 Rational Functions/05 Rational Functions.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa" style="width: 100%;">
+
+  
+
+  <div class="grid">
+
+  <div class="fa" style="width: 100%;">
 <p>Example: Determine the end behavior of the rational functions listed below.</p>
 <ol>
-  <li>\(f(x)=\dfrac{3x^4-x^2+2}{x+4}\)</li><br><br>
-  <li>\(g(x)=\dfrac{-7x^5-x^3+2x}{x^7+5x^4-3}\)</li><br><br>
-  <li>\(k(t)=\dfrac{-t^2+2t+5t^3}{t^3-27}\)</li>
+<li>\(f(x)=\dfrac{3x^4-x^2+2}{x+4}\)</li><br/><br/>
+<li>\(g(x)=\dfrac{-7x^5-x^3+2x}{x^7+5x^4-3}\)</li><br/><br/>
+<li>\(k(t)=\dfrac{-t^2+2t+5t^3}{t^3-27}\)</li>
 </ol>
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong></p>
 <ol>
-<li>End Behavior determined by: \[\dfrac{3x^4}{x} =3x^3\]This is an odd degree polynomial with positive leading coefficient, thus, the end behavior is 
+<li>End Behavior determined by: \[\dfrac{3x^4}{{x}} =3x^3\]This is an odd degree polynomial with positive leading coefficient, thus, the end behavior is 
 \[
   \solve{
-    y\rightarrow-\infty &\text{ as } &x\rightarrow -\infty\\
-    y\rightarrow \infty &\text{ as} &x\rightarrow \infty 
+    y\rightarrow-\infty &amp;\text{ as } &amp;x\rightarrow -\infty\\
+    y\rightarrow \infty &amp;\text{ as} &amp;x\rightarrow \infty 
   }
 \]</li>
 <li>End Behavior determined by: \[\dfrac{-7x^5}{x^7} =\dfrac{-7}{x^2}\] this confirms that the denominator dominates the rational function, thus, the end behavior is a horizontal asympotote at \(y=0\).</li>
@@ -65,29 +71,31 @@
 </div>
 </div>
 <p>
-
 <script> 
   document.addEventListener("DOMContentLoaded", () => {
     var elt = document.getElementById('calculator');
     var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true,showGrid:false, xAxisNumbers:false,yAxisNumbers:false,trace:false});
   calculator.setMathBounds({left:-10,right:10,bottom:-10,top:20});
   calculator.setExpressions( [
-    {latex: `a=\\frac{-7}{10}`,secret:true},{latex: `b=\\frac{22}{5}`,secret:true},
-    {latex: `c=\\frac{-6}{5}`,secret:true},{latex: `x_1=\\frac{2}{7}`,secret:true},
+    {latex: `a=\\frac{-7}{{10}}`,secret:true},{latex: `b=\\frac{{22}}{{5}}`,secret:true},
+    {latex: `c=\\frac{-6}{{5}}`,secret:true},{latex: `x_1=\\frac{{2}}{{7}}`,secret:true},
     {latex: `x_2=6`,secret:true},
     {latex: String.raw`f(x) = ax^2+bx+c`,secret:true,color:"blue"},
-    {latex:`(0,c)`,secret:true,showLabel:true,label:"`(0,\\frac{-6}{5})`",color:"blue",dragMode:Desmos.DragModes.NONE},
-    {latex:`(22/7,40/7)`,secret:true,showLabel:true,label:"`(\\frac{22}{7},\\frac{40}{7})`",color:"blue",dragMode:Desmos.DragModes.NONE},
-    {latex:`(x_1,0)`,secret:true,showLabel:true,label:"`(\\frac{2}{7},0)`",color:"blue",dragMode:Desmos.DragModes.NONE},
+    {latex:`(0,c)`,secret:true,showLabel:true,label:"`(0,\\frac{-6}{{5}})`",color:"blue",dragMode:Desmos.DragModes.NONE},
+    {latex:`(22/7,40/7)`,secret:true,showLabel:true,label:"`(\\frac{{22}}{{7}},\\frac{{40}}{{7}})`",color:"blue",dragMode:Desmos.DragModes.NONE},
+    {latex:`(x_1,0)`,secret:true,showLabel:true,label:"`(\\frac{{2}}{{7}},0)`",color:"blue",dragMode:Desmos.DragModes.NONE},
     {latex:`(x_2,0)`,secret:true,showLabel:true,label:"`(6,0)`",color:"blue",dragMode:Desmos.DragModes.NONE}
   ]);
 
 
   });
-</script>
+</script></p>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/06 Rational Functions/07 Sketching Rational Function.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

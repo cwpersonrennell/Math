@@ -35,51 +35,123 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>01 Intercepts Of Equation</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa">
-<p>Find all the \(x\) and \(y\) intercepts of the graphs for the equation:</p>
-\[ x^4 + y^3 -xy^2 = 4096 \]
-<div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
-<p><strong>Solution</strong></p>
-<p>What does it mean for a graph to have intercepts? There are two types of intercepts: <br><strong>Vertical Intercepts</strong>: This is when the graph intercepts the vertical axis, which only occurs when the horizontal values are exactly zero. Vertical intercepts will always take the form \((0,y_1),\;(0,y_2),...(0,y_n)\)<br><strong>Horizontal Intercepts</strong>: This is when the graph intercepts the horizontal axis, which only occurs when the vertical values are exactly zero. Horizontal intercepts will always take the form \((x_1,0),\;(x_2,0),\;...(x_m,0)\)</p>
-<p><strong>Algebraic Approach</strong>:To find the intercepts, we set the \(x\) or \(y\) value to zero, according to the definitions above.</p>
-<p>Vertical Intercept(s):\[ 
-   \begin{array}{rcl} 0^4+y^3 - (0)y^2 &amp;=&amp; 4096\\ 
-   y^3 &amp;=&amp;4096\\ y&amp;=&amp;\sqrt[3]{4096}\\ 
-   y&amp;=&amp;16 \end{array} 
-\]
-From this calcluation, we can say the there is only one vertical intercept at \((0, 16)\)</p>
-<p>Horizontal Intercept(s): 
-\[ \solve{
-   x^4 +(0)^3 - x(0) &amp;=&amp;4096\\ 
-   x^4 &amp;=&amp;4096\\ 
-   x &amp;=&amp;\pm \sqrt[4]{4096}\\ 
-   x&amp;=&amp;\pm8 
-} 
-\]From this calculation, we can deduce two horizontal intercepts: \((-8,0),\;(8,0)\)</p>
-<p>Now that we have completed our algebraic approach, let's verify our answer using a visual approach:</p>
-<div id="calculator" style="width: 600px; height: 400px; text-align: center;"></div>
-</div>
-<p>
-<script>
-   document.addEventListener("DOMContentLoaded", () => {
-  var elt = document.getElementById('calculator');
-  var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:false,xAxisStep:0});
-  calculator.setMathBounds({left:-10,right:10,bottom:-20,top:20});
-  calculator.setExpressions( [{id: 'graph1', latex: 'x^4 + y^3 -xy^2 = 4096'},{latex:"(-8,0)",color:"blue",showLabel:true},{latex:"(8,0)",color:"blue",showLabel:true},{latex:"(-0,16)",color:"blue",showLabel:true}]);
-   });
-</script>
-</p>
-</div>
+
+  <style>
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(3,minmax(200px,1fr));
+            grid-template-rows:auto 1fr;
+            column-gap: 1rem;
+            }
+
+         details{
+            display:grid;
+            grid-template-columns:subgrid;
+            grid-template-rows:subgrid;
+            grid-column: 1 / -1;
+            grid-row: 1 / span 3;
+        }
+
+        details::details-content{
+          grid-row: 2;
+          grid-column: 1 / -1;
+          padding: 1rem;
+          border-bottom: 2px solid black;
+        }
+        
+        details:not([open])::details-content{
+          display:none;
+        }
+        
+        summary{
+          grid-row: 1;
+          display: grid;
+          padding: 1rem;
+          border-bottom:2px solid black;
+          cursor:pointer;
+          z-index: 1;
+        }
+        
+        details[open] summary{
+          font-weight:bold;
+        }
+        details:nth-of-type(1) summary{
+            grid-column: 1 / span 1;
+        }
+    
+        details:nth-of-type(2) summary{
+            grid-column: 2 / span 1;
+        }
+    
+        details:nth-of-type(3) summary{
+            grid-column: 3 / span 1;
+        }
+    
+        summary{
+            grid-column: var(--n) / span 1;
+          }
+    
+    </style>
+
+  <div class="grid">
+
+  <details class='item' name='alpha' open style='--n: 1'><summary class='subitem'>Notes </summary><div> <p>At the core of this class are a series of different approaches we will take to each problem</p>
+<ol>
+<li>Numerically</li>
+<li>Algebraically</li>
+<li>Visually</li>
+</ol>
+<p>Some of the language we use and definitions depend on fully understanding the connections between these. For example, in this problem we will be looking at various <em>intercepts</em>. But what an intercept is and means depends on the variable and orientation assigned to it. Numerically, the horizontal intercept is the collection of points where the vertical value is set to \(0\). </p>
+<p>Conversely, the vertical intercept is the collection of points where the horizontal values are \(0\). </p>
+<p>The reason for <strong>why</strong> that is the case comes directly from the visual approach: those are the points where the graph intersects with the horizontal and vertical axes. </p>
+<p>Algebraically, we can solve an equation or two in order to precisely and exactly find these values. </p>
+<p>Numerically, we can build our intuition and explore or even generate the visual ourselves by creating a <strong>table of values</strong>, where we input different horizontal and/or vertical values to see what works and what does not.</p>
+<p>Consider the Problem and try it out on your own before taking a look at the solution.</p> </div></details><details class='item' name='alpha' open style='--n: 2'><summary class='subitem'>Problem </summary><div> <p>Find all the horizontal, \(x\),  and vertical,  \(y\),  intercepts for the graph of the equation:</p>
+<p>\[ x^4 + y^3 -xy^2 = 4096 \]</p> </div></details><details class='item' name='alpha' open style='--n: 3'><summary class='subitem'>Solution </summary><div> <p>What does it mean for a graph to have intercepts? There are two types of intercepts: </p>
+<p><strong>Vertical Intercepts</strong>: This is when the graph intercepts the vertical axis, which only occurs when the horizontal values are exactly zero. Vertical intercepts will always take the form \((0,y_1),\;(0,y_2),...(0,y_n)\)</p>
+<p><strong>Horizontal Intercepts</strong>: This is when the graph intercepts the horizontal axis, which only occurs when the vertical values are exactly zero. Horizontal intercepts will always take the form \((x_1,0),\;(x_2,0),\;...(x_m,0)\)</p>
+<p><strong>Algebraic Approach</strong>:To find the intercepts, we set the \(x\) or \(y\) value to zero, according to the definitions above.
+   Recall the original equation was \[
+   x^4 + y^3 -xy^2 = 4096
+   \]</p>
+<p><em>Vertical Intercept(s)</em> Set the horizontal value, \(x\), to be exactly \(0\):</p>
+<p>\[ 
+      \begin{array}{rcl} 0^4+y^3 - (0)y^2 &amp;=&amp; 4096\\
+      y^3 &amp;=&amp;4096\\ y&amp;=&amp;\sqrt[3]{4096}\\
+      y&amp;=&amp;16 \end{array} 
+   \]</p>
+<p>Each algebraically step leads us to the next, simpler equation and at the end of it, we can say the there is only one vertical intercept at \((0, 16)\)</p>
+<p><em>Horizontal Intercept(s)</em> set the vertical value \(y\) to be exactly \(0\): </p>
+<p>\[ 
+   \solve{
+      x^4 +(0)^3 - x(0) &amp;=&amp;4096\\
+      x^4 &amp;=&amp;4096\\
+      x &amp;=&amp;\pm \sqrt[4]{4096}\\
+      x&amp;=&amp;\pm8 
+   } 
+   \]</p>
+<p>From this set of algebraic steps, we can deduce there are exactly two horizontal intercepts: \((-8,0),\;(8,0)\)</p>
+<p><strong>Visual Approach</strong>: It is quite possible to have begun this whole problem via a visual approach. However, in a <em>large</em> variety of cases, this can lead to imprecise or approximated values, so it does tend to be slightly devalued as a primary approach. Nevertheless, you can use the graph as a primary approach so long as you are also practicing and applying the algebraic approach too! </p>
+<p>Since we have already found our solution algebraically, we can use the visual approach to instead <strong>validate</strong> our answer. Note that not all graphing calculators can graph equations of this type (known as <em>implicit</em> equations) but when you have one that can it is very helpful. Desmos is one such tool that can directly graph this:</p><div id="calculator" style="width: 600px; height: 400px; text-align: center;"></div><script>
+      document.addEventListener("DOMContentLoaded", () => {
+     var elt = document.getElementById('calculator');
+     var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:false,xAxisStep:0});
+     calculator.setMathBounds({left:-10,right:10,bottom:-20,top:20});
+     calculator.setExpressions( [{id: 'graph1', latex: 'x^4 + y^3 -xy^2 = 4096'},{latex:"(-8,0)",color:"blue",showLabel:true},{latex:"(8,0)",color:"blue",showLabel:true},{latex:"(-0,16)",color:"blue",showLabel:true}]);
+      });
+   </script> </div></details>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/02 Table And Graph Circle.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

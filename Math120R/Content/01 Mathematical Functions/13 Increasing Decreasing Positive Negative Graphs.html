@@ -35,22 +35,28 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>13 Increasing Decreasing Positive Negative Graphs</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/12 Applied Tucson Rain.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa">
+
+  
+
+  <div class="grid">
+
+  <div class="fa">
 <p>Using the graph below, determine the intervals of increasing/decreasing and where the function is positive/negative.</p>
 <div id="calculator" style="width: 100%; height: 600px; text-align: center;"></div>
-<hr>
+<hr/>
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong></p>
 <p>The function is represented with tailing ends (not fixed endpoints) so we can presume that the domain is \((-\infty,\infty)\). With that in mind:</p>
-<div>\[ \begin{array}{r|l} \text{Increasing:}&amp;(5.5,10.5)\\ \hline \text{Decreasing:}&amp;(-\infty,5.5)\cup(10.5,\infty)\\\hline \text{Positive:}&amp;(-\infty,3)\cup(8,13)\\ \hline \text{Negative:}&amp;(3,8)\cup(13,\infty) \end{array} \]</div>
-<div id="calculator2" class="solution" style="width: 100%; height: 600px;"></div>
+<div>\[ \begin{{array}}{r|l} \text{Increasing:}&amp;(5.5,10.5)\\ \hline \text{Decreasing:}&amp;(-\infty,5.5)\cup(10.5,\infty)\\\hline \text{Positive:}&amp;(-\infty,3)\cup(8,13)\\ \hline \text{Negative:}&amp;(3,8)\cup(13,\infty) \end{{array}} \]</div>
+<div class="solution" id="calculator2" style="width: 100%; height: 600px;"></div>
 </div>
 <!-- End Solution--></div>
 <p>
@@ -65,10 +71,13 @@
   var calculator2 = Desmos.GraphingCalculator(elt2,{projectorMode: true,expressions:false,lockViewport:false});
   calculator2.setMathBounds({left:-4,right:20,bottom:-30,top:30});
   calculator2.setExpressions( [{latex:'f(x)=(x-3)(x-8)\\left\\{x\\le8\\right\\}',color:"blue"},{latex:'g(x)=-(x-10.5)^2+6.25\\left\\{x\\geq8\\right\\}',color:"blue"},{latex:"(3,f(3))",color:"blue", showLabel:true},{latex:"(8,f(8))",color:"blue", showLabel:true},{latex:"(13,g(13))",color:"blue", showLabel:true},{latex:"(10.5,g(10.5))",color:"blue", showLabel:true},{latex:"(5.5,f(5.5))",color:"blue", showLabel:true},{latex:"0\\le y\\le f(x)",color:"blue"},{latex:"0\\le y\\le g(x)",color:"blue"},{latex:"0\\geq y\\geq f(x)",color:"red"},{latex:"0\\geq y\\geq g(x)",color:"red"},{latex:"f(x)\\left\\{5.5\\leq x \\leq 10.5\\right\\}",color:"green"},{latex:"g(x)\\left\\{5.5\\leq x \\leq 10.5\\right\\}",color:"green"},{latex:"f(x)\\left\\{x \\leq 5.5\\right\\}",color:"red"},{latex:"g(x)\\left\\{ x \\geq 10.5\\right\\}",color:"red"},]);});
-</script>
+</script></p>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/14 Where Is A Function Positive.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

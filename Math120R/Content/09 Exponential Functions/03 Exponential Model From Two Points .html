@@ -35,31 +35,37 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>03 Exponential Model From Two Points </div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/09 Exponential Functions/02 Exponential Model From Two Points.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa" style="width: 100%;">
+
+  
+
+  <div class="grid">
+
+  <div class="fa" style="width: 100%;">
 <p>Example: Determine an exponential function of the form \(f(x) = C\cdot B^x\) which passes through the points \((-1,8)\) and \((1,2)\)</p>
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong></p>
 <p>Similar to our previous example, we will apply both points to the model. The main difference is that one of the points is not the vertical intercept, so we will need to use some different substitution techniques to fully answer the question:
 \[
 \solve{
-	8&=&C\cdot B^{-1}\\
-	8&=&\frac{C}{B}\\
-	8B&=&C
+	8&amp;=&amp;C\cdot B^{-1}\\
+	8&amp;=&amp;\frac{C}{B}\\
+	8B&amp;=&amp;C
 }
 \]This time we don't get the exact value for \(C\), but instead solve it in terms of \(B\). In general, with these exponential models, I <strong>strongly</strong> suggest always solving for the \(C\) parameter first. You can do it either way, but I find it slightly easier to just focus on that parameter first. Using the second point and substituting the \(x\), \(y\), and \(C\) values:
 \[\solve{
-2 &=&(8B)\cdot B^1\\
-2&=&8\cdot B^2\\
-\frac{1}{4}&=&B^2\\
-\pm\frac{1}{2}&=&B\\
-\frac{1}{2}&=&B
+2 &amp;=&amp;(8B)\cdot B^1\\
+2&amp;=&amp;8\cdot B^2\\
+\frac{1}{4}&amp;=&amp;B^2\\
+\pm\frac{1}{2}&amp;=&amp;B\\
+\frac{1}{2}&amp;=&amp;B
 }
 \]As before, we drop the negative solution since the Base must be positive. This time, we need to <strong>back-substitute</strong> in order to get \(C\):
 \[
@@ -71,9 +77,12 @@ f(x) = 4\left(\frac{1}{2}\right)^x
 \]</p>
 </div>
 </div>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/09 Exponential Functions/04 Exponential Vs Linear.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

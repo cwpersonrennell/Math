@@ -35,18 +35,24 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>11 Applied Energy and Velocity</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/10 Graphing Piecewise Functions.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa">
-<p>A bird flying into a headwind will use more energy to maintain its speed. If the headwind is blowing at a constant 5mph, the energy required to fly a fixed distance of 50 miles at a speed of&nbsp;v miles per hour is given by:&nbsp;</p>
-\[E(v) = 0.0005v^3\displaystyle\frac{50}{v-5} \]
+
+  
+
+  <div class="grid">
+
+  <div class="fa">
+<p>A bird flying into a headwind will use more energy to maintain its speed. If the headwind is blowing at a constant 5mph, the energy required to fly a fixed distance of 50 miles at a speed of v miles per hour is given by: </p>
+\[E(v) = 0.0005v^3\displaystyle\frac{{50}}{v-5} \]
 <p>Find the speed the bird can fly at which will <strong>minimize</strong> the energy it uses.</p>
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong></p>
 <p>The hard part of these types of questions can be getting the window just right. This particular example wasn't too hard, but we can use context to help. The bird needs to fly more than 5 miles per hour to make any headway, and we can see that the graph does some *weird* things around \(v=5\). The energy should most likely be positive, so it makes sense to set the vertical view to only positive values, and the upper limit I determined through some mild guessing until I could clearly see a "minimum" in the graph. Using Desmos, I can just click the minimum, but using a TI-83/84 you will need to use the *min* function.</p>
 <p>The speed the bird will need to fly to minimize its energy use is \(v=7.5mph\)</p>
@@ -59,12 +65,15 @@
   var elt = document.getElementById('calculator');
   var calculator = Desmos.GraphingCalculator(elt,{projectorMode: true,expressions:false,lockViewport:false});
   calculator.setMathBounds({left:-4,right:20,bottom:0,top:30});
-  calculator.setExpressions( [{latex:'E(v)=0.0005v^3\\frac{50}{v-5}',color:"blue"}]);
+  calculator.setExpressions( [{latex:'E(v)=0.0005v^3\\frac{{50}}{v-5}',color:"blue"}]);
   });
-</script>
+</script></p>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/12 Applied Tucson Rain.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

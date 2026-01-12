@@ -35,16 +35,20 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>28 Inverse Functions Horizontal Line Test</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/27 Inverse Functions.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<p>The graph below represents a function with a domain of all real numbers, \(f(x) = x^2\). This function does <strong>not</strong> have an inverse function on this domain. Notice that for most horizontal lines, there are two possible paths back to the input space (one positive, one negative). This <i>fails</i> the horizontal line test and thus does not have an inverse function.</p>
+
+  
+
+  <div class="grid">
+
+  <p>The graph below represents a function with a domain of all real numbers, \(f(x) = x^2\). This function does <strong>not</strong> have an inverse function on this domain. Notice that for most horizontal lines, there are two possible paths back to the input space (one positive, one negative). This <i>fails</i> the horizontal line test and thus does not have an inverse function.</p>
 <div id="calculator" style="width: 100%; height: 600px;"></div>
 <p>
-
- 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
       try{
@@ -63,12 +67,12 @@
     hide=true;
     
     return [
-      {latex:String.raw`x_{${pointCounter}}=${x}`,hidden:true,secret:hide},
-      {latex:String.raw`y_{${pointCounter}}=${y}`,hidden:true,secret:hide},
-      //{latex:String.raw`(x_{${pointCounter}},y_{${pointCounter}})`,hidden:true,secret:true},
-      {latex:String.raw`t_{${pointCounter}}=${theta}`,hidden:true,secret:hide},
-      {latex:String.raw`k_{${pointCounter}}\left(t\right)\ =\left(${m}\left|t\right|\cdot\cos\left(t_{${pointCounter}}\right)-t\cdot\sin\left(t_{${pointCounter}}\right)+x_{${pointCounter}},${m}\left|t\right|\cdot\sin\left(t_{${pointCounter}}\right)+t\cdot\cos\left(t_{${pointCounter}}\right)+y_{${pointCounter}}\right)`,hidden:true,secret:hide},
-      {latex:String.raw`k_{${pointCounter}}(t)`,parametricDomain:{min:"-0.2",max:".2"},color:color,secret:hide}
+      {latex:String.raw`x_{${{pointCounter}}}=${{x}}`,hidden:true,secret:hide},
+      {latex:String.raw`y_{${{pointCounter}}}=${{y}}`,hidden:true,secret:hide},
+      //{latex:String.raw`(x_{${{pointCounter}}},y_{${{pointCounter}}})`,hidden:true,secret:true},
+      {latex:String.raw`t_{${{pointCounter}}}=${{theta}}`,hidden:true,secret:hide},
+      {latex:String.raw`k_{${{pointCounter}}}\left(t\right)\ =\left(${{m}}\left|t\right|\cdot\cos\left(t_{${{pointCounter}}}\right)-t\cdot\sin\left(t_{${{pointCounter}}}\right)+x_{${{pointCounter}}},${{m}}\left|t\right|\cdot\sin\left(t_{${{pointCounter}}}\right)+t\cdot\cos\left(t_{${{pointCounter}}}\right)+y_{${{pointCounter}}}\right)`,hidden:true,secret:hide},
+      {latex:String.raw`k_{${{pointCounter}}}(t)`,parametricDomain:{min:"-0.2",max:".2"},color:color,secret:hide}
     ];
   }
   var elt = document.getElementById('calculator');
@@ -78,7 +82,7 @@
   calculator.setExpressions(arrowAtPoint(1,"f(x_1)",String.raw`-\pi/2`,"blue"));//x_1,y_1
   calculator.setExpressions(arrowAtPoint("0","f(x_1)",String.raw`0`,"blue"));//x_2,y_2
   calculator.setExpressions([{latex:"(x_1,0)",label:"`x`",color:"blue",showLabel:true,secret:true},{latex:String.raw`x=x_1\left\{0\leq y \leq f(x_1)\right\}`,color:"blue",lineStyle:Desmos.Styles.DASHED,secret:true},{latex:String.raw`y=f(x_1)\left\{0\leq x \leq x_1\right\}`,color:"blue",lineStyle:Desmos.Styles.DASHED,secret:true},{latex:String.raw`y=f(x_1)\left\{x_1\leq x \leq 0\right\}`,color:"blue",lineStyle:Desmos.Styles.DASHED,secret:true},{latex:"(0,f(x_1))",label:"`f(x)`",showLabel:true,color:"blue",hidden:true,labelOrientation:Desmos.LabelOrientations.LEFT}]);
-  calculator.setExpression({latex:"g(x) = \\sqrt{x}",hidden:true,secret:true});
+  calculator.setExpression({latex:"g(x) = \\sqrt{{x}}",hidden:true,secret:true});
   
   calculator.setExpressions([{latex:String.raw`(0,y_3)`,label:"`y`",color:"green",showLabel:true,secret:true}]);
   calculator.setExpressions(arrowAtPoint(String.raw`g(y_3)`,2,RIGHT,"green"));//x_3,y_3
@@ -93,10 +97,13 @@
 </script>
 </p>
 <p></p>
-<hr></div>
+<hr/>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/29 Inverse Functions Swaping Input and Output.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

@@ -35,24 +35,30 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>08 Example Where Is Polynomial Positive</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/05 Polynomial Functions/07 Sketching Polynomial With 4 Terms.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa" style="width: 100%;">
+
+  
+
+  <div class="grid">
+
+  <div class="fa" style="width: 100%;">
 <p>Example: For which values of \(x\) (in interval notation) is the function positive?</p>
 \[ f(x) = x^4 - 9x^2 \]
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong> We need to solve the inequality:</p>
 \[ \solve{ x^4-9x^2&amp; \gt &amp; 0\\ x^2(x^2-9)&amp; \gt &amp; 0\\ x^2(x-3)(x+3)&amp; \gt &amp;0 } \]
 <p>Now that we have the factored polynomial, we use the standard inequality methods. In this case, I will create a table and use the sign changes of the terms to get our answer. The zeros of the polynomial (from the above factors) are -3, 0, and 3.</p>
-\[ \begin{array}{ |c|c|c|c|c| } \hline &amp;\left(-\infty, -3\right)&amp;\left(-3,0\right)&amp;\left(0,3\right) &amp; \left(3,\infty\right)\\ \hline x^2&amp;\mathbb{+}&amp;\mathbb{+}&amp;\mathbb{+}&amp;\mathbb{+}\\ \hline x+3&amp;\mathbb{-}&amp;\mathbb{+}&amp;\mathbb{+}&amp;\mathbb{+}\\ \hline x-3&amp;\mathbb{-}&amp;\mathbb{-}&amp;\mathbb{-}&amp;\mathbb{+}\\ \hline &amp;\downarrow&amp;\downarrow&amp;\downarrow&amp;\downarrow \\ \hline \text{Result:}&amp;\mathbb{+}&amp;\mathbb{-}&amp;\mathbb{-}&amp;\mathbb{+}\\ \hline &amp;{\color{green} \checkmark}&amp;{\color{red} \times}&amp;{\color{red} \times}&amp;{\color{green} \checkmark} \\ \hline \end{array} \]
+\[ \begin{{array}}{ |c|c|c|c|c| } \hline &amp;\left(-\infty, -3\right)&amp;\left(-3,0\right)&amp;\left(0,3\right) &amp; \left(3,\infty\right)\\ \hline x^2&amp;\mathbb{+}&amp;\mathbb{+}&amp;\mathbb{+}&amp;\mathbb{+}\\ \hline x+3&amp;\mathbb{-}&amp;\mathbb{+}&amp;\mathbb{+}&amp;\mathbb{+}\\ \hline x-3&amp;\mathbb{-}&amp;\mathbb{-}&amp;\mathbb{-}&amp;\mathbb{+}\\ \hline &amp;\downarrow&amp;\downarrow&amp;\downarrow&amp;\downarrow \\ \hline \text{Result:}&amp;\mathbb{+}&amp;\mathbb{-}&amp;\mathbb{-}&amp;\mathbb{+}\\ \hline &amp;{\color{{green}} \checkmark}&amp;{\color{{red}} \times}&amp;{\color{{red}} \times}&amp;{\color{{green}} \checkmark} \\ \hline \end{{array}} \]
 <div id="calculator" style="width: 100%; height: 600px;"></div>
 <p>Thus, we can now clearly state with confidence that the polynomial is positive on the interval: \(\left(-\infty, -3\right)\cup\left(3,\infty\right)\).
-</div>
+</p></div>
 </div>
 <p>
 <script> 
@@ -68,10 +74,13 @@
 
 
   });
-</script>
+</script></p>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/06 Rational Functions/01 Domain Of Rational Expressions.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

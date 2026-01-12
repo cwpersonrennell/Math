@@ -35,27 +35,31 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>04 Quadratic Function From Graph Part 1</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/03 Quadratic Functions/03 Quadratic Function Basic Form Part 2.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa" style="width: 100%;">
+
+  
+
+  <div class="grid">
+
+  <div class="fa" style="width: 100%;">
 <p>Example: Use the graph below to determine the equation of the parabola.</p>
 <div id="calculator" style="width: 100%; height: 600px;"></div>
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution:</strong> In this example, we can clearly identify that the vertex is located at \( (5,0)\) and the horizontal intercept is located at \( (0,-10) \). When consider the collection of possible forms to choose from in order to solve this equation, I recommend the standard form (quadratic vertex form) becuase we know the vertex. This would initially give us:</p>
 \[ y = a\left(x-5\right)^2 \]
 <p>Since \(k=0\) there is no trailing value in the equation. In fact, the only parameter left unknown is \(a\). However, we have one more point, so let's use that to solve for \(a\):</p>
-\[ \solve{ -10 &amp;=&amp; a\left(0-5\right)^2\\ -10 &amp;=&amp;25a\\ -\dfrac{10}{25}&amp;=&amp;a\\ -\dfrac{2}{5}&amp;=&amp;a } \]
-<p>Since we now know the \(a\) value, we can write our full answer: \(y=-\dfrac{2}{5}\left(x-5\right)^2\).</p>
+\[ \solve{ -10 &amp;=&amp; a\left(0-5\right)^2\\ -10 &amp;=&amp;25a\\ -\dfrac{{10}}{{25}}&amp;=&amp;a\\ -\dfrac{{2}}{{5}}&amp;=&amp;a } \]
+<p>Since we now know the \(a\) value, we can write our full answer: \(y=-\dfrac{{2}}{{5}}\left(x-5\right)^2\).</p>
 </div>
 </div>
 <p>
-
- 
 <script> 
   document.addEventListener("DOMContentLoaded", () => {
     var elt = document.getElementById('calculator');
@@ -67,10 +71,13 @@
 
 
   });
-</script>
+</script></p>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/03 Quadratic Functions/05 Quadratic Function From Graph Part 2.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

@@ -35,44 +35,53 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>04 Difference Quotient</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/03 Table And Graph From Equation.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa">
+
+  
+
+  <div class="grid">
+
+  <div class="fa">
 <p>Find \(f(a)\), \(f(a+h)\) and the difference quotient: 
-\[\frac{f(a+h)-f(a)}{h}\;\;h\neq 0\] where 
+\[\frac{f(a+h)-f(a)}{{h}}\;\;h\neq 0\] where 
 \[f(x) = x^2 - 1\]
 </p>
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide"><bold>Solution:</bold>
+<hr/>
+<div class="hide" id="solution"><bold>Solution:</bold>
 <p>I like to work through these types of questions in a series of steps, beginning with evaluating the function at \(a+h\) and \(a\) and then simplifying the numerator.</p>
 
-\[ \begin{array}{ rcl } 
+\[ \begin{{array}}{ rcl } 
 \displaystyle f({\color{ red } a +h}) &amp;=&amp; ({\color{ red } a+h})^2-1\\ 
 &amp;=&amp;(a+h)(a+h)-1\\ 
 &amp;=&amp;a^2 + ah + ah + h^2 - 1\\ 
-f(a+h)&amp;=&amp;a^2+2ah+h^2 - 1 \end{array} \]
+f(a+h)&amp;=&amp;a^2+2ah+h^2 - 1 \end{{array}} \]
 <p>The \(f(a)\) evaulation is really just a change of variables, so it is relatively simple to rewrite: 
 \[f({\color{ red } a}) = {\color{ red }a}^2-1\]
 </p>
 <p>Next, I need to figure out \(f(a+h)-f(a)\). Notice that \(f(a)\) has two terms, so when I substitute it, I really need to use extra parenthesis.</p>
-\[ \begin{array}{rcl} 
+\[ \begin{{array}}{{rcl}} 
 {\color{ blue } f(a+h)}-{\color{ green } f(a)} &amp;=&amp; {\color{ blue } a^2+2ah+h^2-1}-({\color{ green } a^2-1})\\ 
 &amp;=&amp;a^2+2ah+h^2-1 - a^2 + 1\\ 
-f(a+h)-f(a) &amp;=&amp;2ah+h^2 \end{array} \]
+f(a+h)-f(a) &amp;=&amp;2ah+h^2 \end{{array}} \]
 <p>Now that we have evaluated the numerator, let's put it all together and figure out the quotient:</p>
-\[\begin{array}{rcl} 
-\displaystyle \frac{f(a+h)-f(a)}{h}&amp;=&amp; \displaystyle\frac{2ah+h^2}{h}\\ 
-&amp;=&amp;\displaystyle\frac{h\left(2a+h\right)}{h}\\ 
-\displaystyle\frac{f(a+h)-f(a)}{h}&amp;=&amp;\boxed{2a+h} 
-\end{array} \]</div>
-</div>
+\[\begin{{array}}{{rcl}} 
+\displaystyle \frac{f(a+h)-f(a)}{{h}}&amp;=&amp; \displaystyle\frac{2ah+h^2}{{h}}\\ 
+&amp;=&amp;\displaystyle\frac{h\left(2a+h\right)}{{h}}\\ 
+\displaystyle\frac{f(a+h)-f(a)}{{h}}&amp;=&amp;\boxed{2a+h} 
+\end{{array}} \]</div>
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/05 Domain Restrictions 1.html">Next</a></div>
+  </div>
+
+</div>
+
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

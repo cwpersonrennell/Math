@@ -35,24 +35,30 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>19 Function Transformations Refresher</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/18 Average Rate Of Change Variable.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa">
+
+  
+
+  <div class="grid">
+
+  <div class="fa">
 <p>There are many different types of transformations we can apply to functions and their corresponding graphs. Think about any image processing programs you have ever used where you could crop, skew, rotate, move or otherwise manipulate an image. Many of those types of transformations have a direct correspondence to the function transformations we will be studying.</p>
 <p>When performing transformations on a given function, say \(f(x)\), we will typically write \(y=...\) to indicate a new graph based on the old function after applying one or more transformations. Typically, operations that occur <strong>outside</strong> the original function result in vertical transformations while those occuring <strong>inside</strong> the function parenthesis are horizontal transformations.</p>
-<p><strong>Shifting a Function</strong><br>The first transformations we will consider are <strong>horizontal</strong> and <strong>vertical</strong> shifts (also called <strong>translations</strong>). Consider some positive real number values \(h\) and \(k\) and a function \(f(x)\) defined on real numbers.</p>
-\[\begin{array}{rl} \text{Horizontal Shift Right by }h:&amp;y=f(x-h)\\ \text{Horizontal Shift Left by }h:&amp;y=f(x+h)\\ \text{Vertical Shift Up by }k:&amp;y=f(x)+k\\ \text{Vertical Shift Down by }k:&amp;y=f(x)-k \end{array} \]
+<p><strong>Shifting a Function</strong><br/>The first transformations we will consider are <strong>horizontal</strong> and <strong>vertical</strong> shifts (also called <strong>translations</strong>). Consider some positive real number values \(h\) and \(k\) and a function \(f(x)\) defined on real numbers.</p>
+\[\begin{{array}}{{rl}} \text{Horizontal Shift Right by }h:&amp;y=f(x-h)\\ \text{Horizontal Shift Left by }h:&amp;y=f(x+h)\\ \text{Vertical Shift Up by }k:&amp;y=f(x)+k\\ \text{Vertical Shift Down by }k:&amp;y=f(x)-k \end{{array}} \]
 <p>Note that the horizontal shifts are the <strong>opposite</strong> sign to which you might expect.</p>
 <p>Next up are the <strong>stretching</strong> or <strong>shrinking</strong> transformations. Let \(a\gt 1\) be a real number.</p>
-\[\begin{array}{rl} \text{Horizontal Stretch by a factor of }a:&amp;y=f\left(\frac{x}{a}\right)\\ \text{Horizontal Compression by a factor of }\displaystyle\frac{1}{a}:&amp;y=f(ax)\\ \text{Vertical Stretch by a factor of }a:&amp;y=af(x)\\ \text{Vertical Compression by a factor of }\displaystyle\frac{1}{a}:&amp;y=\displaystyle\frac{1}{a}f(x) \end{array} \]
+\[\begin{{array}}{{rl}} \text{Horizontal Stretch by a factor of }a:&amp;y=f\left(\frac{{x}}{{a}}\right)\\ \text{Horizontal Compression by a factor of }\displaystyle\frac{{1}}{{a}}:&amp;y=f(ax)\\ \text{Vertical Stretch by a factor of }a:&amp;y=af(x)\\ \text{Vertical Compression by a factor of }\displaystyle\frac{{1}}{{a}}:&amp;y=\displaystyle\frac{{1}}{{a}}f(x) \end{{array}} \]
 <p>Once again, note that the <strong>horizontal</strong> operations of dividing and multiplying correspond to <strong>opposite</strong> transformations of stretching and compression!</p>
 <p>The last set of transformations are similar to stretching and compression, but instead are about <strong>flipping or reflecting</strong> the graph over a specific axis:</p>
-\[\begin{array}{rl} \text{Reflection over the }x\text{-axis}:&amp;y=-f(x)\\ \text{Reflection over the }y\text{-axis}:&amp;y=f(-x) \end{array} \]
+\[\begin{{array}}{{rl}} \text{Reflection over the }x\text{-axis}:&amp;y=-f(x)\\ \text{Reflection over the }y\text{-axis}:&amp;y=f(-x) \end{{array}} \]
 <p>Note that rotation over the horizontal, \(x\), axis is a <strong>vertical</strong> transformation, so the negative is outside the function.</p>
-<hr>
+<hr/>
 <div>
 <p>The following graph is a function and the applied transformation(s): \(y = a f(x-h)+k\). You can slide the points to pick different values of \(a,\;h,\;k\) and see what happens.</p>
 <div id="calculator" style="min-width: 600px; height: 600px;"></div>
@@ -68,17 +74,20 @@
   var elt = document.getElementById('calculator');
   var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true});
   calculator.setMathBounds({left:-10,right:10,bottom:-10,top:10});
-  calculator.setExpressions( [{latex: 'f(x)=x^3-2x^2',color:"blue"},{latex:"a=1"},{latex:"h=0"},{latex:"k=0"},{latex:"y=a\\cdot f(x-h)+k",color:"red"},{latex:"(a,0)",showLabel:true,label:"`a=${a}`"},{latex:"(h,-2)",showLabel:true,label:"`h=${h}`"},{latex:"(-4,k)",showLabel:true,label:"`k=${k}`"},{latex:"(-6,6)",showLabel:true,label:"`y=${a}f(x-(${h}))+(${k})`"}]);
+  calculator.setExpressions( [{latex: 'f(x)=x^3-2x^2',color:"blue"},{latex:"a=1"},{latex:"h=0"},{latex:"k=0"},{latex:"y=a\\cdot f(x-h)+k",color:"red"},{latex:"(a,0)",showLabel:true,label:"`a=${{a}}`"},{latex:"(h,-2)",showLabel:true,label:"`h=${{h}}`"},{latex:"(-4,k)",showLabel:true,label:"`k=${{k}}`"},{latex:"(-6,6)",showLabel:true,label:"`y=${{a}}f(x-(${{h}}))+(${{k}})`"}]);
 
     var elt2 = document.getElementById('calculator2');
   var calculator2 = Desmos.GraphingCalculator(elt2,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true});
   calculator2.setMathBounds({left:-10,right:10,bottom:-10,top:10});
-  calculator2.setExpressions( [{latex: 'f(x)=x^3-2x^2',color:"blue"},{latex:"a=1"},{latex:"h=0"},{latex:"k=0"},{latex:"y=f(a\\cdot(x-h))+k",color:"red"},{latex:"(a,0)",showLabel:true,label:"`a=${a}`"},{latex:"(h,-2)",showLabel:true,label:"`h=${h}`"},{latex:"(-4,k)",showLabel:true,label:"`k=${k}`"},{latex:"(-6,6)",showLabel:true,label:"`y=f(${a}(x-(${h})))+(${k})`"}]);
+  calculator2.setExpressions( [{latex: 'f(x)=x^3-2x^2',color:"blue"},{latex:"a=1"},{latex:"h=0"},{latex:"k=0"},{latex:"y=f(a\\cdot(x-h))+k",color:"red"},{latex:"(a,0)",showLabel:true,label:"`a=${{a}}`"},{latex:"(h,-2)",showLabel:true,label:"`h=${{h}}`"},{latex:"(-4,k)",showLabel:true,label:"`k=${{k}}`"},{latex:"(-6,6)",showLabel:true,label:"`y=f(${{a}}(x-(${{h}})))+(${{k}})`"}]);
   });
-</script>
+</script></p>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/20 Applying Transformations To A Point.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

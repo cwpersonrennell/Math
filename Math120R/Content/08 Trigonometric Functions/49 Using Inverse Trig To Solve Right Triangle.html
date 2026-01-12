@@ -35,25 +35,34 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>49 Using Inverse Trig To Solve Right Triangle</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/08 Trigonometric Functions/48 Rewriting Trig As Algebraic Expressions.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa" style="width: 100%;">
+
+  
+
+  <div class="grid">
+
+  <div class="fa" style="width: 100%;">
 <p>Example: Given a right triangle with legs of length 13 cm and 11 cm, solve for the missing side and angles.</p>
 <p></p>
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong></p>
-First, let's draw the triangle: <calculator options="{&quot;expressions&quot;:false,&quot;keypad&quot;:true,&quot;graphpaper&quot;:true,&quot;showGrid&quot;:false,&quot;showXAxis&quot;:false,&quot;showYAxis&quot;:false,&quot;xAxisNumbers&quot;:true,&quot;yAxisNumbers&quot;:true,&quot;trace&quot;:false,&quot;pointsOfInterest&quot;:false,&quot;settingsMenu&quot;:false,&quot;zoomButtons&quot;:false,&quot;expressionsCollapsed&quot;:false,&quot;capExpressionSize&quot;:false,&quot;lockViewport&quot;:true,&quot;projectorMode&quot;:true,&quot;invertedColors&quot;:false}" mathbounds="{&quot;left&quot;:-3.5411764705882347,&quot;right&quot;:15.282352941176471,&quot;top&quot;:16.52450980392157,&quot;bottom&quot;:-7.004901960784309}" style="width: 800px; height: 600px;" data-string="{&quot;version&quot;:9,&quot;randomSeed&quot;:&quot;f6fd27115da7172a1694c2c025711ac6&quot;,&quot;graph&quot;:{&quot;viewport&quot;:{&quot;xmin&quot;:-3.5411764705882347,&quot;ymin&quot;:-7.004901960784309,&quot;xmax&quot;:15.282352941176471,&quot;ymax&quot;:16.52450980392157},&quot;showGrid&quot;:false,&quot;showXAxis&quot;:false,&quot;showYAxis&quot;:false,&quot;squareAxes&quot;:false},&quot;expressions&quot;:{&quot;list&quot;:[{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;1&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;x=11\\left\\{0\\le y\\le13\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;2&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=0\\left\\{0\\le x\\le11\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;3&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=\\frac{13}{11}x\\left\\{0\\le x\\le11\\right\\}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;4&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(2,1\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`\\theta_1`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;right&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;5&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(10,10\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`\\theta_2`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;6&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(5.5,0\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`11`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;below&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;7&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(11,6.5\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`13`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;right&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;8&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(5.5,\\ 6.5\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`H`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;above_left&quot;}]}}"></calculator>
-<p>Using the Pythagorean theorem: \[\solve{ h^2 &amp;=&amp; 11^2+13^2 \\ h^2 &amp;=&amp;290\\h&amp;=&amp;\sqrt{ 290 } }\] Here we only take the positive square root since this is a geometric value. To solve for the angles, we will use the inverse trig functions: \[ \solve{\sin^{-1}\left(\frac{13}{\sqrt{290} }\right) &amp;=&amp; \theta_1\\ \sin^{-1}\left(\frac{11}{\sqrt{290} }\right) &amp;=&amp; \theta_2\\} \] Make sure your calculator is in degrees and then plug in the values (no need to simplify) and then we have our answers. \[ \solve{ \theta_1 &amp;=&amp; 49.8^\circ\\\theta_2 &amp;=&amp; 40.2^\circ } \]</p>
-</div>
+First, let's draw the triangle: <calculator data-string='{"version":9,"randomSeed":"f6fd27115da7172a1694c2c025711ac6","graph":{"viewport":{"xmin":-3.5411764705882347,"ymin":-7.004901960784309,"xmax":15.282352941176471,"ymax":16.52450980392157},"showGrid":false,"showXAxis":false,"showYAxis":false,"squareAxes":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#000000","latex":"x=11\\left\\{0\\le y\\le13\\right\\}"},{"type":"expression","id":"2","color":"#000000","latex":"y=0\\left\\{0\\le x\\le11\\right\\}"},{"type":"expression","id":"3","color":"#000000","latex":"y=\\frac{{13}}{{11}}x\\left\\{0\\le x\\le11\\right\\}"},{"type":"expression","id":"4","color":"#000000","latex":"\\left(2,1\\right)","showLabel":true,"label":"`\\theta_1`","hidden":true,"labelSize":"2","labelOrientation":"right"},{"type":"expression","id":"5","color":"#000000","latex":"\\left(10,10\\right)","showLabel":true,"label":"`\\theta_2`","hidden":true,"labelSize":"2"},{"type":"expression","id":"6","color":"#000000","latex":"\\left(5.5,0\\right)","showLabel":true,"label":"`11`","hidden":true,"labelSize":"2","labelOrientation":"below"},{"type":"expression","id":"7","color":"#000000","latex":"\\left(11,6.5\\right)","showLabel":true,"label":"`13`","hidden":true,"labelSize":"2","labelOrientation":"right"},{"type":"expression","id":"8","color":"#000000","latex":"\\left(5.5,\\ 6.5\\right)","showLabel":true,"label":"`H`","hidden":true,"labelSize":"2","labelOrientation":"above_left"}]}}' mathbounds='{"left":-3.5411764705882347,"right":15.282352941176471,"top":16.52450980392157,"bottom":-7.004901960784309}' options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":false,"showXAxis":false,"showYAxis":false,"xAxisNumbers":true,"yAxisNumbers":true,"trace":false,"pointsOfInterest":false,"settingsMenu":false,"zoomButtons":false,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":true,"projectorMode":true,"invertedColors":false}' style="width: 800px; height: 600px;"></calculator>
+<p>Using the Pythagorean theorem: \[\solve{ h^2 &amp;=&amp; 11^2+13^2 \\ h^2 &amp;=&amp;290\\h&amp;=&amp;\sqrt{ 290 } }\] Here we only take the positive square root since this is a geometric value. To solve for the angles, we will use the inverse trig functions: \[ \solve{\sin^{-1}\left(\frac{{13}}{\sqrt{{290}} }\right) &amp;=&amp; \theta_1\\ \sin^{-1}\left(\frac{{11}}{\sqrt{{290}} }\right) &amp;=&amp; \theta_2\\} \] Make sure your calculator is in degrees and then plug in the values (no need to simplify) and then we have our answers. \[ \solve{ \theta_1 &amp;=&amp; 49.8^\circ\\\theta_2 &amp;=&amp; 40.2^\circ } \]</p>
 </div>
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/08 Trigonometric Functions/50 Exploring Unit Circle And Trig Relations.html">Next</a></div>
+  </div>
+
+</div>
+
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

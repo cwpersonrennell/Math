@@ -35,37 +35,46 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>08 One Logarithm To Many</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/10 Logarithmic Functions/07 One Logarithm To Many.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa" style="width: 100%;">
+
+  
+
+  <div class="grid">
+
+  <div class="fa" style="width: 100%;">
 <p>Example: Use the Laws of Logarithms to expand the logarithm:</p>
 \[ \ln\left(\dfrac{7e^3w^7}{h^2\sqrt{r^3}}\right) \]
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong></p>
 In my solution below, I shall separate each step as a one-at-time step. However, do note that you can figure out that all the terms in the numerator should have a positive logarithm, while those in the denominator need a negative logarithm, and thereby skip many of the individual steps below. 
 \[
 \solve{
-	\ln\left(\dfrac{7e^3w^7}{h^2\sqrt{r^3}}\right)&=&
+	\ln\left(\dfrac{7e^3w^7}{h^2\sqrt{r^3}}\right)&amp;=&amp;
 	\ln\left(\frac{7e^3}{h^2r^{\frac{3}{2}}}\right)+\ln(w^7)\\
-	&=&\ln\left(\frac{7}{h^2r^{\frac{3}{2}}}\right)+\ln(e^3)+7\ln(w)\\
-	&=&\ln\left(\frac{7}{h^2}\right)-\ln(r^\frac{3}{2})+3+7\ln(w)\\
-	&=&\ln(7)-\ln(h^2)-\frac{3}{2}\ln(r)+3+7\ln(w)\\
-	&=&\ln(7)-2\ln(h)-\frac{3}{2}\ln(r)+3+7\ln(w)\\
-	&=&\ln(7)+3+7\ln(w)-2\ln(h)-\frac{3}{2}\ln(r)
+	&amp;=&amp;\ln\left(\frac{7}{h^2r^{\frac{3}{2}}}\right)+\ln(e^3)+7\ln(w)\\
+	&amp;=&amp;\ln\left(\frac{7}{h^2}\right)-\ln(r^\frac{3}{2})+3+7\ln(w)\\
+	&amp;=&amp;\ln(7)-\ln(h^2)-\frac{3}{2}\ln(r)+3+7\ln(w)\\
+	&amp;=&amp;\ln(7)-2\ln(h)-\frac{3}{2}\ln(r)+3+7\ln(w)\\
+	&amp;=&amp;\ln(7)+3+7\ln(w)-2\ln(h)-\frac{3}{2}\ln(r)
 }
 \]
 I reorganized the terms in the last line to emphasis that you can really go from the first expression almost directly to the last expression as long as you keep the exponenents and signs under careful consideration.
 </div>
 </div>
 
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/10 Logarithmic Functions/09 Many Logarithms To One.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

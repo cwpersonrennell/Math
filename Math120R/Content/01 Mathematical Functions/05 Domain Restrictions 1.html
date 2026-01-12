@@ -35,16 +35,22 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>05 Domain Restrictions 1</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/04 Difference Quotient.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<p class="fa">Determine the domain of the function. Give your answer in interval notation. \[ k(x) = \displaystyle\frac{\sqrt[7]{2x-5}}{4x^2-25} \]</p>
+
+  
+
+  <div class="grid">
+
+  <p class="fa">Determine the domain of the function. Give your answer in interval notation. \[ k(x) = \displaystyle\frac{\sqrt[7]{2x-5}}{4x^2-25} \]</p>
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
-<p>First of all, the domain restrictions in this function can arise from both the radical and the fraction. In the case of the radical, we need only be considered if the <span style="color: red;">index</span> is even. The index is the number in upper left portion of the radical. In this case, the index is odd, therefore there are no restrictions on the <span style="color: red;">radicand</span> (the inside of the radical).<br><br>In the case of the fraction, we must never divide by zero. Since this function *might* divide by zero, we have to force ourselves to consider the exact \(x\) values which could result in zero division. To do this, we simply create a new equation by setting the denominator equal to zero and then solving. The results are value(s) that are *not* in the domain: \[ \begin{array}{ rcl } 4x^2-25&amp;=&amp;0\\ 4x^2&amp;=&amp;25\\ x^2 &amp;=&amp; \displaystyle\frac{25}{4}\\ x &amp;=&amp; \pm \displaystyle\frac{5}{2} \end{array} \] Note that the \(\pm\) indicates *two* answers, \(\displaystyle\frac{5}{2}\) and \(\displaystyle -\frac{5}{2}\). To fully answer the question about the domain of this function using the proper notation: <br><br><br>The domain of \(k(x)\) is given by the interval \( \left(-\infty, -\frac{5}{2}\right)\cup\left(-\frac{5}{2},\frac{5}{2}\right)\cup\left(\frac{5}{2},\infty\right) \). <br><br>Finally, let's look at this graphically to verify our work. Here I am displaying a Desmos graph centered around the origin and the domain restrictions. While different domain restrictions may appear in different ways, usually we expect to see a <span style="color: red;"> discontinuity</span> of some type. In this case, we will see a "tear" also known as a <span style="color: red;">vertical asymptote</span>. We will return to that topic later in the semester.</p>
+<hr/>
+<div class="hide" id="solution">
+<p>First of all, the domain restrictions in this function can arise from both the radical and the fraction. In the case of the radical, we need only be considered if the <span style="color: red;">index</span> is even. The index is the number in upper left portion of the radical. In this case, the index is odd, therefore there are no restrictions on the <span style="color: red;">radicand</span> (the inside of the radical).<br/><br/>In the case of the fraction, we must never divide by zero. Since this function *might* divide by zero, we have to force ourselves to consider the exact \(x\) values which could result in zero division. To do this, we simply create a new equation by setting the denominator equal to zero and then solving. The results are value(s) that are *not* in the domain: \[ \begin{{array}}{ rcl } 4x^2-25&amp;=&amp;0\\ 4x^2&amp;=&amp;25\\ x^2 &amp;=&amp; \displaystyle\frac{{25}}{{4}}\\ x &amp;=&amp; \pm \displaystyle\frac{{5}}{{2}} \end{{array}} \] Note that the \(\pm\) indicates *two* answers, \(\displaystyle\frac{{5}}{{2}}\) and \(\displaystyle -\frac{{5}}{{2}}\). To fully answer the question about the domain of this function using the proper notation: <br/><br/><br/>The domain of \(k(x)\) is given by the interval \( \left(-\infty, -\frac{{5}}{{2}}\right)\cup\left(-\frac{{5}}{{2}},\frac{{5}}{{2}}\right)\cup\left(\frac{{5}}{{2}},\infty\right) \). <br/><br/>Finally, let's look at this graphically to verify our work. Here I am displaying a Desmos graph centered around the origin and the domain restrictions. While different domain restrictions may appear in different ways, usually we expect to see a <span style="color: red;"> discontinuity</span> of some type. In this case, we will see a "tear" also known as a <span style="color: red;">vertical asymptote</span>. We will return to that topic later in the semester.</p>
 <div id="calculator" style="width: 600px; height: 400px; text-align: center;"></div>
 </div>
 <p>
@@ -56,9 +62,12 @@
   calculator.setExpressions( [{id: 'graph1', latex: 'y=\\frac{\\sqrt[7]{2x-5}}{4x^2-25}'},{id:'x1',latex:'x=-5/2',color:"#c74440",lineStyle:Desmos.Styles.DASHED},{id:'x2',latex:'x=5/2',color:"#c74440",lineStyle:Desmos.Styles.DASHED}]);});
 </script>
 </p>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/06 Domain Restrictions 2.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

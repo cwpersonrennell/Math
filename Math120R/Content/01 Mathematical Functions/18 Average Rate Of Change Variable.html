@@ -35,22 +35,28 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>18 Average Rate Of Change Variable</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/17 Average Rate Of Change Numerical.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa">
+
+  
+
+  <div class="grid">
+
+  <div class="fa">
 <p>Determine the average rate of change of the function between \(s = a\) and \(s = a+h\) where the function is defined by: </p>
-\[ f(s) = \frac{7}{s^2} \]
+\[ f(s) = \frac{{7}}{s^2} \]
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong></p>
-<p><strong>Net Change: </strong>\[ \begin{array}{rcl} f(a+h)-f(a) &amp;=&amp; \displaystyle\frac{7}{(a+h)^2}-\displaystyle\frac{7}{a^2}\\ f(a+h)-f(a) &amp;=&amp; \displaystyle\frac{7\cdot {\color{red} a^2}}{(a+h)^2 {\color{red} a^2}} - \displaystyle\frac{7\cdot {\color{red} (a+h)^2}}{a^2{\color{red} (a+h)^2}}\\ f(a+h)-f(a) &amp;=&amp;\displaystyle\frac{7a^2-7(a+h)^2}{a^2(a+h)^2}\\ f(a+h)-f(a) &amp;=&amp;\displaystyle\frac{7a^2-7(a^2+2ah+h^2)}{a^2(a+h)^2}\\ f(a+h)-f(a) &amp;=&amp;\displaystyle\frac{7a^2-7a^2-14ah-7h^2)}{a^2(a+h)^2}\\ f(a+h)-f(a) &amp;=&amp;\displaystyle\frac{-14ah-7h^2)}{a^2(a+h)^2}\\ f(a+h)-f(a) &amp;=&amp;\displaystyle\frac{-7h(2a+h)}{a^2(a+h)^2} \end{array}\]</p>
+<p><strong>Net Change: </strong>\[ \begin{{array}}{{rcl}} f(a+h)-f(a) &amp;=&amp; \displaystyle\frac{{7}}{(a+h)^2}-\displaystyle\frac{{7}}{a^2}\\ f(a+h)-f(a) &amp;=&amp; \displaystyle\frac{7\cdot {\color{{red}} a^2}}{(a+h)^2 {\color{{red}} a^2}} - \displaystyle\frac{7\cdot {\color{{red}} (a+h)^2}}{a^2{\color{{red}} (a+h)^2}}\\ f(a+h)-f(a) &amp;=&amp;\displaystyle\frac{7a^2-7(a+h)^2}{a^2(a+h)^2}\\ f(a+h)-f(a) &amp;=&amp;\displaystyle\frac{7a^2-7(a^2+2ah+h^2)}{a^2(a+h)^2}\\ f(a+h)-f(a) &amp;=&amp;\displaystyle\frac{7a^2-7a^2-14ah-7h^2)}{a^2(a+h)^2}\\ f(a+h)-f(a) &amp;=&amp;\displaystyle\frac{-14ah-7h^2)}{a^2(a+h)^2}\\ f(a+h)-f(a) &amp;=&amp;\displaystyle\frac{-7h(2a+h)}{a^2(a+h)^2} \end{{array}}\]</p>
 <p><strong>Horizontal Change: </strong>\(a+h-(a))=h\)</p>
-<p><strong>Average Rate of Change between \(s=a\) and \(s=a+h\): </strong> \[ \frac{-7{\color{red}h}(2a+h)}{a^2(a+h)^2}\div {\color{red}h} = \boxed{\frac{-7(2a+h)}{a^2(a+h)^2}} \]</p>
-<p>This question is more tricky to check, but we can verify the formula by setting up some variables in Desmos. The slope will be the average rate shown above, and the point we pass the line through will be \((a,f(a))\) which is \(\left(a,\frac{7}{a^2}\right)\). We will also assume that \(h \gt 0\), although it doesn't strictly have to be.</p>
+<p><strong>Average Rate of Change between \(s=a\) and \(s=a+h\): </strong> \[ \frac{-7{\color{{red}}h}(2a+h)}{a^2(a+h)^2}\div {\color{{red}}h} = \boxed{\frac{-7(2a+h)}{a^2(a+h)^2}} \]</p>
+<p>This question is more tricky to check, but we can verify the formula by setting up some variables in Desmos. The slope will be the average rate shown above, and the point we pass the line through will be \((a,f(a))\) which is \(\left(a,\frac{{7}}{a^2}\right)\). We will also assume that \(h \gt 0\), although it doesn't strictly have to be.</p>
 <div id="calculator" style="height: 600px; text-align: center;"></div>
 </div>
 </div>
@@ -60,12 +66,15 @@
   var elt = document.getElementById('calculator');
   var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24,projectorMode:true});
   calculator.setMathBounds({left:-10,right:10,bottom:-10,top:20});
-  calculator.setExpressions( [{latex: 'f(x) = \\frac{7}{x^2}'},{latex:"a=-5",sliderBounds:{min:"-10",max:"10",step:"0.25"}},{latex:"h=1.5",sliderBounds:{min:"0.5",max:"5",step:"0.1"}},{latex:"(a,f(a))",color:"red",showLabel:true,label:"`(a,f(a))`"},{latex:"(a+h,f(a+h))",color:"red",showLabel:true,label:"`(a+h,f(a+h))`"},{latex:"y=-\\frac{7(2a+h)}{a^2(a+h)^2}(x-a)+\\frac{7}{a^2}",color:"red"}]);
+  calculator.setExpressions( [{latex: 'f(x) = \\frac{{7}}{x^2}'},{latex:"a=-5",sliderBounds:{min:"-10",max:"10",step:"0.25"}},{latex:"h=1.5",sliderBounds:{min:"0.5",max:"5",step:"0.1"}},{latex:"(a,f(a))",color:"red",showLabel:true,label:"`(a,f(a))`"},{latex:"(a+h,f(a+h))",color:"red",showLabel:true,label:"`(a+h,f(a+h))`"},{latex:"y=-\\frac{7(2a+h)}{a^2(a+h)^2}(x-a)+\\frac{{7}}{a^2}",color:"red"}]);
   });
-</script>
+</script></p>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/19 Function Transformations Refresher.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

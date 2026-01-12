@@ -35,20 +35,26 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>E4 Solving Radical Equations</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/A1 Algebraic Techniques/E3 Solving Quadratic Equations.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa">
+
+  
+
+  <div class="grid">
+
+  <div class="fa">
 <p>Solve the following equations:</p>
 \[ \begin{array}{rcl} \sqrt{x^2 -1} &amp;=&amp;5\\ \sqrt[3]{x^2- 1}&amp;=&amp;5\\ \sqrt[4]{x^2+2x+2} &amp;=&amp; -1 \end{array} \]
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong></p>
 <p>I will demonstrate how to solve these questions algebraically. If you would like more than the steps laid out below, don't hesistate to reach out and ask for clarifications.</p>
-<p>\[ \begin{array}{rcl} \sqrt{x^2-1}&amp;=&amp;5\\ x^2 -1 &amp;=&amp;25\\ x^2 &amp;=&amp;26\\ x &amp;=&amp;\pm\sqrt{26} \\ \hline \sqrt[3]{x^2-1} &amp;=&amp;5\\ x^2 - 1 &amp;=&amp;125\\ x^2 &amp;=&amp;126\\ x &amp;=&amp;\pm\sqrt{126}\\ x &amp;=&amp;\pm3\sqrt{14} \\ \hline \sqrt[4]{x^2+2x+2} &amp;=&amp;-1\\ \text{Trick question }&amp;\\ \sqrt[4]{x^2+2x+2} &amp;\geq&amp; 0 \\ \text{No Real Solution}&amp; \end{array} \]</p>
+<p>\[ \begin{array}{rcl} \sqrt{x^2-1}&amp;=&amp;5\\ x^2 -1 &amp;=&amp;25\\ x^2 &amp;=&amp;26\\ x &amp;=&amp;\pm\sqrt{{26}} \\ \hline \sqrt[3]{x^2-1} &amp;=&amp;5\\ x^2 - 1 &amp;=&amp;125\\ x^2 &amp;=&amp;126\\ x &amp;=&amp;\pm\sqrt{{126}}\\ x &amp;=&amp;\pm3\sqrt{{14}} \\ \hline \sqrt[4]{x^2+2x+2} &amp;=&amp;-1\\ \text{Trick question }&amp;\\ \sqrt[4]{x^2+2x+2} &amp;\geq&amp; 0 \\ \text{No Real Solution}&amp; \end{array} \]</p>
 <p>As usual, it pays to double check our answers. However, more than just using graphs to check our work, it is of particular interest to note how the solution to these equations can be visualized as the intersections of graphs. In each of the graphs below, you can see that I graph both the left and right side of the equation. The solution, then, is the x-coordinate of where the graphs intersect. In a very real way, we can mentally interpret <strong>any</strong> equation as the intersection of some graphs.</p>
 <div id="calculator" style="width: 600px; height: 400px; text-align: center;"></div>
 <div id="calculator2" style="width: 600px; height: 400px; text-align: center;"></div>
@@ -61,22 +67,25 @@
   var elt = document.getElementById('calculator');
   var calculator = Desmos.GraphingCalculator(elt,{expressions:true,lockViewport:true,xAxisStep:0.5});
   calculator.setMathBounds({left:-10,right:10,bottom:-10,top:10});
-  calculator.setExpressions( [{latex: 'y=\\sqrt{x^2-1}'},{latex:'y=5'},{latex:"\\sqrt{26}"}]);
+  calculator.setExpressions( [{latex: 'y=\\sqrt{x^2-1}'},{latex:'y=5'},{latex:"\\sqrt{{26}}"}]);
 
     var elt2 = document.getElementById('calculator');
   var calculator2 = Desmos.GraphingCalculator(elt,{expressions:true,lockViewport:true,xAxisStep:0.5});
   calculator2.setMathBounds({left:-15,right:15,bottom:-15,top:15});
-  calculator2.setExpressions( [{latex: 'y=\\sqrt[3]{x^2-1}'},{latex:'y=5'},{latex:'3\\sqrt{14}'}]);
+  calculator2.setExpressions( [{latex: 'y=\\sqrt[3]{x^2-1}'},{latex:'y=5'},{latex:'3\\sqrt{{14}}'}]);
 
     var elt3 = document.getElementById('calculator');
   var calculator3 = Desmos.GraphingCalculator(elt,{expressions:true,lockViewport:true,xAxisStep:0.5});
   calculator3.setMathBounds({left:-10,right:10,bottom:-10,top:-10});
   calculator3.setExpressions( [{latex: 'y=\\sqrt[4]{x^2+2x+2}'},{latex:'y=-1'}]);
   });
-</script>
+</script></p>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/A1 Algebraic Techniques/E5 Solving Equation From Graph Part 1.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

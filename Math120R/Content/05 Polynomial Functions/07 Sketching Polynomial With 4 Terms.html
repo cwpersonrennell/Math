@@ -35,27 +35,36 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>07 Sketching Polynomial With 4 Terms</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/05 Polynomial Functions/06 Polynomial End Behavior.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa" style="width: 100%;">
+
+  
+
+  <div class="grid">
+
+  <div class="fa" style="width: 100%;">
 <p>Example: Sketch the graph of the polynomial: \[P(x)=x^3-2x^2-4x+8\]</p>
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong> When sketching the graph, we will need to identify the zeros, the vertical intercept, and the end behavior. The exact locations of the minima or maxima are not required to be accurate for the sketch.</p>
 <p>Let's start with the vertical intercept. Since this is in standard form, the vertical intercept is exactly the constant term, 8. For the end behavior, this polynomial has a positive leading coefficient and an odd degree (3) so we can expect it to go down to the left and up to the right: \[ \solve{ P(x)\rightarrow -\infty &amp;\text{ as }&amp; x\rightarrow -\infty\\ P(x)\rightarrow \infty &amp;\text{ as }&amp; x\rightarrow \infty } \]finally, to determine the zeros, we can factor the polynomial using the grouping method:</p>
 \[ \solve{ x^3-2x^2-4x+8&amp;=&amp; x^2(x-2) - 4(x-2)\\ &amp;=&amp;(x-2)(x^2-4)\\ &amp;=&amp;(x-2)(x-2)(x+2)\\ &amp;=&amp;(x-2)^2(x+2) } \]
 <p>Note that the second factor is still factorable (using the Difference of Squares pattern) and by continuing to factor we get a much more accurate sense of the behavior near the various zeros, eg., that it will behave linearly near \(x=-2\) and parabolically near \(x=2\).</p>
-<p><calculator options="{&quot;expressions&quot;:false,&quot;keypad&quot;:true,&quot;graphpaper&quot;:true,&quot;showGrid&quot;:false,&quot;showXAxis&quot;:true,&quot;showYAxis&quot;:true,&quot;xAxisNumbers&quot;:true,&quot;yAxisNumbers&quot;:false,&quot;trace&quot;:true,&quot;pointsOfInterest&quot;:true,&quot;settingsMenu&quot;:false,&quot;zoomButtons&quot;:false,&quot;expressionsCollapsed&quot;:false,&quot;capExpressionSize&quot;:false,&quot;lockViewport&quot;:true,&quot;projectorMode&quot;:true,&quot;invertedColors&quot;:false}" mathbounds="{&quot;left&quot;:-2.7124241638183584,&quot;right&quot;:4.061013336181642,&quot;top&quot;:15.442591349283845,&quot;bottom&quot;:-12.780064900716148}" style="width: 800px; height: 600px;" data-string="{&quot;version&quot;:9,&quot;randomSeed&quot;:&quot;d7bdd362acf84ea19ad40057a6c5d964&quot;,&quot;graph&quot;:{&quot;viewport&quot;:{&quot;xmin&quot;:-2.7124241638183584,&quot;ymin&quot;:-12.780064900716148,&quot;xmax&quot;:4.061013336181642,&quot;ymax&quot;:15.442591349283845},&quot;showGrid&quot;:false,&quot;yAxisNumbers&quot;:false,&quot;squareAxes&quot;:false},&quot;expressions&quot;:{&quot;list&quot;:[{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;1&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;f\\left(x\\right)=x^{3}-2x^{2}-4x+8&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;2&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(-2,f\\left(-2\\right)\\right)&quot;,&quot;showLabel&quot;:true},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;3&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(0,f\\left(0\\right)\\right)&quot;,&quot;showLabel&quot;:true},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;4&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;\\left(2,f\\left(2\\right)\\right)&quot;,&quot;showLabel&quot;:true}]}}"></calculator></p>
+<p><calculator data-string='{"version":9,"randomSeed":"d7bdd362acf84ea19ad40057a6c5d964","graph":{"viewport":{"xmin":-2.7124241638183584,"ymin":-12.780064900716148,"xmax":4.061013336181642,"ymax":15.442591349283845},"showGrid":false,"yAxisNumbers":false,"squareAxes":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#000000","latex":"f\\left(x\\right)=x^{{3}}-2x^{{2}}-4x+8"},{"type":"expression","id":"2","color":"#000000","latex":"\\left(-2,f\\left(-2\\right)\\right)","showLabel":true},{"type":"expression","id":"3","color":"#000000","latex":"\\left(0,f\\left(0\\right)\\right)","showLabel":true},{"type":"expression","id":"4","color":"#000000","latex":"\\left(2,f\\left(2\\right)\\right)","showLabel":true}]}}' mathbounds='{"left":-2.7124241638183584,"right":4.061013336181642,"top":15.442591349283845,"bottom":-12.780064900716148}' options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":false,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":false,"trace":true,"pointsOfInterest":true,"settingsMenu":false,"zoomButtons":false,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":true,"projectorMode":true,"invertedColors":false}' style="width: 800px; height: 600px;"></calculator></p>
 </div>
 </div>
 
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/05 Polynomial Functions/08 Example Where Is Polynomial Positive.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

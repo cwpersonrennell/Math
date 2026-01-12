@@ -35,37 +35,46 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>41 Solving Right Triangles</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/08 Trigonometric Functions/40 Right Angle Trigonometry.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa" style="width: 100%;">
+
+  
+
+  <div class="grid">
+
+  <div class="fa" style="width: 100%;">
 <p>Example: Solve the right triangle shown in the image below.</p>
-<calculator options="{&quot;expressions&quot;:false,&quot;keypad&quot;:true,&quot;graphpaper&quot;:true,&quot;showGrid&quot;:false,&quot;showXAxis&quot;:false,&quot;showYAxis&quot;:false,&quot;xAxisNumbers&quot;:true,&quot;yAxisNumbers&quot;:true,&quot;trace&quot;:false,&quot;pointsOfInterest&quot;:false,&quot;settingsMenu&quot;:false,&quot;zoomButtons&quot;:false,&quot;expressionsCollapsed&quot;:false,&quot;capExpressionSize&quot;:false,&quot;lockViewport&quot;:true,&quot;projectorMode&quot;:true,&quot;invertedColors&quot;:true}" mathbounds="{&quot;left&quot;:-3.9177425650031763,&quot;right&quot;:14.905786846761544,&quot;top&quot;:6.481312448759979,&quot;bottom&quot;:-7.6363346100635585}" style="width: 800px; height: 600px;" data-string="{&quot;version&quot;:9,&quot;randomSeed&quot;:&quot;509b3926267acf6b038a5e543c23a0fc&quot;,&quot;graph&quot;:{&quot;viewport&quot;:{&quot;xmin&quot;:-3.9177425650031763,&quot;ymin&quot;:-7.6363346100635585,&quot;xmax&quot;:14.905786846761544,&quot;ymax&quot;:6.481312448759979},&quot;showGrid&quot;:false,&quot;showXAxis&quot;:false,&quot;showYAxis&quot;:false},&quot;expressions&quot;:{&quot;list&quot;:[{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;1&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;x_{1}=-0.16&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;2&quot;,&quot;color&quot;:&quot;#2d70b3&quot;,&quot;latex&quot;:&quot;y_{1}\\ =\\ 5&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;3&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;P_{1}=\\left(x_{1},y_{1}\\right)&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;4&quot;,&quot;color&quot;:&quot;#6042a6&quot;,&quot;latex&quot;:&quot;x_{2}\\ =\\ 4&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;5&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y_{2}\\ =\\ -3.54&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;6&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;P_{2}=\\left(x_{2},y_{2}\\right)&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;7&quot;,&quot;color&quot;:&quot;#2d70b3&quot;,&quot;latex&quot;:&quot;m_{12}=\\frac{y_{2}-y_{1}}{x_{2}-x_{1}}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;8&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=m_{12}\\left(x-x_{1}\\right)+y_{1}\\left\\{\\min\\left(x_{1},x_{2}\\right)\\le x\\le\\max\\left(x_{1},x_{2}\\right)\\right\\}&quot;,&quot;lineWidth&quot;:&quot;4&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;9&quot;,&quot;color&quot;:&quot;#6042a6&quot;,&quot;latex&quot;:&quot;m_{23}=\\ -\\ \\frac{1}{m_{12}}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;10&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;f\\left(x\\right)=m_{23}\\left(x-x_{2}\\right)+y_{2}&quot;,&quot;hidden&quot;:true},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;11&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;x_{3}=x_{2}+7&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;12&quot;,&quot;color&quot;:&quot;#2d70b3&quot;,&quot;latex&quot;:&quot;y_{3}=f\\left(x_{3}\\right)&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;13&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;P_{3}=\\left(x_{3}-2,y_{3}\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`\\frac{2\\pi}{9}`&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;left&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;14&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=f\\left(x\\right)\\left\\{\\min\\left(x_{2},x_{3}\\right)\\le x\\le\\max\\left(x_{2},x_{3}\\right)\\right\\}&quot;,&quot;lineWidth&quot;:&quot;4&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;15&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;m_{13}=\\frac{y_{3}-y_{1}}{x_{3}-x_{1}}&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;16&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;latex&quot;:&quot;y=m_{13}\\left(x-x_{1}\\right)+y_{1}\\left\\{\\min\\left(x_{1},x_{3}\\right)\\le x\\le\\max\\left(x_{1},x_{3}\\right)\\right\\}&quot;,&quot;lineWidth&quot;:&quot;4&quot;},{&quot;type&quot;:&quot;expression&quot;,&quot;id&quot;:&quot;19&quot;,&quot;color&quot;:&quot;#c74440&quot;,&quot;latex&quot;:&quot;P_{4}=\\left(\\frac{x_{3}+x_{1}}{2},\\frac{y_{3}+y_{1}}{2}\\right)&quot;,&quot;showLabel&quot;:true,&quot;label&quot;:&quot;`14`cm&quot;,&quot;hidden&quot;:true,&quot;labelSize&quot;:&quot;2&quot;,&quot;labelOrientation&quot;:&quot;above_right&quot;}]}}"></calculator>
+<calculator data-string='{"version":9,"randomSeed":"509b3926267acf6b038a5e543c23a0fc","graph":{"viewport":{"xmin":-3.9177425650031763,"ymin":-7.6363346100635585,"xmax":14.905786846761544,"ymax":6.481312448759979},"showGrid":false,"showXAxis":false,"showYAxis":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#c74440","latex":"x_{{1}}=-0.16"},{"type":"expression","id":"2","color":"#2d70b3","latex":"y_{{1}}\\ =\\ 5"},{"type":"expression","id":"3","color":"#000000","latex":"P_{{1}}=\\left(x_{{1}},y_{{1}}\\right)"},{"type":"expression","id":"4","color":"#6042a6","latex":"x_{{2}}\\ =\\ 4"},{"type":"expression","id":"5","color":"#000000","latex":"y_{{2}}\\ =\\ -3.54"},{"type":"expression","id":"6","color":"#000000","latex":"P_{{2}}=\\left(x_{{2}},y_{{2}}\\right)"},{"type":"expression","id":"7","color":"#2d70b3","latex":"m_{{12}}=\\frac{y_{{2}}-y_{{1}}}{x_{{2}}-x_{{1}}}"},{"type":"expression","id":"8","color":"#000000","latex":"y=m_{{12}}\\left(x-x_{{1}}\\right)+y_{{1}}\\left\\{\\min\\left(x_{{1}},x_{{2}}\\right)\\le x\\le\\max\\left(x_{{1}},x_{{2}}\\right)\\right\\}","lineWidth":"4"},{"type":"expression","id":"9","color":"#6042a6","latex":"m_{{23}}=\\ -\\ \\frac{{1}}{m_{{12}}}"},{"type":"expression","id":"10","color":"#000000","latex":"f\\left(x\\right)=m_{{23}}\\left(x-x_{{2}}\\right)+y_{{2}}","hidden":true},{"type":"expression","id":"11","color":"#c74440","latex":"x_{{3}}=x_{{2}}+7"},{"type":"expression","id":"12","color":"#2d70b3","latex":"y_{{3}}=f\\left(x_{{3}}\\right)"},{"type":"expression","id":"13","color":"#c74440","latex":"P_{{3}}=\\left(x_{{3}}-2,y_{{3}}\\right)","showLabel":true,"label":"`\\frac{2\\pi}{{9}}`","hidden":true,"labelSize":"2","labelOrientation":"left"},{"type":"expression","id":"14","color":"#000000","latex":"y=f\\left(x\\right)\\left\\{\\min\\left(x_{{2}},x_{{3}}\\right)\\le x\\le\\max\\left(x_{{2}},x_{{3}}\\right)\\right\\}","lineWidth":"4"},{"type":"expression","id":"15","color":"#000000","latex":"m_{{13}}=\\frac{y_{{3}}-y_{{1}}}{x_{{3}}-x_{{1}}}"},{"type":"expression","id":"16","color":"#000000","latex":"y=m_{{13}}\\left(x-x_{{1}}\\right)+y_{{1}}\\left\\{\\min\\left(x_{{1}},x_{{3}}\\right)\\le x\\le\\max\\left(x_{{1}},x_{{3}}\\right)\\right\\}","lineWidth":"4"},{"type":"expression","id":"19","color":"#c74440","latex":"P_{{4}}=\\left(\\frac{x_{{3}}+x_{{1}}}{{2}},\\frac{y_{{3}}+y_{{1}}}{{2}}\\right)","showLabel":true,"label":"`14`cm","hidden":true,"labelSize":"2","labelOrientation":"above_right"}]}}' mathbounds='{"left":-3.9177425650031763,"right":14.905786846761544,"top":6.481312448759979,"bottom":-7.6363346100635585}' options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":false,"showXAxis":false,"showYAxis":false,"xAxisNumbers":true,"yAxisNumbers":true,"trace":false,"pointsOfInterest":false,"settingsMenu":false,"zoomButtons":false,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":true,"projectorMode":true,"invertedColors":true}' style="width: 800px; height: 600px;"></calculator>
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong></p>
 Regardless of orientation, you should be able to identify that the Hypotenuse of this right triangle is 14 cm and the given angle is \(\frac{2\pi}{9}\). The missing sides are the Opposite and Adjacent, so we will need to use the Sine (Opp/Hyp) and Cosine (Adj/Hyp) to solve the missing sides:
 \[
 \solve{
-	\sin\left(\frac{2\pi}{9}\right)&=&\frac{Opp}{14}\\
-	Opp&=&14\sin\left(\frac{2\pi}{9}\right)\\
-	Opp&\approx&9
+	\sin\left(\frac{2\pi}{9}\right)&amp;=&amp;\frac{Opp}{14}\\
+	Opp&amp;=&amp;14\sin\left(\frac{2\pi}{9}\right)\\
+	Opp&amp;\approx&amp;9
 }
 \]\[
 \solve{
-	\cos\left(\frac{2\pi}{9}\right)&=&\frac{Adj}{14}\\
-	Adj&=&14\cos\left(\frac{2\pi}{9}\right)\\
-	Adj&\approx&10.72
+	\cos\left(\frac{2\pi}{9}\right)&amp;=&amp;\frac{Adj}{14}\\
+	Adj&amp;=&amp;14\cos\left(\frac{2\pi}{9}\right)\\
+	Adj&amp;\approx&amp;10.72
 }\]
 Depending on how the question is asked, you may be required to give an exact answer (such as \(14\sin\left(\frac{2\pi}{9}\right)\) ) or approximate (such as 10.72). Make sure you check your directions in WebAssign. If no directions are provided, the best answer is the exact answer.
 </div>
 </div>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/08 Trigonometric Functions/42 Navigating With Trigonometry.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

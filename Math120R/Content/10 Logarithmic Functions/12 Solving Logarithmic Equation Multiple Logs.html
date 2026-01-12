@@ -35,16 +35,22 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>12 Solving Logarithmic Equation Multiple Logs</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/10 Logarithmic Functions/11 Solving Simple Logarithmic Equation.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa" style="width: 100%;">
+
+  
+
+  <div class="grid">
+
+  <div class="fa" style="width: 100%;">
 <p>Example: Solve the equation \[\log_3(x+6)-\log_3(6-x)=3\]</p>
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong></p>
 <p>
 	When we have a problem with multiply logarithms, our goal should be to condense the logarithms into a <strong>single </strong> logarithm and then apply the definition of logarithm to get the problem in the exponential form. However, different form exponential equations, we <strong>must</strong> keep the domain of the logarithmic functions closely in mind.
@@ -55,35 +61,38 @@
 
 	Since we have multiply logarithms, the overall valid set of solutions will entirely depend on the overlapping domains of each:
 	\[\solve{
-		x+6&\gt&0\\
-		x&\gt&-6\\\hline
-		6-x&\gt&0\\
-		-x&\gt&-6\\
-		x&\lt&6
+		x+6&amp;\gt&amp;0\\
+		x&amp;\gt&amp;-6\\\hline
+		6-x&amp;\gt&amp;0\\
+		-x&amp;\gt&amp;-6\\
+		x&amp;\lt&amp;6
 	}
 	\]
 	These two domain restrictions combined give a solution domain of \((-6,6)\). Thus, any answer we find algebraically, we must check against this restriction. Let's now turn to solving the question as presented:
 	\[
 	\solve{
-		\log_3(x+6)-\log_3(6-x)&=&3\\
-		\log_3\left(\frac{x+6}{6-x}\right)&=&3\\
-		3^3&=&\frac{x+6}{6-x}\\
-		27\left(6-x\right)&=&x+6\\
-		162-27x&=&x+6\\
-		156&=&28x
-		\frac{39}{7}&=&x
-		\frac{39}{7}&\approx&5.57\dots
+		\log_3(x+6)-\log_3(6-x)&amp;=&amp;3\\
+		\log_3\left(\frac{x+6}{6-x}\right)&amp;=&amp;3\\
+		3^3&amp;=&amp;\frac{x+6}{6-x}\\
+		27\left(6-x\right)&amp;=&amp;x+6\\
+		162-27x&amp;=&amp;x+6\\
+		156&amp;=&amp;28x
+		\frac{39}{7}&amp;=&amp;x
+		\frac{39}{7}&amp;\approx&amp;5.57\dots
 
 	}
 	\]
 	Since the answer we found, \(\frac{39}{7}\), is in the domain \((-6,6)\), we have finished our problem.
 	</p>
-	<p>A few notes: Solving problems with multiple logarithms will require combining those logarithms together in order to apply the definition of logarithm and converting the equation to its exponential equivalent. The Domain of the logarithms will restrict the available solutions and should always be considered when solving these types of questions.</p>
-</div>
+<p>A few notes: Solving problems with multiple logarithms will require combining those logarithms together in order to apply the definition of logarithm and converting the equation to its exponential equivalent. The Domain of the logarithms will restrict the available solutions and should always be considered when solving these types of questions.</p>
 </div>
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/10 Logarithmic Functions/13 Finding Inverse Of Logarithm.html">Next</a></div>
+  </div>
+
+</div>
+
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

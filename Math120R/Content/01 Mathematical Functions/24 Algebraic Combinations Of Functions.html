@@ -35,13 +35,19 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>24 Algebraic Combinations Of Functions</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/23 0N Even vs Odd Functions.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa" style="width: 100%;">
-<p><strong>Use the function \(f(x)=x^2+1\) and \(g(x) = \displaystyle\frac{1}{x}\) to answer the following</strong></p>
+
+  
+
+  <div class="grid">
+
+  <div class="fa" style="width: 100%;">
+<p><strong>Use the function \(f(x)=x^2+1\) and \(g(x) = \displaystyle\frac{{1}}{{x}}\) to answer the following</strong></p>
 <ol>
 <li>Find \(f(g(x))\).</li>
 <li>What is the domain of \(f(g(x))\)?</li>
@@ -49,13 +55,13 @@
 <li>What is the domain of \(g(f(x))\)?</li>
 </ol>
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong></p>
 <ol>
-<li>\(f(g(x))=\displaystyle\frac{1}{x^2}+1\).</li>
+<li>\(f(g(x))=\displaystyle\frac{{1}}{x^2}+1\).</li>
 <li>Domain of \(f(g(x))\): \((-\infty,0)\cup(0,\infty)\)</li>
-<li>\(g(f(x))=\displaystyle\frac{1}{x^2+1}\)</li>
+<li>\(g(f(x))=\displaystyle\frac{{1}}{x^2+1}\)</li>
 <li>Domain of \(g(f(x))\): \((-\infty,\infty)\)</li>
 </ol>
 <p><strong>In General: </strong>when composing functions, first consider the domain of the <i>inner function</i>, then consider the domain of the result.</p>
@@ -68,12 +74,15 @@
   var elt = document.getElementById('calculator');
   var calculator = Desmos.GraphingCalculator(elt,{expressions:true,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true});
   calculator.setMathBounds({left:-10,right:10,bottom:-10,top:10});
-  calculator.setExpressions( [{latex: 'f(x)=x^2+1',color:"red"},{latex: 'g(x)=1/x',color:"green"},{latex: 'y=f(g(x))',hidden:true},{latex: 'y=g(f(x))',hidden:true},{latex:"(0,f(0))",label:"`f(x)`",showLabel:true,color:"red",hidden:true,secret:true,labelOrientation:Desmos.LabelOrientations.LEFT},{latex:"(1,g(1))",label:"`g(x)`",showLabel:true,color:"green",hidden:true,secret:true,labelOrientation:Desmos.LabelOrientations.RIGHT},{latex:"y=\\frac{1}{x^2}+1",hidden:true},{latex:"y=\\frac{1}{x^2+1}",hidden:true}]);
+  calculator.setExpressions( [{latex: 'f(x)=x^2+1',color:"red"},{latex: 'g(x)=1/x',color:"green"},{latex: 'y=f(g(x))',hidden:true},{latex: 'y=g(f(x))',hidden:true},{latex:"(0,f(0))",label:"`f(x)`",showLabel:true,color:"red",hidden:true,secret:true,labelOrientation:Desmos.LabelOrientations.LEFT},{latex:"(1,g(1))",label:"`g(x)`",showLabel:true,color:"green",hidden:true,secret:true,labelOrientation:Desmos.LabelOrientations.RIGHT},{latex:"y=\\frac{{1}}{x^2}+1",hidden:true},{latex:"y=\\frac{{1}}{x^2+1}",hidden:true}]);
   });
-</script>
+</script></p>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/24 Using A Graph To Calculate Algebraic Combinations Of Functions.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

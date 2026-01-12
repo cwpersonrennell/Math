@@ -35,21 +35,27 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>E5 Solving Equation From Graph Part 1</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/A1 Algebraic Techniques/E4 Solving Radical Equations.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<div class="fa" style="width: 100%;">
-<p>Determine the equation of the line in the graph. The other curve is&nbsp; \(y=\dfrac{3}{32}x^3+\dfrac{5}{16}x^2\)</p>
+
+  
+
+  <div class="grid">
+
+  <div class="fa" style="width: 100%;">
+<p>Determine the equation of the line in the graph. The other curve is  \(y=\dfrac{{3}}{{32}}x^3+\dfrac{{5}}{{16}}x^2\)</p>
 <div id="calculator" style="width: 100%; height: 600px;"></div>
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution: </strong>Since we do not know what the \(b\) value is, we need to determine the slope <i>in terms of \(b\)</i>:</p>
-\[ \solve{ m&amp;=&amp;\dfrac{2-b}{2-0}\\ m&amp;=&amp;\dfrac{2-b}{2} } \]
+\[ \solve{ m&amp;=&amp;\dfrac{2-b}{2-0}\\ m&amp;=&amp;\dfrac{2-b}{{2}} } \]
 <p>Then, we can use the Point-Slope form of a line to get the equation:</p>
-\[ \solve{y&amp;=&amp;m(x-x_1)+y_1\\y&amp;=&amp;\dfrac{2-b}{2}(x-2)+2} \]</div>
+\[ \solve{y&amp;=&amp;m(x-x_1)+y_1\\y&amp;=&amp;\dfrac{2-b}{{2}}(x-2)+2} \]</div>
 </div>
 <p>
 <script>
@@ -59,10 +65,13 @@
   calculator.setMathBounds({left:-10,right:10,bottom:-10,top:10});
   calculator.setExpressions( [{latex: 'y=3/32x^3+5/16x^2'},{latex: '(2,2)',showLabel:true},{latex:"y=0.5(x-2)+2"},{latex:"(0,1)",showLabel:true,label:"`(0,b)`"}]);
   });
-</script>
+</script></p>
+
+  </div>
+
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/A1 Algebraic Techniques/E6 Solving Equation From Graph Part 2.html">Next</a></div>
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>

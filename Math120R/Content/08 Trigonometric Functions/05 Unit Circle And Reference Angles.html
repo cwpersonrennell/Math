@@ -35,20 +35,26 @@
 	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
-<div class="container">
+<div class='header'>05 Unit Circle And Reference Angles</div>
 
-<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/08 Trigonometric Functions/04 Finding Points On Unit Circle.html">Back</a></div>
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{previous_page}}}">Back</a></div>
 
 <div id="main" class="content">
-<script defer="defer">
+
+  
+
+  <div class="grid">
+
+  <script defer="defer">
     function Point(x,y){
-         return "`"+String.raw`\left(${x},${y}\right)`+"`";
+         return "`"+String.raw`\left(${{x}},${{y}}\right)`+"`";
        }
        function Sqrt(x){
-         return String.raw`\sqrt{${x}}`;
+         return String.raw`\sqrt{${{x}}}`;
        }
        function Frac(x,y){
-         return "`"+String.raw`\frac{ ${x} }{ ${y} }`+"`";
+         return "`"+String.raw`\frac{ ${{x}} }{ ${{y}} }`+"`";
        }
        function Pi(){
          return String.raw`\pi `;
@@ -78,22 +84,25 @@
 </script>
 <div class="fa" style="width: 100%;">
 <p>Example: Given each angle below, sketch the quadrant the angle appears in and then calculate the corresponding reference angle.</p>
-\[ \solve{ a)\;t&amp;=&amp;\dfrac{5\pi}{6}\\ b)\;t&amp;=&amp;-\dfrac{5\pi}{6}\\ c)\;t&amp;=&amp;\dfrac{3\pi}{4}\\ d)\;t&amp;=&amp;-\dfrac{\pi}{4}\\ e)\;t&amp;=&amp;\dfrac{\pi}{3}\\ } \]
+\[ \solve{ a)\;t&amp;=&amp;\dfrac{5\pi}{{6}}\\ b)\;t&amp;=&amp;-\dfrac{5\pi}{{6}}\\ c)\;t&amp;=&amp;\dfrac{3\pi}{{4}}\\ d)\;t&amp;=&amp;-\dfrac{\pi}{{4}}\\ e)\;t&amp;=&amp;\dfrac{\pi}{{3}}\\ } \]
 <div><button id="toggle_solution">Show Solution</button></div>
-<hr>
-<div id="solution" class="hide">
+<hr/>
+<div class="hide" id="solution">
 <p><strong>Solution</strong> To answer the questions about reference angles, we need to have a rough idea of which quadrant each of the angles is in. If you haven't seen it already, here is the standard representation of the angles of a unit circle (one counter-clockwise pass around the circle) to get you started:</p>
-<calculator style="width: 1000px; height: 1000px;" options="{fontSize:18, expressions:false, lockViewport:false}" mathbounds="{left:-1.5,right:1.5,bottom:-1.5,top:1.5}"> x^2+y^2 = 1 ;{color:black, lineWidth:5}\ (1,0); {showLabel:true,label:points[0],color:black, labelOrientation:Desmos.LabelOrientations.RIGHT}\ (\cos(\pi/6),\sin(\pi/6)) ; {showLabel:true,label:points[1],color:black,labelOrientation:Desmos.LabelOrientations.RIGHT}\ (\cos(\pi/4),\sin(\pi/4)) ; {showLabel:true,label:points[2],color:black}\ (\cos(2\pi/6),\sin(2\pi/6)) ; {showLabel:true,label:points[3],color:black, labelOrientation:Desmos.LabelOrientations.RIGHT}\ (\cos(2\pi/4),\sin(2\pi/4)) ; {showLabel:true,label:points[4],color:black, labelOrientation:Desmos.LabelOrientations.ABOVE}\ (\cos(4\pi/6),\sin(4\pi/6)) ; {showLabel:true,label:points[5],color:black, labelOrientation:Desmos.LabelOrientations.LEFT}\ (\cos(3\pi/4),\sin(3\pi/4)) ; {showLabel:true,label:points[6],color:black}\ (\cos(5\pi/6),\sin(5\pi/6)) ; {showLabel:true,label:points[7],color:black, labelOrientation:Desmos.LabelOrientations.LEFT}\ (\cos(\pi),\sin(\pi)) ; {showLabel:true,label:points[8],color:black, labelOrientation:Desmos.LabelOrientations.LEFT}\ (\cos(7\pi/6),\sin(7\pi/6)) ; {showLabel:true,label:points[9],color:black, labelOrientation:Desmos.LabelOrientations.LEFT}\ (\cos(5\pi/4),\sin(5\pi/4)) ; {showLabel:true,label:points[10],color:black}\ (\cos(8\pi/6),\sin(8\pi/6)) ; {showLabel:true,label:points[11],color:black, labelOrientation:Desmos.LabelOrientations.LEFT}\ (\cos(3\pi/2),\sin(3\pi/2)) ; {showLabel:true,label:points[12],color:black, labelOrientation:Desmos.LabelOrientations.BELOW}\ (\cos(10\pi/6),\sin(10\pi/6)) ; {showLabel:true,label:points[13],color:black, labelOrientation:Desmos.LabelOrientations.RIGHT}\ (\cos(7\pi/4),\sin(7\pi/4)) ; {showLabel:true,label:points[14],color:black}\ (\cos(11\pi/6),\sin(11\pi/6)) ; {showLabel:true,label:points[15],color:black, labelOrientation:Desmos.LabelOrientations.RIGHT}</calculator>
+<calculator mathbounds="{left:-1.5,right:1.5,bottom:-1.5,top:1.5}" options="{fontSize:18, expressions:false, lockViewport:false}" style="width: 1000px; height: 1000px;"> x^2+y^2 = 1 ;{color:black, lineWidth:5}\ (1,0); {showLabel:true,label:points[0],color:black, labelOrientation:Desmos.LabelOrientations.RIGHT}\ (\cos(\pi/6),\sin(\pi/6)) ; {showLabel:true,label:points[1],color:black,labelOrientation:Desmos.LabelOrientations.RIGHT}\ (\cos(\pi/4),\sin(\pi/4)) ; {showLabel:true,label:points[2],color:black}\ (\cos(2\pi/6),\sin(2\pi/6)) ; {showLabel:true,label:points[3],color:black, labelOrientation:Desmos.LabelOrientations.RIGHT}\ (\cos(2\pi/4),\sin(2\pi/4)) ; {showLabel:true,label:points[4],color:black, labelOrientation:Desmos.LabelOrientations.ABOVE}\ (\cos(4\pi/6),\sin(4\pi/6)) ; {showLabel:true,label:points[5],color:black, labelOrientation:Desmos.LabelOrientations.LEFT}\ (\cos(3\pi/4),\sin(3\pi/4)) ; {showLabel:true,label:points[6],color:black}\ (\cos(5\pi/6),\sin(5\pi/6)) ; {showLabel:true,label:points[7],color:black, labelOrientation:Desmos.LabelOrientations.LEFT}\ (\cos(\pi),\sin(\pi)) ; {showLabel:true,label:points[8],color:black, labelOrientation:Desmos.LabelOrientations.LEFT}\ (\cos(7\pi/6),\sin(7\pi/6)) ; {showLabel:true,label:points[9],color:black, labelOrientation:Desmos.LabelOrientations.LEFT}\ (\cos(5\pi/4),\sin(5\pi/4)) ; {showLabel:true,label:points[10],color:black}\ (\cos(8\pi/6),\sin(8\pi/6)) ; {showLabel:true,label:points[11],color:black, labelOrientation:Desmos.LabelOrientations.LEFT}\ (\cos(3\pi/2),\sin(3\pi/2)) ; {showLabel:true,label:points[12],color:black, labelOrientation:Desmos.LabelOrientations.BELOW}\ (\cos(10\pi/6),\sin(10\pi/6)) ; {showLabel:true,label:points[13],color:black, labelOrientation:Desmos.LabelOrientations.RIGHT}\ (\cos(7\pi/4),\sin(7\pi/4)) ; {showLabel:true,label:points[14],color:black}\ (\cos(11\pi/6),\sin(11\pi/6)) ; {showLabel:true,label:points[15],color:black, labelOrientation:Desmos.LabelOrientations.RIGHT}</calculator>
 <p>To then solve the question, we consider where each angle lies. This will be easy for the positive angles since we can find the exact values in the circle. For the negative angles, I find that counting backwards by multiples of 1/6 or 1/4 quite helpful to determining where the terminal point is located.</p>
-\[ \solve{ a)\;t&amp;=&amp;\dfrac{5\pi}{6}\;\text{Quadrant II}\\ b)\;t&amp;=&amp;-\dfrac{5\pi}{6} \text{Quadrant III} \\ c)\;t&amp;=&amp;\dfrac{3\pi}{4} \text{Quadrant II}\\ d)\;t&amp;=&amp;-\dfrac{\pi}{4}\;\text{Quadrant IV}\\ e)\;t&amp;=&amp;\dfrac{\pi}{3} \;\text{Quadrant I} } \]
-<p>Let's go through this in order. \(5\pi/6\) is in Quadrant II and the reference angle is just above \(\pi\), so we can calculate it by subtracting: \(\pi-\frac{5\pi}{6} = \frac{\pi}{6}\). This is the reference angle. For the second angle, it is in quadrant III, but is a negative angle that is just shy of \(-\pi\). Thus, we can calculate the reference angle by subtracting and taking the absolute value of the result:</p>
-\[ \solve{ \displaystyle\left| -\pi-\left(-\frac{5\pi}{6}\right)\right| &amp;=&amp;\left|-\pi+\frac{5\pi}{6}\right|\\ &amp;=&amp;\left|-\frac{\pi}{6}\right|\\ &amp;=&amp;\frac{\pi}{6} }\].
-<p>Notice that even though we had two opposite angles that ended up in completely different quadrants, it is possible for them to still have the same reference angle. For \(\frac{3\pi}{4}\), being also in quadrant II and positive we subtract from \(\pi\) to get \(\frac{\pi}{4}\). In a similar way, although \(-\frac{\pi}{4}\) is in the IV quadrant, we take the difference from zero (the nearest horizontal angle) and take the absolute value to get \(\frac{\pi}{4}\). Finally, a positive angle in quadrant I is always equal to its reference angle (take the difference with zero and you just get the angle back).</p>
-</div>
+\[ \solve{ a)\;t&amp;=&amp;\dfrac{5\pi}{{6}}\;\text{Quadrant II}\\ b)\;t&amp;=&amp;-\dfrac{5\pi}{{6}} \text{Quadrant III} \\ c)\;t&amp;=&amp;\dfrac{3\pi}{{4}} \text{Quadrant II}\\ d)\;t&amp;=&amp;-\dfrac{\pi}{{4}}\;\text{Quadrant IV}\\ e)\;t&amp;=&amp;\dfrac{\pi}{{3}} \;\text{Quadrant I} } \]
+<p>Let's go through this in order. \(5\pi/6\) is in Quadrant II and the reference angle is just above \(\pi\), so we can calculate it by subtracting: \(\pi-\frac{5\pi}{{6}} = \frac{\pi}{{6}}\). This is the reference angle. For the second angle, it is in quadrant III, but is a negative angle that is just shy of \(-\pi\). Thus, we can calculate the reference angle by subtracting and taking the absolute value of the result:</p>
+\[ \solve{ \displaystyle\left| -\pi-\left(-\frac{5\pi}{{6}}\right)\right| &amp;=&amp;\left|-\pi+\frac{5\pi}{{6}}\right|\\ &amp;=&amp;\left|-\frac{\pi}{{6}}\right|\\ &amp;=&amp;\frac{\pi}{{6}} }\].
+<p>Notice that even though we had two opposite angles that ended up in completely different quadrants, it is possible for them to still have the same reference angle. For \(\frac{3\pi}{{4}}\), being also in quadrant II and positive we subtract from \(\pi\) to get \(\frac{\pi}{{4}}\). In a similar way, although \(-\frac{\pi}{{4}}\) is in the IV quadrant, we take the difference from zero (the nearest horizontal angle) and take the absolute value to get \(\frac{\pi}{{4}}\). Finally, a positive angle in quadrant I is always equal to its reference angle (take the difference with zero and you just get the angle back).</p>
 </div>
 </div>
 
-<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/08 Trigonometric Functions/06 Trigonometric Functions.html">Next</a></div>
+  </div>
+
+</div>
+
+<div class = "navigate" id="next" style="display:block;float:right"><a target="" href="https://cwpersonrennell.github.io/Math/Math120R/Content/{{{next_page}}}">Next</a></div>
 </div>
 </body>
 </html>
