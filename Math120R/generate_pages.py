@@ -17,9 +17,7 @@ def FlattenStringArray(array,md = False):
     result = ""
     for i in range(0, len(array)):
         if(md):
-            print(str(array[i]))
             result += markdown.markdown(str(array[i]))
-            print(result)
         else:
             result += str(array[i])
     return result
@@ -93,11 +91,8 @@ def CompileFile(filename):
     if len(tabs) == 0:
         result = FlattenStringArray(soup.contents)
         return [result,""]
-    #print(html)
-    print(tabs)
-    print(soup)
+
     for i in range(0, len(tabs)):
-        print(tabs[i])
         result += CompileTab(FlattenStringArray(tabs[i].contents, True),tabs[i].attrs['name'],i+1)
         
     return [result, CompileTabStyle(len(tabs))]
@@ -172,11 +167,13 @@ def GenerateFilesFromStemAndTemplate(template_filename,directory):
         
         next_page = "index.html"
         previous_page = "index.html"
-        if(i<len(Stem_filepaths)):
-            next_page = os.fspath(Stem_filepaths[i+1]).replace("Stems\\","").replace("\\","/")
-        if(i>0):
-            previous_page = os.fspath(Stem_filepaths[i-1]).replace("Stems\\","").replace("\\","/")
-        
+        try:
+            if(i<len(Stem_filepaths)):
+                next_page = os.fspath(Stem_filepaths[i+1]).replace("Stems\\","").replace("\\","/")
+            if(i>0):
+                previous_page = os.fspath(Stem_filepaths[i-1]).replace("Stems\\","").replace("\\","/")
+        except IndexError as e:
+            print(e)
         #print(previous_page+"-->"+next_page)
         pathname= os.fspath(Stem_filepaths[i].absolute()).replace("Stems\\",directory+"\\")
         #Some older files from D2L doubled braces unneccessarily, this removes them.
@@ -190,7 +187,36 @@ def GenerateFilesFromStemAndTemplate(template_filename,directory):
         contents = contents.replace("{{{tabs}}}", tabs)
         contents = contents.replace("{{{title}}}",Stem_filepaths[i].name.split(".html")[0])
         CreateAndWriteContentsToFile(contents,pathname)
+
+def CreateLink(filepath,label):
+    filepath = filepath.replace("\\","/")
+    result = f'<a href="https://cwpersonrennell.github.io/Math/Math120R/Content/{filepath}">{label}</a>'
+    return result
         
+def CreateIndexFiles(top):
+    for root, dirs, files in os.walk(".\Stems"):
+        new_root = root.replace("Stems",top)
+        file = open(f"{new_root}\index.html", "w")
+        file.write("")
+        new_root = root.replace(".\\Stems\\","")
         
+        index = CreateLink(f"{new_root}\index.html",new_root)
+        body = f"<title>{new_root}</title><h1>{new_root}</h1>"
+        template_file = open("index-template.html","r")
+        contents = template_file.read()
+        body += f"<ul>\n"
+        if(len(files)>0):
+            for i in range(0,len(files)):
+                body+="<li>"+CreateLink(files[i],files[i].replace(".html",""))+"</li>\n"
+        if(len(dirs)>0):
+            for i in range(0, len(dirs)):
+                body+="<li>"+CreateLink(dirs[i]+"/index.html",dirs[i])+"</li>\n"
+        
+        body +=f"</ul>\n"
+        contents=contents.replace("{{{body}}}",body)
+        file.write(contents)
+        file.close()
+            
         
 GenerateFilesFromStemAndTemplate("new-main-body-template.html","Content")
+CreateIndexFiles("Content")
