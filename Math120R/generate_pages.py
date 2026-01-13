@@ -208,7 +208,7 @@ def BuildProject(template_filename,top):
         index_contents = template_file.read()
         
         root_link = CreateLink("index.html", "Home")
-        breadcrumb = f'<h2>{root_link} / '
+        breadcrumb = f'<h6>{root_link} / '
         
         link_list = f"<ul>\n"
         if(len(files)>0):
@@ -224,7 +224,7 @@ def BuildProject(template_filename,top):
                 contents = template_file.read().replace("{{{tab_style}}}", tab_style)
                 contents = contents.replace("{{{tabs}}}", tabs)
                 contents = contents.replace("{{{title}}}",new_root)
-                contents = contents.replace("{{{breadcrumb}}}",breadcrumb)
+                contents = contents.replace("{{{breadcrumb}}}",breadcrumb+f" / {files[i].replace('.html','')}")
                 next_page=CreateLink("index.html","Next")
                 previous_page=CreateLink("index.html","Back")
                 try:
@@ -248,7 +248,7 @@ def BuildProject(template_filename,top):
             for i in range(0, len(dirs)):
                 link_list+="<li>"+CreateLink(dirs[i]+"/index.html",dirs[i])+"</li>\n"
         link_list +=f"</ul>\n"
-        body+=breadcrumb +"</h2>\n"
+        body+=breadcrumb +"</h6>\n"
         body+=link_list
         index_contents=index_contents.replace("{{{body}}}",body)
         index_contents = index_contents.replace("{{{title}}}",new_root)
