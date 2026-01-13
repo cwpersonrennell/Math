@@ -45,7 +45,7 @@
   <style>
         .grid{
             display:grid;
-            grid-template-columns:repeat(2,minmax(200px,1fr));
+            grid-template-columns:repeat(3,minmax(200px,1fr));
             grid-template-rows:auto 1fr;
             column-gap: 1rem;
             }
@@ -55,7 +55,7 @@
             grid-template-columns:subgrid;
             grid-template-rows:subgrid;
             grid-column: 1 / -1;
-            grid-row: 1 / span 2;
+            grid-row: 1 / span 3;
         }
 
         details::details-content{
@@ -89,6 +89,10 @@
             grid-column: 2 / span 1;
         }
     
+        details:nth-of-type(3) summary{
+            grid-column: 3 / span 1;
+        }
+    
         summary{
             grid-column: var(--n) / span 1;
           }
@@ -97,7 +101,7 @@
 
   <div class="grid">
 
-  <details class='item' name='alpha' open style='--n: 1'><summary class='subitem'>Welcome </summary><div> <h1>Welcome</h1><p>This site is structured around the course I teach at the University of Arizona, Math 120R - Calculus Preparation. Before we begin, I am going to restate the course goals here as I will occasionally make reference to these when it comes to motivating certain topics and approaches:</p><blockquote>
+  <details class='item' name='alpha' open style='--n: 1'><summary class='subitem'>Welcome </summary><div> <p>This site is structured around the course I teach at the University of Arizona, Math 120R - Calculus Preparation. Before we begin, I am going to restate the course goals here as I will occasionally make reference to these when it comes to motivating certain topics and approaches:</p><blockquote>
 <ul>
 <li>To prepare students to be successful in the Calculus sequence at U of A (math 122A/B, 129, and 223).</li>
 <li>To help students develop and refine basic algebra skills by way of an integrated review of these skills as they are needed in the course.</li>
@@ -107,7 +111,7 @@
 <li>To incorporate writing into the curriculum. Through writing about mathematics you will increase your understanding of mathematical concepts.</li>
 <li>To help strengthen students' general academic skills.</li>
 </ul>
-</blockquote> </div></details><details class='item' name='alpha' open style='--n: 2'><summary class='subitem'>Introductory Notes </summary><div> <h1>What is a <strong>function</strong>?</h1><p>Mathematically, when we refer to something as a function, it must satisfy the following condition: </p><p>Given a relationship between two sets, for any given <em>input</em> there is exactly one <em>output</em>. </p><p>We can denote these in a specific order, called a <strong>point</strong> or an <strong>ordered pair</strong>: \((\text{input},\text{output})\)</p><p>In this course, we primarily deal in numbers, but it should be noted that a function can and is defined for notions well beyond numerical values. </p><h2>Real World Examples of Functions</h2><ol>
+</blockquote> </div></details><details class='item' name='alpha' open style='--n: 2'><summary class='subitem'>What is a Function? </summary><div> <p>Mathematically, when we refer to something as a function, it must satisfy the following condition: </p><p>Given a relationship between two sets, for any given <em>input</em> there is exactly one <em>output</em>. </p><p>We can denote these in a specific order, called a <strong>point</strong> or an <strong>ordered pair</strong>: \((\text{input},\text{output})\)</p><p>When we graph these on the <em>coordinate plane</em>, we typically consider the <strong>horizontal axis</strong> to the be the input and the <strong>vertical axis</strong> to be the output.</p><p>In this course, we primarily deal in numbers, but it should be noted that a function can be (and is) defined for notions well beyond numerical values. </p><h2>Real World Examples of Functions</h2><ol>
 <li>For a given traffic light, at any point in time (input) there is exactly one light illuminated (output).</li>
 <li>In an investment, for a fixed time period, the interest rate (input) and the final amount in the investment (output).</li>
 <li>In an investment, for a fixed interest rate, the time it is invested (input) and the final amount in the investment (output).</li>
@@ -115,7 +119,7 @@
 <li>In vehicle safety design, the speed of a vehicle (input) and the feet required to come to a complete stop (output).</li>
 <li>Given your current altitude (input), the corresponding atmospheric pressure (output).</li>
 <li>For a particular employee, the hours worked (input) and their total earnings (output).</li>
-</ol><p>Now, a few of the items above are rearrangments of themselves (notably, the ones about investments). This is to highlight that many situations can be considered from different perspectives as functions. The key for something to make sense as a function, is that given any particular input, there is only ever one corresponding related output. </p><p>Think about each of the items listed above and really ask/answer the question for yourself: does it make sense that the description provided ensures that there is only one output for any given input?</p> </div></details>
+</ol><p>Now, a few of the items above are rearrangments of themselves (notably, the ones about investments). This is to highlight that many situations can be considered from different perspectives as functions. The key for something to make sense as a function, is that given any particular input, there is only ever one corresponding related output. </p><p>Think about each of the items listed above and really ask/answer the question for yourself: does it make sense that the description provided ensures that there is only one output for any given input?</p> </div></details><details class='item' name='alpha' open style='--n: 3'><summary class='subitem'> </summary><div>  </div></details>
 
   </div>
 
