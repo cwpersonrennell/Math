@@ -193,30 +193,66 @@ def CreateLink(filepath,label):
     result = f'<a href="https://cwpersonrennell.github.io/Math/Math120R/Content/{filepath}">{label}</a>'
     return result
         
-def CreateIndexFiles(top):
+def BuildProject(template_filename,top):
     for root, dirs, files in os.walk(".\Stems"):
         new_root = root.replace("Stems",top)
-        file = open(f"{new_root}\index.html", "w")
-        file.write("")
+        top_root = root.replace("Stems",top)
+        index_file = open(f"{new_root}\index.html", "w")
+        index_file.write("")
         new_root = root.replace(".\\Stems\\","")
         
         index = CreateLink(f"{new_root}\index.html",new_root)
         body = f"<title>{new_root}</title><h1>{new_root}</h1>"
+        
         template_file = open("index-template.html","r")
-        contents = template_file.read()
-        body += f"<ul>\n"
+        index_contents = template_file.read()
+        
+        root_link = CreateLink("index.html", "Home")
+        breadcrumb = f'{root_link} / '
+        
+        link_list = f"<ul>\n"
         if(len(files)>0):
+            breadcrumb+=CreateLink(f"{new_root}\index.html",new_root)
             for i in range(0,len(files)):
-                body+="<li>"+CreateLink(f"{new_root}\{files[i]}",files[i].replace(".html",""))+"</li>\n"
+                source_filename = f"{root}\{files[i]}"
+                target_filename = f"{top_root}\{files[i]}"
+                
+                source_file = open(source_filename,"r")
+                template_file = open(template_filename)
+                
+                tabs, tab_style = CompileFile(source_filename)
+                contents = template_file.read().replace("{{{tab_style}}}", tab_style)
+                contents = contents.replace("{{{tabs}}}", tabs)
+                contents = contents.replace("{{{title}}}",breadcrumb)
+                next_page=CreateLink("index.html","Next")
+                previous_page=CreateLink("index.html","Back")
+                try:
+                    if(i<len(files)-1):
+                        next_page = CreateLink(f"{new_root}\{files[i+1]}","Next")
+                    if(i>0):
+                        previous_page = CreateLink(f"{new_root}\{files[i+1]}","Back")
+                except IndexError as e:
+                    print(e)
+                
+                contents = contents.replace("{{{previous_page}}}",previous_page)
+                contents = contents.replace("{{{next_page}}}", next_page)
+                
+                print(contents)
+                CreateAndWriteContentsToFile(contents,target_filename)
+                source_file.close()
+                template_file.close()
+                
+                link_list +="<li>"+CreateLink(f"{new_root}\{files[i]}",files[i].replace(".html",""))+"</li>\n"
         if(len(dirs)>0):
             for i in range(0, len(dirs)):
-                body+="<li>"+CreateLink(dirs[i]+"/index.html",dirs[i])+"</li>\n"
-        
-        body +=f"</ul>\n"
-        contents=contents.replace("{{{body}}}",body)
-        file.write(contents)
-        file.close()
+                link_list+="<li>"+CreateLink(dirs[i]+"/index.html",dirs[i])+"</li>\n"
+        link_list +=f"</ul>\n"
+        body+=breadcrumb +"\n"
+        body+=link_list
+        index_contents=index_contents.replace("{{{body}}}",body)
+        index_file.write(index_contents)
+        index_file.close()
             
         
-GenerateFilesFromStemAndTemplate("new-main-body-template.html","Content")
-CreateIndexFiles("Content")
+#GenerateFilesFromStemAndTemplate("new-main-body-template.html","Content")
+BuildProject("new-main-body-template.html","Content")
