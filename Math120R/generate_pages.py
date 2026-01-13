@@ -12,7 +12,8 @@ import markdown
 from bs4 import BeautifulSoup
 
 DEBUG = False
-
+#URL = "https://cwpersonrennell.github.io/Math/Math120R/Content"
+URL = "https://uamathematics.com/120R"
 def FlattenStringArray(array,md = False):
     result = ""
     for i in range(0, len(array)):
@@ -191,10 +192,12 @@ def GenerateFilesFromStemAndTemplate(template_filename,directory):
 
 def CreateLink(filepath,label):
     filepath = filepath.replace("\\","/")
-    result = f'<a href="https://cwpersonrennell.github.io/Math/Math120R/Content/{filepath}">{label}</a>'
+    result = f'<a href="{URL}/{filepath}">{label}</a>'
     return result
         
 def BuildProject(template_filename,top):
+    Stem_filepaths, Stems = CompileStems()
+    MakeTargetDirectoriesFromStems(Stems,top)
     for root, dirs, files in os.walk(".\Stems"):
         new_root = root.replace("Stems",top)
         top_root = root.replace("Stems",top)
@@ -232,7 +235,7 @@ def BuildProject(template_filename,top):
                     if(i<len(files)-1):
                         next_page = CreateLink(f"{new_root}\{files[i+1]}","Next")
                     if(i>0):
-                        previous_page = CreateLink(f"{new_root}\{files[i+1]}","Back")
+                        previous_page = CreateLink(f"{new_root}\{files[i-1]}","Back")
                 except IndexError as e:
                     print(e)
                 
@@ -258,4 +261,4 @@ def BuildProject(template_filename,top):
             
         
 #GenerateFilesFromStemAndTemplate("new-main-body-template.html","Content")
-BuildProject("new-main-body-template.html","Content")
+BuildProject("new-main-body-template.html","120R")

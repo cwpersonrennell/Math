@@ -42,30 +42,195 @@
 
 <div id="main" class="content">
 
-  
+  <style>
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(3,minmax(200px,1fr));
+            grid-template-rows:auto 1fr;
+            column-gap: 1rem;
+            }
+
+         details{
+            display:grid;
+            grid-template-columns:subgrid;
+            grid-template-rows:subgrid;
+            grid-column: 1 / -1;
+            grid-row: 1 / span 3;
+        }
+
+        details::details-content{
+          grid-row: 2;
+          grid-column: 1 / -1;
+          padding: 1rem;
+          border-bottom: 2px solid black;
+        }
+        
+        details:not([open])::details-content{
+          display:none;
+        }
+        
+        summary{
+          grid-row: 1;
+          display: grid;
+          padding: 1rem;
+          border-bottom:2px solid black;
+          cursor:pointer;
+          z-index: 1;
+        }
+        
+        details[open] summary{
+          font-weight:bold;
+        }
+        details:nth-of-type(1) summary{
+            grid-column: 1 / span 1;
+        }
+    
+        details:nth-of-type(2) summary{
+            grid-column: 2 / span 1;
+        }
+    
+        details:nth-of-type(3) summary{
+            grid-column: 3 / span 1;
+        }
+    
+        summary{
+            grid-column: var(--n) / span 1;
+          }
+    
+    </style>
 
   <div class="grid">
 
-  <div class="fa">
-<p>Use a table of values to graph the circle:</p>
+  <details class='item' name='alpha' open style='--n: 1'><summary class='subitem'>Problem </summary><div> <p>Create a table of values and then graph the circle:</p><p>\[ (x-2)^2 + (y-1)^2 = 4 \]</p> </div></details><details class='item' name='alpha' open style='--n: 2'><summary class='subitem'>Scratch Work </summary><div> <p>For my scratch work, I will start by calculating the input/output using either \(x=0\) or \(y=0\) to get some relatively easy calculations. 
 \[ (x-2)^2 + (y-1)^2 = 4 \]
-<div><button id="toggle_solution">Show Solution</button></div>
-<hr/>
-<div class="hide" id="solution">
-<p><strong>Solution</strong></p>
-<div id="calculator" style="width: 600px; height: 600px; text-align: center;"></div>
-<p>
-<script>
+\[
+\begin{array}{rcl}
+\text{Let: }x=0&amp;&amp;\\
+(0-2)^2 +(y-1)^2 &amp;=&amp; 4\\
+4 + (y-1)^2 &amp;=&amp;4\\
+(y-1)^2 &amp;=&amp;0\\
+y-1&amp;=&amp;0\\
+y&amp;=&amp;1
+\end{array}
+\]</p><p>This first set of algebraic calculations yields one point: \((0, 1)\)</p><p>\[
+\begin{array}{rcl}
+\text{Let: }y=0&amp;&amp;\\
+(x-2)^2 +(0-1)^2 &amp;=&amp; 4\\
+(x-2)^2 +1 &amp;=&amp;4\\
+(x-2)^2 &amp;=&amp;3\\
+x-2 &amp;=&amp;\pm \sqrt{3}\\
+x &amp;=&amp;2\pm \sqrt{3}
+\end{array}
+\]</p><p>This one is a bit more tricky, here I still get my answers, two points \((2-\sqrt{3}, 0)\) and \((2+\sqrt{3},0)\), but they are not easy for me to figure out how to graph since those exact values do not correspond to nice grid lines. </p><p>Of course, our goal is still to fill out a table. This is where experimenting numerically is going to prove more helpful. I tried the "easy" or "obvious" choices of the zeros, but we can also just systematically plug in numbers to figure things out. Let's build out a table of values using the calculations we have already performed as guides. I am going to put some \(?\)s in whenever there is an unknown corresponding value, we will work these out in a later step.</p><p>As for why start and end at the values I included in my table, there are simply relatively small values and are a <strong>starting</strong> point. I may refine, remove, or add more values as I perform my numerical computations.</p><p>\[
+\begin{array}{|c|c|}
+\hline
+x&amp;y\\\hline
+-2&amp;?\\\hline
+-1&amp;?\\\hline
+0&amp;1\\\hline
+1&amp;?\\\hline
+2&amp;?\\\hline
+?&amp;-2\\\hline
+?&amp;-1\\\hline
+2-\sqrt{3}&amp;0\\\hline
+2+\sqrt{3}&amp;0\\\hline
+?&amp;1\\\hline
+?&amp;2\\\hline
+\end{array}
+\]</p><p>Notice that we can let either \(x\) or \(y\) take on a value and still calculate the other. With this much calculation, you <strong>may</strong> be tempted to find some shortcuts; this is <em>encouraged</em>! The practice of mathematics is identifying patterns and looking for consistent rules that allow us to better understand a problem and get to the heart of things.</p><p>Let's do some of those calculations now:
+\[ (x-2)^2 + (y-1)^2 = 4 \]
+\[
+\begin{array}{rcl}
+\text{Let: }x=-2&amp;&amp;\\
+(-2-2)^2 +(y-1)^2 &amp;=&amp; 4\\
+(-4)^2 + (y-1)^2 &amp;=&amp;4\\
+16+(y-1)^2 &amp;=&amp;4\\
+(y-1)^2 &amp;=&amp;-12\\
+\end{array}
+\]</p><p>Alright, seem to have hit a bit of a snag; what is going on here? I cannot square a value and end up with a negative (at least amongst the <strong>real</strong> number values), so I must conclude that when \(x=-2\), there are <strong>no</strong> corresponding \(y\) values! On the plus side, that does mean I can remove that row from my table! Let's keep going:</p><p>\[
+\begin{array}{rcl}
+\text{Let: }x=-1&amp;&amp;\\
+(-1-2)^2 +(y-1)^2 &amp;=&amp; 4\\
+(-3)^2 + (y-1)^2 &amp;=&amp;4\\
+9+(y-1)^2 &amp;=&amp;4\\
+(y-1)^2 &amp;=&amp;-5\\
+\end{array}
+\]</p><p>Whelp. It happened again. If I haven't done so already, I am <em>definitely</em> checking my work to look for errors, but everything looks neat, tidy, and correct, so no help for it but to press on:</p><p>\[
+\begin{array}{rcl}
+\text{Let: }x=1&amp;&amp;\\
+(1-2)^2 +(y-1)^2 &amp;=&amp; 4\\
+(-1)^2 + (y-1)^2 &amp;=&amp;4\\
+1+(y-1)^2 &amp;=&amp;4\\
+(y-1)^2 &amp;=&amp;3\\
+y-1 &amp;=&amp;\pm\sqrt{3}\\
+y&amp;=&amp;1\pm\sqrt{3}
+\end{array}
+\]</p><p>Nice! Now I have two more points I can add to my table, \((1, 1\pm\sqrt{3})\) and \((1,1-\sqrt{3})\). Still, not great for graphing/sketching due to the lack of landing on a nice gridline, but progress! Let's do one more and see what we get:</p><p>\[
+\begin{array}{rcl}
+\text{Let: }x=2&amp;&amp;\\
+(2-2)^2 +(y-1)^2 &amp;=&amp; 4\\
+(0)^2 + (y-1)^2 &amp;=&amp;4\\
+0+(y-1)^2 &amp;=&amp;4\\
+(y-1)^2 &amp;=&amp;4\\
+y-1 &amp;=&amp;\pm\sqrt{4}\\
+y&amp;=&amp;1\pm 2\\
+y=3&amp;\text{or}&amp;y=-1
+\end{array}
+\]</p><p><strong>Finally!</strong> We landed on some nice whole number values. I recommend you review this set of steps; what about this \(x\) value in particular helped us to land on such a nice value? Look at <strong>all</strong> the steps and see how each one contributed to this final answer. We now have two more points to add to our table: \((2,-1)\) and \((2,3)\)</p><p>Okay, now I have done this calculation <strong>so</strong> many times, I am quite tired of copying/pasting and re-writing my work. Looking back, I basically repeat the same few steps over and over again. This is where <strong>algebra</strong> can really save us some of this tedium. Instead of picking an \(x\) value and then solving for \(y\), what if I just started by solving for \(y\), and leave the \(x\) variable alone?</p><p>\[
+\begin{array}{rcl}
+\text{Let: }x=x&amp;&amp;\\
+(x-2)^2 +(y-1)^2 &amp;=&amp; 4\\
+(y-1)^2 &amp;=&amp;4- (x-2)^2\\
+y-1 &amp;=&amp;\pm\sqrt{4- (x-2)^2}\\
+y &amp;=&amp;1\pm\sqrt{4-(x-2)^2}
+\end{array}
+\]</p><p>By doing the "harder" work of solving this <strong>symbolically</strong> for \(y\) (or \(x\)!) we can now more easily plug in \(x\) values to see what the corresponding \(y\) values are! Note that we <strong>still</strong> need that \(\pm\) in front of the square root, so this equation is <strong>not</strong> a function! But that's okay! We are just graphing this equation, so no need to worry about whether the equation represents a function.</p><p>If we do the same for \(x\) we can pretty quickly use those values to fill out our table:</p><p>\[
+\begin{array}{rcl}
+\text{Let: }y=y&amp;&amp;\\
+(x-2)^2 +(y-1)^2 &amp;=&amp; 4\\
+(x-2)^2 &amp;=&amp;4- (y-1)^2\\
+x-2 &amp;=&amp;\pm\sqrt{4- (y-1)^2}\\
+x &amp;=&amp;2\pm\sqrt{4-(y-1)^2}
+\end{array}
+\]</p><p>Using these, we can see pretty quickly how we can get our table filled out:
+\[
+\begin{array}{|c|c|}
+\hline
+x&amp;y\\\hline
+-2&amp;DNE\\\hline
+-1&amp;DNE\\\hline
+0&amp;1\\\hline
+1&amp;1-\sqrt{3}\\\hline
+1&amp;1+\sqrt{3}\\\hline
+2&amp;3\\\hline
+2&amp;-1\\\hline
+DNE&amp;-2\\\hline
+DNE&amp;-1\\\hline
+2-\sqrt{3}&amp;0\\\hline
+2+\sqrt{3}&amp;0\\\hline
+0&amp;1\\\hline
+4&amp;1\\\hline
+2+\sqrt{3}&amp;2\\\hline
+2-\sqrt{3}&amp;2\\\hline
+\end{array}
+\]</p><p>For my solution, I will take out all those pesky radicals and DNEs and just focus on the nice grid values. Also, just by doing the work in the order I did, I actually ended up with a duplicated entry: \((0,1)\), so I will consolidate that into just one.</p> </div></details><details class='item' name='alpha' open style='--n: 3'><summary class='subitem'>Solution </summary><div> <p>After doing some scratch work, I found at least 4 nice points to help figure out the graph of the circle:
+\[
+\begin{array}{|c|c|}
+\hline
+x&amp;y\\\hline
+2&amp;3\\\hline
+2&amp;-1\\\hline
+0&amp;1\\\hline
+4&amp;1\\\hline
+\end{array}
+\]</p><p>If I plot these on a nice grid and connect them in a circle, I should get something like this:</p><div id="calculator" style="width: 600px; height: 600px; text-align: center;"></div><script>
   document.addEventListener("DOMContentLoaded", () => {
   var elt = document.getElementById('calculator');
   var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0.5,zoomSquare:true});
   calculator.setMathBounds({left:-5,right:5,bottom:-5,top:5});
   calculator.setExpressions( [{latex: '(x-2)^2 + (y-1)^2 = 4',color:"blue"},{latex:"(2,3)",color:"blue",showLabel:true},{latex:"(2,-1)",color:"blue",showLabel:true},{latex:"(0,1)",color:"blue",showLabel:true},{latex:"(4,1)",color:"blue",showLabel:true}]);
   });
-</script>
-</p>
-</div>
-</div>
+</script> </div></details>
 
   </div>
 

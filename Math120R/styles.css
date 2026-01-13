@@ -31,7 +31,7 @@
   align-items:stretch;
   align-content:stretch;
   gap:5px;
-  height:90vh;
+  height:80vh;
 }
 
 .navigate{
@@ -52,21 +52,21 @@
 }
 .content{
   flex:18;
-  height:90vh;
+  height:80vh;
 }
 .header{
-  height:10vh;
+  height:5vh;
 }
 
 body{
-  height:100vh;
+  height:95vh;
 }
 .grid{
-  height:100vh;
+  height:80vh;
 }
 
 details > div{
   overflow-y:scroll;
   height:80vh;
-  
+
 }
