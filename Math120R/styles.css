@@ -36,6 +36,9 @@
 
 .navigate{
   flex:1;
+  background:#322b4c;
+  border-radius:10px;
+  display:block;
 }
 
 .navigate > a{

@@ -200,15 +200,15 @@ def BuildProject(template_filename,top):
         index_file = open(f"{new_root}\index.html", "w")
         index_file.write("")
         new_root = root.replace(".\\Stems\\","")
-        
+        if(new_root == ".\\Stems"):new_root = "Home"
         index = CreateLink(f"{new_root}\index.html",new_root)
-        body = f"<title>{new_root}</title><h1>{new_root}</h1>"
-        
+        #body = f"<title>{new_root}</title><h1>{new_root}</h1>"
+        body = ""
         template_file = open("index-template.html","r")
         index_contents = template_file.read()
         
         root_link = CreateLink("index.html", "Home")
-        breadcrumb = f'{root_link} / '
+        breadcrumb = f'<h2>{root_link} / '
         
         link_list = f"<ul>\n"
         if(len(files)>0):
@@ -237,17 +237,17 @@ def BuildProject(template_filename,top):
                 contents = contents.replace("{{{previous_page}}}",previous_page)
                 contents = contents.replace("{{{next_page}}}", next_page)
                 
-                print(contents)
                 CreateAndWriteContentsToFile(contents,target_filename)
                 source_file.close()
                 template_file.close()
                 
                 link_list +="<li>"+CreateLink(f"{new_root}\{files[i]}",files[i].replace(".html",""))+"</li>\n"
         if(len(dirs)>0):
+            print("There are Subdirectories", dirs)
             for i in range(0, len(dirs)):
                 link_list+="<li>"+CreateLink(dirs[i]+"/index.html",dirs[i])+"</li>\n"
         link_list +=f"</ul>\n"
-        body+=breadcrumb +"\n"
+        body+=breadcrumb +"</h2>\n"
         body+=link_list
         index_contents=index_contents.replace("{{{body}}}",body)
         index_file.write(index_contents)
