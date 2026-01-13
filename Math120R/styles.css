@@ -61,5 +61,4 @@ body{
 
 details > div{
   overflow-y:scroll;
-  max-height:50%;
 }
