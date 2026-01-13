@@ -85,7 +85,7 @@
 <script> 
   document.addEventListener("DOMContentLoaded", () => {
     var elt = document.getElementById('calculator');
-    
+
     var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:false,xAxisStep:0,fontSize:24, projectorMode:true,showGrid:false, xAxisNumbers:true,yAxisNumbers:false,trace:false});
   calculator.setMathBounds({left:-5,right:6,bottom:-50,top:15});
   calculator.setExpressions( [{latex:String.raw`g(x)=-2/500(x-5)^2(x+4)x^3`,color:"blue"}, {latex:String.raw`(0,g(0))`,showLabel:true,color:"blue"},{latex:String.raw`(5,0)`,showLabel:true,color:"blue"},{latex:String.raw`(-4,0)`,showLabel:true,color:"blue"}
@@ -109,7 +109,7 @@
   ]);
    x3c.setExpressions( [{latex:String.raw`g(x)=-2/500(x-5)^2(x+4)x^3`,color:"blue"}, {latex:String.raw`(0,g(0))`,showLabel:true,color:"blue"},{latex:String.raw`(5,0)`,showLabel:true,color:"blue"},{latex:String.raw`(-4,0)`,showLabel:true,color:"blue"}
   ]);
-    
+
   });
 </script></p>
 

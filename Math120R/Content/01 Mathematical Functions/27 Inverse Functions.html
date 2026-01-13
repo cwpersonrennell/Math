@@ -69,7 +69,7 @@
       let m = 1;
       pointCounter++;
       hide=true;
-      
+
       return [
         {latex:String.raw`x_{${{pointCounter}}}=${{x}}`,hidden:true,secret:hide},
         {latex:String.raw`y_{${{pointCounter}}}=${{y}}`,hidden:true,secret:hide},
@@ -87,7 +87,7 @@
     calculator.setExpressions(arrowAtPoint("0","f(x_1)",String.raw`0`,"blue"));//x_2,y_2
     calculator.setExpressions([{latex:"(x_1,0)",label:"`x`",color:"blue",showLabel:true,secret:true},{latex:String.raw`x=x_1\left\{0\leq y \leq f(x_1)\right\}`,color:"blue",lineStyle:Desmos.Styles.DASHED,secret:true},{latex:String.raw`y=f(x_1)\left\{0\leq x \leq x_1\right\}`,color:"blue",lineStyle:Desmos.Styles.DASHED,secret:true},{latex:"(0,f(x_1))",label:"`f(x)`",showLabel:true,color:"blue",hidden:true,labelOrientation:Desmos.LabelOrientations.LEFT}]);
     calculator.setExpression({latex:"g(x) = \\sqrt{{x}}",hidden:true,secret:true});
-    
+
     calculator.setExpressions([{latex:String.raw`(0,y_3)`,label:"`y`",color:"green",showLabel:true,secret:true}]);
     calculator.setExpressions(arrowAtPoint(String.raw`g(y_3)`,2,RIGHT,"green"));//x_3,y_3
     calculator.setExpressions(arrowAtPoint(String.raw`g(y_3)`,0,DOWN,"green"));//x_4,y_4
@@ -100,6 +100,7 @@
 
 <p></p>
 <hr/>
+
 
   </div>
 

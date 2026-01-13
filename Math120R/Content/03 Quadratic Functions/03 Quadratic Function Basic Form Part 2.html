@@ -66,11 +66,11 @@
 <script> 
   document.addEventListener("DOMContentLoaded", () => {
     var elt = document.getElementById('calculator');
-    
+
     var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true,showGrid:true, xAxisNumbers:true,yAxisNumbers:true,trace:true});
   calculator.setMathBounds({left:-10,right:10,bottom:-10,top:20});
   calculator.setExpressions( [{latex:String.raw`f(x)=\frac{{1}}{{5}}x^2-\frac{{8}}{{5}}x-\frac{{9}}{{5}}`,color:"blue"},{latex:"(-1,0)",showLabel:true,color:"blue"},{latex:"(9,0)",showLabel:true,color:"blue"},{latex:"(4,-5)",showLabel:true,color:"blue"},{latex:"(0,-9/5)",showLabel:true,color:"blue"}
-   
+
   ]);
 
 

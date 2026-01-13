@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html style="height:100%;margin:0px;padding:0px">
+<head>
+	<title>01 Mathematical Functions</title>
+  <script src="https://cwpersonrennell.github.io/Math/iframeResizer.contentWindow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+  <script defer="" src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=8ae2ef20e33540178af61f4f9ee3ca30"></script>
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/DesmosAddons/styles.css">
+  <link rel="stylesheet" href="https://cwpersonrennell.github.io/Math/Math120R/styles.css">
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/DesmosAddons.js"></script>
+  <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
+  <script defer="defer"> 
+     document.addEventListener("DOMContentLoaded", () => {
+     	try{
+       		MathJax.typeset();
+       	}catch(err){
+       		console.log(err);
+       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+       	}
+
+
+       //Building the Desmos Calculator from the Desmos Calculator App: 
+       //https://cwpersonrennell.github.io/DesmosAddons/
+       //DEFAULT_OPTIONS.expressions=true;
+       getCalculators();
+  });
+</script>
+</head>
+<body>
+	<p style="display: none;" comment="LaTex Macros">
+\( 
+	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+\)
+</p>
+<div class='header'><h6><a href="https://cwpersonrennell.github.io/Math/Math120R/Content/index.html">Home</a> / <a href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/index.html">01 Mathematical Functions</a> / 00 Introduction to Mathematical Functions</div>
+
+<div class="container">
+<div class="navigate" id="back" style="display:block;float:left"><a href="https://cwpersonrennell.github.io/Math/Math120R/Content/index.html">Back</a></div>
+
+<div id="main" class="content">
+
+  <style>
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(2,minmax(200px,1fr));
+            grid-template-rows:auto 1fr;
+            column-gap: 1rem;
+            }
+
+         details{
+            display:grid;
+            grid-template-columns:subgrid;
+            grid-template-rows:subgrid;
+            grid-column: 1 / -1;
+            grid-row: 1 / span 2;
+        }
+
+        details::details-content{
+          grid-row: 2;
+          grid-column: 1 / -1;
+          padding: 1rem;
+          border-bottom: 2px solid black;
+        }
+        
+        details:not([open])::details-content{
+          display:none;
+        }
+        
+        summary{
+          grid-row: 1;
+          display: grid;
+          padding: 1rem;
+          border-bottom:2px solid black;
+          cursor:pointer;
+          z-index: 1;
+        }
+        
+        details[open] summary{
+          font-weight:bold;
+        }
+        details:nth-of-type(1) summary{
+            grid-column: 1 / span 1;
+        }
+    
+        details:nth-of-type(2) summary{
+            grid-column: 2 / span 1;
+        }
+    
+        summary{
+            grid-column: var(--n) / span 1;
+          }
+    
+    </style>
+
+  <div class="grid">
+
+  <details class='item' name='alpha' open style='--n: 1'><summary class='subitem'>Welcome </summary><div> <h1>Welcome</h1><p>This site is structured around the course I teach at the University of Arizona, Math 120R - Calculus Preparation. Before we begin, I am going to restate the course goals here as I will occasionally make reference to these when it comes to motivating certain topics and approaches:</p><blockquote>
+<ul>
+<li>To prepare students to be successful in the Calculus sequence at U of A (math 122A/B, 129, and 223).</li>
+<li>To help students develop and refine basic algebra skills by way of an integrated review of these skills as they are needed in the course.</li>
+</ul>
+</blockquote> </div></details><details class='item' name='alpha' open style='--n: 2'><summary class='subitem'>Introductory Notes </summary><div> <h1>Notes</h1><p>What is a <strong>function</strong>?</p> </div></details>
+
+  </div>
+
+</div>
+
+<div class = "navigate" id="next" style="display:block;float:right"><a href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/01 Intercepts of an Implicit Equation.html">Next</a></div>
+</div>
+</body>
+</html>

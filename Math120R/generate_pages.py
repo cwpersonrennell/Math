@@ -84,8 +84,9 @@ def CompileTabStyle(n):
 def CompileFile(filename):
     file = open(filename, 'r')
     source = file.read()
-    #html = markdown.markdown(source, extensions=['pymdownx.arithmatex'])
-    soup = BeautifulSoup(source, 'html.parser')
+    html = markdown.markdown(source, extensions=['md_in_html'])
+    if(filename.find("00")!=-1):print(html)
+    soup = BeautifulSoup(html, 'html.parser')
     tabs = soup.select("section")
     result = ""
     if len(tabs) == 0:

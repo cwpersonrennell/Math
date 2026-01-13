@@ -60,12 +60,12 @@
 <script defer="" src="https://cwpersonrennell.github.io/DesmosAddons/hide.js"></script>
 <script defer="defer"> 
      document.addEventListener("DOMContentLoaded", () => {
-     	try{
-       		MathJax.typeset();
-       	}catch(err){
-       		console.log(err);
-       		MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
-       	}
+        try{
+            MathJax.typeset();
+        }catch(err){
+            console.log(err);
+            MathJax.typesetPromise().then(()=>{console.log("Async Render?");}).catch((err)=>{console.log("Render Failed: "+err.message);});
+        }
 
 
        //Building the Desmos Calculator from the Desmos Calculator App: 
@@ -78,8 +78,8 @@
 <body>
 <p comment="LaTex Macros" style="display: none;">
 \( 
-	\def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
-	\def\solve#1{\begin{array}{rcl}#1\end{array} } 
+    \def\dfrac#1#2{\displaystyle\frac{#1}{#2}} 
+    \def\solve#1{\begin{array}{rcl}#1\end{array} } 
 \)
 </p>
 <div id="alternate" style="display:block;float:right">
@@ -91,24 +91,24 @@
 <p>Conceptually, the problem is relatively straightforward: the total area is the area of the half-circle (usually called a semicircle) added to the area of the rectangle. The semicircle we actually already know: \(A_{c} = \frac{1}{2}\pi r^2\). The rectangle is where things get more tricky. Look closely at the top of the rectangle and convince yourself of this: the top length of the rectangle is \(2r\). If the top of the rectangle is \(2r\), then so to must the the bottom be. That leaves the left and right (both the same) as some unknown. Let's call the unknown left/right values \(h\) (since it is kind of a height): </p>
 <calculator data-string='{"version":9,"randomSeed":"a3176651d61192bbeba4e4b3753818ab","graph":{"viewport":{"xmin":-16.948490668132944,"ymin":-3.928755615867942,"xmax":17.56512384979469,"ymax":21.95645527257778},"showGrid":false,"showXAxis":false,"showYAxis":false,"xAxisNumbers":false,"yAxisNumbers":false},"expressions":{"list":[{"type":"expression","id":"1","color":"#000000","latex":"\\left|x\\right|\\ =\\ 5\\left\\{0\\le y\\le15\\right\\}"},{"type":"expression","id":"2","color":"#000000","latex":"y=\\sqrt{25-x^{2}}+15"},{"type":"expression","id":"3","color":"#000000","latex":"y=0\\left\\{\\left|x\\right|\\le5\\right\\}"},{"type":"expression","id":"4","color":"#000000","latex":"y=15\\left\\{\\left|x\\right|\\le5\\right\\}"},{"type":"expression","id":"5","color":"#c74440","latex":"y=105\\left\\{-5\\le x\\le5\\right\\}","lineWidth":"2.5"},{"type":"expression","id":"6","color":"#c74440","latex":"\\left(0,15\\right)","showLabel":false,"label":"`2r`","hidden":true,"labelSize":"1.5","labelOrientation":"above"},{"type":"expression","id":"7","color":"#c74440","latex":"\\left(0,0\\right)","showLabel":true,"label":"`2r`","hidden":true,"labelSize":"1.5","labelOrientation":"below"},{"type":"expression","id":"8","color":"#000000","latex":"\\left(5,7.5\\right)","showLabel":true,"label":"`h`","hidden":true,"labelSize":"1.5","labelOrientation":"right"},{"type":"expression","id":"9","color":"#000000","latex":"\\left(-5,7.5\\right)","showLabel":true,"label":"`h`","hidden":true,"labelSize":"1.5","labelOrientation":"left"}]}}' mathbounds='{"left":-16.948490668132944,"right":17.56512384979469,"top":21.95645527257778,"bottom":-3.928755615867942}' options='{"expressions":false,"keypad":true,"graphpaper":true,"showGrid":false,"showXAxis":false,"showYAxis":false,"xAxisNumbers":false,"yAxisNumbers":false,"trace":false,"pointsOfInterest":false,"settingsMenu":false,"zoomButtons":false,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":true,"projectorMode":true,"invertedColors":false}' style="width:800px;height:600px"></calculator>
 <p>From this, we can see the most of the exterior pieces of the perimeter. Note that the bottom of the circle (the top of the rectangle) is not included in the perimeter. The total perimeter then must be made up of the 3 sides of the rectangle and the circumference of the semicircle: 
-		\[P = 2r + h +h +\frac{1}{2}(2\pi r) = 2r+2h + \pi r\]</p>
+        \[P = 2r + h +h +\frac{1}{2}(2\pi r) = 2r+2h + \pi r\]</p>
 <p>From this formula, we can substitute the known value of the perimeter, 20 feet, and use that to solve for \(h\), thus eliminating the "extra" variable we introduced into this problem:
-			\[\solve{
-				20 &amp;=&amp;2r + 2h + \pi r\\
-				20-2r-\pi r &amp;=&amp; 2 h \\
-				10 - r -\frac{\pi}{2}r &amp;=&amp; h
-			}
-			\]</p>
+            \[\solve{
+                20 &amp;=&amp;2r + 2h + \pi r\\
+                20-2r-\pi r &amp;=&amp; 2 h \\
+                10 - r -\frac{\pi}{2}r &amp;=&amp; h
+            }
+            \]</p>
 <p>Known \(h\) in terms of \(r\), we can now return to our original idea for the area by adding the area of the semicircle with the area of the rectangle:
-			\[
-			\solve{
-				A &amp;=&amp; \frac{1}{2}\pi r^2 + (2r)(h)\\
-				A &amp;=&amp; \frac{1}{2}\pi r^2 + (2r)(10-r-\frac{\pi}{2}r)\\
-				A &amp;=&amp; \frac{1}{2}\pi r^2 + 20r - 2r^2 - \pi r^2\\
-				A &amp;=&amp; -2r^2 - \frac{\pi}{2} r^2 +20r\\
-				A &amp;=&amp; -r^2(2+\frac{\pi}{2})+20r
-			}
-			\]</p>
+            \[
+            \solve{
+                A &amp;=&amp; \frac{1}{2}\pi r^2 + (2r)(h)\\
+                A &amp;=&amp; \frac{1}{2}\pi r^2 + (2r)(10-r-\frac{\pi}{2}r)\\
+                A &amp;=&amp; \frac{1}{2}\pi r^2 + 20r - 2r^2 - \pi r^2\\
+                A &amp;=&amp; -2r^2 - \frac{\pi}{2} r^2 +20r\\
+                A &amp;=&amp; -r^2(2+\frac{\pi}{2})+20r
+            }
+            \]</p>
 <p>This final statement can be rewritten a few way that are all equally correct; the final steps involve rearranging the values, notably combining all the \(\pi r^2\) terms(\(1/2 - 1\) becomes \(-1/2\) just with \(\pi r^2\)).</p>
 </body>
 </html>

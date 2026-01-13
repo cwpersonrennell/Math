@@ -38,7 +38,7 @@
 <div class='header'><h6><a href="https://cwpersonrennell.github.io/Math/Math120R/Content/index.html">Home</a> / <a href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/index.html">01 Mathematical Functions</a> / 01 Intercepts of an Implicit Equation</div>
 
 <div class="container">
-<div class="navigate" id="back" style="display:block;float:left"><a href="https://cwpersonrennell.github.io/Math/Math120R/Content/index.html">Back</a></div>
+<div class="navigate" id="back" style="display:block;float:left"><a href="https://cwpersonrennell.github.io/Math/Math120R/Content/01 Mathematical Functions/02 Creating a table to graph a circle.html">Back</a></div>
 
 <div id="main" class="content">
 
@@ -117,33 +117,21 @@
 <p>Algebraically, we can solve an equation or two in order to precisely and exactly find these values. </p>
 <p>Numerically, we can build our intuition and explore or even generate the visual ourselves by creating a <strong>table of values</strong>, where we input different horizontal and/or vertical values to see what works and what does not.</p>
 <p>Consider the Problem and try it out on your own before taking a look at the solution.</p> </div></details><details class='item' name='alpha' open style='--n: 2'><summary class='subitem'>Problem </summary><div> <p>Find all the horizontal, \(x\),  and vertical,  \(y\),  intercepts for the graph of the equation:</p>
-<p>\[ x^4 + y^3 -xy^2 = 4096 \]</p> </div></details><details class='item' name='alpha' open style='--n: 3'><summary class='subitem'>Solution </summary><div> <p>What does it mean for a graph to have intercepts? There are two types of intercepts: </p>
-<p><strong>Vertical Intercepts</strong>: This is when the graph intercepts the vertical axis, which only occurs when the horizontal values are exactly zero. Vertical intercepts will always take the form \((0,y_1),\;(0,y_2),...(0,y_n)\)</p>
-<p><strong>Horizontal Intercepts</strong>: This is when the graph intercepts the horizontal axis, which only occurs when the vertical values are exactly zero. Horizontal intercepts will always take the form \((x_1,0),\;(x_2,0),\;...(x_m,0)\)</p>
-<p><strong>Algebraic Approach</strong>:To find the intercepts, we set the \(x\) or \(y\) value to zero, according to the definitions above.
+<p>\[ x^4 + y^3 -xy^2 = 4096 \]</p> </div></details><details class='item' name='alpha' open style='--n: 3'><summary class='subitem'>Solution </summary><div> <p>What does it mean for a graph to have intercepts? There are two types of intercepts: </p><p><strong>Vertical Intercepts</strong>: This is when the graph intercepts the vertical axis, which only occurs when the horizontal values are exactly zero. Vertical intercepts will always take the form \((0,y_1),\;(0,y_2),...(0,y_n)\)</p><p><strong>Horizontal Intercepts</strong>: This is when the graph intercepts the horizontal axis, which only occurs when the vertical values are exactly zero. Horizontal intercepts will always take the form \((x_1,0),\;(x_2,0),\;...(x_m,0)\)</p><p><strong>Algebraic Approach</strong>:To find the intercepts, we set the \(x\) or \(y\) value to zero, according to the definitions above.
    Recall the original equation was \[
    x^4 + y^3 -xy^2 = 4096
-   \]</p>
-<p><em>Vertical Intercept(s)</em> Set the horizontal value, \(x\), to be exactly \(0\):</p>
-<p>\[ 
+   \]</p><p><em>Vertical Intercept(s)</em> Set the horizontal value, \(x\), to be exactly \(0\):</p><p>\[ 
       \begin{array}{rcl} 0^4+y^3 - (0)y^2 &amp;=&amp; 4096\\
       y^3 &amp;=&amp;4096\\ y&amp;=&amp;\sqrt[3]{4096}\\
       y&amp;=&amp;16 \end{array} 
-   \]</p>
-<p>Each algebraically step leads us to the next, simpler equation and at the end of it, we can say the there is only one vertical intercept at \((0, 16)\)</p>
-<p><em>Horizontal Intercept(s)</em> set the vertical value \(y\) to be exactly \(0\): </p>
-<p>\[ 
+   \]</p><p>Each algebraically step leads us to the next, simpler equation and at the end of it, we can say the there is only one vertical intercept at \((0, 16)\)</p><p><em>Horizontal Intercept(s)</em> set the vertical value \(y\) to be exactly \(0\): </p><p>\[ 
    \solve{
       x^4 +(0)^3 - x(0) &amp;=&amp;4096\\
       x^4 &amp;=&amp;4096\\
       x &amp;=&amp;\pm \sqrt[4]{4096}\\
       x&amp;=&amp;\pm8 
    } 
-   \]</p>
-<p>Some notes on the above algebra: when we reduce a power by applying a radical of the corresponding index to both sides (in this case, the fourth root), there is an important consideration we cannot forget: even valued powers can be the result of repeatedly multiplying either <em>positive</em> <strong>or</strong> <em>negative</em> values! In this case, \(-8\cdot -8 \cdot -8\cdot -8 = 4086\) <strong>and</strong> \(8\cdot 8 \cdot 8\cdot 8=4096\) which is why you see the <em>plus/minus</em> sign in front of the \(8\).</p>
-<p>From this set of algebraic steps, we can deduce there are exactly two horizontal intercepts: \((-8,0),\;(8,0)\)</p>
-<p><strong>Visual Approach</strong>: It is quite possible to have begun this whole problem via a visual approach. However, in a <em>large</em> variety of cases, this can lead to imprecise or approximated values, so it does tend to be slightly devalued as a primary approach. Nevertheless, you can use the graph as a primary approach so long as you are also practicing and applying the algebraic approach too! </p>
-<p>Since we have already found our solution algebraically, we can use the visual approach to instead <strong>validate</strong> our answer. Note that not all graphing calculators can graph equations of this type (known as <em>implicit</em> equations) but when you have one that can it is very helpful. Desmos is one such tool that can directly graph this:</p><div id="calculator" style="width: 600px; height: 400px; text-align: center;"></div><script>
+   \]</p><p>Some notes on the above algebra: when we reduce a power by applying a radical of the corresponding index to both sides (in this case, the fourth root), there is an important consideration we cannot forget: even valued powers can be the result of repeatedly multiplying either <em>positive</em> <strong>or</strong> <em>negative</em> values! In this case, \(-8\cdot -8 \cdot -8\cdot -8 = 4086\) <strong>and</strong> \(8\cdot 8 \cdot 8\cdot 8=4096\) which is why you see the <em>plus/minus</em> sign in front of the \(8\).</p><p>From this set of algebraic steps, we can deduce there are exactly two horizontal intercepts: \((-8,0),\;(8,0)\)</p><p><strong>Visual Approach</strong>: It is quite possible to have begun this whole problem via a visual approach. However, in a <em>large</em> variety of cases, this can lead to imprecise or approximated values, so it does tend to be slightly devalued as a primary approach. Nevertheless, you can use the graph as a primary approach so long as you are also practicing and applying the algebraic approach too! </p><p>Since we have already found our solution algebraically, we can use the visual approach to instead <strong>validate</strong> our answer. Note that not all graphing calculators can graph equations of this type (known as <em>implicit</em> equations) but when you have one that can it is very helpful. Desmos is one such tool that can directly graph this:</p><div id="calculator" style="width: 600px; height: 400px; text-align: center;"></div><script>
       document.addEventListener("DOMContentLoaded", () => {
      var elt = document.getElementById('calculator');
      var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:false,xAxisStep:0});

@@ -63,7 +63,7 @@
 <script> 
   document.addEventListener("DOMContentLoaded", () => {
     var elt = document.getElementById('calculator');
-    
+
     var calculator = Desmos.GraphingCalculator(elt,{expressions:false,lockViewport:true,xAxisStep:0,fontSize:24, projectorMode:true,showGrid:false, xAxisNumbers:false,yAxisNumbers:false,trace:false});
   calculator.setMathBounds({left:-1,right:11,bottom:-15,top:5});
   calculator.setExpressions( [{latex:String.raw`g(x)=-2/5(x-5)^2`,color:"blue"}, {latex:String.raw`(0,g(0))`,showLabel:true, label:"`-10`",color:"blue"},{latex:String.raw`(5,0)`,showLabel:true, label:"`5`",color:"blue"}

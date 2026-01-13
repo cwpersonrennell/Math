@@ -62,51 +62,51 @@
 
 \[
 \solve{
-	|2x-3|&amp;\lt&amp;5\\
-	2x-3\lt5&amp;\text{ and }&amp;2x-3{\bf \gt}-5\\
-	2x\lt8&amp;\text{ and }&amp;2x\gt-2\\
-	x\lt4&amp;\text{ and }&amp;x\gt-1
+    |2x-3|&amp;\lt&amp;5\\
+    2x-3\lt5&amp;\text{ and }&amp;2x-3{\bf \gt}-5\\
+    2x\lt8&amp;\text{ and }&amp;2x\gt-2\\
+    x\lt4&amp;\text{ and }&amp;x\gt-1
 }
 \]
 Taking both inequalities into consideration (and putting the values in order) we can see that \(x\) must be greater than \(-1\) while also being less that \(4\), which in interval notation gives the answer \((-1,4)\). Note that these are strictly less than/greater than, so we exclude both endpoints.
 </p>
 <p>As per our usual tactics, let's see if we can check our answer visually/graphically. We will graph both sides of the inequality and attempt to identify where the left side graph is less than the right side graph. In this case, the right side just the horizontal line at \(5\), but as you will see in the next example, we can still use this idea in more complex scenarios:
 <calculator mathbounds='{"left":-10,"right":10,"top":10,"bottom":-10}' options='{"expressions":true,"keypad":true,"graphpaper":true,"showGrid":true,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":false,"projectorMode":false,"invertedColors":false}' style="width:800px;height:600px">
-	y=\left|2x-3\right|\ 
-	y=5\ 
-	(-1,5)\ 
-	(4,5)\ 
-	\left|2x-3\right|\le5\left\{\left|2x-3\right|\le y\le5\right\}
+    y=\left|2x-3\right|\ 
+    y=5\ 
+    (-1,5)\ 
+    (4,5)\ 
+    \left|2x-3\right|\le5\left\{\left|2x-3\right|\le y\le5\right\}
 </calculator></p>
 <p>
-	For the next problem, we proceed in a very similar fashion, only, there is an \(x\) on the opposite side. Due to the quadratic nature of the absolute value, I will demonstrate the positive and negative possibilities separately.
+    For the next problem, we proceed in a very similar fashion, only, there is an \(x\) on the opposite side. Due to the quadratic nature of the absolute value, I will demonstrate the positive and negative possibilities separately.
 \[
-	\solve{
-		|x^2-x-4|&amp;\leq&amp; x\\
-		x^2-x-4 &amp;\leq&amp;x\\
-		x^2 -2x -4  &amp;\leq&amp; 0\\
-	}
-\]	
+    \solve{
+        |x^2-x-4|&amp;\leq&amp; x\\
+        x^2-x-4 &amp;\leq&amp;x\\
+        x^2 -2x -4  &amp;\leq&amp; 0\\
+    }
+\]  
 This quadratic is prime, so we cannot factor it, but we can still apply the quadratic formula to determine the critical values:
 \[
 \solve{
-	x&amp;=&amp;\dfrac{2\pm\sqrt{4-4(1)(-4)}}{2}\\
-	&amp;=&amp;\dfrac{2\pm\sqrt{4+16}}{2}\\
-	&amp;=&amp;\dfrac{2\pm\sqrt{20}}{2}\\
-	&amp;=&amp;\dfrac{2\pm2\sqrt{5}}{2}\\
-	&amp;=&amp;1\pm\sqrt{5}\\
-	x=1+\sqrt{5}&amp;&amp;x=1-\sqrt{5}
+    x&amp;=&amp;\dfrac{2\pm\sqrt{4-4(1)(-4)}}{2}\\
+    &amp;=&amp;\dfrac{2\pm\sqrt{4+16}}{2}\\
+    &amp;=&amp;\dfrac{2\pm\sqrt{20}}{2}\\
+    &amp;=&amp;\dfrac{2\pm2\sqrt{5}}{2}\\
+    &amp;=&amp;1\pm\sqrt{5}\\
+    x=1+\sqrt{5}&amp;&amp;x=1-\sqrt{5}
 }
 \]
 Now, remember, these are simply the <strong>critical values</strong> that we will use to test our inequalities against. We will need to pick values from the intervals, so knowing the approximate values will help me pick appropriate test values: \(1-\sqrt{5}\approx -1.23\dots\) and \(1+\sqrt{5}\approx 3.23\dots\). <br/><br/>
 However, we have only found the critical values for <strong>half the possibilities</strong>. We still need to solve for the <strong>negative</strong>outcomes:
 \[
-	\solve{
-		|x^2-x-4|&amp;\leq&amp; x\\
-		x^2-x-4 &amp;\geq&amp;-x\\
-		x^2 -4  &amp;\geq&amp; 0\\
-		(x-2)(x+2)&amp;\geq&amp; 0
-	}
+    \solve{
+        |x^2-x-4|&amp;\leq&amp; x\\
+        x^2-x-4 &amp;\geq&amp;-x\\
+        x^2 -4  &amp;\geq&amp; 0\\
+        (x-2)(x+2)&amp;\geq&amp; 0
+    }
 \]
 This gives us our next two critical values, which are thankfully whole numbers. Now, we need to put all the critical values together in order and get the intervals. Finally, when we pick test points from each interval, we <strong>must</strong> use the original absolute value inequality to apply the test values. First, the intervals are:
 \[
@@ -114,42 +114,42 @@ This gives us our next two critical values, which are thankfully whole numbers. 
 \]
 I will use the following test values: -3, -1.5, 0, 3, and 4.
 \[
-	\begin{array}{|c|c|c|c|c|}
-		\hline
-		(-\infty,-2] &amp; [-2,1-\sqrt{5}] &amp; [1-\sqrt{5},2] &amp; [2,1+\sqrt{5}] &amp; [1+\sqrt{5},\infty) \\\hline
-		\times &amp; \times &amp; \times &amp; \checkmark &amp; \times \\\hline
-	\end{array}
+    \begin{array}{|c|c|c|c|c|}
+        \hline
+        (-\infty,-2] &amp; [-2,1-\sqrt{5}] &amp; [1-\sqrt{5},2] &amp; [2,1+\sqrt{5}] &amp; [1+\sqrt{5},\infty) \\\hline
+        \times &amp; \times &amp; \times &amp; \checkmark &amp; \times \\\hline
+    \end{array}
 \]
 To determine that the interval \([2,1+\sqrt{5}]\) was the correct interval, as a reminder, I am plugging the value \(3\) into the inequality: 
 \[
 \solve{
-	|x^2-x-4|&amp;\leq&amp;x\\
-	|(3)^2-3-4|&amp;\leq &amp;3\\
-	|9-3-4|&amp;\leq&amp;3\\
-	|2|&amp;\leq&amp;3
+    |x^2-x-4|&amp;\leq&amp;x\\
+    |(3)^2-3-4|&amp;\leq &amp;3\\
+    |9-3-4|&amp;\leq&amp;3\\
+    |2|&amp;\leq&amp;3
 }
 \]
 Since the inequality is <strong>true</strong> for my test value, I accept the whole interval. Feel free to check for yourself that the inequality <strong>fails</strong> for my other test values!</p>
 <p>Finally, we can always check our answer using a graphing utility like Desmos. Here, I graph both sides of the original inequality and look for where the graph of the left side is <strong>below</strong> the graph on the right:
 <calculator mathbounds='{"left":-10,"right":10,"top":10,"bottom":-10}' options='{"expressions":true,"keypad":true,"graphpaper":true,"showGrid":true,"showXAxis":true,"showYAxis":true,"xAxisNumbers":true,"yAxisNumbers":true,"trace":true,"pointsOfInterest":true,"settingsMenu":true,"zoomButtons":true,"expressionsCollapsed":false,"capExpressionSize":false,"lockViewport":false,"projectorMode":false,"invertedColors":false}' style="width:800px;height:600px">
-	y=\left|x^{2}-x-4\right|\ 
-	y=x\ 
-	(2,2)\ 
-	(1+\sqrt{5},1+\sqrt{5})\ 
-	\left|x^{2}-x-4\right|\le x\left\{\left|x^{2}-x-4\right|\le y\le x\right\}
+    y=\left|x^{2}-x-4\right|\ 
+    y=x\ 
+    (2,2)\ 
+    (1+\sqrt{5},1+\sqrt{5})\ 
+    \left|x^{2}-x-4\right|\le x\left\{\left|x^{2}-x-4\right|\le y\le x\right\}
 </calculator>
 <p>The final example problem is actually quite trivial:
-	\[
-	|3x-2|\gt 0
-	\]
-	is pretty much always true <strong>except</strong> when the absolute value is exactly zero. Hence, the solution will be all values of \(x\) except the value which makes the absolute value exactly zero:
-	\[
-	\solve{
-		3x-2 &amp;=&amp; 0\\
-		x &amp;=&amp;\frac{2}{3}
-	}
-	\]
-	So, the final answer will be \(\left(-\infty,\frac{2}{3}\right)\cup\left(\frac{2}{3},\infty\right)\). I will not check this visually, since there is nothing to really see (the graph is always positive except where it is exactly zero). 
+    \[
+    |3x-2|\gt 0
+    \]
+    is pretty much always true <strong>except</strong> when the absolute value is exactly zero. Hence, the solution will be all values of \(x\) except the value which makes the absolute value exactly zero:
+    \[
+    \solve{
+        3x-2 &amp;=&amp; 0\\
+        x &amp;=&amp;\frac{2}{3}
+    }
+    \]
+    So, the final answer will be \(\left(-\infty,\frac{2}{3}\right)\cup\left(\frac{2}{3},\infty\right)\). I will not check this visually, since there is nothing to really see (the graph is always positive except where it is exactly zero). 
 </p>
 <hr/></p></div>
 </div>
