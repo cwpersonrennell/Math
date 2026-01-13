@@ -223,7 +223,8 @@ def BuildProject(template_filename,top):
                 tabs, tab_style = CompileFile(source_filename)
                 contents = template_file.read().replace("{{{tab_style}}}", tab_style)
                 contents = contents.replace("{{{tabs}}}", tabs)
-                contents = contents.replace("{{{title}}}",breadcrumb)
+                contents = contents.replace("{{{title}}}",new_root)
+                contents = contents.replace("{{{breadcrumb}}}",breadcrumb)
                 next_page=CreateLink("index.html","Next")
                 previous_page=CreateLink("index.html","Back")
                 try:
@@ -250,6 +251,7 @@ def BuildProject(template_filename,top):
         body+=breadcrumb +"</h2>\n"
         body+=link_list
         index_contents=index_contents.replace("{{{body}}}",body)
+        index_contents = index_contents.replace("{{{title}}}",new_root)
         index_file.write(index_contents)
         index_file.close()
             
