@@ -68,4 +68,5 @@ body{
 details > div{
   overflow-y:scroll;
   height:80vh;
+  
 }
