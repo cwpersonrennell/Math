@@ -66,6 +66,7 @@ body{
 }
 
 details > div{
+  display:block;
   overflow-y:scroll;
   height:70vh;
 
