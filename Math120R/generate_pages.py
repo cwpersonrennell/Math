@@ -10,6 +10,7 @@ import os
 import re
 import markdown
 from bs4 import BeautifulSoup
+import re
 
 DEBUG = False
 #URL = "https://cwpersonrennell.github.io/Math/Math120R/Content"
@@ -81,12 +82,27 @@ def CompileTabStyle(n):
     </style>"""
     return result
     
-
+def EscapeLatex(source):
+    result =source.replace("\n\\[\n","\n\\\\[\n")
+    result =result.replace("\\]","\\\\]")
+    a = r"\s\("
+    result =re.sub(a,r" \(",result)
+    result =result.replace("\\)","\\\\)")
+    result = result.replace("\\\\\n","\\\\\\\\\n")
+    result = result.replace("\\\\\\hline\n","\\\\\\\\\\hline\n")
+    
+    print(result)
+    print("###########################")
+    return result
+    
 def CompileFile(filename):
     file = open(filename, 'r')
     source = file.read()
+    #source = EscapeLatex(source)
     html = markdown.markdown(source, extensions=['md_in_html'])
-    if(filename.find("00")!=-1):print(html)
+    if(filename.find("02")!=-1):
+        EscapeLatex(source)
+        #print(html)
     soup = BeautifulSoup(html, 'html.parser')
     tabs = soup.select("section")
     result = ""
@@ -248,7 +264,6 @@ def BuildProject(template_filename,top):
                 
                 link_list +="<li>"+CreateLink(f"{new_root}\{files[i]}",files[i].replace(".html",""))+"</li>\n"
         if(len(dirs)>0):
-            print("There are Subdirectories", dirs)
             for i in range(0, len(dirs)):
                 link_list+="<li>"+CreateLink(dirs[i]+"/index.html",dirs[i])+"</li>\n"
         link_list +=f"</ul>\n"

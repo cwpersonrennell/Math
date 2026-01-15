@@ -31,7 +31,7 @@
   align-items:stretch;
   align-content:stretch;
   gap:5px;
-  height:80vh;
+  height:90vh;
 }
 
 .navigate{
@@ -68,6 +68,6 @@ body{
 details > div{
   display:block;
   overflow-y:scroll;
-  height:70vh;
+  height:80vh;
 
 }
